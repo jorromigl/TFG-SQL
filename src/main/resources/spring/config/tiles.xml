@@ -8,7 +8,7 @@
 	">
 
 	<util:list id="tiles">
-		<value>/views/master-page/tiles.xml</value>		
+		<value>/views/principal-page/tiles.xml</value>		
 		<value>/views/misc/tiles.xml</value>		
 		<value>/views/security/tiles.xml</value>
 		<value>/views/welcome/tiles.xml</value>
