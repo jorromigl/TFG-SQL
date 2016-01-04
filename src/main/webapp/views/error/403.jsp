@@ -6,6 +6,6 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-<p>Oops! It seems that you don't have access to this resource.</p> 
+<h1><spring:message code="403.access" /></h1>
 
-<p><a href="<spring:url value='/' />">Return to index page</a><p>
+<p><a href="<spring:url value='/' />"><spring:message code="403.return" /></a><p>

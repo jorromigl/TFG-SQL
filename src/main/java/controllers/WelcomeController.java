@@ -21,7 +21,7 @@ public class WelcomeController extends AbstractController {
 	// Index ------------------------------------------------------------------		
 
 	@RequestMapping(value = "/index")
-	public ModelAndView index(@RequestParam(required=false, defaultValue="Página del U.D.Mairena Del Aljarafe") String name) {
+	public ModelAndView index() {
 		ModelAndView result;
 		SimpleDateFormat formatter;
 		String moment;
@@ -30,9 +30,11 @@ public class WelcomeController extends AbstractController {
 		moment = formatter.format(new Date());
 				
 		result = new ModelAndView("welcome/index");
-		result.addObject("name", name);
+		
 		result.addObject("moment", moment);
 
 		return result;
 	}
+	
+	
 }
