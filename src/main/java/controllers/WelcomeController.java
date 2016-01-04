@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/welcome")
-public class WelcomeController extends AbstractController {
+public class WelcomeController extends ErrorController {
 
 	// Constructors -----------------------------------------------------------
 	

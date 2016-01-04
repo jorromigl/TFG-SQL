@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import controllers.AbstractController;
+import controllers.ErrorController;
 
 @Controller
 @Transactional
 @RequestMapping("/security")
-public class LoginController extends AbstractController {
+public class LoginController extends ErrorController {
 
 	// Supporting services ----------------------------------------------------
 	

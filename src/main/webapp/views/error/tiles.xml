@@ -6,9 +6,9 @@
        
 <tiles-definitions>
 
-	<definition name="panic" extends="principal.page">
-		<put-attribute name="title" value="Pánico" />
-		<put-attribute name="body" value="/views/misc/panic.jsp" />
+	<definition name="error/error" extends="principal.page">
+		<put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/views/error/error.jsp" />
 	</definition>
 
 </tiles-definitions>

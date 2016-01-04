@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/customer")
-public class CustomerController extends AbstractController {
+public class CustomerController extends ErrorController {
 
 	// Constructors -----------------------------------------------------------
 

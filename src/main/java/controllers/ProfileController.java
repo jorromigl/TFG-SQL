@@ -1,12 +1,13 @@
 package controllers;
 
+import org.aspectj.bridge.AbortException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/profile")
-public class ProfileController extends AbstractController {
+public class ProfileController extends ErrorController {
 	
 	// Action-1 ---------------------------------------------------------------		
 
@@ -34,7 +35,7 @@ public class ProfileController extends AbstractController {
 	
 	@RequestMapping("/action-3")
 	public ModelAndView action3() {
-		throw new RuntimeException("Oops! An exception was thrown.");
+		throw new AbortException("ERROR ACTION 3");
 	}
 	
 }

@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/administrator")
-public class AdministratorController extends AbstractController {
+public class AdministratorController extends ErrorController {
 
 	// Constructors -----------------------------------------------------------
 	
