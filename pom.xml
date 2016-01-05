@@ -29,6 +29,8 @@
 			</exclusions>
 		</dependency>
 
+
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -38,7 +40,13 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
-			<version>3.2.4.RELEASE</version>
+			<version>${org.springframework-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.aspectj</groupId>
+					<artifactId>aspectjweaver</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<!-- <dependency> <groupId>org.springframework</groupId> 
@@ -149,7 +157,7 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>1.3.4.RELEASE</version>
+			<version>1.4.3.RELEASE</version>
 		</dependency>
 
 	<!-- Security -->
@@ -194,10 +202,12 @@
 			<version>4.2.3.Final</version>
 		</dependency>
 		
+		
+		<!-- VERSION 4.3.0 xq sino no pilla indexes -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.2.3.Final</version>
+			<version>4.3.0.Final</version>
 		</dependency>
 		
 		<dependency>
@@ -205,6 +215,14 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.3.1.Final</version>
 		</dependency>
+		
+		<!-- PARA EL @INDEX DE FOLDER -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.0.Final</version>
+ 		</dependency>
+		
 		
 		<!-- Display Tag -->
 
