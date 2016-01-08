@@ -47,6 +47,22 @@
 		</property>
 	</bean>
 	
-	<!-- Other domain beans come here -->	
+	<!-- TEAM -->
+	<bean id="" class="domain.Team">
+		<property name="username" value="super" />
+		<property name="password" value="1b3231655cebb7a1f783eddf27d254ca" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	
 	
 </beans>
