@@ -64,17 +64,17 @@ public class Summary extends DomainEntity {
 		this.moment = moment;
 	}
 	
-	private Trainer trainer;
+	private Coach coach;
 	private Match match;
 
 	@ManyToOne
-	public Trainer getTrainer() {
-		return trainer;
+	public Coach getCoach() {
+		return coach;
 	}
 
 
-	public void setTrainer(Trainer trainer) {
-		this.trainer = trainer;
+	public void setCoach(Coach coach) {
+		this.coach = coach;
 	}
 
 	

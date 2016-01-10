@@ -10,9 +10,9 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Call extends User {
+public class Recruitment extends User {
 
-	public Call() {
+	public Recruitment() {
 		super();
 
 	}

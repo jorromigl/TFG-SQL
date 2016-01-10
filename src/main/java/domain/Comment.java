@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -61,5 +62,42 @@ public class Comment extends DomainEntity {
 	public void setMoment(Date moment) {
 		this.moment = moment;
 	}
+	
+	private Coach coach;
+	private Family family;
+	private Player player;
+
+	@ManyToOne(optional=false)
+	public Coach getCoach() {
+		return coach;
+	}
+
+
+	public void setCoach(Coach coach) {
+		this.coach = coach;
+	}
+
+	@ManyToOne(optional=false)
+	public Family getFamily() {
+		return family;
+	}
+
+
+	public void setFamily(Family family) {
+		this.family = family;
+	}
+
+	@ManyToOne(optional=false)
+	public Player getPlayer() {
+		return player;
+	}
+
+
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+	
+	
+	
 	
 }

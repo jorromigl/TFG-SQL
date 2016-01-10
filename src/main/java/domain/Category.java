@@ -10,16 +10,16 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class Category {
 
-    private String name;
+    private String cname;
     private String age;
 
     @NotBlank
-    public String getName() {
-        return name;
+    public String getCname() {
+        return cname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCname(String cname) {
+        this.cname = cname;
     }
     
     //Restriction

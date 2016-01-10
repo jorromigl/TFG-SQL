@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -17,13 +18,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
+@Table(name = "Macth")
 public class Match extends DomainEntity {
 
 	
-	private String adversary;
-	private String place;
+	private String rival;
+	private String location;
 	private Date moment;
-	
 
 	public Match() {
 		super();
@@ -31,21 +32,21 @@ public class Match extends DomainEntity {
 
 
 	@NotBlank
-	public String getPlace() {
-		return place;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setPlace(String place) {
-		this.place = place;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	
 	@NotBlank
-	public String getAdversary() {
-		return adversary;
+	public String getRival() {
+		return rival;
 	}
 
-	public void setAdversary(String adversary) {
-		this.adversary = adversary;
+	public void setRival(String rival) {
+		this.rival= rival;
 	}
 	
 	@NotNull
@@ -59,21 +60,20 @@ public class Match extends DomainEntity {
 		this.moment = moment;
 	}
 	
-	private Trainer trainer;
+	private Coach coach;
 	private Summary summary;
-	private Call call;
+	private Recruitment recruitment;
 
 	@ManyToOne(optional=false)
-	public Trainer getTrainer() {
-		return trainer;
+	public Coach getCoach() {
+		return coach;
 	}
 
-
-	public void setTrainer(Trainer trainer) {
-		this.trainer = trainer;
+	public void setCoach(Coach coach) {
+		this.coach = coach;
 	}
 
-	@OneToOne(optional=false, cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL)
 	public Summary getSummary() {
 		return summary;
 	}
@@ -83,14 +83,18 @@ public class Match extends DomainEntity {
 		this.summary = summary;
 	}
 
-	@OneToOne(optional=false, cascade=CascadeType.ALL)
-	public Call getCall() {
-		return call;
+	@OneToOne(cascade=CascadeType.ALL)
+	public Recruitment getRecruitment() {
+		return recruitment;
 	}
 
 
-	public void setCall(Call call) {
-		this.call = call;
+	public void setRecruitment(Recruitment recruitment) {
+		this.recruitment = recruitment;
+	}
+	
+	public String toString(){
+		return "rival = " + getRival() + "location= "+ getLocation()  + ", moment= " + getMoment();
 	}
 	
 	

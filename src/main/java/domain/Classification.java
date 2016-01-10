@@ -14,7 +14,7 @@ public class Classification extends DomainEntity {
 
 	
 	private String division;
-	private String name;
+	private String info;
 	private Integer point;
 	private Integer played;
 	private Integer won;
@@ -35,12 +35,12 @@ public class Classification extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getName() {
-		return name;
+	public String getInfo() {
+		return info;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setInfo(String info) {
+		this.info = info;
 	}
 	
 	@Min(0)
@@ -88,15 +88,15 @@ public class Classification extends DomainEntity {
 		this.tied = tied;
 	}
 
-	private Team team;
+	private Squadra squadra;
 	
 	@OneToOne(optional=false)
-	public Team getTeam() {
-		return team;
+	public Squadra getSquadra() {
+		return squadra;
 	}
 
-	public void setTeam(Team team) {
-		this.team = team;
+	public void setSquadra(Squadra squadra) {
+		this.squadra = squadra;
 	}
 	
 	

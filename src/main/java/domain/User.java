@@ -4,7 +4,6 @@ package domain;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
@@ -28,9 +27,13 @@ public abstract class User extends DomainEntity {
 	private String email;
 	private String phone;
 	private String address;
-	private byte[] photo;
+//	private byte[] photo;
 
-
+	@NotBlank
+	public String getName() {
+		return name;
+	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -74,23 +77,15 @@ public abstract class User extends DomainEntity {
 		this.address = address;
 	}
 	
-	@Column(columnDefinition = "LONGBLOB")
-	public byte[] getPhoto() {
-		return photo;
-	}
+//	@Column(columnDefinition = "LONGBLOB")
+//	public byte[] getPhoto() {
+//		return photo;
+//	}
+//
+//	public void setPhoto(byte[] photo) {
+//		this.photo = photo;
+//	}
 
-	public void setPhoto(byte[] photo) {
-		this.photo = photo;
-	}
-
-
-	@NotBlank
-	public String getName() {
-		return name;
-	}
-	
-	
-	
 	private UserAccount userAccount;
 
 	@NotNull

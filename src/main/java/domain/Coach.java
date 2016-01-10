@@ -12,9 +12,9 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Trainer extends User {
+public class Coach extends User {
 
-	public Trainer() {
+	public Coach() {
 		super();
 
 	}
@@ -32,10 +32,10 @@ public class Trainer extends User {
 	private Admin admin;
 	private Collection<Summary> summaries;
 	private Collection<Match> matches;
-	private Team team;
+	private Squadra squadra;
 	private Collection<Comment> comments;
 	
-	@OneToMany(mappedBy="trainer")
+	@OneToMany(mappedBy="coach")
 	public Collection<Comment> getComments() {
 		return comments;
 	}
@@ -45,15 +45,15 @@ public class Trainer extends User {
 	}
 
 	@OneToOne(optional=false)
-	public Team getTeam() {
-		return team;
+	public Squadra getSquadra() {
+		return squadra;
 	}
 
-	public void setTeam(Team team) {
-		this.team = team;
+	public void setSquadra(Squadra squadra) {
+		this.squadra = squadra;
 	}
 
-	@OneToMany(mappedBy="trainer")
+	@OneToMany(mappedBy="coach")
 	public Collection<Match> getMatches() {
 		return matches;
 	}

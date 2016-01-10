@@ -13,23 +13,15 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Team {
+public class Squadra extends DomainEntity{
 
-	public Team() {
+	public Squadra() {
 		super();
 
 	}
 	
-	private Category category;
 	private String name;
-
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+	private Category category;
 	
 	@NotBlank
 	public String getName() {
@@ -39,18 +31,27 @@ public class Team {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	
-	private Trainer trainer;
+	
+	
+	private Coach coach;
 	private Classification classification;
 	private Collection<Player> players;
 
 	@OneToOne(optional=false)
-	public Trainer getTrainer() {
-		return trainer;
+	public Coach getCoach() {
+		return coach;
 	}
 
-	public void setTrainer(Trainer trainer) {
-		this.trainer = trainer;
+	public void setCoach(Coach coach) {
+		this.coach = coach;
 	}
 	
 	@OneToOne(optional=false, cascade=CascadeType.ALL)
@@ -62,7 +63,7 @@ public class Team {
 		this.classification = classification;
 	}
 	
-	@OneToMany(mappedBy="team")
+	@OneToMany(mappedBy="squadra")
 	public Collection<Player> getPlayers() {
 		return players;
 	}
@@ -72,5 +73,5 @@ public class Team {
 	}
 	
 	
-
+	
 }

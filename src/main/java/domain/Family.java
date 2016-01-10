@@ -16,6 +16,8 @@ public class Family extends User {
 		super();
 
 	}
+	private Player player;
+	private Collection<Comment> comments;
 	
 	@ManyToOne(optional = false)
 	public Player getPlayer() {
@@ -25,7 +27,8 @@ public class Family extends User {
 		this.player = player;
 	}
 	
-	@OneToMany(mappedBy="family")
+//	@OneToMany(mappedBy="family")
+	@OneToMany
 	public Collection<Comment> getComments() {
 		return comments;
 	}
@@ -33,7 +36,6 @@ public class Family extends User {
 		this.comments = comments;
 	}
 
-	private Player player;
-	private Collection<Comment> comments;
+	
 
 }

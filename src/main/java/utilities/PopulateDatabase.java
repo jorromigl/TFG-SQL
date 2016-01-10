@@ -44,10 +44,10 @@ public class PopulateDatabase {
 				System.out.printf(" -> id = %d, version = %d%n", entity.getId(), entity.getVersion());
 			}
 			databaseUtil.commitTransaction();
-		} catch (Throwable oops) {
+		} catch (Throwable error) {
 			System.out.flush();
-			System.err.printf("%n%s%n", oops.getLocalizedMessage());
-			oops.printStackTrace(System.err);			
+			System.err.printf("%n%s%n", error.getLocalizedMessage());
+			error.printStackTrace(System.err);			
 		} finally {
 			if (databaseUtil != null)
 				databaseUtil.close();

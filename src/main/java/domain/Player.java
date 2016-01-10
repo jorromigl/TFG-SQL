@@ -21,15 +21,15 @@ public class Player extends User {
 
 	}
 	
-	private Date age;
+	private Date moment;
 	private Category category;
 	
 	@Past
-	public Date getAge() {
-		return age;
+	public Date getMoment() {
+		return moment;
 	}
-	public void setAge(Date age) {
-		this.age = age;
+	public void setMoment(Date moment) {
+		this.moment = moment;
 	}
 	public Category getCategory() {
 		return category;
@@ -40,8 +40,8 @@ public class Player extends User {
 	
 	private Collection<Family> families;
 	private Collection<Comment> comments;
-	private Team team;
-	private Collection<Call> calls;
+	private Squadra squadra;
+	private Collection<Recruitment> recruitments;
 
 	
 	
@@ -62,19 +62,19 @@ public class Player extends User {
 	}
 	
 	@ManyToOne(optional=false)
-	public Team getTeam() {
-		return team;
+	public Squadra getSquadra() {
+		return squadra;
 	}
-	public void setTeam(Team team) {
-		this.team = team;
+	public void setSquadra(Squadra squadra) {
+		this.squadra = squadra;
 	}
 	
 	@ManyToMany
-	public Collection<Call> getCalls() {
-		return calls;
+	public Collection<Recruitment> getRecruitments() {
+		return recruitments;
 	}
-	public void setCalls(Collection<Call> calls) {
-		this.calls = calls;
+	public void setRecruitments(Collection<Recruitment> recruitments) {
+		this.recruitments = recruitments;
 	}
 	
 

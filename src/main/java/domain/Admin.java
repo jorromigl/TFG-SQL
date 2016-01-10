@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
@@ -17,14 +16,14 @@ public class Admin extends User {
 
 	}
 	
-private Collection<Trainer> trainers;
+private Collection<Coach> coachs;
 
-@OneToMany(mappedBy="admin", cascade= CascadeType.ALL)
-public Collection<Trainer> getTrainers() {
-	return trainers;
+@OneToMany(mappedBy="admin")
+public Collection<Coach> getCoachs() {
+	return coachs;
 }
-public void setTrainers(Collection<Trainer> trainers) {
-	this.trainers = trainers;
+public void setCoachs(Collection<Coach> coachs) {
+	this.coachs = coachs;
 }
 
 

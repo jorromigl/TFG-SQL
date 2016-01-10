@@ -101,8 +101,8 @@ public class QueryDatabase {
 					default:
 						System.err.println("Command not understood");
 				}
-			} catch (Throwable oops) {					
-				oops.printStackTrace(System.err);
+			} catch (Throwable error) {					
+				error.printStackTrace(System.err);
 			}
 		}
 		
