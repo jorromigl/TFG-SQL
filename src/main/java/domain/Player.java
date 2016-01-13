@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -13,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -54,8 +54,9 @@ public class Player extends User {
 	private Collection<Recruitment> recruitments;
 
 	
-	
-	@OneToMany(mappedBy="player", cascade=CascadeType.ALL)
+	@NotNull
+//	@OneToMany(mappedBy="player", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="player")
 	public Collection<Family> getFamilies() {
 		return families;
 	}
@@ -71,7 +72,7 @@ public class Player extends User {
 		this.comments = comments;
 	}
 	
-	@ManyToOne(optional=false)
+	@ManyToOne(optional=true)
 	public Squadra getSquadra() {
 		return squadra;
 	}

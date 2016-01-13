@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Recruitment extends User {
+public class Recruitment extends DomainEntity{
 
 	public Recruitment() {
 		super();
@@ -20,8 +20,7 @@ public class Recruitment extends User {
 	private Match match;
 	private Collection<Player> players;
 	
-//	@OneToOne
-	@OneToOne  //para popular
+	@OneToOne
 	public Match getMatch() {
 		return match;
 	}

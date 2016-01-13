@@ -32,7 +32,7 @@ public class Comment extends DomainEntity {
 
 
 	@NotBlank
-	@SafeHtml(whitelistType = WhiteListType.NONE)
+//	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getText() {
 		return text;
 	}
@@ -42,7 +42,7 @@ public class Comment extends DomainEntity {
 	}
 	
 	@NotBlank
-	@SafeHtml(whitelistType = WhiteListType.NONE)
+//	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getSubject() {
 		return subject;
 	}

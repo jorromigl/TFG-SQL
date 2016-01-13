@@ -79,11 +79,6 @@ public class Coach extends User {
 		this.admin = admin;
 	}
 	
-//	public String toString() {
-//		return super.toString() + ", Category= "
-//				+ category.getCname();
-//	}
-	
 	
 
 }

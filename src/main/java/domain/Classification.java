@@ -90,7 +90,7 @@ public class Classification extends DomainEntity {
 
 	private Squadra squadra;
 	
-	@OneToOne(optional=false)
+	@OneToOne(optional=true)
 	public Squadra getSquadra() {
 		return squadra;
 	}

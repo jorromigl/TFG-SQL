@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -14,7 +13,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Squadra extends DomainEntity{
+public class Squadra extends DomainEntity {
 
 	public Squadra() {
 		super();
@@ -56,7 +55,7 @@ public class Squadra extends DomainEntity{
 		this.coach = coach;
 	}
 	
-	@OneToOne(optional=false, cascade=CascadeType.ALL)
+	@OneToOne(optional=true)
 	public Classification getClassification() {
 		return classification;
 	}

@@ -7,6 +7,8 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -19,7 +21,9 @@ public class Family extends User {
 	private Player player;
 	private Collection<Comment> comments;
 	
-	@ManyToOne(optional = false)
+	@NotNull
+	@Valid
+	@ManyToOne(optional = true)
 	public Player getPlayer() {
 		return player;
 	}
