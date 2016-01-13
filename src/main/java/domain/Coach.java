@@ -5,10 +5,8 @@ import java.util.Collection;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -32,7 +30,7 @@ public class Coach extends User {
 	private Admin admin;
 	private Collection<Summary> summaries;
 	private Collection<Match> matches;
-	private Squadra squadra;
+	private Collection<Squadra> squadras;
 	private Collection<Comment> comments;
 	
 	@OneToMany(mappedBy="coach")
@@ -44,13 +42,14 @@ public class Coach extends User {
 		this.comments = comments;
 	}
 
-	@OneToOne(optional=false)
-	public Squadra getSquadra() {
-		return squadra;
+//	@OneToOne(optional=false)
+	@OneToMany(mappedBy = "coach")//para populate
+	public Collection<Squadra> getSquadras() {
+		return squadras;
 	}
 
-	public void setSquadra(Squadra squadra) {
-		this.squadra = squadra;
+	public void setSquadras(Collection<Squadra> squadras) {
+		this.squadras = squadras;
 	}
 
 	@OneToMany(mappedBy="coach")
@@ -62,7 +61,7 @@ public class Coach extends User {
 		this.matches = matches;
 	}
 
-	@ManyToMany
+	@OneToMany(mappedBy = "coach")
 	public Collection<Summary> getSummaries() {
 		return summaries;
 	}
@@ -79,6 +78,11 @@ public class Coach extends User {
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
+	
+//	public String toString() {
+//		return super.toString() + ", Category= "
+//				+ category.getCname();
+//	}
 	
 	
 

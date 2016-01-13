@@ -59,7 +59,7 @@ public abstract class User extends DomainEntity {
 	}
 	
 	@NotBlank
-	//Pattern
+//	@Pattern(regexp = "^\\+\\d{2,3}\\d{7,14}$")
 	public String getPhone() {
 		return phone;
 	}

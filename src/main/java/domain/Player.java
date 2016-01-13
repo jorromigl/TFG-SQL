@@ -10,7 +10,12 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Past;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -21,16 +26,21 @@ public class Player extends User {
 
 	}
 	
-	private Date moment;
+	private Date date;
 	private Category category;
 	
 	@Past
-	public Date getMoment() {
-		return moment;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+	public Date getDate() {
+		return date;
 	}
-	public void setMoment(Date moment) {
-		this.moment = moment;
+	public void setDate(Date date) {
+		this.date = date;
 	}
+	
+
+	@Valid
 	public Category getCategory() {
 		return category;
 	}
@@ -69,7 +79,7 @@ public class Player extends User {
 		this.squadra = squadra;
 	}
 	
-	@ManyToMany
+	@ManyToMany(mappedBy = "players")
 	public Collection<Recruitment> getRecruitments() {
 		return recruitments;
 	}
@@ -77,7 +87,10 @@ public class Player extends User {
 		this.recruitments = recruitments;
 	}
 	
-
+	public String toString() {
+		return "Player  [date=" + date + ", category="
+				+ category +"]";
+	}
 	
 
 }

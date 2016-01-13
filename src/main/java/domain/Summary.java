@@ -67,7 +67,7 @@ public class Summary extends DomainEntity {
 	private Coach coach;
 	private Match match;
 
-	@ManyToOne
+	@ManyToOne(optional=true)
 	public Coach getCoach() {
 		return coach;
 	}
@@ -78,7 +78,8 @@ public class Summary extends DomainEntity {
 	}
 
 	
-	@OneToOne(optional=false)
+//	@OneToOne(optional=false)
+	@OneToOne //para populate
 	public Match getMatch() {
 		return match;
 	}

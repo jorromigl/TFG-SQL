@@ -20,7 +20,8 @@ public class Recruitment extends User {
 	private Match match;
 	private Collection<Player> players;
 	
-	@OneToOne(optional=false)
+//	@OneToOne
+	@OneToOne  //para popular
 	public Match getMatch() {
 		return match;
 	}

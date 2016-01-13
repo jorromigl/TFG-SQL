@@ -64,7 +64,8 @@ public class Match extends DomainEntity {
 	private Summary summary;
 	private Recruitment recruitment;
 
-	@ManyToOne(optional=false)
+//	@ManyToOne(optional=false)
+	@ManyToOne //para populate
 	public Coach getCoach() {
 		return coach;
 	}

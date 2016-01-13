@@ -234,16 +234,276 @@
 		</property>
 	</bean>
 	
+	
+	
+	
+	
 	<!-- ADMIN -->
+	
+	
+	
+	
 	
 	<bean id="admin" class="domain.Admin">
 		<property name="name" value="Jorge" />
 		<property name="surname" value="Romero Iglesias" />
 		<property name="email" value="jorge@mail.com" />
 		<property name="userAccount" ref="userAccount1" />
+		<property name="phone" value="655655655" />
+		<property name="address" value="calle hinojo 13" />
 	</bean>
 	
+	
+	
+	
+	
+	<!-- CATEGORY -->
+	
+	
+	
+	
+	<bean id="category1" class="domain.Category">
+		<property name="cname" value="Juvenil" />
+		<property name="age" value="16" />
+	</bean>
+	
+	<!-- COACH -->
+	
+	
+	
+	
+	
+	
+	<bean id="coach1" class="domain.Coach">
+		<property name="name" value="Juande" />
+		<property name="surname" value="Roman Ramos" />
+		<property name="email" value="juande@mail.com" />
+		<property name="address" value="calle señor 21" />
+		<property name="phone" value="655655655" />
+		<!--  <property name="photo" value="" />-->
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount18" />
+		<property name="admin" ref="admin" />
+		<property name="summaries">
+			<list>
+				<ref bean="summary1" />
+			</list>
+		</property>
+		<property name="matches">
+			<list>
+			<ref bean="match1" />
+			</list>
+		</property>
+		<property name="comments">
+			<list>
+				
+			</list>
+		</property>
+		<property name="squadras">
+			<list>
+			<ref bean="squadra1" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="coach2" class="domain.Coach">
+		<property name="name" value="Roberto" />
+		<property name="surname" value="Prieto Caravaca" />
+		<property name="email" value="roberto@mail.com" />
+		<property name="address" value="calle monzon 09" />
+		<property name="phone" value="655655655" />
+		<!--  <property name="photo" value="" />-->
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount19" />
+		<property name="admin" ref="admin" />
+		<property name="summaries">
+			<list>
+				
+			</list>
+		</property>
+		<property name="matches">
+			<list>
+							</list>
+		</property>
+		<property name="comments">
+			<list>
+				
+			</list>
+		</property>
+		<property name="squadras">
+			<list>
+			
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- MATCH -->
+	
+	
+	
+	
+	
+	
+	<bean id="match1" class="domain.Match">
+		<property name="rival" value="Tomares" />
+		<property name="location" value="Tomares" />
+		<property name="moment" value="25/08/2016 10:00" />
+		<property name="coach" ref="coach1" />
+		<property name="summary" ref="summary1"/>
+		<property name="recruitment" ref="recruitment1" />
+	</bean>
+	
+	
+	
+	<!-- SUMMARY -->
+	
+	
+	
+	<bean id="summary1" class="domain.Summary">
+		<property name="moment" value="02/02/2015 10:00"/>
+		<property name="text" value="Resumen summary 1."/>
+		<property name="subject" value="revision"/>
+		<property name="coach" ref="coach1"/>
+		<property name="match" ref="match1"/>
+	</bean>	
+	
+	
+	
+	
+	
+	
+	
+	<!-- SQUADRA-->
+
+
+
+	<bean id="squadra1" class="domain.Squadra">
+		<property name="category" ref="category1" />
+		<property name="name" value="Cavaleri" />
+		<property name="coach" ref="coach1" />
+		<property name="classification" ref="classification1" />
+		<property name="players">
+			<list>
+				<ref bean="player1" />
+				<ref bean="player2" />
+				<ref bean="player3" />
+				<ref bean="player4" />
+				<ref bean="player5" />
+				<ref bean="player6" />
+				<ref bean="player7" />
+				<ref bean="player8" />
+				<ref bean="player9" />
+				<ref bean="player10"/>
+				<ref bean="player11" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="squadra2" class="domain.Squadra">
+		<property name="category" ref="category1" />
+		<property name="name" value="Libertad" />
+		<property name="coach" ref="coach2" />
+		<property name="classification" ref="classification2" />
+		<property name="players">
+			<list>
+			
+			</list>
+		</property>
+	</bean>	
+	
+	
+	
+	
+	<!-- RECRUITMENT-->
+	
+	
+	
+	<bean id="recruitment1" class="domain.Recruitment">
+		<property name="match" ref="match1"/>
+		<property name="players">
+			<list>
+				<ref bean="player1" />
+				<ref bean="player2" />
+				<ref bean="player3" />
+				<ref bean="player4" />
+				<ref bean="player5" />
+				<ref bean="player6" />
+				<ref bean="player7" />
+				<ref bean="player8" />
+				<ref bean="player9" />
+				<ref bean="player10" />
+				<ref bean="player11" />				
+			</list>
+		</property>
+	</bean>	
+	
+	
+	
+	
+	
+	
+	<!-- CLASSIFICATION -->
+	
+	
+	<bean id="classification1" class="domain.Classification">
+		<property name="division" value="Primera Division"/>
+		<property name="info" value="Informacion de la clasificacion 1"/>
+		<property name="point" value="7"/>
+		<property name="played" value="5"/>
+		<property name="won" value="2"/>
+		<property name="lost" value="1"/>
+		<property name="tied" value="2"/>
+	</bean>
+	
+	<bean id="classification2" class="domain.Classification">
+		<property name="division" value="Segunda Division"/>
+		<property name="info" value="Informacion de la clasificacion 2"/>
+		<property name="point" value="7"/>
+		<property name="played" value="5"/>
+		<property name="won" value="2"/>
+		<property name="lost" value="1"/>
+		<property name="tied" value="2"/>
+	</bean>
+	
+
+	
+	
+	
+	
+	
+	<!-- COMMENT -->
+	
+	
+	
+	
+	
+	<bean id="comment1" class="domain.Comment">
+		<property name="moment" value="02/02/2015 10:00"/>
+		<property name="text" value="El partido no debio llevarselo el equipo contrario."/>
+		<property name="subject" value="revision"/>
+		<property name="coach" ref="coach1"/>
+	</bean>	
+	
+	<bean id="comment2" class="domain.Comment">
+		<property name="moment" value="02/02/2015 10:00"/>
+		<property name="text" value="El jugador con dorsal 10 tuvo que ser expulsado."/>
+		<property name="subject" value="revision"/>
+		<property name="player" ref="player1"/>
+	</bean>
+	
+	
+	
+	
+
+	
+	
+	
 	<!-- PLAYER -->
+	
+	
+	
+	
 
 	<bean id="player1" class="domain.Player">
 		<property name="name" value="Jesús" />
@@ -252,7 +512,7 @@
 		<property name="address" value="calle hinojo 2" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="02/11/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount2" />
 		<property name="families">
 			<list>
@@ -279,8 +539,8 @@
 		<property name="email" value="migue@mail.com" />
 		<property name="address" value="calle ajo 3" />
 		<!--  <property name="photo" value="" />-->
-		<property name="date" value="01/12/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="date" value="02/11/2000 10:00"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount3" />
 		<property name="families">
 			<list>
@@ -306,7 +566,7 @@
 		<property name="address" value="calle uruguay 4" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="03/10/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount4" />
 		<property name="families">
 			<list>
@@ -333,7 +593,7 @@
 		<property name="address" value="calle brasil 6" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="04/09/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount5" />
 		<property name="families">
 			<list>
@@ -360,7 +620,7 @@
 		<property name="address" value="calle Filosofia 8" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="07/10/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount6" />
 		<property name="families">
 			<list>
@@ -387,7 +647,7 @@
 		<property name="address" value="calle filosofia 3" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="05/08/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount7" />
 		<property name="families">
 			<list>
@@ -414,7 +674,7 @@
 		<property name="address" value="calle huracan 9" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="02/07/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount8" />
 		<property name="families">
 			<list>
@@ -441,7 +701,7 @@
 		<property name="address" value="calle Gabana 10" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="04/04/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount9" />
 		<property name="families">
 			<list>
@@ -468,7 +728,7 @@
 		<property name="address" value="calle Sacarias 2" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="02/01/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount10" />
 		<property name="families">
 			<list>
@@ -495,7 +755,7 @@
 		<property name="address" value="calle lopez 1" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="12/11/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount11" />
 		<property name="families">
 			<list>
@@ -522,7 +782,7 @@
 		<property name="address" value="calle casanova 9" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="06/03/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount12" />
 		<property name="families">
 			<list>
@@ -549,7 +809,7 @@
 		<property name="address" value="calle cerro Aguila 6" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="21/02/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount13" />
 		<property name="families">
 			<list>
@@ -576,7 +836,7 @@
 		<property name="address" value="calle tajo 13" />
 		<!--  <property name="photo" value="" />-->
 		<property name="date" value="25/08/2000 10:00"/>
-		<property name="category" value="Juvenil"/>
+		<property name="category" ref="category1"/>
 		<property name="userAccount" ref="userAccount14" />
 		<property name="families">
 			<list>
@@ -596,76 +856,21 @@
 	</bean>
 	
 	
-	<!-- MATCH -->
-	
-	<bean id="match1" class="domain.Match">
-		<property name="rival" value="Tomares" />
-		<property name="location" value="Tomares" />
-		<property name="moment" value="25/08/2016 10:00" />
-		<property name="coach" value="coacth1" />
-		<property name="summary" value="summary1"/>
-		<property name="recruitment" ref="recruitment1" />
-	</bean>
+
 	
 	
-	<!-- COACH -->
 	
-	<bean id="coach1" class="domain.Coach">
-		<property name="name" value="Juande" />
-		<property name="surname" value="Roman Ramos" />
-		<property name="email" value="juande@mail.com" />
-		<property name="address" value="calle señor 21" />
-		<!--  <property name="photo" value="" />-->
-		<property name="category" value="Juvenil"/>
-		<property name="userAccount" ref="userAccount18" />
-		<property name="admin" ref="admin1" />
-		<property name="summaries">
-			<list>
-				<ref bean="summary1" />
-			</list>
-		</property>
-		<property name="matches">
-			<list>
-			<ref bean="match1" />
-			</list>
-		</property>
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
-		<property name="squadra" ref="squadra1" />
-	</bean>
 	
-	<bean id="coach2" class="domain.Coach">
-		<property name="name" value="Roberto" />
-		<property name="surname" value="Prieto Caravaca" />
-		<property name="email" value="roberto@mail.com" />
-		<property name="address" value="calle monzon 09" />
-		<!--  <property name="photo" value="" />-->
-		<property name="category" value="Juvenil"/>
-		<property name="userAccount" ref="userAccount19" />
-		<property name="admin" ref="admin1" />
-		<property name="summaries">
-			<list>
-				
-			</list>
-		</property>
-		<property name="matches">
-			<list>
-							</list>
-		</property>
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
-		<property name="squadra" ref="squadra2" />
-	</bean>
+	
 	
 	
 	<!-- FAMILY -->
-	
+
+
+
+
+
+
 	<bean id="family1" class="domain.Family">
 		<property name="name" value="Pedro" />
 		<property name="surname" value="Sanchez" />
@@ -710,41 +915,13 @@
 		</property>
 		<property name="player" ref="player2" />
 	</bean>
-
-	<!-- squadra -->
-	<bean id="squadra1" class="domain.Squadra">
-		<property name="category" value="super" />
-		<property name="name" value="Cavaleri" />
-		<property name="coach" ref="coach1" />
-		<property name="classification" ref="classification1" />
-		<property name="players">
-			<list>
-				<ref bean="player1" />
-				<ref bean="player2" />
-				<ref bean="player3" />
-				<ref bean="player4" />
-				<ref bean="player5" />
-				<ref bean="player6" />
-				<ref bean="player7" />
-				<ref bean="player8" />
-				<ref bean="player9" />
-				<ref bean="player10"/>
-				<ref bean="player11" />
-			</list>
-		</property>
-	</bean>
 	
-	<bean id="squadra2" class="domain.Squadra">
-		<property name="category" value="super" />
-		<property name="name" value="Libertad" />
-		<property name="coach" ref="coach" />
-		<property name="classification" ref="classification2" />
-		<property name="players">
-			<list>
-			
-			</list>
-		</property>
-	</bean>
+	
+	
+	
+	
+
+	
 
 
 	

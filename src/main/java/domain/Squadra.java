@@ -6,6 +6,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -45,7 +46,8 @@ public class Squadra extends DomainEntity{
 	private Classification classification;
 	private Collection<Player> players;
 
-	@OneToOne(optional=false)
+//	@OneToOne(optional=false)
+	@ManyToOne(optional = false) //para populate
 	public Coach getCoach() {
 		return coach;
 	}
