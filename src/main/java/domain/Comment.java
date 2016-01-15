@@ -12,8 +12,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.SafeHtml;
-import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -63,39 +61,37 @@ public class Comment extends DomainEntity {
 		this.moment = moment;
 	}
 	
-	private Coach coach;
-	private Family family;
-	private Player player;
+	private User user;
 
 	@ManyToOne(optional=false)
-	public Coach getCoach() {
-		return coach;
+	public User getUser() {
+		return user;
 	}
 
 
-	public void setCoach(Coach coach) {
-		this.coach = coach;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	@ManyToOne(optional=false)
-	public Family getFamily() {
-		return family;
-	}
-
-
-	public void setFamily(Family family) {
-		this.family = family;
-	}
-
-	@ManyToOne(optional=false)
-	public Player getPlayer() {
-		return player;
-	}
-
-
-	public void setPlayer(Player player) {
-		this.player = player;
-	}
+//	@ManyToOne(optional=false)
+//	public Family getFamily() {
+//		return family;
+//	}
+//
+//
+//	public void setFamily(Family family) {
+//		this.family = family;
+//	}
+//
+//	@ManyToOne(optional=false)
+//	public Player getPlayer() {
+//		return player;
+//	}
+//
+//
+//	public void setPlayer(Player player) {
+//		this.player = player;
+//	}
 	
 	
 	

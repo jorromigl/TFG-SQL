@@ -19,7 +19,7 @@ public class Family extends User {
 
 	}
 	private Player player;
-	private Collection<Comment> comments;
+//	private Collection<Comment> comments;
 	
 	@NotNull
 	@Valid
@@ -32,13 +32,13 @@ public class Family extends User {
 	}
 	
 //	@OneToMany(mappedBy="family")
-	@OneToMany
-	public Collection<Comment> getComments() {
-		return comments;
-	}
-	public void setComments(Collection<Comment> comments) {
-		this.comments = comments;
-	}
+//	@OneToMany
+//	public Collection<Comment> getComments() {
+//		return comments;
+//	}
+//	public void setComments(Collection<Comment> comments) {
+//		this.comments = comments;
+//	}
 
 	
 

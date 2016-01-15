@@ -1,10 +1,13 @@
 package domain;
 
 
+import java.util.Collection;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -75,6 +78,17 @@ public abstract class User extends DomainEntity {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	private Collection<Comment> comments;
+	
+	@OneToMany(mappedBy="user")
+	public Collection<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(Collection<Comment> comments) {
+		this.comments = comments;
 	}
 	
 //	@Column(columnDefinition = "LONGBLOB")

@@ -49,7 +49,7 @@ public class Player extends User {
 	}
 	
 	private Collection<Family> families;
-	private Collection<Comment> comments;
+//	private Collection<Comment> comments;
 	private Squadra squadra;
 	private Collection<Recruitment> recruitments;
 
@@ -64,13 +64,13 @@ public class Player extends User {
 		this.families = families;
 	}
 	
-	@OneToMany(mappedBy="player")
-	public Collection<Comment> getComments() {
-		return comments;
-	}
-	public void setComments(Collection<Comment> comments) {
-		this.comments = comments;
-	}
+//	@OneToMany(mappedBy="player")
+//	public Collection<Comment> getComments() {
+//		return comments;
+//	}
+//	public void setComments(Collection<Comment> comments) {
+//		this.comments = comments;
+//	}
 	
 	@ManyToOne(optional=true)
 	public Squadra getSquadra() {

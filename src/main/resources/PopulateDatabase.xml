@@ -894,14 +894,360 @@
 		<property name="moment" value="02/02/2015 10:00"/>
 		<property name="text" value="El partido no debio llevarselo el equipo contrario."/>
 		<property name="subject" value="revision"/>
-		<property name="coach" ref="coach1"/>
+		<property name="user" ref="coach1"/>
 	</bean>	
 	
 	<bean id="comment2" class="domain.Comment">
 		<property name="moment" value="02/02/2015 10:00"/>
 		<property name="text" value="El jugador con dorsal 10 tuvo que ser expulsado."/>
 		<property name="subject" value="revision"/>
-		<property name="player" ref="player1"/>
+		<property name="user" ref="player1"/>
 	</bean>
+	
+	
+	<!-- FOLDER -->
+	
+	<bean id="folder1" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="admin" />
+	</bean>
+
+	<bean id="folder2" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="admin" />
+	</bean>
+
+	<bean id="folder3" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="coach1" />
+	</bean>
+	
+	<bean id="folder4" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="coach1" />
+	</bean>
+
+	<bean id="folder5" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="coach2" />
+	</bean>
+	
+	<bean id="folder6" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="coach2" />
+	</bean>
+	
+	<bean id="folder7" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player1" />
+	</bean>
+	
+	<bean id="folder8" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player1" />
+	</bean>
+	
+	<bean id="folder9" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player2" />
+	</bean>
+	
+	<bean id="folder10" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player2" />
+	</bean>
+	
+	<bean id="folder11" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player3" />
+	</bean>
+	
+	<bean id="folder12" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player3" />
+	</bean>
+	
+	<bean id="folder13" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player4" />
+	</bean>
+	
+	<bean id="folder14" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player4" />
+	</bean>
+	
+	<bean id="folder15" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player5" />
+	</bean>
+	
+	<bean id="folder16" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player5" />
+	</bean>
+	
+	<bean id="folder17" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player6" />
+	</bean>
+	
+	<bean id="folder18" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player6" />
+	</bean>
+	
+	<bean id="folder19" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player7" />
+	</bean>
+
+	<bean id="folder20" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player7" />
+	</bean>
+	
+	<bean id="folder21" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player8" />
+	</bean>
+
+	<bean id="folder22" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player8" />
+	</bean>
+	
+	<bean id="folder23" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player9" />
+	</bean>
+
+	<bean id="folder24" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player9" />
+	</bean>
+	
+	<bean id="folder25" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player10" />
+	</bean>
+
+	<bean id="folder26" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player10" />
+	</bean>
+	
+	<bean id="folder27" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player11" />
+	</bean>
+
+	<bean id="folder28" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player11" />
+	</bean>
+	
+	<bean id="folder29" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player12" />
+	</bean>
+
+	<bean id="folder30" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player12" />
+	</bean>
+	
+	<bean id="folder31" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player13" />
+	</bean>
+
+	<bean id="folder32" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player13" />
+	</bean>
+	
+	<bean id="folder33" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family1" />
+	</bean>
+
+	<bean id="folder34" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family1" />
+	</bean>
+	
+	<bean id="folder35" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family2" />
+	</bean>
+
+	<bean id="folder36" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family2" />
+	</bean>
+	
+	<bean id="folder37" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family3" />
+	</bean>
+
+	<bean id="folder38" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family3" />
+	</bean>
+	
 	
 </beans>

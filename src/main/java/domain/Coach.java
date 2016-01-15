@@ -31,16 +31,7 @@ public class Coach extends User {
 	private Collection<Summary> summaries;
 	private Collection<Match> matches;
 	private Collection<Squadra> squadras;
-	private Collection<Comment> comments;
-	
-	@OneToMany(mappedBy="coach")
-	public Collection<Comment> getComments() {
-		return comments;
-	}
 
-	public void setComments(Collection<Comment> comments) {
-		this.comments = comments;
-	}
 
 //	@OneToOne(optional=false)
 	@OneToMany(mappedBy = "coach")//para populate

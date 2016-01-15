@@ -31,7 +31,7 @@ public class Folder extends DomainEntity{
 	}
 	
 	@NotBlank
-	@SafeHtml(whitelistType = WhiteListType.NONE)
+//	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getName() {
 		return name;
 	}
