@@ -113,7 +113,7 @@ public abstract class User extends DomainEntity {
 		this.userAccount = userAccount;
 	}
 	public String toString(){
-		return "name = " + getName() + "surname = "+ getSurname()  + ", email= " + email;
+		return "name = " + getName() + ", surname = "+ getSurname()  + ", email= " + email;
 	}
 
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import domain.Classification;
 
 @Repository
-public interface ClassificacionRepository extends JpaRepository<Classification, Integer> {
+public interface ClassificationRepository extends JpaRepository<Classification, Integer> {
 	
 	@Query("select a from Classification a where a.userAccount.id=?1")
 	Classification findByUserAccountId(int id);
