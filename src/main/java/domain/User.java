@@ -11,7 +11,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -81,6 +80,7 @@ public abstract class User extends DomainEntity {
 	}
 	
 	private Collection<Comment> comments;
+	private Collection<Folder> folders;
 	
 	@OneToMany(mappedBy="user")
 	public Collection<Comment> getComments() {
@@ -89,6 +89,16 @@ public abstract class User extends DomainEntity {
 
 	public void setComments(Collection<Comment> comments) {
 		this.comments = comments;
+	}
+	
+	@Valid
+	@OneToMany(mappedBy="user")
+	public Collection<Folder> getFolders() {
+		return folders;
+	}
+
+	public void setFolders(Collection<Folder> folders) {
+		this.folders = folders;
 	}
 	
 //	@Column(columnDefinition = "LONGBLOB")
