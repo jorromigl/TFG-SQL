@@ -8,7 +8,7 @@ import domain.User;
 
 @Component
 @Transactional
-public class ActorToStringConverter implements Converter<User, String>{
+public class UserToStringConverter implements Converter<User, String>{
 	
 	@Override
 	public String convert(User user){

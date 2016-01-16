@@ -20,7 +20,7 @@
 	
 	<bean id="userAccount2" class="security.UserAccount">
 		<property name="username" value="player1" />
-		<property name="password" value="8241b8074e8676e4401b7a02b8b52bf5" />
+		<property name="password" value="5d2bbc279b5ce75815849d5e3f0533ec" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
@@ -212,7 +212,7 @@
 
 	<bean id="userAccount18" class="security.UserAccount">
 		<property name="username" value="coach1" />
-		<property name="password" value="4d9a96c8e1650dc161f1adcf5c5082a0" />
+		<property name="password" value="1bf06497729c4c55cb24a10c99ce4525" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">
@@ -224,7 +224,7 @@
 	
 	<bean id="userAccount19" class="security.UserAccount">
 		<property name="username" value="coach2" />
-		<property name="password" value="6662f54a6c5033357408e6839a5c0a05" />
+		<property name="password" value="48d1704fb173fbd4138eff9c063cb8f2" />
 		<property name="authorities">
 			<list>
 				<bean class="security.Authority">

@@ -11,7 +11,7 @@ import domain.User;
 
 @Component
 @Transactional
-public class StringToActorConverter implements Converter<String, User> {
+public class StringToUserConverter implements Converter<String, User> {
 	
 	@Autowired UserRepository userRepository;
 	
