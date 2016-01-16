@@ -11,21 +11,21 @@
 	<ul id="jMenu">
 		<!-- Do not forget the "fNiv" class for the first level links !! -->
 		<security:authorize access="hasRole('ADMIN')">
-			<li><a class="fNiv"><spring:message	code="principal.page.administrator" /></a>
+			<li><a class="fNiv"><spring:message	code="principal.page.admin" /></a>
 				<ul>
-					<li class="arrow"></li>
-					<li><a href="administrator/action-1.do"><spring:message code="principal.page.administrator.action.1" /></a></li>
-					<li><a href="administrator/action-2.do"><spring:message code="principal.page.administrator.action.2" /></a></li>					
+					<!-- <li class="arrow"></li> -->
+					<li><a href="admin/action-1.do"><spring:message code="principal.page.admin.action.1" /></a></li>
+					<li><a href="admin/action-2.do"><spring:message code="principal.page.admin.action.2" /></a></li>					
 				</ul>
 			</li>
 		</security:authorize>
 		
-		<security:authorize access="hasRole('CUSTOMER')">
-			<li><a class="fNiv"><spring:message	code="principal.page.customer" /></a>
+		<security:authorize access="hasRole('COACH')">
+			<li><a class="fNiv"><spring:message	code="principal.page.coach" /></a>
 				<ul>
-					<li class="arrow"></li>
-					<li><a href="customer/action-1.do"><spring:message code="principal.page.customer.action.1" /></a></li>
-					<li><a href="customer/action-2.do"><spring:message code="principal.page.customer.action.2" /></a></li>					
+					<!--  <li class="arrow"></li>-->
+					<li><a href="coach/action-1.do"><spring:message code="principal.page.coach.action.1" /></a></li>
+					<li><a href="coach/action-2.do"><spring:message code="principal.page.coach.action.2" /></a></li>					
 				</ul>
 			</li>
 		</security:authorize>
@@ -41,7 +41,7 @@
 			        (<security:authentication property="principal.username" />)
 				</a>
 				<ul>
-					<li class="arrow"></li>
+				<!-- 	<li class="arrow"></li> -->
 					<li><a href="profile/action-1.do"><spring:message code="principal.page.profile.action.1" /></a></li>
 					<li><a href="profile/action-2.do"><spring:message code="principal.page.profile.action.2" /></a></li>
 					<li><a href="profile/action-3.do"><spring:message code="principal.page.profile.action.3" /></a></li>					

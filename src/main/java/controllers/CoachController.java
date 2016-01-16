@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/customer")
-public class CustomerController extends ErrorController {
+@RequestMapping("/coach")
+public class CoachController extends ErrorController {
 
 	// Constructors -----------------------------------------------------------
 
-	public CustomerController() {
+	public CoachController() {
 		super();
 	}
 
@@ -20,7 +20,7 @@ public class CustomerController extends ErrorController {
 	public ModelAndView action1() {
 		ModelAndView result;
 
-		result = new ModelAndView("customer/action-1");
+		result = new ModelAndView("coach/action-1");
 
 		return result;
 	}
@@ -31,7 +31,7 @@ public class CustomerController extends ErrorController {
 	public ModelAndView action2() {
 		ModelAndView result;
 
-		result = new ModelAndView("customer/action-2");
+		result = new ModelAndView("coach/action-2");
 
 		return result;
 	}

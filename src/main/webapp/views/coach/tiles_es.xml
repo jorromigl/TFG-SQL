@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+      
+<tiles-definitions>
+
+	<definition name="coach/action-1" extends="principal.page">	
+		<put-attribute name="title" value="Entrenador: Acción 1" />
+		<put-attribute name="body" value="/views/coach/action-1.jsp" />
+	</definition>
+	
+	<definition name="coach/action-2" extends="principal.page">	
+		<put-attribute name="title" value="Entrenador: Acción 2" />
+		<put-attribute name="body" value="/views/coach/action-2.jsp" />
+	</definition>
+	
+</tiles-definitions>
