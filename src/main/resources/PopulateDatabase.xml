@@ -251,6 +251,17 @@
 		<property name="userAccount" ref="userAccount1" />
 		<property name="phone" value="655655655" />
 		<property name="address" value="calle hinojo 13" />
+		<property name="comments">
+			<list>
+				
+			</list>
+		</property>
+		<property name="folders">
+			<list>
+				<ref bean="folder1" />
+				<ref bean="folder2" />
+			</list>
+		</property>
 	</bean>
 	
 	
@@ -304,6 +315,12 @@
 			<ref bean="squadra1" />
 			</list>
 		</property>
+		<property name="folders">
+			<list>
+				<ref bean="folder3" />
+				<ref bean="folder4" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="coach2" class="domain.Coach">
@@ -333,6 +350,12 @@
 		<property name="squadras">
 			<list>
 			
+			</list>
+		</property>
+		<property name="folders">
+			<list>
+				<ref bean="folder5" />
+				<ref bean="folder6" />
 			</list>
 		</property>
 	</bean>
@@ -432,6 +455,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder7" />
+				<ref bean="folder8" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player2" class="domain.Player">
@@ -459,6 +488,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder9" />
+				<ref bean="folder10" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player3" class="domain.Player">
@@ -487,6 +522,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder11" />
+				<ref bean="folder12" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player4" class="domain.Player">
@@ -515,6 +556,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder13" />
+				<ref bean="folder14" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player5" class="domain.Player">
@@ -543,6 +590,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder15" />
+				<ref bean="folder16" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player6" class="domain.Player">
@@ -571,6 +624,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder17" />
+				<ref bean="folder18" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player7" class="domain.Player">
@@ -599,6 +658,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder19" />
+				<ref bean="folder20" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player8" class="domain.Player">
@@ -627,6 +692,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder21" />
+				<ref bean="folder22" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player9" class="domain.Player">
@@ -655,6 +726,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder23" />
+				<ref bean="folder24" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player10" class="domain.Player">
@@ -683,6 +760,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder25" />
+				<ref bean="folder26" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player11" class="domain.Player">
@@ -711,6 +794,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder27" />
+				<ref bean="folder28" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player12" class="domain.Player">
@@ -739,6 +828,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder29" />
+				<ref bean="folder30" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="player13" class="domain.Player">
@@ -766,6 +861,12 @@
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder31" />
+				<ref bean="folder32" />
+			</list>
+		</property>
 	</bean>
 	
 	
@@ -791,6 +892,12 @@
 			</list>
 		</property>
 		<property name="player" ref="player1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder33" />
+				<ref bean="folder34" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="family2" class="domain.Family">
@@ -807,6 +914,12 @@
 			</list>
 		</property>
 		<property name="player" ref="player1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder35" />
+				<ref bean="folder36" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="family3" class="domain.Family">
@@ -823,6 +936,12 @@
 			</list>
 		</property>
 		<property name="player" ref="player2" />
+		<property name="folders">
+			<list>
+				<ref bean="folder37" />
+				<ref bean="folder38" />
+			</list>
+		</property>
 	</bean>
 	
 	
