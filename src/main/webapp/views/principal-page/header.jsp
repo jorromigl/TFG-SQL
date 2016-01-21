@@ -32,7 +32,6 @@
 		
 		<security:authorize access="isAnonymous()">
 			<li><a class="fNiv" href="security/login.do"><spring:message code="principal.page.login" /></a></li>
-			<li><a href="coach/register.do"><spring:message code="master.page.register.coach" /></a></li>
 			<li><a href="player/register.do"><spring:message code="master.page.register.player" /></a></li>
 			<li><a href="family/register.do"><spring:message code="master.page.register.family" /></a></li>		
 		</security:authorize>

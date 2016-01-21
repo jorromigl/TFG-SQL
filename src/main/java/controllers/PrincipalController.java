@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/welcome")
-public class WelcomeController extends ErrorController {
+@RequestMapping("/principal")
+public class PrincipalController extends ErrorController {
 
 	// Constructors -----------------------------------------------------------
 	
-	public WelcomeController() {
+	public PrincipalController() {
 		super();
 	}
 		
@@ -28,7 +28,7 @@ public class WelcomeController extends ErrorController {
 		formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		moment = formatter.format(new Date());
 				
-		result = new ModelAndView("welcome/index");
+		result = new ModelAndView("principal/index");
 		
 		result.addObject("moment", moment);
 

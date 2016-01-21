@@ -6,4 +6,4 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-<jsp:forward page="/welcome/index.do" />
+<jsp:forward page="/principal/index.do" />

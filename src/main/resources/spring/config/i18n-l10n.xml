@@ -11,11 +11,13 @@
 		<value>/views/principal-page/messages</value>
 		<value>/views/error/messages</value>
 		<value>/views/security/messages</value>		
-		<value>/views/welcome/messages</value>
+		<value>/views/principal/messages</value>
 		
 		<value>/views/admin/messages</value>
 		<value>/views/coach/messages</value>
 		<value>/views/profile/messages</value>
+		
+		<value>/views/register/messages</value>
 	</util:list>
 
 </beans>

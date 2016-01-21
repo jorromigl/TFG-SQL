@@ -13,7 +13,6 @@ import forms.UserForm;
 import repositories.UserRepository;
 import security.LoginService;
 import security.UserAccount;
-import security.UserAccountService;
 
 @Service
 @Transactional
@@ -24,8 +23,7 @@ public class UserService {
 	private UserRepository userRepository;
 	
 	// Supporting services ----------------------------------------------
-	@Autowired
-	private UserAccountService userAccountService;
+
 	
 	// Constructor ------------------------------------------------------
 	public UserService(){
@@ -34,16 +32,17 @@ public class UserService {
 	
 	// Simple CRUD methods ----------------------------------------------
 	
-	// Other business methods -------------------------------------------------
-	public UserAccount findUserAccount(User user) {
-		Assert.notNull(user);
-		
-		UserAccount result;
-		
-		result = userAccountService.findByUser(user);
-		
-		return result;
-	}
+//	 Other business methods -------------------------------------------------
+	
+//	public UserAccount findUserAccount(User user) {
+//		Assert.notNull(user);
+//		
+//		UserAccount result;
+//		
+//		result = userAccountService.findByUser(user);
+//		
+//		return result;
+//	}
 	
 	public User findByUserAccount(int id){
 		Assert.isTrue(id != 0);

@@ -11,11 +11,14 @@
 		<value>/views/principal-page/tiles.xml</value>		
 		<value>/views/error/tiles.xml</value>		
 		<value>/views/security/tiles.xml</value>
-		<value>/views/welcome/tiles.xml</value>
+		<value>/views/principal/tiles.xml</value>
+		
 		
 		<value>/views/admin/tiles.xml</value>
 		<value>/views/coach/tiles.xml</value>
 		<value>/views/profile/tiles.xml</value>
+		
+		<value>/views/register/tiles.xml</value>
 	</util:list>
 
 </beans>

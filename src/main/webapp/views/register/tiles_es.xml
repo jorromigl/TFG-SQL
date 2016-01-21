@@ -6,9 +6,13 @@
       
 <tiles-definitions>
 
-	<definition name="welcome/index" extends="principal.page">	
-		<put-attribute name="title" value="¡Bienvenidos!" />
-		<put-attribute name="body" value="/views/welcome/index.jsp" />
+	
+	
+	<definition name="register/register" extends="principal.page">
+		<put-attribute name="title" value="Registro Jugador" />
+		<put-attribute name="body"
+			value="/views/register/register.jsp" />
 	</definition>
+	
 	
 </tiles-definitions>

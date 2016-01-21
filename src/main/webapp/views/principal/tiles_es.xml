@@ -3,12 +3,12 @@
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
-       
+      
 <tiles-definitions>
 
-	<definition name="welcome/index" extends="principal.page">	
-		<put-attribute name="title" value="Welcome!" />
-		<put-attribute name="body" value="/views/welcome/index.jsp" />
+	<definition name="principal/index" extends="principal.page">	
+		<put-attribute name="title" value="¡Bienvenidos!" />
+		<put-attribute name="body" value="/views/principal/index.jsp" />
 	</definition>
 	
 </tiles-definitions>
