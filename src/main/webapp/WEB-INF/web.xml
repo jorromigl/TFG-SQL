@@ -47,7 +47,7 @@
 	<!-- Special files -->
 
 	<welcome-file-list>
-		<welcome-file>/views/principal-page/index.jsp</welcome-file>
+   		 <welcome-file>/views/error/index.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<filter>  

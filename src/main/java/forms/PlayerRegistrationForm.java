@@ -2,10 +2,8 @@ package forms;
 
 import java.util.Date;
 
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.UniqueConstraint;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -15,7 +13,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import domain.Category;
 import utilities.PasswordMatches;
 
-@Table(uniqueConstraints={@UniqueConstraint(columnNames="referenceNumber")})
 public class PlayerRegistrationForm {
 	
 	private int id;
@@ -58,6 +55,7 @@ public class PlayerRegistrationForm {
 	}
 
 	public void setCategory(Category category) {
+		
 		this.category = category;
 	}
 	

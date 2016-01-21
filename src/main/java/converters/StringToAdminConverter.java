@@ -31,8 +31,8 @@ public class StringToAdminConverter implements Converter<String, Admin> {
 				result = adminRepository.findOne(id);
 			}
 			
-		} catch(Throwable oops){
-			throw new IllegalArgumentException(oops);
+		} catch(Throwable error){
+			throw new IllegalArgumentException(error);
 		}
 		
 		return result;

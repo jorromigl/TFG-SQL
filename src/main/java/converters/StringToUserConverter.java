@@ -29,8 +29,8 @@ public class StringToUserConverter implements Converter<String, User> {
 				result = userRepository.findOne(id);
 			}
 			
-		} catch(Throwable oops){
-			throw new IllegalArgumentException(oops);
+		} catch(Throwable error){
+			throw new IllegalArgumentException(error);
 		}
 		
 		return result;

@@ -11,14 +11,13 @@ public class RegistrationForm {
 	private String username;
 	private String password;
 	private String verifyPassword;
-	
 	private String name;
 	private String surname;
 	private String email;
 	private String phone;
 	private String address;	
 	
-	
+	@NotBlank
 	@Size(min = 5, max = 32)
 //	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getUsername() {
@@ -28,7 +27,8 @@ public class RegistrationForm {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
+	
+	@NotBlank
 	@Size(min = 5, max = 32)
 //	@SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getPassword() {
@@ -38,7 +38,8 @@ public class RegistrationForm {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
+	@NotBlank
 //	@SafeHtml(whitelistType = WhiteListType.NONE)
 	@Size(min = 5, max = 32)
 	public String getVerifyPassword() {

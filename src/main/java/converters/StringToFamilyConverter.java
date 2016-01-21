@@ -29,8 +29,8 @@ public class StringToFamilyConverter implements Converter<String, Family> {
 				result = familyRepository.findOne(id);
 			}
 			
-		} catch(Throwable oops){
-			throw new IllegalArgumentException(oops);
+		} catch(Throwable error){
+			throw new IllegalArgumentException(error);
 		}
 		
 		return result;

@@ -1,4 +1,4 @@
-<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF8"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <%@taglib prefix="jstl"	uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -17,9 +17,12 @@
 		<tag:password code="register.password2" path="registrationForm.verifyPassword" />
 		<tag:textbox code="register.name" path="registrationForm.name" />
 		<tag:textbox code="register.surname" path="registrationForm.surname" />
+		<tag:textbox code="register.category" path="category.cname" />
+		<tag:textbox code="register.date" path="date" />
 		<tag:textbox code="register.email" path="registrationForm.email" />
 		<tag:textbox code="register.phone" path="registrationForm.phone" />
 		<tag:textbox code="register.address" path="registrationForm.address" />
+		
 		<%-- <br/>
 		<tag:checkbox path="available" url="law/law.do" code="register.text" />
 		<br/> --%>

@@ -29,8 +29,8 @@ public class StringToCoachConverter implements Converter<String, Coach> {
 				result = coachRepository.findOne(id);
 			}
 			
-		} catch(Throwable oops){
-			throw new IllegalArgumentException(oops);
+		} catch(Throwable error){
+			throw new IllegalArgumentException(error);
 		}
 		
 		return result;

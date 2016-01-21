@@ -29,8 +29,8 @@ public class StringToFolderConverter implements Converter<String, Folder> {
 				result = folderRepository.findOne(id);
 			}
 			
-		} catch(Throwable oops){
-			throw new IllegalArgumentException(oops);
+		} catch(Throwable error){
+			throw new IllegalArgumentException(error);
 		}
 		
 		return result;

@@ -1,14 +1,11 @@
 package forms;
 
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import domain.Category;
 import utilities.PasswordMatches;
 
-@Table(uniqueConstraints={@UniqueConstraint(columnNames="referenceNumber")})
 public class CoachRegistrationForm {
 	
 	private int id;

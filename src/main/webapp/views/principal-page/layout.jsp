@@ -12,12 +12,33 @@
 <base
 	href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <link rel="shortcut icon" href="favicon.ico"/> 
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
-	
+
+	<script type="text/javascript">
+		function relativeRedir(loc) {	
+			var b = document.getElementsByTagName('base');
+			if (b && b[0] && b[0].href) {
+	  			if (b[0].href.substr(b[0].href.length - 1) == '/' && loc.charAt(0) == '/')
+	    		loc = loc.substr(1);
+	  			loc = b[0].href + loc;
+			}
+			window.location.replace(loc);
+		}
+	</script>
+
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui.js"></script>
+<script type="text/javascript" src="scripts/jmenu.js"></script>
+
+<link rel="stylesheet" href="styles/common.css" type="text/css">
+<link rel="stylesheet" href="styles/jmenu.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="styles/displaytag.css" type="text/css">
+
 <title><tiles:insertAttribute name="title" ignore="true" /></title>
 
 <script type="text/javascript">
