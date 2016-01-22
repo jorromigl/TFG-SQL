@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Comment;
+import domain.Family;
 import domain.Folder;
 import domain.Player;
 import forms.PlayerRegistrationForm;
@@ -47,25 +48,20 @@ public class PlayerService {
 		UserAccount userAccount = new UserAccount();
 	
 		
-		authority.setAuthority(Authority.COACH);
+		authority.setAuthority(Authority.PLAYER);
 		userAccount.addAuthority(authority);
 		
 		res.setUserAccount(userAccount);
 			
 		Collection<Folder> folders = new ArrayList<Folder>();
 		Collection<Comment> comments = new ArrayList<Comment>();
+		Collection<Family> families= new ArrayList<Family>();
 		
 		res.setComments(comments);			
+		res.setFamilies(families);			
 		res.setFolders(folders);
 				
 		return res;
-	}
-	
-	public Player encodePass(Player player){
-		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
-		player.getUserAccount().setPassword(encoder.encodePassword(player.getUserAccount().getPassword(), null));
-		
-		return player;
 	}
 		
 	public Player findOneToEdit(int expertId) {
@@ -106,6 +102,7 @@ public class PlayerService {
 		result.setAddress(registrationForm.getRegistrationForm().getAddress());
 		
 		result.setCategory(registrationForm.getCategory());
+		result.setDate(registrationForm.getDate());
 		result.getUserAccount().setUsername(registrationForm.getRegistrationForm().getUsername());
 		result.getUserAccount().setPassword(registrationForm.getRegistrationForm().getPassword());
 			

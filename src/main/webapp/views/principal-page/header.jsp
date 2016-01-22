@@ -4,7 +4,7 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
 <div>
-	<img src="images/logo.png" alt="EscuelaFutbol" />
+	<a href="welcome/index.do"> <img src="images/logo.png" alt="EscuelaFutbol" /></a>
 </div>
 
 <div>

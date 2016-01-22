@@ -58,7 +58,6 @@ public class PlayerController extends ErrorController {
 
 				}else{
 					try{
-						player= playerService.encodePass(player);
 						playerService.save(player);
 						result = new ModelAndView("redirect:../principal/index.do");
 					} catch (Throwable error) {

@@ -31,7 +31,7 @@ public class Player extends User {
 	
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	public Date getDate() {
 		return date;
 	}

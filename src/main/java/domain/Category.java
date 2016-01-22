@@ -11,7 +11,6 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Category {
 
     private String cname;
-    private Integer age;
 
     @NotBlank
     public String getCname() {
@@ -22,21 +21,4 @@ public class Category {
         this.cname = cname;
     }
     
-    
-    public int getAge(){
-    	return age;
-    }
-    
-    public void setAge(int age){
-    	this.age=age;
-    }
-
-
-//    public String toString() {
-//		return "Category  [name=" + cname + ", age="
-//				+ age +"]";
-//	}
-
- 
-
 }

@@ -275,7 +275,6 @@
 	
 	<bean id="category1" class="domain.Category">
 		<property name="cname" value="Juvenil" />
-		<property name="age" value="16" />
 	</bean>
 	
 	<!-- COACH -->

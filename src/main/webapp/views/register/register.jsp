@@ -17,7 +17,7 @@
 		<tag:password code="register.password2" path="registrationForm.verifyPassword" />
 		<tag:textbox code="register.name" path="registrationForm.name" />
 		<tag:textbox code="register.surname" path="registrationForm.surname" />
-		<tag:textbox code="register.category" path="category.cname" />
+		<tag:textbox code="register.category1" path="category.cname" />
 		<tag:textbox code="register.date" path="date" />
 		<tag:textbox code="register.email" path="registrationForm.email" />
 		<tag:textbox code="register.phone" path="registrationForm.phone" />
