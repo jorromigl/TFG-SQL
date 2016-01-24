@@ -46,7 +46,7 @@
 			<tag:textbox code="register.phone" path="registrationForm.phone" />
 			<tag:textbox code="register.address" path="registrationForm.address" />
 			
-			<%-- <tag:select code= "register.players" path="player" items="${players}" itemLabel="fullName"/> --%>
+			<tag:select code= "register.players" path="player" items="${players}" itemLabel="fullName"/>
 			
 			<tag:checkbox path="available" url="law/law.do" code="register.available" />
 			<br/>
