@@ -1,6 +1,6 @@
 /* displaytag.css
  *
- * Copyright (C) 2013 Universidad de Sevilla
+ * Copyright (C) 2014 Universidad de Sevilla
  * 
  * The use of this project is hereby constrained to the conditions of the 
  * TDG Licence, a copy of which you may download from 
@@ -44,20 +44,20 @@ th.sorted a,th.sortable a {
 }
 
 th.sortable a {
-	background-image: url(../images/arrow_off.png);
+	background-image: url('../images/arrow_off.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-position: right;	
 }
 
 th.order1 a {
-	background-image: url(../images/arrow_down.png);
+	background-image: url('../images/arrow_down.png');
 	background-repeat: no-repeat;
 	background-position: right;		
 }
 
 th.order2 a {
-	background-image: url(../images/arrow_up.png);
+	background-image: url('../images/arrow_up.png');
 	background-repeat: no-repeat;
 	background-position: right;	
 }
@@ -86,23 +86,23 @@ span.export {
 }
 
 span.excel {
-	background-image: url(../images/ico_file_excel.png);
+	background-image: url('../images/ico_file_excel.png');
 }
 
 span.csv {
-	background-image: url(../images/ico_file_csv.png);
+	background-image: url('../images/ico_file_csv.png');
 }
 
 span.xml {
-	background-image: url(../images/ico_file_xml.png);
+	background-image: url('../images/ico_file_xml.png');
 }
 
 span.pdf {
-	background-image: url(../images/ico_file_pdf.png);
+	background-image: url('../images/ico_file_pdf.png');
 }
 
 span.rtf {
-	background-image: url(../images/ico_file_rtf.png);
+	background-image: url('../images/ico_file_rtf.png');
 }
 
 span.pagebanner {

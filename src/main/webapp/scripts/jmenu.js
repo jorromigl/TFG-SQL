@@ -1,20 +1,3 @@
-/************************************************************************
-*************************************************************************
-@Name    :      jMenu - jQuery Plugin
-@Revison :      1.9
-@Date    :      09/2012
-@Author  :      ALPIXEL - (www.myjqueryplugins.com - www.alpixel.fr)
-@Support :      FF, IE7, IE8, MAC Firefox, MAC Safari
-@License :      Open Source - MIT License : http://www.opensource.org/licenses/mit-license.php
- 
-**************************************************************************
-*************************************************************************/
-
-/** 
-@ IsHovered Plugin 
-@ Thanks to Chad Smith fr his isHovered Plugin 
-@ source : http://mktgdept.com/jquery-ishovered
-**/
 ;(function(b,c) {
     b('*').hover(function() {
         b(this).data(c, 1)

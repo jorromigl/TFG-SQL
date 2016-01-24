@@ -34,6 +34,7 @@
 
 	<import resource="datasource.xml" />
 
+ 	
 	<bean id="openEntityManagerInViewInterceptor"
 		class="org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor" />
 
