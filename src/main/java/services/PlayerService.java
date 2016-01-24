@@ -64,10 +64,10 @@ public class PlayerService {
 		return res;
 	}
 		
-	public Player findOneToEdit(int expertId) {
+	public Player findOneToEdit(int playerId) {
 		Player result;
 			
-		result = playerRepository.findOne(expertId);		
+		result = playerRepository.findOne(playerId);		
 		
 		
 		return result;

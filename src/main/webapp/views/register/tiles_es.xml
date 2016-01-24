@@ -9,7 +9,7 @@
 	
 	
 	<definition name="register/register" extends="principal.page">
-		<put-attribute name="title" value="Registro Jugador" />
+		<put-attribute name="title" value="Registro" />
 		<put-attribute name="body"
 			value="/views/register/register.jsp" />
 	</definition>

@@ -64,13 +64,15 @@ public class Player extends User {
 		this.families = families;
 	}
 	
-//	@OneToMany(mappedBy="player")
-//	public Collection<Comment> getComments() {
-//		return comments;
-//	}
-//	public void setComments(Collection<Comment> comments) {
-//		this.comments = comments;
-//	}
+	public void addFamily(Family family) {
+		families.add(family);
+		family.setPlayer(this);
+	}
+
+	public void removeFamily(Family family) {
+		families.remove(family);
+		family.setPlayer(null);
+	}
 	
 	@ManyToOne(optional=true)
 	public Squadra getSquadra() {

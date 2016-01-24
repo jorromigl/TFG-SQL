@@ -8,10 +8,43 @@
 	">
 
 	<util:list id="converters">
-		<!-- 
-			Add your own converters using entries of the following form: 
-			<bean class="converters.Class1ToClass2" /> 
-		-->
+	
+		<bean class="converters.AdminToStringConverter" /> 
+  		<bean class="converters.StringToAdminConverter" /> 
+	
+		<bean class="converters.ClassificationToStringConverter" /> 
+  		<bean class="converters.StringToClassificationConverter" /> 
+  		
+  		<bean class="converters.CoachToStringConverter" /> 
+  		<bean class="converters.StringToCoachConverter" /> 
+  		
+  		<bean class="converters.CommentToStringConverter" /> 
+  		<bean class="converters.StringToCommentConverter" /> 
+  		
+  		<bean class="converters.FamilyToStringConverter" /> 
+  		<bean class="converters.StringToFamilyConverter" /> 
+  		
+  		<bean class="converters.FolderToStringConverter" /> 
+  		<bean class="converters.StringToFolderConverter" /> 
+  		
+  		<bean class="converters.MatchToStringConverter" /> 
+  		<bean class="converters.StringToMatchConverter" /> 
+  		
+  		<bean class="converters.MessageToStringConverter" /> 
+  		<bean class="converters.StringToMessageConverter" /> 
+  		
+  		<bean class="converters.PlayerToStringConverter" /> 
+  		<bean class="converters.StringToPlayerConverter" /> 
+  		
+  		<bean class="converters.RecruitmentToStringConverter" /> 
+  		<bean class="converters.StringToRecruitmentConverter" /> 
+  		
+  		<bean class="converters.SquadraToStringConverter" /> 
+  		<bean class="converters.StringToSquadraConverter" /> 
+  		
+  		<bean class="converters.UserToStringConverter" /> 
+  		<bean class="converters.StringToUserConverter" /> 
+  				  			
 	</util:list>
 
 </beans>

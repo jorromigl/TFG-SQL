@@ -9,6 +9,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Email;
@@ -30,6 +31,8 @@ public abstract class User extends DomainEntity {
 	private String phone;
 	private String address;
 //	private byte[] photo;
+	@SuppressWarnings("unused")
+	private String fullName;
 
 	@NotBlank
 	public String getName() {
@@ -77,6 +80,15 @@ public abstract class User extends DomainEntity {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	@Transient
+	public String getFullName() {
+		return name +" "+  surname;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 	
 	private Collection<Comment> comments;

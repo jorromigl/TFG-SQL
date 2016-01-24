@@ -20,6 +20,7 @@ public class PlayerRegistrationForm {
 	private RegistrationForm registrationForm;
 	private Category category;
 	private Date date;
+	private boolean available;
 	
 	
 	public int getId() {
@@ -68,6 +69,15 @@ public class PlayerRegistrationForm {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	@NotNull
+	public boolean getAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
 	}
 	
 	

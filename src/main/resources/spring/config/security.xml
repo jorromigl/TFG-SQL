@@ -39,7 +39,9 @@
 		
 		<security:intercept-url pattern="/views/error/index.jsp" access="permitAll" />
 		
-		<security:intercept-url pattern="/player/register.do" access="permitAll" /> 
+		<security:intercept-url pattern="/player/register.do" access="permitAll" />
+		<security:intercept-url pattern="/family/register.do" access="permitAll" />
+		<security:intercept-url pattern="/law/law.do" access="permitAll" />  
 		
 		
 		

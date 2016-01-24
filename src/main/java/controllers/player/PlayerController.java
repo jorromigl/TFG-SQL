@@ -52,7 +52,7 @@ public class PlayerController extends ErrorController {
 			
 			Player player = playerService.reconstruct(playerForm);
 			
-			if(playerForm.getRegistrationForm().getVerifyPassword().equals(playerForm.getRegistrationForm().getPassword())){
+			if(playerForm.getAvailable() && playerForm.getRegistrationForm().getVerifyPassword().equals(playerForm.getRegistrationForm().getPassword())){
 				if (bindingResult.hasErrors()) {
 					result = createModelAndView(playerForm);
 
@@ -65,11 +65,13 @@ public class PlayerController extends ErrorController {
 					}
 				} 
 			}else {
-				
+				if(playerForm.getAvailable()){
+					result = createModelAndView(playerForm, "register.commit.error1");
+				}else{	
 					result = createModelAndView(playerForm, "register.commit.error2");
 
 				}
-			
+			}
 			return result;
 		}
 		
@@ -95,7 +97,7 @@ public class PlayerController extends ErrorController {
 				result = new ModelAndView("register/register");
 				result.addObject("playerForm", playerForm);
 				result.addObject("message", message);
-//				result.addObject("isPlayer", true);
+				result.addObject("isPlayer", true);
 
 				return result;
 			}

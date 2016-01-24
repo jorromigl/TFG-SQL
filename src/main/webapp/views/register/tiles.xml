@@ -7,7 +7,7 @@
 <tiles-definitions>
 	
 	<definition name="register/register" extends="principal.page">
-		<put-attribute name="title" value="Player Register" />
+		<put-attribute name="title" value="Register" />
 		<put-attribute name="body"
 			value="/views/register/register.jsp" />
 	</definition>
