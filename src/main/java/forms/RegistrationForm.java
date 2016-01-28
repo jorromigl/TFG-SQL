@@ -1,4 +1,5 @@
 package forms;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
@@ -83,7 +84,7 @@ public class RegistrationForm {
 	
 	@NotBlank
 //	@SafeHtml(whitelistType = WhiteListType.NONE)
-//	@Pattern(regexp = "^\\+\\d{2,3}\\d{7,14}$")
+	@Pattern(regexp = "^\\+\\d{2,3}\\d{7,14}$")
 	public String getPhone() {
 		return phone;
 	}
