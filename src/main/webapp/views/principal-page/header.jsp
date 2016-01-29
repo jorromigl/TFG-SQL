@@ -18,15 +18,23 @@
 			
 		</security:authorize>
 		
+		<security:authorize access="hasRole('PLAYER')">
+			<li><a class="fNiv"><spring:message	code="principal.page.player" /></a>
+				
+				<li><a href="player/displayA.do"><spring:message code="master.page.display" /> </a></li>
+				
+			
+		</security:authorize>
+		
 		<security:authorize access="hasRole('COACH')">
 			<li><a class="fNiv"><spring:message	code="principal.page.coach" /></a>
 				<ul>
-					<!--  <li class="arrow"></li>-->
-					<li><a href="coach/action-1.do"><spring:message code="principal.page.coach.action.1" /></a></li>
-					<li><a href="coach/action-2.do"><spring:message code="principal.page.coach.action.2" /></a></li>					
+								
 				</ul>
 			</li>
 		</security:authorize>
+		
+		
 		
 		<security:authorize access="isAnonymous()">
 			<li><a class="fNiv" href="security/login.do"><spring:message code="principal.page.login" /></a></li>

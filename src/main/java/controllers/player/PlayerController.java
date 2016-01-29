@@ -31,7 +31,7 @@ public class PlayerController extends ErrorController {
 	}
 
 	
-	// Create methods --------------------------------------------------------------
+	// REGISTRAR --------------------------------------------------------------
 	
 	
 		@RequestMapping(value="/register", method = RequestMethod.GET)
@@ -74,11 +74,61 @@ public class PlayerController extends ErrorController {
 			}
 			return result;
 		}
+		//----------------------------------------------------------------------
+		// VER PERFIL --------------------------------------------------------------
 		
+		@RequestMapping(value = "/displayA", method = RequestMethod.GET)
+		public ModelAndView displayA(){
+			ModelAndView result;
+			Player p = playerService.findByPrincipal();
+			
+			PlayerRegistrationForm player = playerService.createForm(p);
+//			Assert.notNull(player);
+			result = createModelAndView1(player);
+			
+			result.addObject("requestURI", "player/displayA.do?playerId="+p.getId());
+			result.addObject("detailsPlayer",true);
+			
+			return result;
+		}
 		
-		
-		
+		// EDITAR PERFIL --------------------------------------------------------------
+		@RequestMapping(value = "/displayB", method = RequestMethod.GET)
+		public ModelAndView displayB(){
+			ModelAndView result;
+			Player p = playerService.findByPrincipal();
+			
+			PlayerRegistrationForm player = playerService.createForm(p);
+//			Assert.notNull(player);
+			result = createModelAndView1(player);
+			
+			result.addObject("requestURI", "player/displayB.do?playerId="+p.getId());
+			result.addObject("detailsPlayer",false);
+			
+			return result;
+		}
+		@RequestMapping(value = "/displayB", method = RequestMethod.POST, params = "save1")
+		public ModelAndView save1(@Valid PlayerRegistrationForm player, BindingResult binding) {
+			ModelAndView result;
+			Player p;
+			if (binding.hasErrors()) {
+				result = createModelAndView1(player);
+				result.addObject("detailsPlayer",false);
+			} else {
+				try {
+					p = playerService.reconstructor2(player);
+					playerService.save(p);
+					result = new ModelAndView("redirect:../principal/index.do");
+	
+				} catch (Throwable error) {
+					result = createModelAndView1(player, "player.commit.error");	
+					result.addObject("detailsPlayer",false);
+				}
+			}
 
+			return result;
+		}
+		
 		// Ancillary methods ---------------------------------------------------------
 		
 			protected ModelAndView createModelAndView(PlayerRegistrationForm playerForm){
@@ -100,6 +150,26 @@ public class PlayerController extends ErrorController {
 				result.addObject("isPlayer", true);
 				result.addObject("isCoach", false);
 				
+				return result;
+			}
+			
+			
+			protected ModelAndView createModelAndView1(PlayerRegistrationForm player) {
+				ModelAndView result;
+
+				result = createModelAndView1(player, null);
+
+				return result;
+			}
+
+			protected ModelAndView createModelAndView1(PlayerRegistrationForm player, String message) {
+				ModelAndView result;
+
+				result = new ModelAndView("player/display");
+				result.addObject("player", player);
+				
+				result.addObject("message", message);
+			
 				return result;
 			}
 }

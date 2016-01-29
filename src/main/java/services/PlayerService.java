@@ -1,7 +1,10 @@
 package services;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import javax.sql.rowset.serial.SerialException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
@@ -9,11 +12,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import domain.Category;
 import domain.Comment;
 import domain.Family;
 import domain.Folder;
 import domain.Player;
 import forms.PlayerRegistrationForm;
+import forms.RegistrationForm;
 import repositories.PlayerRepository;
 import security.Authority;
 import security.LoginService;
@@ -107,6 +112,54 @@ public class PlayerService {
 		result.getUserAccount().setPassword(registrationForm.getRegistrationForm().getPassword());
 			
 		return result;	
+	}
+	
+	public Player reconstructor2(PlayerRegistrationForm playerForm) throws SerialException, SQLException{
+		Player result;
+
+		
+		result = playerRepository.findOne(playerForm.getId());		
+
+		result.setId(playerForm.getId());
+		result.setVersion(playerForm.getVersion());
+		
+		result.setEmail(playerForm.getRegistrationForm().getEmail());
+		result.setName(playerForm.getRegistrationForm().getName());
+		result.setPhone(playerForm.getRegistrationForm().getPhone());
+		result.setSurname(playerForm.getRegistrationForm().getSurname());
+		result.setAddress(playerForm.getRegistrationForm().getAddress());
+		result.getCategory().setCname(playerForm.getCategory().getCname());
+		result.setDate(playerForm.getDate());
+		result.getUserAccount().setUsername(playerForm.getRegistrationForm().getUsername());
+		result.getUserAccount().setPassword(playerForm.getRegistrationForm().getPassword());
+		return result;
+	}
+	
+	public PlayerRegistrationForm createForm(Player player){
+		
+		PlayerRegistrationForm playerForm = new PlayerRegistrationForm();
+		
+		
+		playerForm.setId(player.getId());
+		playerForm.setVersion(player.getVersion());
+		RegistrationForm form= new RegistrationForm();
+		form.setEmail(player.getEmail());
+//		playerForm.setRegistrationForm().setEmail(player.getEmail());
+		
+		playerForm.setRegistrationForm(form);
+		playerForm.getRegistrationForm().setName(player.getName());
+		playerForm.getRegistrationForm().setPhone(player.getPhone());
+		playerForm.getRegistrationForm().setSurname(player.getSurname());
+		playerForm.getRegistrationForm().setAddress(player.getAddress());
+		playerForm.setAvailable(true);
+		Category c = new Category();
+		c.setCname(player.getCategory().getCname());
+		playerForm.setCategory(c);
+		playerForm.setDate(player.getDate());
+		playerForm.getRegistrationForm().setUsername(player.getUserAccount().getUsername());
+		playerForm.getRegistrationForm().setPassword(player.getUserAccount().getPassword());			
+			
+		return playerForm;
 	}
 	
 
