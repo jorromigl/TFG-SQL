@@ -32,9 +32,11 @@
 		<security:authorize access="hasRole('COACH')">
 			<li><a class="fNiv"><spring:message	code="principal.page.coach" /></a>
 				<ul>
-								
+					<li class="arrow"></li>
+					<li><a href="match/listAll.do"><spring:message code="master.page.match.listAll" /></a></li>		
 				</ul>
 			</li>
+			<li><a href="match/coach/create.do"><spring:message code="master.page.coach.createMatch" /> </a></li>
 		</security:authorize>
 		
 		
