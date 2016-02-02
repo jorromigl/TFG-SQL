@@ -12,7 +12,10 @@
 		<!-- Do not forget the "fNiv" class for the first level links !! -->
 		<security:authorize access="hasRole('ADMIN')">
 			<li><a class="fNiv"><spring:message	code="principal.page.admin" /></a>
-				
+				<ul>
+					<li class="arrow"></li>
+					<li><a href="coach/listAll.do"><spring:message code="master.page.coach.listAll" /></a></li>
+				</ul>
 				<li><a href="coach/register.do"><spring:message code="master.page.register.coach" /> </a></li>
 				
 			

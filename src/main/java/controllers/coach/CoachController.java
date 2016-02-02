@@ -1,12 +1,16 @@
 package controllers.coach;
 
+import java.util.Collection;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
@@ -31,6 +35,21 @@ public class CoachController extends ErrorController {
 
 		
 		// Create methods --------------------------------------------------------------
+		
+		// List all coach
+		@RequestMapping(value = "/listAll", method = RequestMethod.GET)
+		public ModelAndView listAll() {
+			ModelAndView result;
+			Collection<Coach> coachs;
+			
+			coachs = coachService.findAll();
+									
+			result = new ModelAndView("coach/list");
+			result.addObject("coachs", coachs);
+			result.addObject("requestURI", "coach/listAll.do");
+
+			return result;
+		}
 		
 		
 			@RequestMapping(value="/register", method = RequestMethod.GET)
@@ -80,7 +99,25 @@ public class CoachController extends ErrorController {
 				return result;
 			}
 			
+			//Delete
 			
+			@RequestMapping(value = "/delete", method = RequestMethod.GET)
+			public ModelAndView delete(@RequestParam int coachId) {
+				ModelAndView result;
+				Coach coach;
+				
+				coach = coachService.findOne(coachId);
+				
+				try {
+					coachService.delete(coach);
+					result = new ModelAndView("redirect:../coach/listAll.do");
+				} catch (Throwable error) {
+					result = createModelAndView(coach, "coach.commit.error");
+				}
+				return result;
+			}
+			
+
 			
 			
 
@@ -108,4 +145,23 @@ public class CoachController extends ErrorController {
 
 					return result;
 				}
+				
+
+				protected ModelAndView createModelAndView(Coach coach) {
+					ModelAndView result;
+
+					result = createModelAndView(coach, null);
+
+					return result;
+				}
+
+				protected ModelAndView createModelAndView(Coach coach, String message) {
+					ModelAndView result;
+
+					result = new ModelAndView("coach/delete");
+					result.addObject("coach", coach);
+					result.addObject("message", message);
+				
+					return result;
+				}	
 	}

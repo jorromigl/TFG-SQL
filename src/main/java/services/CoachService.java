@@ -63,7 +63,13 @@ public class CoachService {
 				
 		return res;
 	}
+	
+	public void delete(Coach c) {
+		Assert.notNull(c);
 		
+		coachRepository.delete(c);
+	}
+	
 	public Coach findOneToEdit(int coachId) {
 		Coach result;
 			
