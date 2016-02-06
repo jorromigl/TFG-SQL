@@ -1,6 +1,7 @@
 package services;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,9 @@ public class MatchService {
 	
 	public void save(Match m){
 		Assert.notNull(m);
+		Date date = new Date();
+		date.setSeconds(date.getSeconds()+1);
+		Assert.isTrue(m.getMoment().after(date));
 		
 		matchRepository.save(m);
 	}
