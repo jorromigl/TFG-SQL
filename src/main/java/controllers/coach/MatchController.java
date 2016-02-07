@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
+import domain.Coach;
 import domain.Match;
 import services.MatchService;
 
@@ -32,7 +33,7 @@ public class MatchController extends ErrorController {
 			super();
 		}
 
-		// List all, user
+		// List all
 		@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 		public ModelAndView listAll() {
 			ModelAndView result;
@@ -42,10 +43,44 @@ public class MatchController extends ErrorController {
 									
 			result = new ModelAndView("match/list");
 			result.addObject("matches", matches);
+			result.addObject("isFuture", false);
 			result.addObject("requestURI", "match/listAll.do");
 
 			return result;
 		}
+		
+		// List FUTURE
+		@RequestMapping(value = "/coach/listFuture", method = RequestMethod.GET)
+		public ModelAndView listFuture() {
+			ModelAndView result;
+			Collection<Match> matches;
+			
+			matches = matchService.findFuture();
+									
+			result = new ModelAndView("match/list");
+			result.addObject("matches", matches);
+			result.addObject("isFuture", true);
+			result.addObject("requestURI", "match/listFuture.do");
+			
+			return result;
+		}
+		
+		// List PAST
+		@RequestMapping(value = "/coach/listPast", method = RequestMethod.GET)
+		public ModelAndView listPast() {
+			ModelAndView result;
+			Collection<Match> matches;
+			
+			matches = matchService.findPast();
+									
+			result = new ModelAndView("match/list");
+			result.addObject("isFuture", false);
+			result.addObject("matches", matches);
+			result.addObject("requestURI", "match/listPast.do");
+
+			return result;
+		}	
+			
 		// Create
 		@RequestMapping(value = "/coach/create", method = RequestMethod.GET)
 		public ModelAndView create() {
@@ -88,6 +123,24 @@ public class MatchController extends ErrorController {
 			return result;
 		}
 		
+		//Delete
+		
+		@RequestMapping(value = "/coach/delete", method = RequestMethod.GET)
+		public ModelAndView delete(@RequestParam int matchId) {
+			ModelAndView result;
+			Match match;
+			
+			match= matchService.findOne(matchId);
+			
+			try {
+				matchService.delete(match);
+				result = new ModelAndView("redirect:../coach/listFuture.do");
+			} catch (Throwable error) {
+				result = createModelAndView(match, "coach.commit.error");
+			}
+			return result;
+		}
+		
 		
 		protected ModelAndView createModelAndView(Match match) {
 			ModelAndView result;
@@ -101,6 +154,7 @@ public class MatchController extends ErrorController {
 			ModelAndView result;
 
 			result = new ModelAndView("match/edit");
+
 			result.addObject("match", match);
 			result.addObject("message", message);
 		

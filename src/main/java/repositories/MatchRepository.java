@@ -9,5 +9,4 @@ import domain.Match;
 public interface MatchRepository extends JpaRepository<Match, Integer> {
 	
 
-
 }

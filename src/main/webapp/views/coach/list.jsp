@@ -26,10 +26,10 @@
 			<a href="coach/displayA.do?coachId=${row.id}" ><spring:message code="coach.display" /></a>
 	</display:column>
 	
-			<display:column >
-				<a href="coach/delete.do?coachId=${row.id}" ><spring:message code="coach.delete" /></a>
-			</display:column>
-			
+	<display:column >
+			<a href="coach/delete.do?coachId=${row.id}" ><spring:message code="coach.delete" /></a>
+	</display:column>
+		
 </display:table>
 	
 	<tag:button code="coach.return" url="principal/index.do'" />

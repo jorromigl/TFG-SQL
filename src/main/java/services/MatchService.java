@@ -1,5 +1,6 @@
 package services;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
@@ -51,6 +52,36 @@ public class MatchService {
 		Match m= matchRepository.findOne(id);
 
 		return m;
+	}
+	
+	public Collection<Match> findFuture(){
+		Collection<Match> matches = matchRepository.findAll();
+		Collection<Match> future = new ArrayList<Match>();
+		Date date= new Date();
+		
+		for(Match m: matches){
+			if(m.getMoment().after(date))
+				future.add(m);
+			
+		}
+		
+		return 	future;
+		
+	}
+	
+	public Collection<Match> findPast(){
+		Collection<Match> matches = matchRepository.findAll();
+		Collection<Match> past = new ArrayList<Match>();
+		Date date= new Date();
+		
+		for(Match m: matches){
+			if(m.getMoment().before(date))
+				past.add(m);
+			
+		}
+		
+		return 	past;
+		
 	}
 	
 	public Collection<Match> findAll(){

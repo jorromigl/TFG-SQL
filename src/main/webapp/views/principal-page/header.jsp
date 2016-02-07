@@ -33,7 +33,9 @@
 			<li><a class="fNiv"><spring:message	code="principal.page.coach" /></a>
 				<ul>
 					<li class="arrow"></li>
-					<li><a href="match/listAll.do"><spring:message code="master.page.match.listAll" /></a></li>		
+					<li><a href="match/listAll.do"><spring:message code="master.page.match.listAll" /></a></li>
+					<li><a href="match/coach/listFuture.do"><spring:message code="master.page.match.listFuture" /></a></li>	
+					<li><a href="match/coach/listPast.do"><spring:message code="master.page.match.listPast" /></a></li>			
 				</ul>
 			</li>
 			<li><a href="match/coach/create.do"><spring:message code="master.page.coach.createMatch" /> </a></li>

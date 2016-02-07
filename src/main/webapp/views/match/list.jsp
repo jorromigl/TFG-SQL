@@ -21,9 +21,14 @@
 	
 	<spring:message code="match.moment" var="moment" />
 	<display:column property="moment" title="${moment}"  />
+	<jstl:if test="${isFuture==true}">
 	<display:column >
 		<a href="match/coach/edit.do?matchId=${row.id}" ><spring:message code="match.edit" /></a>
 	</display:column>
+	<display:column >
+		<a href="match/coach/delete.do?matchId=${row.id}" ><spring:message code="match.delete" /></a>
+	</display:column>
+	</jstl:if>
 	<%-- <display:column >
 			<a href="coach/displayA.do?coachId=${row.id}" ><spring:message code="coach.display" /></a>
 	</display:column>
