@@ -971,7 +971,7 @@
 	<bean id="match1" class="domain.Match">
 		<property name="rival" value="Tomares" />
 		<property name="location" value="Tomares" />
-		<property name="moment" value="25/08/2016 10:00" />
+		<property name="moment" value="25/08/2010 10:00" />
 		<property name="coach" ref="coach1" />
 		<property name="summary" ref="summary1"/>
 		<property name="recruitment" ref="recruitment1" />

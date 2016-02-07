@@ -18,7 +18,7 @@
 		<value>/views/player/messages</value>
 		<value>/views/profile/messages</value>
 		<value>/views/match/messages</value>
-		
+		<value>/views/summary/messages</value>
 		<value>/views/register/messages</value>
 		<value>/views/law/messages</value>
 	</util:list>

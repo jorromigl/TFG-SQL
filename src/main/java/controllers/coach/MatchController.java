@@ -43,6 +43,7 @@ public class MatchController extends ErrorController {
 									
 			result = new ModelAndView("match/list");
 			result.addObject("matches", matches);
+			result.addObject("isAll", true);
 			result.addObject("isFuture", false);
 			result.addObject("requestURI", "match/listAll.do");
 
@@ -59,6 +60,7 @@ public class MatchController extends ErrorController {
 									
 			result = new ModelAndView("match/list");
 			result.addObject("matches", matches);
+			result.addObject("isAll", false);
 			result.addObject("isFuture", true);
 			result.addObject("requestURI", "match/listFuture.do");
 			
@@ -74,6 +76,7 @@ public class MatchController extends ErrorController {
 			matches = matchService.findPast();
 									
 			result = new ModelAndView("match/list");
+			result.addObject("isAll", false);
 			result.addObject("isFuture", false);
 			result.addObject("matches", matches);
 			result.addObject("requestURI", "match/listPast.do");

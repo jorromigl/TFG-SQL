@@ -39,6 +39,9 @@
 		<security:intercept-url pattern="/match/listAll.do" access="permitAll" />
 		<security:intercept-url pattern="/match/coach/**" access="hasRole('COACH')" />
 		
+		<security:intercept-url pattern="/summary/coach/displayA.do" access="permitAll" />
+		<security:intercept-url pattern="/summary/displayB.do" access="hasRole('COACH')" />
+		
 		<security:intercept-url pattern="/views/error/index.jsp" access="permitAll" />
 		
 		<security:intercept-url pattern="/player/register.do" access="permitAll" />
