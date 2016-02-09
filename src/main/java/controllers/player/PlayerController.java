@@ -3,6 +3,7 @@ package controllers.player;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
 import domain.Player;
-import forms.PlayerRegistrationForm;
+import forms.PlayerForm;
+//import forms.PlayerRegistrationForm;
 import services.PlayerService;
 
 @Controller
@@ -38,7 +40,7 @@ public class PlayerController extends ErrorController {
 		public ModelAndView create(){
 			
 			ModelAndView result;
-			PlayerRegistrationForm playerForm = new PlayerRegistrationForm();
+			PlayerForm playerForm = new PlayerForm();
 			result = createModelAndView(playerForm);
 			
 			return result;
@@ -47,12 +49,12 @@ public class PlayerController extends ErrorController {
 		
 		// Save
 		@RequestMapping(value = "/register", method = RequestMethod.POST, params = "save")
-		public ModelAndView save(@Valid PlayerRegistrationForm playerForm, BindingResult bindingResult) {
+		public ModelAndView save(@Valid PlayerForm playerForm, BindingResult bindingResult) {
 			ModelAndView result;
 			
 			Player player = playerService.reconstruct(playerForm);
 			
-			if(playerForm.getAvailable() && playerForm.getRegistrationForm().getVerifyPassword().equals(playerForm.getRegistrationForm().getPassword())){
+			if(playerForm.getAvailable() && playerForm.getVerifyPassword().equals(playerForm.getPassword())){
 				if (bindingResult.hasErrors()) {
 					result = createModelAndView(playerForm);
 
@@ -74,6 +76,52 @@ public class PlayerController extends ErrorController {
 			}
 			return result;
 		}
+		
+//		@RequestMapping(value = "/register", method = RequestMethod.POST, params = "save")
+//		public ModelAndView save(@Valid PlayerRegistrationForm playerForm,
+//				BindingResult binding) {
+//
+//			ModelAndView result;
+//			Player player;
+//			
+//
+//			if (binding.hasErrors()) {
+//				result = createModelAndView(playerForm);
+//
+//			} else {
+//
+//				try {
+//					player = playerService.reconstruct(playerForm);
+//
+//					playerService.save(player);
+//					result = new ModelAndView("redirect:../../security/login.do");
+//
+//				} catch (DataIntegrityViolationException oops) {
+//					result = createModelAndView(playerForm,
+//							"register.commit.error");
+//
+//				} catch (Throwable oops) {
+//					oops.getMessage();
+//
+//					if (!playerForm.getRegistrationForm().getVerifyPassword().equals(playerForm.getRegistrationForm().getPassword())) {
+//						result = createModelAndView(playerForm,
+//								"register.commit.error");
+//					} else {
+//
+//						if (playerForm.getAvailable()== false) {
+//							result = createModelAndView(playerForm,
+//									"register.commit.error1");
+//						}else{
+//							result = createModelAndView(playerForm,
+//									"register.commit.error2");
+//						} 
+//					}
+//
+//				}
+//			}
+//			return result;
+//		}
+		
 		//----------------------------------------------------------------------
 		// VER PERFIL --------------------------------------------------------------
 		
@@ -82,7 +130,7 @@ public class PlayerController extends ErrorController {
 			ModelAndView result;
 			Player p = playerService.findByPrincipal();
 			
-			PlayerRegistrationForm player = playerService.createForm(p);
+			PlayerForm player = playerService.createForm(p);
 //			Assert.notNull(player);
 			result = createModelAndView1(player);
 			
@@ -98,7 +146,7 @@ public class PlayerController extends ErrorController {
 			ModelAndView result;
 			Player p = playerService.findByPrincipal();
 			
-			PlayerRegistrationForm player = playerService.createForm(p);
+			PlayerForm player = playerService.createForm(p);
 //			Assert.notNull(player);
 			result = createModelAndView1(player);
 			
@@ -108,7 +156,7 @@ public class PlayerController extends ErrorController {
 			return result;
 		}
 		@RequestMapping(value = "/displayB", method = RequestMethod.POST, params = "save1")
-		public ModelAndView save1(@Valid PlayerRegistrationForm player, BindingResult binding) {
+		public ModelAndView save1(@Valid PlayerForm player, BindingResult binding) {
 			ModelAndView result;
 			Player p;
 			if (binding.hasErrors()) {
@@ -131,7 +179,7 @@ public class PlayerController extends ErrorController {
 		
 		// Ancillary methods ---------------------------------------------------------
 		
-			protected ModelAndView createModelAndView(PlayerRegistrationForm playerForm){
+			protected ModelAndView createModelAndView(PlayerForm playerForm){
 				
 				ModelAndView result;
 				
@@ -140,21 +188,24 @@ public class PlayerController extends ErrorController {
 				return result;
 			}
 			
-			protected ModelAndView createModelAndView(PlayerRegistrationForm playerForm, String message){
+			protected ModelAndView createModelAndView(PlayerForm playerForm, String message){
 				
 				ModelAndView result;
+				Player player = playerService.create();
 				
 				result = new ModelAndView("register/register");
 				result.addObject("playerForm", playerForm);
 				result.addObject("message", message);
 				result.addObject("isPlayer", true);
 				result.addObject("isCoach", false);
+				result.addObject("player", player);
+				result.addObject("user", "playerForm");
 				
 				return result;
 			}
 			
 			
-			protected ModelAndView createModelAndView1(PlayerRegistrationForm player) {
+			protected ModelAndView createModelAndView1(PlayerForm player) {
 				ModelAndView result;
 
 				result = createModelAndView1(player, null);
@@ -162,7 +213,7 @@ public class PlayerController extends ErrorController {
 				return result;
 			}
 
-			protected ModelAndView createModelAndView1(PlayerRegistrationForm player, String message) {
+			protected ModelAndView createModelAndView1(PlayerForm player, String message) {
 				ModelAndView result;
 
 				result = new ModelAndView("player/display");

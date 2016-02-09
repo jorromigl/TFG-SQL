@@ -12,7 +12,7 @@ import org.springframework.util.Assert;
 import domain.Comment;
 import domain.Family;
 import domain.Folder;
-import forms.FamilyRegistrationForm;
+import forms.FamilyForm;
 import repositories.FamilyRepository;
 import security.Authority;
 import security.LoginService;
@@ -90,20 +90,20 @@ public class FamilyService {
 
 	// Other business methods ------------------------
 		
-	public Family reconstruct(FamilyRegistrationForm registrationForm){
+	public Family reconstruct(FamilyForm familyForm){
 		
 		Family result = create();
 			
-		result.setEmail(registrationForm.getRegistrationForm().getEmail());
-		result.setName(registrationForm.getRegistrationForm().getName());
-		result.setPhone(registrationForm.getRegistrationForm().getPhone());
-		result.setSurname(registrationForm.getRegistrationForm().getSurname());
-		result.setAddress(registrationForm.getRegistrationForm().getAddress());
+		result.setEmail(familyForm.getEmail());
+		result.setName(familyForm.getName());
+		result.setPhone(familyForm.getPhone());
+		result.setSurname(familyForm.getSurname());
+		result.setAddress(familyForm.getAddress());
 		
-		result.setPlayer(registrationForm.getPlayer());
+		result.setPlayer(familyForm.getPlayer());
 			
-		result.getUserAccount().setUsername(registrationForm.getRegistrationForm().getUsername());
-		result.getUserAccount().setPassword(registrationForm.getRegistrationForm().getPassword());
+		result.getUserAccount().setUsername(familyForm.getUsername());
+		result.getUserAccount().setPassword(familyForm.getPassword());
 			
 		return result;	
 	}

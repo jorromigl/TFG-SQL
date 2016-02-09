@@ -14,16 +14,16 @@
 			<form:hidden path="id" />
 			<form:hidden path="version" />
 			
-			<tag:textbox code="register.username" path="registrationForm.username" />
-			<tag:password code="register.password" path="registrationForm.password" />
-			<tag:password code="register.password2" path="registrationForm.verifyPassword" />
-			<tag:textbox code="register.name" path="registrationForm.name" />
-			<tag:textbox code="register.surname" path="registrationForm.surname" />
+			<tag:textbox code="register.username" path="username" />
+			<tag:password code="register.password" path="password" />
+			<tag:password code="register.password2" path="verifyPassword" />
+			<tag:textbox code="register.name" path="name" />
+			<tag:textbox code="register.surname" path="surname" />
 			<tag:textbox code="register.category1" path="category.cname" />
 			<tag:textbox code="register.date" path="date" />
-			<tag:textbox code="register.email" path="registrationForm.email" />
-			<tag:textbox code="register.phone" path="registrationForm.phone" />
-			<tag:textbox code="register.address" path="registrationForm.address" />
+			<tag:textbox code="register.email" path="email" />
+			<tag:textbox code="register.phone" path="phone" />
+			<tag:textbox code="register.address" path="address" />
 			
 			<tag:checkbox path="available" url="law/law.do" code="register.available" />
 			<br/>
@@ -37,14 +37,14 @@
 			<form:hidden path="id" />
 			<form:hidden path="version" />
 			
-			<tag:textbox code="register.username" path="registrationForm.username" />
-			<tag:password code="register.password" path="registrationForm.password" />
-			<tag:password code="register.password2" path="registrationForm.verifyPassword" />
-			<tag:textbox code="register.name" path="registrationForm.name" />
-			<tag:textbox code="register.surname" path="registrationForm.surname" />
-			<tag:textbox code="register.email" path="registrationForm.email" />
-			<tag:textbox code="register.phone" path="registrationForm.phone" />
-			<tag:textbox code="register.address" path="registrationForm.address" />
+			<tag:textbox code="register.username" path="username" />
+			<tag:password code="register.password" path="password" />
+			<tag:password code="register.password2" path="verifyPassword" />
+			<tag:textbox code="register.name" path="name" />
+			<tag:textbox code="register.surname" path="surname" />
+			<tag:textbox code="register.email" path="email" />
+			<tag:textbox code="register.phone" path="phone" />
+			<tag:textbox code="register.address" path="address" />
 			
 			<tag:select code= "register.players" path="player" items="${players}" itemLabel="fullName"/>
 			
@@ -61,15 +61,15 @@
 			<form:hidden path="version" />
 		
 			
-			<tag:textbox code="register.username" path="registrationForm.username" />
-			<tag:password code="register.password" path="registrationForm.password" />
-			<tag:password code="register.password2" path="registrationForm.verifyPassword" />
-			<tag:textbox code="register.name" path="registrationForm.name" />
-			<tag:textbox code="register.surname" path="registrationForm.surname" />
+			<tag:textbox code="register.username" path="username" />
+			<tag:password code="register.password" path="password" />
+			<tag:password code="register.password2" path="verifyPassword" />
+			<tag:textbox code="register.name" path="name" />
+			<tag:textbox code="register.surname" path="surname" />
 			<tag:textbox code="register.category1" path="category.cname" />
-			<tag:textbox code="register.email" path="registrationForm.email" />
-			<tag:textbox code="register.phone" path="registrationForm.phone" />
-			<tag:textbox code="register.address" path="registrationForm.address" />
+			<tag:textbox code="register.email" path="email" />
+			<tag:textbox code="register.phone" path="phone" />
+			<tag:textbox code="register.address" path="address" />
 			
 			<tag:checkbox path="available" url="law/law.do" code="register.available" />
 			<br/>

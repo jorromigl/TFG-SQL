@@ -18,14 +18,14 @@
 	<form:hidden path="version"/>
 	
 	
-		<tag:textbox code="display.username" path="registrationForm.username" readonly="true" />
-		<tag:textbox code="display.name" path="registrationForm.name" readonly="true"/>
-		<tag:textbox code="display.surname" path="registrationForm.surname" readonly="true"/>
+		<tag:textbox code="display.username" path="username" readonly="true" />
+		<tag:textbox code="display.name" path="name" readonly="true"/>
+		<tag:textbox code="display.surname" path="surname" readonly="true"/>
 		<tag:textbox code="display.category" path="category.cname" readonly="true"/>
 		<tag:textbox code="display.date" path="date" readonly="true"/>
-		<tag:textbox code="display.email" path="registrationForm.email" readonly="true" />
-		<tag:textbox code="display.phone" path="registrationForm.phone" readonly="true"/>
-		<tag:textbox code="display.address" path="registrationForm.address" readonly="true"/>
+		<tag:textbox code="display.email" path="email" readonly="true" />
+		<tag:textbox code="display.phone" path="phone" readonly="true"/>
+		<tag:textbox code="display.address" path="address" readonly="true"/>
 	
 	<%-- <jstl:if test="${incidence.photo!=null}">
 		<b><spring:message code="incidence.photo" /></b><br/><br/>
@@ -48,16 +48,16 @@
 	<form:hidden path="id"/>
 	<form:hidden path="version"/>
 		
-		<tag:textbox code="display.username" path="registrationForm.username" />
-		<tag:password code="display.password" path="registrationForm.password" />
-		<tag:password code="display.password2" path="registrationForm.verifyPassword"/>
-		<tag:textbox code="display.name" path="registrationForm.name" />
-		<tag:textbox code="display.surname" path="registrationForm.surname"/>
+		<tag:textbox code="display.username" path="username" />
+		<tag:password code="display.password" path="password" />
+		<tag:password code="display.password2" path="verifyPassword"/>
+		<tag:textbox code="display.name" path="name" />
+		<tag:textbox code="display.surname" path="surname"/>
 		<tag:textbox code="display.category" path="category.cname"/>
 		<tag:textbox code="display.date" path="date" readonly="true"/>
-		<tag:textbox code="display.email" path="registrationForm.email" />
-		<tag:textbox code="display.phone" path="registrationForm.phone"/>
-		<tag:textbox code="display.address" path="registrationForm.address"/>
+		<tag:textbox code="display.email" path="email" />
+		<tag:textbox code="display.phone" path="phone"/>
+		<tag:textbox code="display.address" path="address"/>
 	
 	<%-- <jstl:if test="${incidence.photo!=null}">
 		<b><spring:message code="incidence.photo" /></b><br/><br/>

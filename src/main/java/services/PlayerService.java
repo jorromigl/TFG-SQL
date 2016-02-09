@@ -17,8 +17,9 @@ import domain.Comment;
 import domain.Family;
 import domain.Folder;
 import domain.Player;
-import forms.PlayerRegistrationForm;
-import forms.RegistrationForm;
+import forms.PlayerForm;
+//import forms.PlayerRegistrationForm;
+//import forms.RegistrationForm;
 import repositories.PlayerRepository;
 import security.Authority;
 import security.LoginService;
@@ -95,73 +96,122 @@ public class PlayerService {
 	}
 
 	// Other business methods ------------------------
-		
-	public Player reconstruct(PlayerRegistrationForm registrationForm){
+	
+	//MIO CONCHI
+	public Player reconstruct(PlayerForm playerForm){
 		
 		Player result = create();
 			
-		result.setEmail(registrationForm.getRegistrationForm().getEmail());
-		result.setName(registrationForm.getRegistrationForm().getName());
-		result.setPhone(registrationForm.getRegistrationForm().getPhone());
-		result.setSurname(registrationForm.getRegistrationForm().getSurname());
-		result.setAddress(registrationForm.getRegistrationForm().getAddress());
+		result.setEmail(playerForm.getEmail());
+		result.setName(playerForm.getName());
+		result.setPhone(playerForm.getPhone());
+		result.setSurname(playerForm.getSurname());
+		result.setAddress(playerForm.getAddress());
 		
-		result.setCategory(registrationForm.getCategory());
-		result.setDate(registrationForm.getDate());
-		result.getUserAccount().setUsername(registrationForm.getRegistrationForm().getUsername());
-		result.getUserAccount().setPassword(registrationForm.getRegistrationForm().getPassword());
+		result.setCategory(playerForm.getCategory());
+		result.setDate(playerForm.getDate());
+		result.getUserAccount().setUsername(playerForm.getUsername());
+		result.getUserAccount().setPassword(playerForm.getPassword());
 			
 		return result;	
 	}
 	
-	public Player reconstructor2(PlayerRegistrationForm playerForm) throws SerialException, SQLException{
-		Player result;
+	//MIO CONCHI
+	public Player reconstructor2(PlayerForm playerForm) throws SerialException, SQLException{
+	Player result;
 
-		
-		result = playerRepository.findOne(playerForm.getId());		
+	
+	result = playerRepository.findOne(playerForm.getId());		
 
-		result.setId(playerForm.getId());
-		result.setVersion(playerForm.getVersion());
-		
-		result.setEmail(playerForm.getRegistrationForm().getEmail());
-		result.setName(playerForm.getRegistrationForm().getName());
-		result.setPhone(playerForm.getRegistrationForm().getPhone());
-		result.setSurname(playerForm.getRegistrationForm().getSurname());
-		result.setAddress(playerForm.getRegistrationForm().getAddress());
-		result.getCategory().setCname(playerForm.getCategory().getCname());
-		result.setDate(playerForm.getDate());
-		result.getUserAccount().setUsername(playerForm.getRegistrationForm().getUsername());
-		result.getUserAccount().setPassword(playerForm.getRegistrationForm().getPassword());
-		return result;
-	}
+	result.setId(playerForm.getId());
+	result.setVersion(playerForm.getVersion());
 	
-	public PlayerRegistrationForm createForm(Player player){
-		
-		PlayerRegistrationForm playerForm = new PlayerRegistrationForm();
-		
-		
-		playerForm.setId(player.getId());
-		playerForm.setVersion(player.getVersion());
-		RegistrationForm form= new RegistrationForm();
-		form.setEmail(player.getEmail());
-//		playerForm.setRegistrationForm().setEmail(player.getEmail());
-		
-		playerForm.setRegistrationForm(form);
-		playerForm.getRegistrationForm().setName(player.getName());
-		playerForm.getRegistrationForm().setPhone(player.getPhone());
-		playerForm.getRegistrationForm().setSurname(player.getSurname());
-		playerForm.getRegistrationForm().setAddress(player.getAddress());
-		playerForm.setAvailable(true);
-		Category c = new Category();
-		c.setCname(player.getCategory().getCname());
-		playerForm.setCategory(c);
-		playerForm.setDate(player.getDate());
-		playerForm.getRegistrationForm().setUsername(player.getUserAccount().getUsername());
-		playerForm.getRegistrationForm().setPassword(player.getUserAccount().getPassword());			
-			
-		return playerForm;
-	}
+	result.setEmail(playerForm.getEmail());
+	result.setName(playerForm.getName());
+	result.setPhone(playerForm.getPhone());
+	result.setSurname(playerForm.getSurname());
+	result.setAddress(playerForm.getAddress());
+	result.getCategory().setCname(playerForm.getCategory().getCname());
+	result.setDate(playerForm.getDate());
+	result.getUserAccount().setUsername(playerForm.getUsername());
+	result.getUserAccount().setPassword(playerForm.getPassword());
+	return result;
+}
 	
+	//MIO CONCHI
+	public PlayerForm createForm(Player player){
+	
+	PlayerForm playerForm = new PlayerForm();
+	
+	
+	playerForm.setId(player.getId());
+	playerForm.setVersion(player.getVersion());
+	playerForm.setEmail(player.getEmail());
+	
+	playerForm.setName(player.getName());
+	playerForm.setPhone(player.getPhone());
+	playerForm.setSurname(player.getSurname());
+	playerForm.setAddress(player.getAddress());
+	playerForm.setAvailable(true);
+	Category c = new Category();
+	c.setCname(player.getCategory().getCname());
+	playerForm.setCategory(c);
+	playerForm.setDate(player.getDate());
+	playerForm.setUsername(player.getUserAccount().getUsername());
+	playerForm.setPassword(player.getUserAccount().getPassword());			
+		
+	return playerForm;
+}
+
+	
+//	public Player reconstructor2(PlayerRegistrationForm playerForm) throws SerialException, SQLException{
+//		Player result;
+//
+//		
+//		result = playerRepository.findOne(playerForm.getId());		
+//
+//		result.setId(playerForm.getId());
+//		result.setVersion(playerForm.getVersion());
+//		
+//		result.setEmail(playerForm.getRegistrationForm().getEmail());
+//		result.setName(playerForm.getRegistrationForm().getName());
+//		result.setPhone(playerForm.getRegistrationForm().getPhone());
+//		result.setSurname(playerForm.getRegistrationForm().getSurname());
+//		result.setAddress(playerForm.getRegistrationForm().getAddress());
+//		result.getCategory().setCname(playerForm.getCategory().getCname());
+//		result.setDate(playerForm.getDate());
+//		result.getUserAccount().setUsername(playerForm.getRegistrationForm().getUsername());
+//		result.getUserAccount().setPassword(playerForm.getRegistrationForm().getPassword());
+//		return result;
+//	}
+	
+//	public PlayerRegistrationForm createForm(Player player){
+//		
+//		PlayerRegistrationForm playerForm = new PlayerRegistrationForm();
+//		
+//		
+//		playerForm.setId(player.getId());
+//		playerForm.setVersion(player.getVersion());
+//		RegistrationForm form= new RegistrationForm();
+//		form.setEmail(player.getEmail());
+////		playerForm.setRegistrationForm().setEmail(player.getEmail());
+//		
+//		playerForm.setRegistrationForm(form);
+//		playerForm.getRegistrationForm().setName(player.getName());
+//		playerForm.getRegistrationForm().setPhone(player.getPhone());
+//		playerForm.getRegistrationForm().setSurname(player.getSurname());
+//		playerForm.getRegistrationForm().setAddress(player.getAddress());
+//		playerForm.setAvailable(true);
+//		Category c = new Category();
+//		c.setCname(player.getCategory().getCname());
+//		playerForm.setCategory(c);
+//		playerForm.setDate(player.getDate());
+//		playerForm.getRegistrationForm().setUsername(player.getUserAccount().getUsername());
+//		playerForm.getRegistrationForm().setPassword(player.getUserAccount().getPassword());			
+//			
+//		return playerForm;
+//	}
+//	
 
 
 	public Player findByPrincipal() {

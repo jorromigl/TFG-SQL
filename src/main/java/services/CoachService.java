@@ -13,7 +13,7 @@ import domain.Admin;
 import domain.Coach;
 import domain.Comment;
 import domain.Folder;
-import forms.CoachRegistrationForm;
+import forms.CoachForm;
 import repositories.CoachRepository;
 import security.Authority;
 import security.LoginService;
@@ -98,19 +98,19 @@ public class CoachService {
 
 	// Other business methods ------------------------
 		
-	public Coach reconstruct(CoachRegistrationForm registrationForm){
+	public Coach reconstruct(CoachForm coachForm){
 		
 		Coach result = create();
 			
-		result.setEmail(registrationForm.getRegistrationForm().getEmail());
-		result.setName(registrationForm.getRegistrationForm().getName());
-		result.setPhone(registrationForm.getRegistrationForm().getPhone());
-		result.setSurname(registrationForm.getRegistrationForm().getSurname());
-		result.setAddress(registrationForm.getRegistrationForm().getAddress());
-		result.setCategory(registrationForm.getCategory());
-//		result.setPhoto(registrationForm.getPhoto());
-		result.getUserAccount().setUsername(registrationForm.getRegistrationForm().getUsername());
-		result.getUserAccount().setPassword(registrationForm.getRegistrationForm().getPassword());
+		result.setEmail(coachForm.getEmail());
+		result.setName(coachForm.getName());
+		result.setPhone(coachForm.getPhone());
+		result.setSurname(coachForm.getSurname());
+		result.setAddress(coachForm.getAddress());
+		result.setCategory(coachForm.getCategory());
+//		result.setPhoto(coachForm.getPhoto());
+		result.getUserAccount().setUsername(coachForm.getUsername());
+		result.getUserAccount().setPassword(coachForm.getPassword());
 			
 		return result;	
 	}

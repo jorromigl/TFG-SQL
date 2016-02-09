@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import controllers.ErrorController;
 import domain.Family;
 import domain.Player;
-import forms.FamilyRegistrationForm;
+import forms.FamilyForm;
 import services.FamilyService;
 import services.PlayerService;
 
@@ -45,7 +45,7 @@ public class FamilyController extends ErrorController {
 		public ModelAndView create(){
 			
 			ModelAndView result;
-			FamilyRegistrationForm familyForm = new FamilyRegistrationForm();
+			FamilyForm familyForm = new FamilyForm();
 			result = createModelAndView(familyForm);
 			
 			return result;
@@ -54,12 +54,12 @@ public class FamilyController extends ErrorController {
 		
 		// Save
 		@RequestMapping(value = "/register", method = RequestMethod.POST, params = "save")
-		public ModelAndView save(@Valid FamilyRegistrationForm familyForm, BindingResult bindingResult) {
+		public ModelAndView save(@Valid FamilyForm familyForm, BindingResult bindingResult) {
 			ModelAndView result;
 			
 			Family family = familyService.reconstruct(familyForm);
 			
-			if(familyForm.getAvailable() && familyForm.getRegistrationForm().getVerifyPassword().equals(familyForm.getRegistrationForm().getPassword())){
+			if(familyForm.getAvailable() && familyForm.getVerifyPassword().equals(familyForm.getPassword())){
 				if (bindingResult.hasErrors()) {
 					result = createModelAndView(familyForm);
 
@@ -89,7 +89,7 @@ public class FamilyController extends ErrorController {
 
 		// Ancillary methods ---------------------------------------------------------
 		
-			protected ModelAndView createModelAndView(FamilyRegistrationForm familyForm){
+			protected ModelAndView createModelAndView(FamilyForm familyForm){
 				
 				ModelAndView result;
 				
@@ -98,7 +98,7 @@ public class FamilyController extends ErrorController {
 				return result;
 			}
 			
-			protected ModelAndView createModelAndView(FamilyRegistrationForm familyForm, String message){
+			protected ModelAndView createModelAndView(FamilyForm familyForm, String message){
 				
 				ModelAndView result;
 				Collection<Player> players= playerService.findAll();

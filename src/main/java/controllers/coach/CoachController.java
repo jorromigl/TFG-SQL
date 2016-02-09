@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
 import domain.Coach;
-import forms.CoachRegistrationForm;
+import forms.CoachForm;
 import services.CoachService;
 
 @Controller
@@ -55,7 +55,7 @@ public class CoachController extends ErrorController {
 			public ModelAndView create(){
 				
 				ModelAndView result;
-				CoachRegistrationForm coachForm = new CoachRegistrationForm();
+				CoachForm coachForm = new CoachForm();
 				
 				result = createModelAndView(coachForm);
 				
@@ -66,14 +66,14 @@ public class CoachController extends ErrorController {
 			
 			// Save
 			@RequestMapping(value = "/register", method = RequestMethod.POST, params = "save")
-			public ModelAndView save(@Valid CoachRegistrationForm coachForm, BindingResult bindingResult) {
+			public ModelAndView save(@Valid CoachForm coachForm, BindingResult bindingResult) {
 				ModelAndView result;
 				
 				Coach coach = coachService.reconstruct(coachForm);
 				
 				
 				
-				if(coachForm.getAvailable() && coachForm.getRegistrationForm().getVerifyPassword().equals(coachForm.getRegistrationForm().getPassword())){
+				if(coachForm.getAvailable() && coachForm.getVerifyPassword().equals(coachForm.getPassword())){
 					
 					if (bindingResult.hasErrors()) {
 						result = createModelAndView(coachForm);
@@ -122,7 +122,7 @@ public class CoachController extends ErrorController {
 
 			// Ancillary methods ---------------------------------------------------------
 			
-				protected ModelAndView createModelAndView(CoachRegistrationForm coachForm){
+				protected ModelAndView createModelAndView(CoachForm coachForm){
 					
 					ModelAndView result;
 					
@@ -131,7 +131,7 @@ public class CoachController extends ErrorController {
 					return result;
 				}
 				
-				protected ModelAndView createModelAndView(CoachRegistrationForm coachForm, String message){
+				protected ModelAndView createModelAndView(CoachForm coachForm, String message){
 					
 					ModelAndView result;
 								
