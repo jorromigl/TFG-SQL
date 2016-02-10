@@ -9,8 +9,6 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-
-
 <display:table name="matches" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
 
 	<spring:message code="match.rival" var="rival" />
@@ -23,7 +21,12 @@
 	<display:column property="moment" title="${moment}"  />
 	<jstl:if test="${isFuture==false and isAll==false}">
 	<display:column >
+	<jstl:if test="${row.summary!= null}">
 		<a href="summary/coach/displayA.do?matchId=${row.id}" ><spring:message code="match.display" /></a>
+	</jstl:if>
+	<jstl:if test="${row.summary== null}">
+		<a href="summary/coach/create.do?matchId=${row.id}" ><spring:message code="match.summary.create" /></a>
+	</jstl:if>
 	</display:column>
 	</jstl:if>
 	<jstl:if test="${isFuture==true}">

@@ -1,13 +1,14 @@
 package services;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import domain.Coach;
+import domain.Match;
 import domain.Summary;
 import repositories.SummaryRepository;
 
@@ -21,23 +22,34 @@ public class SummaryService {
 	
 	// Services
 	
+	@Autowired
+	private MatchService matchService;
+	
+	@Autowired
+	private CoachService coachService;
+	
 	// Constructor
 	public SummaryService() {
 		super();
 	}
 
 
-	public Summary create() {
+	public Summary create(int id) {
+		
 		Summary s = new Summary();
-
+		s.setMatch(matchService.findOne(id));
+		
 		return s;
 	}
 	
 	public void save(Summary s){
 		Assert.notNull(s);
-		Date date = new Date();
-		date.setSeconds(date.getSeconds()+1);
-		Assert.isTrue(s.getMoment().after(date));
+		
+		Match m = matchService.findOne(s.getMatch().getId());
+		Coach c= coachService.findOne(coachService.findByPrincipal().getId());
+		s.setCoach(c);
+		m.setSummary(s);
+		
 		
 		summaryRepository.save(s);
 	}

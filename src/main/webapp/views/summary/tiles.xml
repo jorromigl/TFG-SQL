@@ -5,7 +5,12 @@
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
        
 <tiles-definitions>
-
+	
+	<definition name="summary/edit" extends="principal.page">	
+		<put-attribute name="title" value="Edit Summary" />
+		<put-attribute name="body" value="/views/summary/edit.jsp" />
+	</definition>
+	
 	<definition name="summary/display" extends="principal.page">	
 		<put-attribute name="title" value="Summary Display" />
 		<put-attribute name="body" value="/views/summary/display.jsp" />

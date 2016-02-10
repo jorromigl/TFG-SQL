@@ -18,7 +18,6 @@
 	
 	
 		<tag:textbox code="display.text" path="text" readonly="true" />
-		<tag:textbox code="display.moment" path="moment" readonly="true"/>
 		<tag:textbox code="display.subject" path="subject" readonly="true"/>
 		
 	

@@ -985,7 +985,6 @@
 	
 	
 	<bean id="summary1" class="domain.Summary">
-		<property name="moment" value="02/02/2015 10:00"/>
 		<property name="text" value="Resumen summary 1."/>
 		<property name="subject" value="revision"/>
 		<property name="coach" ref="coach1"/>

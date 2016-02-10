@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import domain.Coach;
 import domain.Match;
 import repositories.MatchRepository;
 
@@ -19,6 +20,9 @@ public class MatchService {
 	// Managed repository
 	@Autowired
 	private MatchRepository matchRepository;
+	
+	@Autowired
+	private CoachService coachService;
 	
 	// Services
 	
@@ -39,7 +43,9 @@ public class MatchService {
 		Date date = new Date();
 		date.setSeconds(date.getSeconds()+1);
 		Assert.isTrue(m.getMoment().after(date));
+		Coach c= coachService.findOne(coachService.findByPrincipal().getId());
 		
+		m.setCoach(c);
 		matchRepository.save(m);
 	}
 	

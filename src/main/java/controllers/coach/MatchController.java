@@ -74,8 +74,8 @@ public class MatchController extends ErrorController {
 			Collection<Match> matches;
 			
 			matches = matchService.findPast();
-									
-			result = new ModelAndView("match/list");
+			
+			result = new ModelAndView("match/list");			
 			result.addObject("isAll", false);
 			result.addObject("isFuture", false);
 			result.addObject("matches", matches);

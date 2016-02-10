@@ -1,13 +1,19 @@
 package controllers.coach;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
 import domain.Summary;
+import services.MatchService;
 import services.SummaryService;
 
 @Controller
@@ -17,6 +23,9 @@ public class SummaryController extends ErrorController {
 		
 			@Autowired
 			private SummaryService summaryService;
+			
+			@Autowired
+			private MatchService matchService;
 				
 		
 		// Constructors -----------------------------------------------------------
@@ -90,16 +99,16 @@ public class SummaryController extends ErrorController {
 					return result;
 				}
 //		// Create
-//		@RequestMapping(value = "/coach/create", method = RequestMethod.GET)
-//		public ModelAndView create() {
-//			ModelAndView result;
-//			Match match;
-//			
-//			match = matchService.create();
-//				
-//			result = createModelAndView(match);	
-//			return result;
-//		}
+		@RequestMapping(value = "/coach/create", method = RequestMethod.GET)
+		public ModelAndView create(@RequestParam int matchId) {
+			ModelAndView result;
+			Summary summary;
+			
+			summary = summaryService.create(matchId);
+				
+			result = createModelAndView(summary);
+			return result;
+		}
 //		
 //		// Edit
 //		@RequestMapping(value = "/coach/edit", method = RequestMethod.GET)
@@ -114,22 +123,23 @@ public class SummaryController extends ErrorController {
 //		}
 //		
 //		// Save
-//		@RequestMapping(value = "/coach/edit", method = RequestMethod.POST, params = "save")
-//		public ModelAndView save(@Valid @ModelAttribute Match match, BindingResult bindingResult) {
-//			ModelAndView result;
-//
-//			if (bindingResult.hasErrors()) {
-//				result = createModelAndView(match);
-//			} else {
-//				try {
-//					matchService.save(match);
-//					result = new ModelAndView("redirect:../../match/listAll.do");
-//				} catch (Throwable error) {
-//					result = createModelAndView(match, "match.commit.error");
-//				}
-//			}
-//			return result;
-//		}
+		@RequestMapping(value = "/coach/edit", method = RequestMethod.POST, params = "save")
+		public ModelAndView save(@Valid @ModelAttribute Summary summary, BindingResult bindingResult) {
+			ModelAndView result;
+
+			if (bindingResult.hasErrors()) {
+				result = createModelAndView(summary);
+			} else {
+				try {
+					
+					summaryService.save(summary);
+					result = new ModelAndView("redirect:../../match/coach/listPast.do");
+				} catch (Throwable error) {
+					result = createModelAndView(summary, "summary.commit.error");
+				}
+			}
+			return result;
+		}
 		
 //		//Delete
 //		
