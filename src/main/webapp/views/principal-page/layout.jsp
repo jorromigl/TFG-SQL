@@ -26,12 +26,45 @@
 
 <link rel="shortcut icon" href="favicon.ico" />
 
+
+
+<script src="../assets/js/ie8-responsive-file-warning.js"></script>
+
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
+<!-- Bootstrap core CSS -->
+
+<link href="styles/style.css" rel="stylesheet">
+<link href="styles/bootstrap.min.css" rel="stylesheet">
+
+<link href="styles/font-awesome.min.css" rel="stylesheet">
+<link href="styles/animate.min.css" rel="stylesheet">
+
+
+
+<!-- Custom styling plus plugins -->
+<link href="styles/custom.css" rel="stylesheet">
+<link href="styles/green.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+
+
+<!-- END Bootstrap core CSS -->
+
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/jquery-ui.js"></script>
 <script type="text/javascript" src="scripts/jmenu.js"></script>
 
+
 <link rel="stylesheet" href="styles/common.css" type="text/css">
-<link rel="stylesheet" href="styles/jmenu.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="styles/jmenu.css" media="screen"
+	type="text/css" />
 <link rel="stylesheet" href="styles/displaytag.css" type="text/css">
 
 <title><tiles:insertAttribute name="title" ignore="true" /></title>

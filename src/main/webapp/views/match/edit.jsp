@@ -24,5 +24,5 @@
 		<tag:submit code="match.delete" name="delete" />
 	</jstl:if>
 		
-	<tag:cancel code="match.cancel" url="match/coach/list.do" />
+	<tag:cancel code="match.cancel" url="principal/index.do" />
 </form:form>

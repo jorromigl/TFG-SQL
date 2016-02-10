@@ -7,7 +7,7 @@
 <tiles-definitions>
 
 	<definition name="principal/index" extends="principal.page">	
-		<put-attribute name="title" value="¡Bienvenidos!" />
+<!-- 		<put-attribute name="title" value="¡Bienvenidos!" /> -->
 		<put-attribute name="body" value="/views/principal/index.jsp" />
 	</definition>
 	
