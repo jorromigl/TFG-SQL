@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
 import domain.Summary;
+import repositories.SummaryRepository;
 import services.MatchService;
 import services.SummaryService;
 
@@ -26,6 +27,9 @@ public class SummaryController extends ErrorController {
 			
 			@Autowired
 			private MatchService matchService;
+
+			@Autowired
+			private SummaryRepository summaryRepository;
 				
 		
 		// Constructors -----------------------------------------------------------
@@ -133,6 +137,9 @@ public class SummaryController extends ErrorController {
 				try {
 					
 					summaryService.save(summary);
+//					int id= summary.getId()-1;
+//					summaryRepository.delete(summaryService.findOne(id));
+				
 					result = new ModelAndView("redirect:../../match/coach/listPast.do");
 				} catch (Throwable error) {
 					result = createModelAndView(summary, "summary.commit.error");

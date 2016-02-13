@@ -11,6 +11,7 @@ import org.springframework.util.Assert;
 
 import domain.Coach;
 import domain.Match;
+import domain.Summary;
 import repositories.MatchRepository;
 
 @Service
@@ -23,6 +24,9 @@ public class MatchService {
 	
 	@Autowired
 	private CoachService coachService;
+	
+	@Autowired
+	private SummaryService summaryService;
 	
 	// Services
 	
@@ -78,13 +82,20 @@ public class MatchService {
 	public Collection<Match> findPast(){
 		Collection<Match> matches = matchRepository.findAll();
 		Collection<Match> past = new ArrayList<Match>();
+		Collection<Summary> summaries = summaryService.findAll();
 		Date date= new Date();
-		
+		for(Summary s: summaries){	
 		for(Match m: matches){
+			if(s.getMatch().getId()==m.getId()){
+				m.setSummary(s);
+			}
+		
 			if(m.getMoment().before(date))
 				past.add(m);
 			
+			}
 		}
+		
 		
 		return 	past;
 		

@@ -44,12 +44,10 @@ public class SummaryService {
 	
 	public void save(Summary s){
 		Assert.notNull(s);
-		
-		Match m = matchService.findOne(s.getMatch().getId());
+
 		Coach c= coachService.findOne(coachService.findByPrincipal().getId());
 		s.setCoach(c);
-		m.setSummary(s);
-		
+//		s.getMatch().getSummary().setId(s.getId());  se queda el partido sin tener un resumen asociao
 		
 		summaryRepository.save(s);
 	}
