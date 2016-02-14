@@ -44,7 +44,7 @@ public class CommentController extends ErrorController {
 
 		result = new ModelAndView("comment/list");
 		result.addObject("comments", comments);
-		result.addObject("requestURI", "comments/listByMatch.do");
+		result.addObject("requestURI", "comment/listByMatch.do");
 
 		return result;
 	}
