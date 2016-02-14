@@ -28,6 +28,9 @@ public class CommentService {
 	@Autowired
 	private AdminService adminService;
 	
+	@Autowired
+	private MatchService matchService;
+	
 	// Constructor
 	public CommentService() {
 		
@@ -51,7 +54,7 @@ public class CommentService {
 	@SuppressWarnings("deprecation")
 	public void save(Comment c) {   
 		Assert.notNull(c);
-		Assert.isTrue(c.getUser().equals(userService.findByPrincipal()));
+		c.setUser(userService.findByPrincipal());
 		
 		Date date = new Date();
 		date.setSeconds(date.getSeconds()+1);
@@ -82,7 +85,10 @@ public class CommentService {
 	}
 	
 	public Collection<Comment> findByMatch(int id) {
-		return commentRepository.findByMatch(id);
+		Match m = matchService.findOne(id);
+		Collection<Comment> c = m.getComments();
+		return c;
+		
 	}
 
 }

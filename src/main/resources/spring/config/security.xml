@@ -42,6 +42,8 @@
 		
 		<security:intercept-url pattern="/comment/listByMatch.do" access="permitAll" />
 		<security:intercept-url pattern="/comment/display.do" access="permitAll" />
+		<security:intercept-url pattern="/comment/create.do" access="permitAll" />
+		<security:intercept-url pattern="/comment/edit.do" access="permitAll" />
 		<security:intercept-url pattern="/comment/admin/delete.do" access="hasRole('ADMIN')" />
 		
 		<security:intercept-url pattern="/views/error/index.jsp" access="permitAll" />

@@ -32,5 +32,6 @@
 			
 </display:table>
 	
+	
 	<tag:button code="comment.return" url="principal/index.do'" />
-
+	

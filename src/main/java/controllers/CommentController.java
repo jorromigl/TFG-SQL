@@ -87,7 +87,7 @@ public class CommentController extends ErrorController {
 		} else {
 			try {
 				commentService.save(c);
-				result = new ModelAndView("redirect:../../match/listAll.do");
+				result = new ModelAndView("redirect:/match/listAll.do");
 			} catch (Throwable oops) {
 				result = createModelAndView(c, "comment.commit.error");
 			}
