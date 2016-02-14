@@ -39,8 +39,6 @@ public class Player extends User {
 		this.date = date;
 	}
 	
-
-	@Valid
 	public Category getCategory() {
 		return category;
 	}
@@ -49,13 +47,11 @@ public class Player extends User {
 	}
 	
 	private Collection<Family> families;
-//	private Collection<Comment> comments;
 	private Squadra squadra;
 	private Collection<Recruitment> recruitments;
 
 	
 	@NotNull
-//	@OneToMany(mappedBy="player", cascade=CascadeType.ALL)
 	@OneToMany(mappedBy="player")
 	public Collection<Family> getFamilies() {
 		return families;
@@ -89,11 +85,5 @@ public class Player extends User {
 	public void setRecruitments(Collection<Recruitment> recruitments) {
 		this.recruitments = recruitments;
 	}
-	
-	public String toString() {
-		return "Player  [date=" + date + ", category="
-				+ category +"]";
-	}
-	
 
 }

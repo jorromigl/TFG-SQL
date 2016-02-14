@@ -17,6 +17,7 @@
 		<value>/views/admin/tiles.xml</value>
 		<value>/views/coach/tiles.xml</value>
 		<value>/views/player/tiles.xml</value>
+		<value>/views/comment/tiles.xml</value>
 		<value>/views/profile/tiles.xml</value>
 		
 		<value>/views/match/tiles.xml</value>

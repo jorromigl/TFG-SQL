@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
@@ -7,6 +8,7 @@ import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -63,6 +65,7 @@ public class Match extends DomainEntity {
 	private Coach coach;
 	private Summary summary;
 	private Recruitment recruitment;
+	private Collection<Comment> comments;
 
 //	@ManyToOne(optional=false)
 	@ManyToOne //para populate
@@ -92,6 +95,15 @@ public class Match extends DomainEntity {
 
 	public void setRecruitment(Recruitment recruitment) {
 		this.recruitment = recruitment;
+	}
+	
+	@OneToMany(mappedBy = "match")
+	public Collection<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(Collection<Comment> comment) {
+		this.comments = comment;
 	}
 	
 	public String toString(){

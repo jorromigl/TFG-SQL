@@ -251,11 +251,7 @@
 		<property name="userAccount" ref="userAccount1" />
 		<property name="phone" value="+34655655655" />
 		<property name="address" value="calle hinojo 13" />
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
+
 		<property name="folders">
 			<list>
 				<ref bean="folder1" />
@@ -319,11 +315,7 @@
 			<ref bean="match1" />
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
+
 		<property name="squadras">
 			<list>
 			<ref bean="squadra1" />
@@ -354,13 +346,9 @@
 		</property>
 		<property name="matches">
 			<list>
-							</list>
-		</property>
-		<property name="comments">
-			<list>
-				
 			</list>
 		</property>
+
 		<property name="squadras">
 			<list>
 			
@@ -458,14 +446,9 @@
 				<ref bean="family2" />
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-				<ref bean="comment1" />
-			</list>
-		</property>
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -492,13 +475,10 @@
 				<ref bean="family3" />
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-			</list>
-		</property>
+
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -525,14 +505,10 @@
 			
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-		
-			</list>
-		</property>
+
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -559,14 +535,10 @@
 			
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-			
-			</list>
-		</property>
+
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -593,14 +565,10 @@
 				
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
+
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -627,14 +595,10 @@
 				
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
+
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -661,14 +625,10 @@
 				
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
+		
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -695,14 +655,10 @@
 				
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
+
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -729,14 +685,9 @@
 			
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-			
-			</list>
-		</property>
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -763,14 +714,9 @@
 				
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -797,14 +743,10 @@
 			
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-			
-			</list>
-		</property>
+	
 		<property name="recruitments">
 			<list>
-				
+				<ref bean="recruitment1" />
 			</list>
 		</property>
 		<property name="squadra" ref="squadra1" />
@@ -831,11 +773,7 @@
 				
 			</list>
 		</property>
-		<property name="comments">
-			<list>
-				
-			</list>
-		</property>
+	
 		<property name="recruitments">
 			<list>
 				
@@ -864,10 +802,6 @@
 			<list>
 				
 			</list>
-		</property>
-		<property name="comments">
-			<list>
-							</list>
 		</property>
 		<property name="recruitments">
 			<list>
@@ -902,7 +836,7 @@
 		<property name="userAccount" ref="userAccount15" />
 		<property name="comments">
 			<list>
-				
+
 			</list>
 		</property>
 		<property name="player" ref="player1" />
@@ -975,6 +909,12 @@
 		<property name="coach" ref="coach1" />
 		<property name="summary" ref="summary1"/>
 		<property name="recruitment" ref="recruitment1" />
+		<property name="comments">
+			<list>
+				<ref bean="comment1" />
+				<ref bean="comment2" />	
+			</list>
+		</property>
 	</bean>
 	
 	
@@ -1027,13 +967,15 @@
 		<property name="text" value="El partido no debio llevarselo el equipo contrario."/>
 		<property name="subject" value="revision"/>
 		<property name="user" ref="coach1"/>
+		<property name="match" ref="match1"/>
 	</bean>	
 	
 	<bean id="comment2" class="domain.Comment">
-		<property name="moment" value="02/02/2015 10:00"/>
+		<property name="moment" value="02/02/2015 10:01"/>
 		<property name="text" value="El jugador con dorsal 10 tuvo que ser expulsado."/>
-		<property name="subject" value="revision"/>
-		<property name="user" ref="player1"/>
+		<property name="subject" value="titulo comentario 2"/>
+		<property name="user" ref="coach2"/>
+		<property name="match" ref="match1"/>
 	</bean>
 	
 	

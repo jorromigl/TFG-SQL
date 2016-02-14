@@ -37,6 +37,11 @@
 		<a href="match/coach/delete.do?matchId=${row.id}" ><spring:message code="match.delete" /></a>
 	</display:column>
 	</jstl:if>
+	<jstl:if test="${row.comments != null}">
+	<display:column >
+		<a href="comment/listByMatch.do?matchId=${row.id}" ><spring:message code="match.comment" /></a>
+	</display:column>
+	</jstl:if>
 	<%-- <display:column >
 			<a href="coach/displayA.do?coachId=${row.id}" ><spring:message code="coach.display" /></a>
 	</display:column>

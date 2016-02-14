@@ -27,9 +27,6 @@
 
 		<security:intercept-url pattern="/principal/index.do" access="permitAll" />
 		
-		<security:intercept-url pattern="/admin/action-1.do" access="hasRole('ADMIN')" />
-		<security:intercept-url pattern="/admin/action-2.do" access="hasRole('ADMIN')" />
-		
 		<security:intercept-url pattern="/player/displayA.do" access="hasRole('PLAYER')" />
 		<security:intercept-url pattern="/player/displayB.do" access="hasRole('PLAYER')" />
 		
@@ -42,6 +39,10 @@
 		<security:intercept-url pattern="/summary/coach/displayA.do" access="permitAll" />
 		<security:intercept-url pattern="/summary/displayB.do" access="hasRole('COACH')" />
 		<security:intercept-url pattern="/summary/coach/**" access="hasRole('COACH')" />
+		
+		<security:intercept-url pattern="/comment/listByMatch.do" access="permitAll" />
+		<security:intercept-url pattern="/comment/display.do" access="permitAll" />
+		<security:intercept-url pattern="/comment/admin/delete.do" access="hasRole('ADMIN')" />
 		
 		<security:intercept-url pattern="/views/error/index.jsp" access="permitAll" />
 		

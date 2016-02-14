@@ -15,6 +15,7 @@
 		
 		<value>/views/admin/messages</value>
 		<value>/views/coach/messages</value>
+		<value>/views/comment/messages</value>
 		<value>/views/player/messages</value>
 		<value>/views/profile/messages</value>
 		<value>/views/match/messages</value>

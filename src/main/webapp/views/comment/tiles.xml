@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+
+	<definition name="comment/list" extends="principal.page">	
+		<put-attribute name="title" value="List comment" />
+		<put-attribute name="body" value="/views/comment/list.jsp" />
+	</definition>
+	
+	
+
+	<definition name="comment/edit" extends="principal.page">	
+		<put-attribute name="title" value="Write comment" />
+		<put-attribute name="body" value="/views/comment/edit.jsp" />
+	</definition>
+	
+	<definition name="comment/display" extends="principal.page">	
+		<put-attribute name="title" value="Show comment" />
+		<put-attribute name="body" value="/views/comment/display.jsp" />
+	</definition>
+	
+</tiles-definitions>
