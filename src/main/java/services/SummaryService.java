@@ -47,11 +47,10 @@ public class SummaryService {
 
 		Coach c= coachService.findOne(coachService.findByPrincipal().getId());
 		s.setCoach(c);
-//		s.getMatch().getSummary().setId(s.getId());  se queda el partido sin tener un resumen asociao
 		
 		summaryRepository.save(s);
 	}
-	
+		
 	public void delete(Summary s) {
 		Assert.notNull(s);
 		summaryRepository.delete(s);
