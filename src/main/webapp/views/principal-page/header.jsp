@@ -82,6 +82,8 @@
 							code="master.page.match.listPast" /></a></li>
 				<li><a href="match/coach/create.do"><spring:message
 					code="master.page.coach.createMatch" /> </a></li>
+				<li><a href="player/coach/listPlayerSameCategoryCoach.do"><spring:message
+					code="master.page.coach.listPlayerCategory" /> </a></li>
 			</ul>
 		
 					</div>

@@ -11,4 +11,9 @@
 		<put-attribute name="body" value="/views/player/display.jsp" />
 	</definition>
 	
+	<definition name="player/list" extends="principal.page">	
+		<put-attribute name="title" value="Player List" />
+		<put-attribute name="body" value="/views/player/list.jsp" />
+	</definition>
+	
 </tiles-definitions>

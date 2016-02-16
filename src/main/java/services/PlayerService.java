@@ -13,9 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Category;
+import domain.Coach;
 import domain.Comment;
 import domain.Family;
 import domain.Folder;
+import domain.Match;
 import domain.Player;
 import forms.PlayerForm;
 //import forms.PlayerRegistrationForm;
@@ -36,6 +38,9 @@ public class PlayerService {
 	
 	@Autowired
 	private FolderService folderService;
+	
+	@Autowired
+	private CoachService coachService;
 
 
 	// Services	
@@ -236,6 +241,10 @@ public class PlayerService {
 		return playerRepository.findOne(id);
 	}
 	
+	public void delete(Player p) {
+		Assert.notNull(p);
+		playerRepository.delete(p);
+	}
 
 	public void save2(Player player){
 		Assert.notNull(player);
@@ -244,4 +253,23 @@ public class PlayerService {
 					
 	}
 	
+	//Listar los Jugadores cuya categoria sea igual a la categoria del Coach que está autentificado
+	public Collection<Player> findPlayerSameCategoryCoach() {
+		Coach coachConnect = coachService.findByPrincipal();
+		String categoryUser = coachConnect.getCategory().getCname();
+		Collection<Player> players;
+		players = playerRepository.findAllPlayersSameCategoryCoach(categoryUser);
+		return players;
+	}
+	
+//	public void squadra(Player p) {
+//		Coach coachConnect = coachService.findByPrincipal();
+//		if (!coachConnect.getSquadraPlayers().contains(p)) {
+//			coachConnect.add(p);
+//			p.add(coachConnect);
+//		}
+
+//	}
+	
+
 }
