@@ -21,6 +21,7 @@ public class MatchService {
 	// Managed repository
 	@Autowired
 	private MatchRepository matchRepository;
+	// Services
 	
 	@Autowired
 	private CoachService coachService;
@@ -28,7 +29,7 @@ public class MatchService {
 	@Autowired
 	private SummaryService summaryService;
 	
-	// Services
+	
 	
 	// Constructor
 	public MatchService() {

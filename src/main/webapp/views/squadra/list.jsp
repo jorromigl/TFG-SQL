@@ -8,10 +8,18 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<display:table name="squadra" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
+<display:table name="squadras" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
 
+	<spring:message code="squadra.category.cname" var="category.cname" />
+	<display:column property="category.cname" title="${category}" sortable="${true}" />
 	
+	<spring:message code="squadra.name" var="name" />
+	<display:column property="name" title="${name}" sortable="${true}" />
+	
+	<display:column >
+		<a href="player/coach/listPlayerSameCategoryCoach.do" ><spring:message code="squadra.player" /></a>
+	</display:column>
 
 </display:table>
 	
-	<tag:button code="match.return" url="principal/index.do'" />
+	<tag:button code="squadra.return" url="principal/index.do'" />

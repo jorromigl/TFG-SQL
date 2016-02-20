@@ -44,6 +44,8 @@
 		<security:intercept-url pattern="/summary/edit.do" access="hasRole('COACH')" />
 		<security:intercept-url pattern="/summary/coach/**" access="hasRole('COACH')" />
 		
+		<security:intercept-url pattern="/recruitment/coach/**" access="hasRole('COACH')" />
+		
 		<security:intercept-url pattern="/comment/listByMatch.do" access="permitAll" />
 		<security:intercept-url pattern="/comment/display.do" access="permitAll" />
 		<security:intercept-url pattern="/comment/create.do" access="permitAll" />

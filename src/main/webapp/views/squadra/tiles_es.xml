@@ -11,5 +11,10 @@
 		<put-attribute name="title" value="Listar Equipo" />
 		<put-attribute name="body" value="/views/squadra/list.jsp" />
 	</definition>
-		
+	
+	
+	<definition name="squadra/edit" extends="principal.page">	
+		<put-attribute name="title" value="Editar Equipo" />
+		<put-attribute name="body" value="/views/squadra/edit.jsp" />
+	</definition>
 </tiles-definitions>

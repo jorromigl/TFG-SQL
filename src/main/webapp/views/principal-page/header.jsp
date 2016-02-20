@@ -84,6 +84,14 @@
 					code="master.page.coach.createMatch" /> </a></li>
 				<li><a href="player/coach/listPlayerSameCategoryCoach.do"><spring:message
 					code="master.page.coach.listPlayerCategory" /> </a></li>
+				<li><a href="recruitment/coach/listPast.do"><spring:message
+					code="master.page.coach.recruitmentsListPast" /> </a></li>
+				<li><a href="recruitment/coach/listFuture.do"><spring:message
+					code="master.page.coach.recruitmentsListFuture" /> </a></li>
+				<li><a href="squadra/coach/create.do"><spring:message
+					code="master.page.coach.createSquadra" /> </a></li>
+				<li><a href="squadra/coach/mysquadra.do"><spring:message
+					code="master.page.coach.mySquadra" /> </a></li>
 			</ul>
 		
 					</div>
