@@ -82,7 +82,6 @@ public class SquadraCoachController extends ErrorController {
 
 		return result;
 	}
-	
 
 	// Create
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
@@ -93,20 +92,24 @@ public class SquadraCoachController extends ErrorController {
 		squadra = squadraService.create();
 
 		result = createModelAndView(squadra);
+		result.addObject("details", false);
 		return result;
 	}
 
-	// Edit
-	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	// Details
+	@RequestMapping(value = "/details", method = RequestMethod.GET)
 	public ModelAndView edit(@RequestParam int squadraId) {
 		ModelAndView result;
 		Squadra squadra;
 
 		squadra = squadraService.findOne(squadraId);
 
-		result = createModelAndView(squadra);
+		result = new ModelAndView("squadra/edit");
+		result.addObject("squadra", squadra);
+		result.addObject("details", true);
 		return result;
 	}
+
 
 	// Save
 	@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "save")

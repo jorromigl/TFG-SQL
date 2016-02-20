@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
 import domain.Player;
+import domain.Squadra;
 import services.PlayerService;
+import services.SquadraService;
 
 @Controller
 @RequestMapping("/player/coach")
@@ -21,7 +24,9 @@ public class PlayerCoachController extends ErrorController {
 
 	@Autowired
 	private PlayerService playerService;
-
+	
+	@Autowired
+	private SquadraService squadraService;
 	// Constructors -----------------------------------------------------------
 
 	public PlayerCoachController() {
@@ -42,7 +47,23 @@ public class PlayerCoachController extends ErrorController {
 
 		return result;
 	}
+	
+	// Lista de jugadores de su equipo
+	@RequestMapping(value = "/listPlayersSquadra", method = RequestMethod.GET)
+	public ModelAndView listPlayersSquadra(@RequestParam int squadraId) {
+		ModelAndView result;
+		Collection<Player> players;
+		Squadra s;
+		
+		s = squadraService.findOne(squadraId);
+		players = playerService.findPlayersSquadra(s);
 
+		result = new ModelAndView("player/list");
+		result.addObject("players", players);
+		result.addObject("requestURI", "player/coach/listPlayersSquadra.do");
+
+		return result;
+	}
 	
 
 	//Squadra

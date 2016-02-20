@@ -10,16 +10,14 @@
 
 <display:table name="squadras" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
 
-	<spring:message code="squadra.category.cname" var="category.cname" />
-	<display:column property="category.cname" title="${category}" sortable="${true}" />
 	
 	<spring:message code="squadra.name" var="name" />
 	<display:column property="name" title="${name}" sortable="${true}" />
 	
 	<display:column >
-		<a href="player/coach/listPlayerSameCategoryCoach.do" ><spring:message code="squadra.player" /></a>
+		<a href="squadra/coach/details.do?squadraId=${row.id}" ><spring:message code="squadra.details" /></a>
 	</display:column>
-
+	
 </display:table>
 	
 	<tag:button code="squadra.return" url="principal/index.do'" />

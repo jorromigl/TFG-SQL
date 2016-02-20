@@ -10,17 +10,35 @@
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<form:form action="squadra/coach/edit.do"
-	modelAttribute="squadra">
+<form:form action="squadra/coach/edit.do" modelAttribute="squadra">
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />
 	
-	<tag:textbox code="squadra.category.cname" path="category.cname" />
-	<tag:textbox code="squadra.name" path="name" />
-
+	<jstl:if test="${details==false}">
 	
-	<acme:submit code="squadra.save" name="save" />
+		<tag:textbox code="squadra.category.cname" path="category.cname" />
+		<tag:textbox code="squadra.name" path="name" />
+
+		<acme:submit code="squadra.save" name="save" />
+	</jstl:if>
+
+	<jstl:if test="${details==true}">
+
+		<b><spring:message code="squadra.details" /></b>
+		<br />
+
+		<ul>
+			<li><b><spring:message code="squadra.category.cname" /></b> <jstl:out
+					value="${squadra.category.cname}"></jstl:out></li>
+			<li><b><spring:message code="squadra.name" /></b> <jstl:out
+					value="${squadra.name}"></jstl:out></li>
+		</ul>
+		<a href="player/coach/listPlayersSquadra.do?squadraId=${squadra.id}" ><spring:message code="squadra.players" /></a>
+
+	</jstl:if>
+	<br>
+	<br>
 	<acme:cancel code="squadra.cancel" url="principal/index.do" />
 
 </form:form>
