@@ -49,19 +49,19 @@ public class PlayerCoachController extends ErrorController {
 		return result;
 	}
 	
-	// Listar solo los jugadores de su categoria que no están en su equipo
-	@RequestMapping(value = "/listInItsCategoryAndNotInSquadra", method = RequestMethod.GET)
-	public ModelAndView listInItsCategoryAndNotInSquadra(@RequestParam int squadraId) {
+	// Listar solo los jugadores de su categoria que no tienen equipo asignado
+	@RequestMapping(value = "/findInItsCategoryAndNotHaveSquadra", method = RequestMethod.GET)
+	public ModelAndView findInItsCategoryAndNotHaveSquadra(@RequestParam int squadraId) {
 		ModelAndView result;
 		Collection<Player> players;
 		Squadra s;
 		s = squadraService.findOne(squadraId);
-		players = playerService.findInItsCategoryAndNotInSquadra(s);
+		players = playerService.findInItsCategoryAndNotHaveSquadra(s);
 
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
 		result.addObject("mysquadra", false);
-		result.addObject("requestURI", "player/coach/listInItsCategoryAndNotInSquadra.do");
+		result.addObject("requestURI", "player/coach/findInItsCategoryAndNotHaveSquadra.do");
 
 		return result;
 	}

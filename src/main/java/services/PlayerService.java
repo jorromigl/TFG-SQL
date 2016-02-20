@@ -285,28 +285,30 @@ public class PlayerService {
 
 		return playersSquadra;
 	}
-	//Devuelve una colección con los jugadores que no están en su equipo pero que tienen la misma categoria
-	public Collection<Player> findInItsCategoryAndNotInSquadra(Squadra squadra) {
+	
+	
+	//Devuelve una colección con los jugadores que no tienen equipo asignado pero que tienen la misma categoria
+		public Collection<Player> findInItsCategoryAndNotHaveSquadra(Squadra squadra) {
 
-		Collection<Squadra> squadras = squadraService.getMySquadra();
-		Collection<Player> players = findPlayerSameCategoryCoach();
-		Collection<Player> playersSquadra = new ArrayList<Player>();
-		
-		for (Squadra s : squadras) {
-			if (s.getName().equals(squadra.getName())) {
-				for (Player p : players) {
-					if (s.getName() != p.getSquadra().getName()) {
-						playersSquadra.add(p);
+			Collection<Squadra> squadras = squadraService.getMySquadra();
+			Collection<Player> players = findPlayerSameCategoryCoach();
+			Collection<Player> playersSquadra = new ArrayList<Player>();
+			
+			for (Squadra s : squadras) {
+				if (s.getName().equals(squadra.getName())) {
+					for (Player p : players) {
+						if (p.getSquadra() == null) {
+							playersSquadra.add(p);
+
+						}
 
 					}
 
 				}
-
 			}
-		}
 
-		return playersSquadra;
-	}
+			return playersSquadra;
+		}
 	}
 
 	// public void squadra(Player p) {
