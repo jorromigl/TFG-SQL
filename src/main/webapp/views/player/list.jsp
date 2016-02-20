@@ -22,11 +22,11 @@
 	<display:column >
 		<a href="player/displayA.do?playerId=${row.id}" ><spring:message code="player.profile" /></a>
 	</display:column>
-	
+	<jstl:if test="${mysquadra==false}">
 	<display:column >
 		<a href="squadra/coach/AddPlayer.do?playerId=${row.id}" ><spring:message code="player.addSquadra" /></a>
 	</display:column>
-
+	</jstl:if>
 </display:table>
 	
 	<tag:button code="match.return" url="principal/index.do'" />

@@ -35,6 +35,9 @@
 					value="${squadra.name}"></jstl:out></li>
 		</ul>
 		<a href="player/coach/listPlayersSquadra.do?squadraId=${squadra.id}" ><spring:message code="squadra.players" /></a>
+		<br>
+		<br>
+		<a href="player/coach/listInItsCategoryAndNotInSquadra.do?squadraId=${squadra.id}" ><spring:message code="squadra.players.add" /></a>
 
 	</jstl:if>
 	<br>

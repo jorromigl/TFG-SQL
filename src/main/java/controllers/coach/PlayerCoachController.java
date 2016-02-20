@@ -33,7 +33,7 @@ public class PlayerCoachController extends ErrorController {
 		super();
 	}
 
-	// List All players same category that login Coach
+	// List All players same category that login Coach (if are or aren't in his squadra)
 	@RequestMapping(value = "/listPlayerSameCategoryCoach", method = RequestMethod.GET)
 	public ModelAndView listInItsCategory() {
 		ModelAndView result;
@@ -43,7 +43,25 @@ public class PlayerCoachController extends ErrorController {
 
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
+		result.addObject("mysquadra", true);
 		result.addObject("requestURI", "player/coach/listPlayerSameCategoryCoach.do");
+
+		return result;
+	}
+	
+	// Listar solo los jugadores de su categoria que no están en su equipo
+	@RequestMapping(value = "/listInItsCategoryAndNotInSquadra", method = RequestMethod.GET)
+	public ModelAndView listInItsCategoryAndNotInSquadra(@RequestParam int squadraId) {
+		ModelAndView result;
+		Collection<Player> players;
+		Squadra s;
+		s = squadraService.findOne(squadraId);
+		players = playerService.findInItsCategoryAndNotInSquadra(s);
+
+		result = new ModelAndView("player/list");
+		result.addObject("players", players);
+		result.addObject("mysquadra", false);
+		result.addObject("requestURI", "player/coach/listInItsCategoryAndNotInSquadra.do");
 
 		return result;
 	}
@@ -60,6 +78,7 @@ public class PlayerCoachController extends ErrorController {
 
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
+		result.addObject("mysquadra", true);
 		result.addObject("requestURI", "player/coach/listPlayersSquadra.do");
 
 		return result;
