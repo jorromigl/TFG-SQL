@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import domain.Player;
+import domain.Recruitment;
 
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Integer> {
@@ -19,4 +20,6 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
     //Devuelve una collection de los jugarodes que tienen la misma Categoria que el Coach logueado
     @Query("select p from Player p where p.category.cname = ?1")
     Collection<Player> findAllPlayersSameCategoryCoach(String categoryUser);
+    
+   
 }

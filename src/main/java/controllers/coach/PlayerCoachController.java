@@ -16,10 +16,12 @@ import org.springframework.web.servlet.ModelAndView;
 import controllers.ErrorController;
 import domain.Coach;
 import domain.Player;
+import domain.Recruitment;
 import domain.Squadra;
 import forms.PlayerForm;
 import services.CoachService;
 import services.PlayerService;
+import services.RecruitmentService;
 import services.SquadraService;
 
 @Controller
@@ -37,6 +39,9 @@ public class PlayerCoachController extends ErrorController {
 
 	@Autowired
 	private CoachService coachService;
+	
+	@Autowired
+	private RecruitmentService recruitmentService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -136,6 +141,22 @@ public class PlayerCoachController extends ErrorController {
 //		return result;
 //
 //	}
+	
+	// Listar los jugadores pertenecientes a un Recruitment 
+	@RequestMapping(value = "/listPlayersByRecruitment", method = RequestMethod.GET)
+	public ModelAndView listPlayersByRecruitment(@RequestParam int recruitmentId) {
+		ModelAndView result;
+		Collection<Player> players;
+		Recruitment recruitment = recruitmentService.findOne(recruitmentId);
+
+		players = playerService.findPlayersByRecruitment(recruitment);
+
+		result = new ModelAndView("player/list");
+		result.addObject("players", players);
+		result.addObject("requestURI", "player/coach/listPlayersByRecruitment.do");
+
+		return result;
+	}
 
 	protected ModelAndView createModelAndView(Player player) {
 		assert player != null;

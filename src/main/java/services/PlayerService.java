@@ -47,9 +47,12 @@ public class PlayerService {
 
 	@Autowired
 	private SquadraService squadraService;
-	
+
 	@Autowired
 	private SquadraRepository squadraRepository;
+
+	@Autowired
+	private RecruitmentService recruitmentService;
 
 	// Services
 
@@ -261,15 +264,14 @@ public class PlayerService {
 		players = playerRepository.findAllPlayersSameCategoryCoach(categoryUser);
 		return players;
 	}
-	
-	
-	//Devuelve una colección con los jugadores de su mismo equipo y categoria
+
+	// Devuelve una colección con los jugadores de su mismo equipo y categoria
 	public Collection<Player> findPlayersSquadra(Squadra squadra) {
 
 		Collection<Squadra> squadras = squadraService.getMySquadra();
 		Collection<Player> players = findPlayerSameCategoryCoach();
 		Collection<Player> playersSquadra = new ArrayList<Player>();
-		
+
 		for (Squadra s : squadras) {
 			if (s.getName().equals(squadra.getName())) {
 				for (Player p : players) {
@@ -285,40 +287,47 @@ public class PlayerService {
 
 		return playersSquadra;
 	}
-	
-	
-	
-	//Devuelve una colección con los jugadores que no tienen equipo asignado pero que tienen la misma categoria
-		public Collection<Player> findInItsCategoryAndNotHaveSquadra(Squadra squadra) {
 
-			Collection<Squadra> squadras = squadraService.getMySquadra();
-			Collection<Player> players = findPlayerSameCategoryCoach();
-			Collection<Player> playersSquadra = new ArrayList<Player>();
-			
-			for (Squadra s : squadras) {
-				if (s.getName().equals(squadra.getName())) {
-					for (Player p : players) {
-						if (p.getSquadra() == null) {
-							playersSquadra.add(p);
+	// Devuelve una colección con los jugadores que no tienen equipo asignado
+	// pero que tienen la misma categoria
+	public Collection<Player> findInItsCategoryAndNotHaveSquadra(Squadra squadra) {
 
-						}
+		Collection<Squadra> squadras = squadraService.getMySquadra();
+		Collection<Player> players = findPlayerSameCategoryCoach();
+		Collection<Player> playersSquadra = new ArrayList<Player>();
+
+		for (Squadra s : squadras) {
+			if (s.getName().equals(squadra.getName())) {
+				for (Player p : players) {
+					if (p.getSquadra() == null) {
+						playersSquadra.add(p);
 
 					}
 
 				}
+
 			}
-
-			return playersSquadra;
 		}
+
+		return playersSquadra;
 	}
+	
+	//Devuelve una coleccion de los jugadores de esa convocatoria
+	public Collection<Player> findPlayersByRecruitment(Recruitment recruitment) {
 
-	// public void squadra(Player p) {
-	// Coach coachConnect = coachService.findByPrincipal();
-	// if (!coachConnect.getSquadraPlayers().contains(p)) {
-	// coachConnect.add(p);
-	// p.add(coachConnect);
-	// }
+		Collection<Player> players = new ArrayList<Player>();
 
-	// }
+		for (Player p : players) {
+			Collection<Recruitment> recruitments = p.getRecruitments();
+			for (Recruitment r : recruitments) {
+				if (r.getId() == (recruitment.getId())) {
+					players.add(p);
 
+				}
+			}
+		}
+
+		return players;
+	}
+}
 

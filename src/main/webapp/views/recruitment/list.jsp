@@ -21,7 +21,7 @@
 	<display:column property="match.moment" title="${moment}"  />
 	
 	<display:column >
-		<a href="players/listByRecruitment.do?recruitmentId=${row.id}" ><spring:message code="recruitment.player" /></a>
+		<a href="player/coach/listPlayersByRecruitment.do?recruitmentId=${row.id}" ><spring:message code="recruitment.player" /></a>
 	</display:column>
 	
 			
