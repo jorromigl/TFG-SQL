@@ -22,6 +22,7 @@
 		<spring:message code="addPlayers.Recruitment" />
 		<br>
 		<br>
+		
 
 	<acme:submit code="recruitment.save" name="save" />
 	<acme:cancel code="recruitment.cancel" url="/match/listFuture.do" />
