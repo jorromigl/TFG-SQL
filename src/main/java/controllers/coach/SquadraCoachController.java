@@ -44,29 +44,7 @@ public class SquadraCoachController extends ErrorController {
 		super();
 	}
 
-	// List Squadra
-
-	@RequestMapping(value = "/AddPlayers", method = RequestMethod.GET)
-	public ModelAndView addOrDeleteUnits(@RequestParam int playerId) {
-
-		Coach coachConnect = coachService.findByPrincipal();
-
-		Player player = playerService.findOneToEdit(playerId);
-		Squadra squadra = new Squadra();
-		Collection<Player> players = new ArrayList<Player>();
-		squadra.setPlayers(players);
-
-		// squadra.setPlayers(players);
-		ModelAndView result;
-
-		result = createModelAndView(squadra);
-
-		result.addObject("squadra", squadra);
-		result.addObject("player", player);
-		result.addObject("requestURI", "/squadra/coach/edit.do?playerId=" + playerId);
-
-		return result;
-	}
+	
 
 	// Ver mi equipo
 	@RequestMapping(value = "/mysquadra", method = RequestMethod.GET)

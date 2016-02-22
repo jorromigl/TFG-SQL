@@ -38,7 +38,7 @@
 		<br>
 		<br>
 		<a href="player/coach/findInItsCategoryAndNotHaveSquadra.do?squadraId=${squadra.id}" ><spring:message code="squadra.players.add" /></a>
-
+		
 	</jstl:if>
 	<br>
 	<br>

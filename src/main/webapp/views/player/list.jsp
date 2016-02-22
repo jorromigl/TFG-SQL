@@ -24,7 +24,7 @@
 	</display:column>
 	<jstl:if test="${mysquadra==false}">
 	<display:column >
-		<a href="squadra/coach/AddPlayer.do?playerId=${row.id}" ><spring:message code="player.addSquadra" /></a>
+		<a href="player/coach/AddPlayers.do?playerId=${row.id}&?squadraId=${squadra.id}" ><spring:message code="player.addSquadra" /></a>
 	</display:column>
 	</jstl:if>
 </display:table>

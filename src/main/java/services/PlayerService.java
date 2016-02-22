@@ -263,7 +263,7 @@ public class PlayerService {
 	}
 	
 	
-	//Devuelve una colección con los jugadores de su mismo equipo
+	//Devuelve una colección con los jugadores de su mismo equipo y categoria
 	public Collection<Player> findPlayersSquadra(Squadra squadra) {
 
 		Collection<Squadra> squadras = squadraService.getMySquadra();
@@ -285,6 +285,7 @@ public class PlayerService {
 
 		return playersSquadra;
 	}
+	
 	
 	
 	//Devuelve una colección con los jugadores que no tienen equipo asignado pero que tienen la misma categoria
