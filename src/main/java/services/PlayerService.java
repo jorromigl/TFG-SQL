@@ -287,6 +287,17 @@ public class PlayerService {
 
 		return playersSquadra;
 	}
+	
+	//Listar jugadores de su equipo  ROME
+	public Collection<Player> findPlayersSquadra(int squadraid) {
+
+		Collection<Player> players = findAll();
+		for (Player p : players) {
+			if (p.getSquadra().getId() != squadraid)
+				players.remove(p);
+		}
+		return players;
+	}
 
 	// Devuelve una colección con los jugadores que no tienen equipo asignado
 	// pero que tienen la misma categoria
@@ -311,8 +322,8 @@ public class PlayerService {
 
 		return playersSquadra;
 	}
-	
-	//Devuelve una coleccion de los jugadores de esa convocatoria
+
+	// Devuelve una coleccion de los jugadores de esa convocatoria
 	public Collection<Player> findPlayersByRecruitment(Recruitment recruitment) {
 
 		Collection<Player> players = new ArrayList<Player>();
@@ -330,4 +341,3 @@ public class PlayerService {
 		return players;
 	}
 }
-

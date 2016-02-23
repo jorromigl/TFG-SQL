@@ -10,7 +10,7 @@
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<form:form action="squadra/coach/edit.do" modelAttribute="squadra">
+<form:form action="${requestURI}" modelAttribute="squadra">
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />
@@ -34,11 +34,10 @@
 			<li><b><spring:message code="squadra.name" /></b> <jstl:out
 					value="${squadra.name}"></jstl:out></li>
 		</ul>
-		<a href="player/coach/listPlayersSquadra.do?squadraId=${squadra.id}" ><spring:message code="squadra.players" /></a>
-		<br>
-		<br>
-		<a href="player/coach/findInItsCategoryAndNotHaveSquadra.do?squadraId=${squadra.id}" ><spring:message code="squadra.players.add" /></a>
 		
+		
+<%-- 	<tag:select code="squadra.players.add" path="player"  id="player" items="players" itemLabel="name"/> --%>
+
 	</jstl:if>
 	<br>
 	<br>

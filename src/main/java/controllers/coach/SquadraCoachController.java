@@ -120,8 +120,9 @@ public class SquadraCoachController extends ErrorController {
 
 		Assert.notNull(squadra);
 		ModelAndView result;
-
+		Collection<Player> players = playerService.findInItsCategoryAndNotHaveSquadra(squadra);
 		result = new ModelAndView("squadra/edit");
+		result.addObject("players", players);
 		result.addObject("squadra", squadra);
 		result.addObject("message", message);
 

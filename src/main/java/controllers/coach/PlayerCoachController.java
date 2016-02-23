@@ -93,6 +93,7 @@ public class PlayerCoachController extends ErrorController {
 		s = squadraService.findOne(squadraId);
 		players = playerService.findPlayersSquadra(s);
 
+
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
 		result.addObject("mysquadra", true);
