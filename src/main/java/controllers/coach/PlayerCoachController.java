@@ -25,7 +25,7 @@ import services.RecruitmentService;
 import services.SquadraService;
 
 @Controller
-@RequestMapping("/player/coach")
+@RequestMapping("/player/c")
 public class PlayerCoachController extends ErrorController {
 
 	// Services
@@ -61,7 +61,7 @@ public class PlayerCoachController extends ErrorController {
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
 		result.addObject("mysquadra", true);
-		result.addObject("requestURI", "player/coach/listPlayerSameCategoryCoach.do");
+		result.addObject("requestURI", "player/c/listPlayerSameCategoryCoach.do");
 
 		return result;
 	}
@@ -78,7 +78,7 @@ public class PlayerCoachController extends ErrorController {
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
 		result.addObject("mysquadra", false);
-		result.addObject("requestURI", "player/coach/findInItsCategoryAndNotHaveSquadra.do");
+		result.addObject("requestURI", "player/c/findInItsCategoryAndNotHaveSquadra.do");
 
 		return result;
 	}
@@ -97,7 +97,7 @@ public class PlayerCoachController extends ErrorController {
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
 		result.addObject("mysquadra", true);
-		result.addObject("requestURI", "player/coach/listPlayersSquadra.do");
+		result.addObject("requestURI", "player/c/listPlayersSquadra.do");
 
 		return result;
 	}
@@ -118,7 +118,7 @@ public class PlayerCoachController extends ErrorController {
 		result.addObject("player", player);
 		result.addObject("squadra", squadra);
 //		result.addObject("requestURI", "player/coach/edit.do?squadraId=" + squadraId);
-		result.addObject("requestURI", "player/coach/AddPlayers.do");
+		result.addObject("requestURI", "player/c/AddPlayers.do");
 
 		return result;
 	}
@@ -154,7 +154,7 @@ public class PlayerCoachController extends ErrorController {
 
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
-		result.addObject("requestURI", "player/coach/listPlayersByRecruitment.do");
+		result.addObject("requestURI", "player/c/listPlayersByRecruitment.do");
 
 		return result;
 	}

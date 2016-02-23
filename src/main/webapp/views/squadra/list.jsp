@@ -15,10 +15,10 @@
 	<display:column href="squadra/coach/details.do?squadraId=${row.id}" property="name" title="${name}" sortable="${true}" />
 
 	<display:column >
-		<a href="player/coach/listPlayersSquadra.do?squadraId=${row.id}" ><spring:message code="squadra.players" /></a>
+		<a href="player/c/listPlayersSquadra.do?squadraId=${row.id}" ><spring:message code="squadra.players" /></a>
 	</display:column>
 	<display:column >
-		<a href="player/coach/findInItsCategoryAndNotHaveSquadra.do?squadraId=${row.id}" ><spring:message code="squadra.players.add" /></a>
+		<a href="player/c/findInItsCategoryAndNotHaveSquadra.do?squadraId=${row.id}" ><spring:message code="squadra.players.add" /></a>
 	</display:column>
 </display:table>
 	

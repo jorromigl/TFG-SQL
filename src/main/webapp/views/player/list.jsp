@@ -20,11 +20,11 @@
 	<display:column property="category.cname" title="${cname}" />
 	
 	<display:column >
-		<a href="player/coach/verPerfilJugador.do?playerId=${row.id}" ><spring:message code="player.profile" /></a>
+		<a href="player/c/verPerfilJugador.do?playerId=${row.id}" ><spring:message code="player.profile" /></a>
 	</display:column>
 	<jstl:if test="${mysquadra==false}">
 	<display:column >
-		<a href="player/coach/AddPlayers.do?playerId=${row.id}&?squadraId=${squadra.id}" ><spring:message code="player.addSquadra" /></a>
+		<a href="player/c/AddPlayers.do?playerId=${row.id}&?squadraId=${squadra.id}" ><spring:message code="player.addSquadra" /></a>
 	</display:column>
 	</jstl:if>
 </display:table>

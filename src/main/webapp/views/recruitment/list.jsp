@@ -21,11 +21,11 @@
 	<display:column property="match.moment" title="${moment}"  />
 	
 	<display:column >
-		<a href="player/coach/listPlayersByRecruitment.do?recruitmentId=${row.id}" ><spring:message code="recruitment.player" /></a>
+		<a href="player/c/listPlayersByRecruitment.do?recruitmentId=${row.id}" ><spring:message code="recruitment.player" /></a>
 	</display:column>
 	<jstl:if test="${isFuture==true}">
 		<display:column >
-		<a href="player/coach/AddPlayersRecruitment.do?recruitmentId=${row.id}" ><spring:message code="player.addRecreutment" /></a>
+		<a href="player/c/AddPlayersRecruitment.do?recruitmentId=${row.id}" ><spring:message code="player.addRecreutment" /></a>
 	</display:column>
 	</jstl:if>
 	
