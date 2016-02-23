@@ -265,30 +265,8 @@ public class PlayerService {
 		return players;
 	}
 
-	// Devuelve una colección con los jugadores de su mismo equipo y categoria
-	public Collection<Player> findPlayersSquadra(Squadra squadra) {
-
-		Collection<Squadra> squadras = squadraService.getMySquadra();
-		Collection<Player> players = findPlayerSameCategoryCoach();
-		Collection<Player> playersSquadra = new ArrayList<Player>();
-
-		for (Squadra s : squadras) {
-			if (s.getName().equals(squadra.getName())) {
-				for (Player p : players) {
-					if (s.getName().equals(p.getSquadra().getName())) {
-						playersSquadra.add(p);
-
-					}
-
-				}
-
-			}
-		}
-
-		return playersSquadra;
-	}
 	
-	//Listar jugadores de su equipo  ROME
+	//Listar jugadores de su equipo  
 	public Collection<Player> findPlayersSquadra(int squadraid) {
 
 		Collection<Player> players = findAll();

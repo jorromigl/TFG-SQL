@@ -88,11 +88,8 @@ public class PlayerCoachController extends ErrorController {
 	public ModelAndView listPlayersSquadra(@RequestParam int squadraId) {
 		ModelAndView result;
 		Collection<Player> players;
-		Squadra s;
 
-		s = squadraService.findOne(squadraId);
-		players = playerService.findPlayersSquadra(s);
-
+		players = playerService.findPlayersSquadra(squadraId);
 
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
