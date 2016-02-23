@@ -20,7 +20,7 @@
 	<display:column property="category.cname" title="${cname}" />
 	
 	<display:column >
-		<a href="player/displayA.do?playerId=${row.id}" ><spring:message code="player.profile" /></a>
+		<a href="player/coach/verPerfilJugador.do?playerId=${row.id}" ><spring:message code="player.profile" /></a>
 	</display:column>
 	<jstl:if test="${mysquadra==false}">
 	<display:column >

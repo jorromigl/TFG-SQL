@@ -72,3 +72,33 @@
 </form:form>
 </jstl:if>
 </security:authorize>
+<security:authorize access="hasRole('COACH')">
+<form:form action="${requestURI}" method="post"  modelAttribute="player">
+		
+<!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form-->	
+
+	<form:hidden path="id"/>
+	<form:hidden path="version"/>
+	
+	
+		<tag:textbox code="display.username" path="username" readonly="true" />
+		<tag:textbox code="display.name" path="name" readonly="true"/>
+		<tag:textbox code="display.surname" path="surname" readonly="true"/>
+		<tag:textbox code="display.category" path="category.cname" readonly="true"/>
+		<tag:textbox code="display.date" path="date" readonly="true"/>
+		<tag:textbox code="display.email" path="email" readonly="true" />
+		<tag:textbox code="display.phone" path="phone" readonly="true"/>
+		<tag:textbox code="display.address" path="address" readonly="true"/>
+	
+	<%-- <jstl:if test="${incidence.photo!=null}">
+		<b><spring:message code="incidence.photo" /></b><br/><br/>
+		<img class="img-responsive img-rounded" src="photo/displayImage.do?incidenceId=${incidence.id}" height="350" width="590" />
+	</jstl:if> 
+	<jstl:if test="${incidence.photo==null}">
+		<b><spring:message code="incidence.photo" /></b><br/><br/>
+		<img class="img-responsive img-rounded" src="images/no-image.png" height="350" width="590" />
+	</jstl:if> --%>
+	
+	<tag:button code="display.cancel" url="principal/index.do'" />
+</form:form>
+</security:authorize>

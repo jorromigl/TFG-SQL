@@ -158,6 +158,22 @@ public class PlayerCoachController extends ErrorController {
 
 		return result;
 	}
+	
+	//Ver el perfil de un jugador
+	@RequestMapping(value = "/verPerfilJugador", method = RequestMethod.GET)
+	public ModelAndView verPerfilJugador(@RequestParam int playerId){
+		ModelAndView result;
+		Player p = playerService.findOne(playerId);
+		
+		PlayerForm player = playerService.createForm(p);
+//		Assert.notNull(player);
+		result = createModelAndView1(player);
+		
+		result.addObject("requestURI", "player/verPerfilJugador.do?playerId="+p.getId());
+		result.addObject("detailsPlayer",true);
+		
+		return result;
+	}
 
 	protected ModelAndView createModelAndView(Player player) {
 		assert player != null;
@@ -176,6 +192,25 @@ public class PlayerCoachController extends ErrorController {
 		result.addObject("player", player);
 		result.addObject("message", message);
 
+		return result;
+	}
+	
+	protected ModelAndView createModelAndView1(PlayerForm player) {
+		ModelAndView result;
+
+		result = createModelAndView1(player, null);
+
+		return result;
+	}
+
+	protected ModelAndView createModelAndView1(PlayerForm player, String message) {
+		ModelAndView result;
+
+		result = new ModelAndView("player/display");
+		result.addObject("player", player);
+		
+		result.addObject("message", message);
+	
 		return result;
 	}
 
