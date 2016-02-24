@@ -145,9 +145,8 @@ public class PlayerCoachController extends ErrorController {
 	public ModelAndView listPlayersByRecruitment(@RequestParam int recruitmentId) {
 		ModelAndView result;
 		Collection<Player> players;
-		Recruitment recruitment = recruitmentService.findOne(recruitmentId);
 
-		players = playerService.findPlayersByRecruitment(recruitment);
+		players = playerService.findPlayersByRecruitment(recruitmentId);
 
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);

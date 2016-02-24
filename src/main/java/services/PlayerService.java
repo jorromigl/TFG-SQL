@@ -304,20 +304,10 @@ public class PlayerService {
 	}
 
 	// Devuelve una coleccion de los jugadores de esa convocatoria
-	public Collection<Player> findPlayersByRecruitment(Recruitment recruitment) {
+	public Collection<Player> findPlayersByRecruitment(int recruitmentId) {
 
-		Collection<Player> players = new ArrayList<Player>();
 
-		for (Player p : players) {
-			Collection<Recruitment> recruitments = p.getRecruitments();
-			for (Recruitment r : recruitments) {
-				if (r.getId() == (recruitment.getId())) {
-					players.add(p);
 
-				}
-			}
-		}
-
-		return players;
+		return playerRepository.findAllPlayersReqcruitment(recruitmentId);
 	}
 }

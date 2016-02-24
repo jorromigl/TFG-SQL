@@ -23,4 +23,7 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
     
     @Query("select p from Player p where p.squadra.id = ?1")
     Collection<Player> findAllPlayersSquadra(int id);
+    
+    @Query("select p from Player p where (select r from Recruitment r where r.id = ?1) member of p.recruitments")
+    Collection<Player> findAllPlayersReqcruitment(int id);
 }
