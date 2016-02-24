@@ -396,8 +396,8 @@
 					code="master.page.coach.createSquadra" /> </a></li>
 				<li><a href="squadra/coach/mysquadra.do"><spring:message
 					code="master.page.coach.mySquadra" /> </a></li>
-				<li><a href="folder/coach/list.do"><spring:message
-					code="master.page.coach.myFolder" /> </a></li>
+				<li><a href="folder/user/list.do"><spring:message
+					code="master.page.user.myFolder" /> </a></li>
 			</ul>
 		
 					</div>

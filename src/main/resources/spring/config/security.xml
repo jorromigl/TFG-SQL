@@ -36,7 +36,9 @@
 		<security:intercept-url pattern="/match/listAll.do" access="permitAll" />
 		<security:intercept-url pattern="/match/coach/**" access="hasRole('COACH')" />
 		
-		<security:intercept-url pattern="/folder/coach/**" access="hasRole('COACH')" />
+		<security:intercept-url pattern="/folder/user/**" access="permitAll" />
+		
+		<security:intercept-url pattern="/message/user/**" access="permitAll" />
 		
 		<security:intercept-url pattern="/player/c/**" access="hasRole('COACH')" />
 		

@@ -6,14 +6,11 @@
       
 <tiles-definitions>
 
-	<definition name="folder/list" extends="principal.page">	
+	<definition name="folder/user/list" extends="principal.page">	
 		<put-attribute name="title" value="Listar Carpetas" />
-		<put-attribute name="body" value="/views/match/list.jsp" />
+		<put-attribute name="body" value="/views/folder/user/list.jsp" />
 	</definition>
 
-	<definition name="folder/edit" extends="principal.page">	
-		<put-attribute name="title" value="Crear Carpeta" />
-		<put-attribute name="body" value="/views/folder/edit.jsp" />
-	</definition>
+
 	
 </tiles-definitions>

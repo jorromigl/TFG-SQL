@@ -24,7 +24,8 @@
 		<value>/views/law/messages</value>
 		<value>/views/recruitment/messages</value>
 		<value>/views/squadra/messages</value>
-		<value>/views/folder/messages</value>
+		<value>/views/folder/user/messages</value>
+		<value>/views/message/user/messages</value>
 	</util:list>
 
 </beans>

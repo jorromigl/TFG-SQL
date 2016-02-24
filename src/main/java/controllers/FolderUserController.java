@@ -1,4 +1,4 @@
-package controllers.coach;
+package controllers;
 
 import java.util.Collection;
 
@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import controllers.ErrorController;
-import domain.Coach;
+
 import domain.Folder;
-import services.CoachService;
+import domain.User;
 import services.FolderService;
+import services.UserService;
 
 @Controller
-@RequestMapping("/folder/coach")
-public class FolderCoachController extends ErrorController {
+@RequestMapping("/folder/user")
+public class FolderUserController extends ErrorController {
 
 	// Services
 
@@ -24,11 +24,11 @@ public class FolderCoachController extends ErrorController {
 	private FolderService folderService;
 	
 	@Autowired
-	private CoachService coachService;
+	private UserService userService;
 
 	// Constructors -----------------------------------------------------------
 
-	public FolderCoachController() {
+	public FolderUserController() {
 		super();
 	}
 	
@@ -40,13 +40,13 @@ public class FolderCoachController extends ErrorController {
 	public ModelAndView list(){
 		ModelAndView result;
 		Collection<Folder> folders;
-		Coach coach = coachService.findByPrincipal();
+		User user = userService.findByPrincipal();
 		
-		folders = folderService.findFoldersByUser(coach);
+		folders = folderService.findFoldersByUser(user);
 					
-		result = new ModelAndView("folder/list");
+		result = new ModelAndView("folder/user/list");
 		result.addObject("folders", folders);
-		result.addObject("requestURI", "folder/coach/listall.do");
+		result.addObject("requestURI", "folder/user/listall.do");
 		
 		return result;
     	
@@ -69,11 +69,11 @@ public class FolderCoachController extends ErrorController {
 		
 		ModelAndView result;
 		
-		Coach coach = coachService.findByPrincipal();
-		Collection<Folder> folders = folderService.findFoldersByUser(coach);
+		User user = userService.findByPrincipal();
+		Collection<Folder> folders = folderService.findFoldersByUser(user);
 		folders.remove(folder);
 					
-		result = new ModelAndView("folder/coach/" + selectView);
+		result = new ModelAndView("folder/user/" + selectView);
 		result.addObject("folder", folder);
 		result.addObject("folders", folders);
 		result.addObject("message", message);
@@ -82,4 +82,3 @@ public class FolderCoachController extends ErrorController {
 	}
 
 }
-

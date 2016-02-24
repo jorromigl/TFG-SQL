@@ -14,6 +14,15 @@
 	<spring:message code="folder.name" var="name" />
 	<display:column property="name" title="${name}" sortable="${true}" />
 	
+	<spring:message code="folder.numberMessages" var="numberMessages" />
+	<display:column title="${numberMessages}">
+		<jstl:out value="${row.messages.size()}"></jstl:out>
+	</display:column>
+
+	<display:column>
+		<a href="message/user/list.do?folderId=${row.id}" ><spring:message code="folder.messages" /></a>
+	</display:column>
+	
 	
 			
 </display:table>
