@@ -58,5 +58,5 @@
 			
 </display:table>
 	
-	<tag:button code="match.return" url="principal/index.do'" />
+	<tag:button code="match.return.link" url="principal/index.do'" />
 

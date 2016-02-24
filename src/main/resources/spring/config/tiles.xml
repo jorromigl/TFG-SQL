@@ -24,6 +24,7 @@
 		<value>/views/summary/tiles.xml</value>
 		<value>/views/recruitment/tiles.xml</value>
 		<value>/views/squadra/tiles.xml</value>
+		<value>/views/folder/tiles.xml</value>
 		
 		<value>/views/register/tiles.xml</value>
 		<value>/views/law/tiles.xml</value>
