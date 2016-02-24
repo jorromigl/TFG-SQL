@@ -73,6 +73,16 @@ public class Squadra extends DomainEntity {
 		this.players = players;
 	}
 	
+	public void addPlayer(Player player) {
+		players.add(player);
+		player.setSquadra(this);
+	}
+
+	public void removePlayer(Player player) {
+		players.remove(player);
+		player.setSquadra(null);
+	}
+	
 	
 	
 }

@@ -76,6 +76,7 @@ public class PlayerCoachController extends ErrorController {
 		players = playerService.findInItsCategoryAndNotHaveSquadra(s);
 
 		result = new ModelAndView("player/list");
+		result.addObject("squadraId",squadraId);
 		result.addObject("players", players);
 		result.addObject("mysquadra", false);
 		result.addObject("requestURI", "player/c/findInItsCategoryAndNotHaveSquadra.do");
@@ -104,18 +105,10 @@ public class PlayerCoachController extends ErrorController {
 	@RequestMapping(value = "/AddPlayers", method = RequestMethod.GET)
 	public ModelAndView AddPlayers(@RequestParam int squadraId, int playerId) {
 
-		Squadra squadra = squadraService.findOne(squadraId);
-		Player player = playerService.findOne(playerId);
-		player.setSquadra(squadra);
+		squadraService.addPlayer(squadraId,playerId);
 		ModelAndView result;
 
-		result = createModelAndView(player, null);
-
-		result.addObject("deleteUnits", true);
-		result.addObject("player", player);
-		result.addObject("squadra", squadra);
-//		result.addObject("requestURI", "player/coach/edit.do?squadraId=" + squadraId);
-		result.addObject("requestURI", "player/c/AddPlayers.do");
+		result = new ModelAndView("redirect:../../squadra/coach/mysquadra.do");
 
 		return result;
 	}
