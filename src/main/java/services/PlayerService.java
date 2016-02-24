@@ -269,12 +269,14 @@ public class PlayerService {
 	//Listar jugadores de su equipo  
 	public Collection<Player> findPlayersSquadra(int squadraid) {
 
-		Collection<Player> players = findAll();
-		for (Player p : players) {
-			if (p.getSquadra().getId() != squadraid)
-				players.remove(p);
-		}
-		return players;
+//		Collection<Player> players = findAll();
+//		for (Player p : players) {
+//			if (p.getSquadra().getId() != squadraid)
+//				players.remove(p);
+//		}
+//		return players;
+		
+		return playerRepository.findAllPlayersSquadra(squadraid);
 	}
 
 	// Devuelve una colección con los jugadores que no tienen equipo asignado
