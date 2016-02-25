@@ -311,6 +311,16 @@ public class PlayerService {
 		return playerRepository.findAllPlayersReqcruitment(recruitmentId);
 	}
 	
+	//Listar Jugadores de la misma categoria
+	public Collection<Player> findPlayerSameCategory() {
+			Player playerConnect = findByPrincipal();
+			String categoryUser = playerConnect.getCategory().getCname();
+			Collection<Player> players;
+			players = playerRepository.findAllPlayersSameCategory(categoryUser);
+			return players;
+		}
+	}
+	
 	// Devuelve una coleccion de los jugadores de mi equipo que no están esa en la convocatoria 
 	//por lo tanto se puede agregar
 //		public Collection<Player> findPlayersNotRecruitment(int recruitmentId, int squadraid) {
@@ -318,4 +328,4 @@ public class PlayerService {
 //			Collection<Player> players= playerRepository.findAllPlayersNotReqcruitment(squadraid, recruitmentId);
 //			return players;
 //		}
-}
+

@@ -20,6 +20,13 @@
 	<spring:message code="match.moment" var="moment" />
 	<display:column property="moment" title="${moment}"  />
 	
+	<display:column >
+		<a href="comment/listByMatch.do?matchId=${row.id}" ><spring:message code="match.comment" /></a>
+	</display:column>
+	<display:column >
+		<a href="comment/create.do?matchId=${row.id}" ><spring:message code="match.comment.create" /></a>
+	</display:column>
+	
 	<security:authorize access="hasRole('PLAYER')">
 	<jstl:if test="${isFuture==false and isAll==false}">
 	<display:column >
@@ -52,12 +59,7 @@
 	</jstl:if>
 	</display:column>
 	</jstl:if>
-	<display:column >
-		<a href="comment/listByMatch.do?matchId=${row.id}" ><spring:message code="match.comment" /></a>
-	</display:column>
-	<display:column >
-		<a href="comment/create.do?matchId=${row.id}" ><spring:message code="match.comment.create" /></a>
-	</display:column>
+	
 	<%-- <display:column >
 			<a href="coach/displayA.do?coachId=${row.id}" ><spring:message code="coach.display" /></a>
 	</display:column>

@@ -1,5 +1,7 @@
 package controllers.player;
 
+import java.util.Collection;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
@@ -31,7 +34,38 @@ public class PlayerController extends ErrorController {
 	public PlayerController() {
 		super();
 	}
+	
+	// List All players same category that login Player (if are or aren't in his
+		// squadra)
+		@RequestMapping(value = "/listPlayerSameCategory", method = RequestMethod.GET)
+		public ModelAndView listInItsCategory() {
+			ModelAndView result;
+			Collection<Player> players;
 
+			players = playerService.findPlayerSameCategory();
+
+			result = new ModelAndView("player/list");
+			result.addObject("players", players);
+			result.addObject("requestURI", "player/listPlayerSameCategory.do");
+
+			return result;
+		}
+		//Ver el perfil de un jugador
+		@RequestMapping(value = "/verPerfilJugador", method = RequestMethod.GET)
+		public ModelAndView verPerfilJugador(@RequestParam int playerId){
+			ModelAndView result;
+			Player p = playerService.findOne(playerId);
+			
+			PlayerForm player = playerService.createForm(p);
+//			Assert.notNull(player);
+			result = createModelAndView1(player);
+			
+			result.addObject("requestURI", "player/verPerfilJugador.do?playerId="+p.getId());
+			result.addObject("viewProfileOther",true);
+			result.addObject("detailsPlayer",true);
+			
+			return result;
+		}
 	
 	// REGISTRAR --------------------------------------------------------------
 	
@@ -123,7 +157,7 @@ public class PlayerController extends ErrorController {
 //		}
 		
 		//----------------------------------------------------------------------
-		// VER PERFIL --------------------------------------------------------------
+		// VER SU PERFIL --------------------------------------------------------------
 		
 		@RequestMapping(value = "/displayA", method = RequestMethod.GET)
 		public ModelAndView displayA(){
@@ -136,11 +170,12 @@ public class PlayerController extends ErrorController {
 			
 			result.addObject("requestURI", "player/displayA.do?playerId="+p.getId());
 			result.addObject("detailsPlayer",true);
+			result.addObject("viewProfileOther",false);
 			
 			return result;
 		}
 		
-		// EDITAR PERFIL --------------------------------------------------------------
+		// EDITAR SU PERFIL --------------------------------------------------------------
 		@RequestMapping(value = "/displayB", method = RequestMethod.GET)
 		public ModelAndView displayB(){
 			ModelAndView result;
@@ -152,6 +187,7 @@ public class PlayerController extends ErrorController {
 			
 			result.addObject("requestURI", "player/displayB.do?playerId="+p.getId());
 			result.addObject("detailsPlayer",false);
+			result.addObject("viewProfileOther",false);
 			
 			return result;
 		}
@@ -171,6 +207,7 @@ public class PlayerController extends ErrorController {
 				} catch (Throwable error) {
 					result = createModelAndView1(player, "player.commit.error");	
 					result.addObject("detailsPlayer",false);
+					result.addObject("viewProfileOther",false);
 				}
 			}
 

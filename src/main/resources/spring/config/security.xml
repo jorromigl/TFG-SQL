@@ -34,6 +34,9 @@
 		
 		<security:intercept-url pattern="/summary/player/**" access="hasRole('PLAYER')" />
 		
+		<security:intercept-url pattern="/player/listPlayerSameCategory.do" access="hasRole('PLAYER')" />
+		<security:intercept-url pattern="/player/verPerfilJugador.do" access="hasRole('PLAYER')" />
+		
 		<security:intercept-url pattern="/coach/listAll.do" access="permitAll" />
 		
 		

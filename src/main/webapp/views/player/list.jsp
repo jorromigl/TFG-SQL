@@ -19,6 +19,13 @@
 	<spring:message code="player.category" var="cname" />
 	<display:column property="category.cname" title="${cname}" />
 	
+	<security:authorize access="hasRole('PLAYER')">
+	<display:column >
+		<a href="player/verPerfilJugador.do?playerId=${row.id}" ><spring:message code="player.profile" /></a>
+	</display:column>
+	</security:authorize>
+	
+	<security:authorize access="hasRole('COACH')">
 	<display:column >
 		<a href="player/c/verPerfilJugador.do?playerId=${row.id}" ><spring:message code="player.profile" /></a>
 	</display:column>
@@ -27,6 +34,7 @@
 		<a href="player/c/AddPlayers.do?playerId=${row.id}&squadraId=${squadraId}" ><spring:message code="player.addSquadra" /></a>
 	</display:column>
 	</jstl:if>
+	</security:authorize>
 </display:table>
 	
 	<tag:button code="match.return" url="principal/index.do'" />

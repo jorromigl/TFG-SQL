@@ -35,8 +35,13 @@
 		<b><spring:message code="incidence.photo" /></b><br/><br/>
 		<img class="img-responsive img-rounded" src="images/no-image.png" height="350" width="590" />
 	</jstl:if> --%>
+	
+	
+	<jstl:if test="${viewProfileOther==false}">
 	<tag:button code="display.edit" url="player/displayB.do'" />
+	</jstl:if>
 	<tag:button code="display.cancel" url="principal/index.do'" />
+	
 </form:form>
 </jstl:if>
 

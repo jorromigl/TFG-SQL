@@ -26,6 +26,9 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
     
     @Query("select p from Player p where (select r from Recruitment r where r.id = ?1) member of p.recruitments")
     Collection<Player> findAllPlayersReqcruitment(int id);
+
+    @Query("select p from Player p where p.category.cname = ?1")
+	Collection<Player> findAllPlayersSameCategory(String categoryUser);
     
 //    @Query("select concat p from Player p where p.squadra.id = ?1 and (select r from Recruitment r where r.id = ?2) member of p.recruitments")
 //    Collection<Player> findAllPlayersNotReqcruitment(int idSquadra, int idRecruitment);
