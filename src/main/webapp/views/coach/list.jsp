@@ -10,7 +10,7 @@
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
 
-
+<div>
 <display:table name="coachs" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
 
 	<spring:message code="coach.fullName" var="fullName" />
@@ -33,4 +33,4 @@
 </display:table>
 	
 	<tag:button code="coach.return" url="principal/index.do'" />
-
+</div>
