@@ -14,7 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
 import domain.Coach;
+import domain.Player;
 import forms.CoachForm;
+import forms.PlayerForm;
 import services.CoachService;
 
 @Controller
@@ -116,6 +118,60 @@ public class CoachController extends ErrorController {
 				return result;
 			}
 			
+			// VER PERFIL --------------------------------------------------------------
+			
+			@RequestMapping(value = "/displayA", method = RequestMethod.GET)
+			public ModelAndView displayA(){
+				ModelAndView result;
+				Coach c = coachService.findByPrincipal();
+				
+				CoachForm coach = coachService.createForm(c);
+//				Assert.notNull(player);
+				result = createModelAndView1(coach);
+				
+				result.addObject("requestURI", "coach/displayA.do?coachId="+c.getId());
+				result.addObject("detailsCoach",true);
+				
+				return result;
+			}
+			
+			// EDITAR PERFIL --------------------------------------------------------------
+			@RequestMapping(value = "/displayB", method = RequestMethod.GET)
+			public ModelAndView displayB(){
+				ModelAndView result;
+				Coach c = coachService.findByPrincipal();
+				
+				CoachForm coach = coachService.createForm(c);
+//				Assert.notNull(player);
+				result = createModelAndView1(coach);
+				
+				result.addObject("requestURI", "coach/displayB.do?coachId="+c.getId());
+				result.addObject("detailsCoach",false);
+				
+				return result;
+			}
+			@RequestMapping(value = "/displayB", method = RequestMethod.POST, params = "save1")
+			public ModelAndView save1(@Valid CoachForm coach, BindingResult binding) {
+				ModelAndView result;
+				Coach c;
+				if (binding.hasErrors()) {
+					result = createModelAndView1(coach);
+					result.addObject("detailsCoach",false);
+				} else {
+					try {
+						c = coachService.reconstructor2(coach);
+						coachService.save(c);
+						result = new ModelAndView("redirect:../principal/index.do");
+		
+					} catch (Throwable error) {
+						result = createModelAndView1(coach, "coach.commit.error");	
+						result.addObject("detailsCoach",false);
+					}
+				}
+
+				return result;
+			}
+			
 
 			
 			
@@ -163,4 +219,23 @@ public class CoachController extends ErrorController {
 				
 					return result;
 				}	
+				
+				protected ModelAndView createModelAndView1(CoachForm coach) {
+					ModelAndView result;
+
+					result = createModelAndView1(coach, null);
+
+					return result;
+				}
+
+				protected ModelAndView createModelAndView1(CoachForm coach, String message) {
+					ModelAndView result;
+
+					result = new ModelAndView("coach/display");
+					result.addObject("coach", coach);
+					
+					result.addObject("message", message);
+				
+					return result;
+				}
 	}

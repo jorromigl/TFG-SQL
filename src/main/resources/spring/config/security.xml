@@ -42,6 +42,9 @@
 		
 		<security:intercept-url pattern="/player/c/**" access="hasRole('COACH')" />
 		
+		<security:intercept-url pattern="/coach/displayA.do" access="hasRole('COACH')" />
+		<security:intercept-url pattern="/coach/displayB.do" access="hasRole('COACH')" />
+		
 		<security:intercept-url pattern="/squadra/coach/**" access="hasRole('COACH')" />
 		
 		<security:intercept-url pattern="/summary/coach/displayA.do" access="permitAll" />

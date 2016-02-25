@@ -310,4 +310,12 @@ public class PlayerService {
 
 		return playerRepository.findAllPlayersReqcruitment(recruitmentId);
 	}
+	
+	// Devuelve una coleccion de los jugadores de mi equipo que no están esa en la convocatoria 
+	//por lo tanto se puede agregar
+//		public Collection<Player> findPlayersNotRecruitment(int recruitmentId, int squadraid) {
+//			
+//			Collection<Player> players= playerRepository.findAllPlayersNotReqcruitment(squadraid, recruitmentId);
+//			return players;
+//		}
 }

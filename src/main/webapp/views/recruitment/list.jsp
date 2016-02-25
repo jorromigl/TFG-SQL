@@ -25,7 +25,7 @@
 	</display:column>
 	<jstl:if test="${isFuture==true}">
 		<display:column >
-		<a href="player/c/AddPlayersRecruitment.do?recruitmentId=${row.id}" ><spring:message code="player.addRecreutment" /></a>
+		<a href="player/c/listPlayersSquadra.do?scuadraId=${squadraId}" ><spring:message code="player.addRecreutment" /></a>
 	</display:column>
 	</jstl:if>
 	

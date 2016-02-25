@@ -1,7 +1,10 @@
 package services;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import javax.sql.rowset.serial.SerialException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
@@ -10,10 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Admin;
+import domain.Category;
 import domain.Coach;
 import domain.Comment;
 import domain.Folder;
+import domain.Player;
 import forms.CoachForm;
+import forms.PlayerForm;
 import repositories.CoachRepository;
 import security.Authority;
 import security.LoginService;
@@ -114,6 +120,49 @@ public class CoachService {
 			
 		return result;	
 	}
+	
+	// MIO CONCHI
+		public Coach reconstructor2(CoachForm coachForm) throws SerialException, SQLException {
+			Coach result;
+
+			result = coachRepository.findOne(coachForm.getId());
+
+			result.setId(coachForm.getId());
+			result.setVersion(coachForm.getVersion());
+
+			result.setEmail(coachForm.getEmail());
+			result.setName(coachForm.getName());
+			result.setPhone(coachForm.getPhone());
+			result.setSurname(coachForm.getSurname());
+			result.setAddress(coachForm.getAddress());
+			result.getCategory().setCname(coachForm.getCategory().getCname());
+			result.getUserAccount().setUsername(coachForm.getUsername());
+			result.getUserAccount().setPassword(coachForm.getPassword());
+			return result;
+		}
+
+		// MIO CONCHI
+		public CoachForm createForm(Coach coach) {
+
+			CoachForm coachForm = new CoachForm();
+
+			coachForm.setId(coach.getId());
+			coachForm.setVersion(coach.getVersion());
+			coachForm.setEmail(coach.getEmail());
+
+			coachForm.setName(coach.getName());
+			coachForm.setPhone(coach.getPhone());
+			coachForm.setSurname(coach.getSurname());
+			coachForm.setAddress(coach.getAddress());
+			coachForm.setAvailable(true);
+			Category c = new Category();
+			c.setCname(coach.getCategory().getCname());
+			coachForm.setCategory(c);
+			coachForm.setUsername(coach.getUserAccount().getUsername());
+			coachForm.setPassword(coach.getUserAccount().getPassword());
+
+			return coachForm;
+		}
 	
 
 

@@ -99,6 +99,22 @@ public class PlayerCoachController extends ErrorController {
 
 		return result;
 	}
+	
+	// Lista de jugadores de su equipo que no están en esa convocatoria
+//		@RequestMapping(value = "/listPlayersNotRecruitment", method = RequestMethod.GET)
+//		public ModelAndView listPlayersNotRecruitment(@RequestParam int squadraId, int recruitmentId) {
+//			ModelAndView result;
+//			Collection<Player> players;
+//
+//			players = playerService.findPlayersNotRecruitment(recruitmentId, squadraId);
+//
+//			result = new ModelAndView("player/list");
+//			result.addObject("players", players);
+//			result.addObject("mysquadra", true);
+//			result.addObject("requestURI", "player/c/listPlayersNotRecruitment.do");
+//
+//			return result;
+//		}
 
 	// Add players Squadra
 
