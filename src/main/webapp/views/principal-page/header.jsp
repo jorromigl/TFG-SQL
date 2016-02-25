@@ -309,6 +309,8 @@
 							code="master.page.match.listPast" /> </a></li>
 				<li><a href="player/listPlayerSameCategory.do"><spring:message
 							code="master.page.coach.listPlayerCategory" /> </a></li>
+				<li><a href="folder/user/list.do"><spring:message
+							code="master.page.user.myFolder" /> </a></li>
 			</ul>
 		</div>
 	</security:authorize>
