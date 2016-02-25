@@ -301,6 +301,12 @@
 				<li class="arrow"></li>
 				<li><a href="player/displayA.do"><spring:message
 							code="master.page.display" /> </a></li>
+				<li><a href="match/listAll.do"><spring:message
+							code="master.page.match.listAll" /></a></li>
+				<li><a href="match/player/listFuture.do"><spring:message
+							code="master.page.match.listFuture" /> </a></li>
+				<li><a href="match/player/listPast.do"><spring:message
+							code="master.page.match.listPast" /> </a></li>
 			</ul>
 		</div>
 	</security:authorize>

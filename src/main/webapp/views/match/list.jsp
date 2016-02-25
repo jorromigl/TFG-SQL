@@ -19,6 +19,16 @@
 	
 	<spring:message code="match.moment" var="moment" />
 	<display:column property="moment" title="${moment}"  />
+	
+	<security:authorize access="hasRole('PLAYER')">
+	<jstl:if test="${isFuture==false and isAll==false}">
+	<display:column >
+		<a href="summary/player/displayA.do?matchId=${row.id}" ><spring:message code="match.display" /></a>
+	</display:column>
+	</jstl:if>	
+	</security:authorize>
+	
+	<security:authorize access="hasRole('COACH')">
 	<jstl:if test="${isFuture==false and isAll==false}">
 	<display:column >
 	<jstl:if test="${row.summary!= null}">
@@ -55,6 +65,7 @@
 			<display:column >
 				<a href="coach/delete.do?coachId=${row.id}" ><spring:message code="coach.delete" /></a>
 			</display:column> --%>
+	</security:authorize>
 			
 </display:table>
 	

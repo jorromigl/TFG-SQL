@@ -19,8 +19,13 @@
 
 		<tag:textbox code="display.text" path="text" readonly="true" />
 		<tag:textbox code="display.subject" path="subject" readonly="true" />
-
+		
+		<security:authorize access="hasRole('COACH')">
 		<tag:button code="summary.edit" url="summary/coach/edit.do?summaryId=${summary.id}'" />
 		<tag:button code="display.return" url="match/coach/listPast.do'" />
+		</security:authorize>
+		<security:authorize access="hasRole('PLAYER')">
+		<tag:button code="display.return" url="match/player/listPast.do'" />
+		</security:authorize>
 	</form:form>
 </jstl:if>
