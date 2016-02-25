@@ -35,7 +35,7 @@
 
 
 	<tag:submit name="save" code="msg.send" />
-
-	<tag:cancel url="/welcome/index.do" code="msg.cancel" />
+	
+	<tag:cancel code="msg.cancel" url="principal/index.do" />
 
 </form:form>
