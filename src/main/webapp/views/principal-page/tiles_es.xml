@@ -11,6 +11,8 @@
 		<put-attribute name="header" value="/views/principal-page/header.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/views/principal-page/footer.jsp" />
+
+		<put-attribute name="sidebar" value="/views/principal-page/sidebar.jsp" />
 	</definition>
 
 </tiles-definitions>

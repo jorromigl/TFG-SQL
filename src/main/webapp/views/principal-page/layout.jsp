@@ -1,19 +1,11 @@
-<%--
- * layout.jsp
- *
- * Copyright (C) 2014 Universidad de Sevilla
- * 
- * The use of this project is hereby constrained to the conditions of the 
- * TDG Licence, a copy of which you may download from 
- * http://www.tdg-seville.info/License.html
- --%>
-
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -51,8 +43,12 @@
 <link href="styles/custom.css" rel="stylesheet">
 <link href="styles/green.css" rel="stylesheet">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/sidebar/classie.js"></script>
+<script type="text/javascript" src="scripts/sidebar/modernizr.custom.js"></script>
+<script type="text/javascript" src="scripts/sidebar/sidebarEffects.js"></script>
 
 
 <!-- END Bootstrap core CSS -->
@@ -94,25 +90,69 @@
 </script>
 
 </head>
+<security:authorize access="isAuthenticated()">
+<a class="fNiv"></a>
 
-<body>
+	<body class="nav-md">
+		<div class="container body">
 
-	<div>
-		<tiles:insertAttribute name="header" />
-	</div>
-	<div>
-		<h1>
-			<tiles:insertAttribute name="title" />
-		</h1>
-		<tiles:insertAttribute name="body" />
-		<jstl:if test="${message != null}">
-			<br />
-			<span class="message"><spring:message code="${message}" /></span>
-		</jstl:if>
-	</div>
-	<div>
-		<tiles:insertAttribute name="footer" />
-	</div>
 
-</body>
+			<div class="main_container">
+				<div>
+					<tiles:insertAttribute name="header" />
+				</div>
+
+				<div>
+					<tiles:insertAttribute name="sidebar" />
+				</div>
+
+				<div class="right_col" role="main">
+
+					<div class="page-title">
+						<tiles:insertAttribute name="title" />
+
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<h1></h1>
+							<tiles:insertAttribute name="body" />
+							<jstl:if test="${message != null}">
+								<br />
+								<span class="message"><spring:message code="${message}" /></span>
+							</jstl:if>
+						</div>
+					</div>
+				</div>
+				<div>
+					<tiles:insertAttribute name="footer" />
+				</div>
+			</div>
+		</div>
+
+	</body>
+</security:authorize>
+
+<security:authorize access="isAnonymous()">
+<a class="fNiv"></a>
+
+	<body class="nav-md">
+
+		<div>
+			<tiles:insertAttribute name="header" />
+		</div>
+		<div>
+					<h1><tiles:insertAttribute name="title" /></h1>
+					<tiles:insertAttribute name="body" />
+					<jstl:if test="${message != null}">
+						<br />
+						<span class="message"><spring:message code="${message}" /></span>
+					</jstl:if>
+		</div>
+		<div>
+			<tiles:insertAttribute name="footer" />
+		</div>
+
+
+	</body>
+</security:authorize>
 </html>

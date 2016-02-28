@@ -9,6 +9,10 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
+	<!-- page content -->
+			
+						
+
 <display:table name="matches" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
 
 	<spring:message code="match.rival" var="rival" />
@@ -73,3 +77,4 @@
 	
 	<tag:button code="match.return" url="principal/index.do'" />
 
+						
