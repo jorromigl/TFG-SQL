@@ -19,12 +19,6 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="security/login.do"><spring:message
 							code="principal.page.login" /></a></li>
-				<li><a href="player/register.do"><spring:message
-							code="master.page.register.player" /></a></li>
-				<li><a href="family/register.do"><spring:message
-							code="master.page.register.family" /></a></li>
-
-
 			</ul>
 		</div>
 		<!-- banner area starts here -->

@@ -15,7 +15,6 @@
 	<a class="hiddenanchor" id="tologin"></a>
 
 	<div id="wrapper">
-		<div id="login" class="animate form">
 			<section class="login_content">
 
 
@@ -108,6 +107,5 @@
 			</section>
 			<!-- content -->
 		</div>
-	</div>
 </body>
 
