@@ -46,6 +46,9 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/sidebar/classie.js"></script>
+<script type="text/javascript" src="scripts/sidebar/modernizr.custom.js"></script>
+<script type="text/javascript" src="scripts/sidebar/sidebarEffects.js"></script>
 
 
 <!-- END Bootstrap core CSS -->
