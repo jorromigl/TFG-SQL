@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
@@ -32,7 +33,21 @@ public class SquadraPlayerController extends ErrorController {
 		public SquadraPlayerController() {
 			super();
 		}
+		// Lista de jugadores de su equipo
+		@RequestMapping(value = "/listPlayersSquadra", method = RequestMethod.GET)
+		public ModelAndView listPlayersSquadra(@RequestParam int squadraId) {
+			ModelAndView result;
+			Collection<Player> players;
 
+			players = playerService.findPlayersSquadra(squadraId);
+
+			result = new ModelAndView("player/list");
+			result.addObject("players", players);
+			result.addObject("mysquadra", true);
+			result.addObject("requestURI", "squadra/player/listPlayersSquadra.do");
+
+			return result;
+		}
 		
 
 		// Ver mi equipo

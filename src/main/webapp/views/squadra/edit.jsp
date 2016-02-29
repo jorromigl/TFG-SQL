@@ -14,9 +14,9 @@
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />
-	
+
 	<jstl:if test="${details==false}">
-	
+
 		<tag:textbox code="squadra.category.cname" path="category.cname" />
 		<tag:textbox code="squadra.name" path="name" />
 
@@ -34,9 +34,15 @@
 			<li><b><spring:message code="squadra.name" /></b> <jstl:out
 					value="${squadra.name}"></jstl:out></li>
 		</ul>
-		
-		
-<%-- 	<tag:select code="squadra.players.add" path="player"  id="player" items="players" itemLabel="name"/> --%>
+
+		<security:authorize access="hasRole('PLAYER')">
+			
+				<a href="squadra/player/listPlayersSquadra.do?squadraId=${squadra.id}"><spring:message
+						code="players.squadra" /></a>
+			
+		</security:authorize>
+
+		<%-- 	<tag:select code="squadra.players.add" path="player"  id="player" items="players" itemLabel="name"/> --%>
 
 	</jstl:if>
 	<br>
