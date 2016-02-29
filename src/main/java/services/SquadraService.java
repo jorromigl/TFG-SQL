@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Coach;
-import domain.Match;
 import domain.Player;
 import domain.Squadra;
 import repositories.SquadraRepository;
@@ -71,6 +70,12 @@ public class SquadraService {
 		Player p= playerService.findOne(playerId);
 		s.addPlayer(p);
 		
+	}
+
+	public Squadra getMySquadraPlayer() {
+		Player playerConnect = playerService.findByPrincipal();
+		Squadra squadra = squadraRepository.getMySquadraPlayer(playerConnect.getId());
+		return squadra;
 	}
 
 }

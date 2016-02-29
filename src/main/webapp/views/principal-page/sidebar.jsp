@@ -91,6 +91,8 @@
 										code="master.page.coach.recruitmentsListPast" /> </a></li>
 							<li><a href="recruitment/player/listFuture.do"><spring:message
 										code="master.page.coach.recruitmentsListFuture" /> </a></li>
+							<li><a href="squadra/player/displaySquadra.do"><spring:message
+										code="master.page.player.mySquadra" /> </a></li>
 
 						</security:authorize>
 						

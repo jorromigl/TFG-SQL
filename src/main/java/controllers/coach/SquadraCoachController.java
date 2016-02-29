@@ -1,6 +1,6 @@
 package controllers.coach;
 
-import java.util.ArrayList;
+
 import java.util.Collection;
 
 import javax.validation.Valid;
@@ -16,11 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
-import domain.Coach;
-import domain.Match;
 import domain.Player;
 import domain.Squadra;
-import services.CoachService;
 import services.PlayerService;
 import services.SquadraService;
 
@@ -32,9 +29,6 @@ public class SquadraCoachController extends ErrorController {
 
 	@Autowired
 	private SquadraService squadraService;
-
-	@Autowired
-	private CoachService coachService;
 
 	@Autowired
 	private PlayerService playerService;
