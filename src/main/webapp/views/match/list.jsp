@@ -31,10 +31,18 @@
 		<a href="comment/create.do?matchId=${row.id}" ><spring:message code="match.comment.create" /></a>
 	</display:column>
 	
-	<security:authorize access="hasAnyRole('PLAYER', 'FAMILY')">
+	<security:authorize access="hasRole('PLAYER')">
 	<jstl:if test="${isFuture==false and isAll==false}">
 	<display:column >
 		<a href="summary/player/displayA.do?matchId=${row.id}" ><spring:message code="match.display" /></a>
+	</display:column>
+	</jstl:if>	
+	</security:authorize>
+	
+	<security:authorize access="hasRole('FAMILY')">
+	<jstl:if test="${isFuture==false and isAll==false}">
+	<display:column >
+		<a href="summary/family/displayA.do?matchId=${row.id}" ><spring:message code="match.display" /></a>
 	</display:column>
 	</jstl:if>	
 	</security:authorize>

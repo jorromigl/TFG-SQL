@@ -27,5 +27,8 @@
 		<security:authorize access="hasRole('PLAYER')">
 		<tag:button code="display.return" url="match/player/listPast.do'" />
 		</security:authorize>
+		<security:authorize access="hasRole('FAMILY')">
+		<tag:button code="display.return" url="match/family/listPast.do'" />
+		</security:authorize>
 	</form:form>
 </jstl:if>
