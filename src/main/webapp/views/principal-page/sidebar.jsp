@@ -87,6 +87,10 @@
 										code="master.page.coach.listPlayerCategory" /> </a></li>
 							<li><a href="folder/user/list.do"><spring:message
 										code="master.page.user.myFolder" /> </a></li>
+							<li><a href="recruitment/player/listPast.do"><spring:message
+										code="master.page.coach.recruitmentsListPast" /> </a></li>
+							<li><a href="recruitment/player/listFuture.do"><spring:message
+										code="master.page.coach.recruitmentsListFuture" /> </a></li>
 
 						</security:authorize>
 						
@@ -98,6 +102,10 @@
 										code="master.page.match.listFuture" /> </a></li>
 							<li><a href="match/family/listPast.do"><spring:message
 										code="master.page.match.listPast" /> </a></li>
+							<li><a href="recruitment/family/listPast.do"><spring:message
+										code="master.page.coach.recruitmentsListPast" /> </a></li>
+							<li><a href="recruitment/family/listFuture.do"><spring:message
+										code="master.page.coach.recruitmentsListFuture" /> </a></li>
 							
 						</security:authorize>
 

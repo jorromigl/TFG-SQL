@@ -34,6 +34,8 @@
 		
 		<security:intercept-url pattern="/summary/player/**" access="hasRole('PLAYER')" />
 		
+		<security:intercept-url pattern="/recruitment/player/**" access="hasRole('PLAYER')" />
+		
 		<security:intercept-url pattern="/player/listPlayerSameCategory.do" access="hasRole('PLAYER')" />
 		<security:intercept-url pattern="/player/verPerfilJugador.do" access="hasRole('PLAYER')" />
 		
@@ -50,6 +52,8 @@
 		<security:intercept-url pattern="/match/family/**" access="hasRole('FAMILY')" />
 		
 		<security:intercept-url pattern="/summary/family/**" access="hasRole('FAMILY')" />
+		
+		<security:intercept-url pattern="/recruitment/family/**" access="hasRole('FAMILY')" />
 		
 		<security:intercept-url pattern="/player/c/**" access="hasRole('COACH')" />
 		

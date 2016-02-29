@@ -9,20 +9,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import domain.Player;
 import domain.Recruitment;
 
 @Repository
 public interface RecruitmentRepository extends JpaRepository<Recruitment, Integer> {
-	
-//	//Devuelve una collection de recruitment no finalizadas dado el id del coach
-//    @Query("select r from Recruitment r where r.coach.id=?1 and r.match.moment < date")
-//    Collection<Recruitment> getRecruitmentsNotFinish(Date date);
-//
-//    //Devuelve una collection de recruitment finalizadas dado el id del coach
-//    @Query("select r from Recruitment r where r.coach.id=?1 and r.match.moment > date")
-//    Collection<Recruitment> getRecruitmentsFinish(Date date);
-	
 
+//	COACH
 	@Query("select a from Recruitment a where a.match.coach.id =?1")
 	Collection<Recruitment> getMyRecruitments(int id);
 	
@@ -32,7 +25,20 @@ public interface RecruitmentRepository extends JpaRepository<Recruitment, Intege
 	@Query("select a from Recruitment a where a.match.coach.id =?1 and a.match.moment < ?2")
 	Collection<Recruitment> getMyRecruitmentsFinish(int id, Date date);
 	
+//	PLAYER
+	@Query("select r from Recruitment r where (select p from Player p where p.id = ?1) member of r.players and r.match.moment >= ?2")
+	Collection<Recruitment> getMyRecruitmentsNotFinishPlayer(int id, Date date);
 	
+	@Query("select r from Recruitment r where (select p from Player p where p.id = ?1) member of r.players and r.match.moment < ?2")
+	Collection<Recruitment> getMyRecruitmentsFinishPlayer(int id, Date date);
 	
+//	FAMILY
+	@Query("select r from Recruitment r where (select p from Player p where (select f from Family f where f.id = ?1) member of p.families) member of r.players and r.match.moment >= ?2")
+	Collection<Recruitment> getMyRecruitmentsNotFinishFamily(int id, Date currentMoment);
+	
+	@Query("select r from Recruitment r where (select p from Player p where (select f from Family f where f.id = ?1) member of p.families) member of r.players and r.match.moment < ?2")
+	Collection<Recruitment> getMyRecruitmentsFinishFamily(int id, Date currentMoment);
+
+ 
 
 }

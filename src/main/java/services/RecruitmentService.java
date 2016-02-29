@@ -10,14 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Coach;
-import domain.Comment;
-import domain.Match;
+import domain.Family;
 import domain.Player;
 import domain.Recruitment;
-import domain.Summary;
 import repositories.RecruitmentRepository;
-import security.LoginService;
-import security.UserAccount;
 
 @Service
 @Transactional
@@ -30,6 +26,12 @@ public class RecruitmentService {
 	
 	@Autowired
 	private CoachService coachService;
+	
+	@Autowired
+	private PlayerService playerService;
+	
+	@Autowired
+	private FamilyService familyService;
 	
 	@Autowired
 	private MatchService matchService;
@@ -96,12 +98,56 @@ public class RecruitmentService {
 			
 			return recruitments;
 		}
+	    
+	    //Me devuelve las convocatorias del player que no han finalizado (Futuras)
+	    public Collection<Recruitment> getMyRecruitmentsNotFinishPlayer() {
+			Player playerConnect = playerService.findByPrincipal();
+			Date currentMoment = new Date();
+			Collection<Recruitment> recruitments = new ArrayList<Recruitment>();
+			recruitments = recruitmentRepository.getMyRecruitmentsNotFinishPlayer(
+					playerConnect.getId(), currentMoment);
+			
+			return recruitments;
+		}
+	    
+	    //Me devuelve las convocatorias del family que no han finalizado (Futuras)
+	    public Collection<Recruitment> getMyRecruitmentsNotFinishFamily() {
+			Family familyConnect = familyService.findByPrincipal();
+			Date currentMoment = new Date();
+			Collection<Recruitment> recruitments = new ArrayList<Recruitment>();
+			recruitments = recruitmentRepository.getMyRecruitmentsNotFinishFamily(
+					familyConnect.getId(), currentMoment);
+			
+			return recruitments;
+		}
+	    
+	    //Devuelve una collection de las convocatorias de un player que han finalizado
+	    public Collection<Recruitment> getMyRecruitmentsFinishPlayer() {
+	    	Player playerConnect = playerService.findByPrincipal();
+			Date currentMoment = new Date();
+			Collection<Recruitment> recruitments = new ArrayList<Recruitment>();
+			recruitments = recruitmentRepository.getMyRecruitmentsFinishPlayer(
+					playerConnect.getId(), currentMoment);
+			
+			return recruitments;
+		}
+	    
+	    //Devuelve una collection de las convocatorias de un family que han finalizado
+	    public Collection<Recruitment> getMyRecruitmentsFinishFamily() {
+	    	Family familyConnect = familyService.findByPrincipal();
+			Date currentMoment = new Date();
+			Collection<Recruitment> recruitments = new ArrayList<Recruitment>();
+			recruitments = recruitmentRepository.getMyRecruitmentsFinishFamily(
+					familyConnect.getId(), currentMoment);
+			
+			return recruitments;
+		}
 		
 		public Collection<Recruitment> findAll(){
 			 return recruitmentRepository.findAll();
 		}
 		
-		
-
 
 }
+
+
