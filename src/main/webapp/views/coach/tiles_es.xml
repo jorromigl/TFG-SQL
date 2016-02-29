@@ -16,4 +16,9 @@
 		<put-attribute name="body" value="/views/coach/display.jsp" />
 	</definition>
 	
+	<definition name="coach/edit" extends="principal.page">	
+		<put-attribute name="title" value="Entrenador" />
+		<put-attribute name="body" value="/views/coach/edit.jsp" />
+	</definition>
+	
 </tiles-definitions>

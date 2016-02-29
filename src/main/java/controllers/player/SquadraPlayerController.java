@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
+import domain.Coach;
 import domain.Player;
 import domain.Squadra;
+import services.CoachService;
 import services.PlayerService;
 import services.SquadraService;
 @Controller
@@ -28,6 +30,9 @@ public class SquadraPlayerController extends ErrorController {
 
 		@Autowired
 		private PlayerService playerService;
+		
+		@Autowired
+		private CoachService coachService;
 		// Constructors -----------------------------------------------------------
 
 		public SquadraPlayerController() {
@@ -48,6 +53,22 @@ public class SquadraPlayerController extends ErrorController {
 
 			return result;
 		}
+		
+		// Ver el entrenador de su equipo
+				@RequestMapping(value = "/viewCoachSquadra", method = RequestMethod.GET)
+				public ModelAndView viewCoachSquadra(@RequestParam int squadraId) {
+					ModelAndView result;
+					Coach coach;
+					coach = coachService.findCoachSquadra(squadraId);
+					
+					result = new ModelAndView("coach/edit");
+					result.addObject("coach", coach);
+					result.addObject("mysquadra", true);
+					result.addObject("requestURI", "squadra/player/viewCoachSquadra.do");
+
+					return result;
+				}
+				
 		
 
 		// Ver mi equipo

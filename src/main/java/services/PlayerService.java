@@ -278,6 +278,7 @@ public class PlayerService {
 		
 		return playerRepository.findAllPlayersSquadra(squadraid);
 	}
+	
 
 	// Devuelve una colección con los jugadores que no tienen equipo asignado
 	// pero que tienen la misma categoria

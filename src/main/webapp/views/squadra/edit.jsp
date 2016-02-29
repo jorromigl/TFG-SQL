@@ -39,6 +39,10 @@
 			
 				<a href="squadra/player/listPlayersSquadra.do?squadraId=${squadra.id}"><spring:message
 						code="players.squadra" /></a>
+						
+				<br>
+				<a href="squadra/player/viewCoachSquadra.do?squadraId=${squadra.id}"><spring:message
+						code="coach.squadra" /></a>
 			
 		</security:authorize>
 

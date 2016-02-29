@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import domain.Coach;
 import domain.Player;
 
 @Repository
@@ -28,6 +29,8 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
 
     @Query("select p from Player p where p.category.cname = ?1")
 	Collection<Player> findAllPlayersSameCategory(String categoryUser);
+    
+    
     
 //    @Query("select concat p from Player p where p.squadra.id = ?1 and (select r from Recruitment r where r.id = ?2) member of p.recruitments")
 //    Collection<Player> findAllPlayersNotReqcruitment(int idSquadra, int idRecruitment);
