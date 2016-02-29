@@ -47,6 +47,8 @@
 		
 		<security:intercept-url pattern="/message/user/**" access="permitAll" />
 		
+		<security:intercept-url pattern="/match/family/**" access="hasRole('FAMILY')" />
+		
 		<security:intercept-url pattern="/player/c/**" access="hasRole('COACH')" />
 		
 		<security:intercept-url pattern="/coach/displayA.do" access="hasRole('COACH')" />

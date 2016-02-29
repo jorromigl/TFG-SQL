@@ -89,6 +89,17 @@
 										code="master.page.user.myFolder" /> </a></li>
 
 						</security:authorize>
+						
+						<security:authorize access="hasRole('FAMILY')">
+
+							<li><a href="match/listAll.do"><spring:message
+										code="master.page.match.listAll" /></a></li>
+							<li><a href="match/family/listFuture.do"><spring:message
+										code="master.page.match.listFuture" /> </a></li>
+							<li><a href="match/family/listPast.do"><spring:message
+										code="master.page.match.listPast" /> </a></li>
+							
+						</security:authorize>
 
 						<security:authorize access="hasRole('ADMIN')">
 

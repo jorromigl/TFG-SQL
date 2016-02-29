@@ -31,7 +31,7 @@
 		<a href="comment/create.do?matchId=${row.id}" ><spring:message code="match.comment.create" /></a>
 	</display:column>
 	
-	<security:authorize access="hasRole('PLAYER')">
+	<security:authorize access="hasAnyRole('PLAYER', 'FAMILY')">
 	<jstl:if test="${isFuture==false and isAll==false}">
 	<display:column >
 		<a href="summary/player/displayA.do?matchId=${row.id}" ><spring:message code="match.display" /></a>
