@@ -13,6 +13,7 @@ import controllers.ErrorController;
 import domain.Coach;
 import domain.Family;
 import domain.Player;
+import forms.FamilyForm;
 import forms.PlayerForm;
 import services.CoachService;
 import services.FamilyService;
@@ -46,7 +47,7 @@ public class FamiliersPlayerController extends ErrorController {
 			Collection<Family> families;
 			families = familyService.findMyFamily();
 			
-			result = new ModelAndView("coach/edit");
+			result = new ModelAndView("family/list");
 			result.addObject("families", families);
 			result.addObject("requestURI", "familiers/player/viewMyFamily.do");
 
@@ -56,31 +57,27 @@ public class FamiliersPlayerController extends ErrorController {
 		// Ancillary methods
 			// ---------------------------------------------------------
 		
-			protected ModelAndView createModelAndView(PlayerForm playerForm) {
+			protected ModelAndView createModelAndView(FamilyForm familyForm) {
 		
 				ModelAndView result;
 		
-				result = createModelAndView(playerForm, null);
+				result = createModelAndView(familyForm, null);
 		
 				return result;
 			}
 		
-			protected ModelAndView createModelAndView(PlayerForm playerForm, String message) {
+			protected ModelAndView createModelAndView(FamilyForm familyForm, String message) {
 		
 				ModelAndView result;
-				Player player = playerService.create();
-		
-				result = new ModelAndView("register/register");
-				result.addObject("playerForm", playerForm);
+				result = new ModelAndView();
+				
+				result.addObject("familyForm", familyForm);
 				result.addObject("message", message);
-				result.addObject("isPlayer", true);
-				result.addObject("isCoach", false);
-				result.addObject("player", player);
-				result.addObject("user", "playerForm");
+				
 		
 				return result;
 			}
-		
+	
 	
 		
 

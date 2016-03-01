@@ -36,6 +36,8 @@
 		
 		<security:intercept-url pattern="/recruitment/player/**" access="hasRole('PLAYER')" />
 		
+		<security:intercept-url pattern="/familiers/player/**" access="hasRole('PLAYER')" />
+		
 		<security:intercept-url pattern="/squadra/player/**" access="hasRole('PLAYER')" />
 		
 		<security:intercept-url pattern="/player/listPlayerSameCategory.do" access="hasRole('PLAYER')" />

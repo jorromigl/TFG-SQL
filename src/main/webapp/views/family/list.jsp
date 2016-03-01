@@ -13,28 +13,15 @@
 
 
 <display:table name="families" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
-
-<%-- 	<spring:message code="coach.fullName" var="fullName" /> --%>
-<%-- 	<display:column property="fullName" title="${fullName}" sortable="${true}" /> --%>
 	
-<%-- 	<spring:message code="coach.category" var="cname" /> --%>
-<%-- 	<display:column property="category.cname" title="${cname}" sortable="${true}" /> --%>
+	<spring:message code="family.name" var="name" />
+	<display:column property="name" title="${name}" sortable="${true}" />
 	
-<%-- 	<spring:message code="coach.phone" var="phone" /> --%>
-<%-- 	<display:column property="phone" title="${phone}"  /> --%>
+	<spring:message code="family.surname" var="surname" />
+	<display:column property="surname" title="${surname}" sortable="${true}" />
 	
-<%-- 	<display:column > --%>
-<%-- 			<a href="coach/displayA.do?coachId=${row.id}" ><spring:message code="coach.display" /></a> --%>
-<%-- 	</display:column> --%>
-	
-<%-- 	<display:column > --%>
-<%-- 			<a href="coach/delete.do?coachId=${row.id}" ><spring:message code="coach.delete" /></a> --%>
-<%-- 	</display:column> --%>
 		
 </display:table>
 	
-	<tag:button code="coach.return" url="principal/index.do'" />
+	<tag:button code="family.return" url="principal/index.do'" />
 
-<div>
-	<tag:button code="coach.return" url="principal/index.do'" />
-</div>

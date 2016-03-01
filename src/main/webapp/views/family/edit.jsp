@@ -10,11 +10,11 @@
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<form:form action="${requestURI}" modelAttribute="coach">
+<form:form action="${requestURI}" modelAttribute="family">
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />
 
-	<acme:cancel code="coach.return" url="principal/index.do" />
+	<acme:cancel code="family.return" url="principal/index.do" />
 
 </form:form>
