@@ -17,8 +17,10 @@ import controllers.ErrorController;
 import domain.Comment;
 import domain.Match;
 import domain.Recruitment;
+import domain.Squadra;
 import services.MatchService;
 import services.RecruitmentService;
+import services.SquadraService;
 
 @Controller
 @RequestMapping("/recruitment/coach")
@@ -32,6 +34,8 @@ public class RecruitmentCoachController extends ErrorController  {
 				@Autowired
 				private MatchService matchService;
 					
+				@Autowired
+				private SquadraService squadraService;
 			
 			// Constructors -----------------------------------------------------------
 
