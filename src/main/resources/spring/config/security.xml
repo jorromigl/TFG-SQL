@@ -59,6 +59,7 @@
 		
 		<security:intercept-url pattern="/recruitment/family/**" access="hasRole('FAMILY')" />
 		<security:intercept-url pattern="/family/**" access="hasRole('FAMILY')" />
+		<security:intercept-url pattern="/player/f/**" access="hasRole('FAMILY')" />
 		
 		<security:intercept-url pattern="/player/c/**" access="hasRole('COACH')" />
 		

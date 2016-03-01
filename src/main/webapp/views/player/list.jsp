@@ -35,6 +35,11 @@
 	</display:column>
 	</jstl:if>
 	</security:authorize>
+	<security:authorize access="hasRole('FAMILY')">
+	<display:column >
+		<a href="player/f/verPerfilJugador.do?playerId=${row.id}" ><spring:message code="player.profile" /></a>
+	</display:column>
+	</security:authorize>
 </display:table>
 	
 	<tag:button code="match.return" url="principal/index.do'" />
