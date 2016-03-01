@@ -13,6 +13,7 @@ import controllers.ErrorController;
 import domain.Coach;
 import domain.Family;
 import domain.Player;
+import forms.CoachForm;
 import forms.FamilyForm;
 import forms.PlayerForm;
 import services.CoachService;
@@ -53,6 +54,23 @@ public class FamiliersPlayerController extends ErrorController {
 
 			return result;
 		}
+		
+		// Ver el perfil de un familiar
+		@RequestMapping(value = "/verPerfilFamily", method = RequestMethod.GET)
+		public ModelAndView verPerfilFamily(@RequestParam int familyId) {
+			ModelAndView result;
+			Family p = familyService.findOne(familyId);
+
+			FamilyForm family = familyService.createForm(p);
+			// Assert.notNull(player);
+			result = createModelAndView2(family);
+
+			result.addObject("requestURI", "player/verPerfilFamily.do?familyId=" + p.getId());
+			result.addObject("viewProfileOther", true);
+			result.addObject("detailsFamily", true);
+
+			return result;
+		}
 
 		// Ancillary methods
 			// ---------------------------------------------------------
@@ -75,6 +93,25 @@ public class FamiliersPlayerController extends ErrorController {
 				result.addObject("message", message);
 				
 		
+				return result;
+			}
+			
+			protected ModelAndView createModelAndView2(FamilyForm family) {
+				ModelAndView result;
+
+				result = createModelAndView2(family, null);
+
+				return result;
+			}
+
+			protected ModelAndView createModelAndView2(FamilyForm family, String message) {
+				ModelAndView result;
+
+				result = new ModelAndView("family/display");
+				result.addObject("family", family);
+
+				result.addObject("message", message);
+
 				return result;
 			}
 	

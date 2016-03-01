@@ -1,7 +1,10 @@
 package services;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import javax.sql.rowset.serial.SerialException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
@@ -9,11 +12,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import domain.Category;
+import domain.Coach;
 import domain.Comment;
 import domain.Family;
 import domain.Folder;
 import domain.Player;
 import domain.Squadra;
+import forms.CoachForm;
 import forms.FamilyForm;
 import repositories.FamilyRepository;
 import repositories.PlayerRepository;
@@ -159,5 +165,44 @@ public class FamilyService {
 		Collection<Family> families = familyRepository.findMyFamily(playerConnect.getId());
 		return families;
 	}
+	
+	// MIO CONCHI
+		public Family reconstructor2(FamilyForm familyForm) throws SerialException, SQLException {
+			Family result;
+
+			result = familyRepository.findOne(familyForm.getId());
+
+			result.setId(familyForm.getId());
+			result.setVersion(familyForm.getVersion());
+
+			result.setEmail(familyForm.getEmail());
+			result.setName(familyForm.getName());
+			result.setPhone(familyForm.getPhone());
+			result.setSurname(familyForm.getSurname());
+			result.setAddress(familyForm.getAddress());
+			result.getUserAccount().setUsername(familyForm.getUsername());
+			result.getUserAccount().setPassword(familyForm.getPassword());
+			return result;
+		}
+
+		public FamilyForm createForm(Family family) {
+
+			FamilyForm familyForm = new FamilyForm();
+
+			familyForm.setId(family.getId());
+			familyForm.setVersion(family.getVersion());
+			familyForm.setEmail(family.getEmail());
+
+			familyForm.setName(family.getName());
+			familyForm.setPhone(family.getPhone());
+			familyForm.setSurname(family.getSurname());
+			familyForm.setAddress(family.getAddress());
+			familyForm.setAvailable(true);
+			
+			familyForm.setUsername(family.getUserAccount().getUsername());
+			familyForm.setPassword(family.getUserAccount().getPassword());
+
+			return familyForm;
+		}
 	
 }

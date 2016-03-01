@@ -20,7 +20,11 @@
 	<spring:message code="family.surname" var="surname" />
 	<display:column property="surname" title="${surname}" sortable="${true}" />
 	
-		
+	<security:authorize access="hasRole('PLAYER')">
+	<display:column >
+		<a href="familiers/player/verPerfilFamily.do?familyId=${row.id}" ><spring:message code="family.profile" /></a>
+	</display:column>
+	</security:authorize>
 </display:table>
 	
 	<tag:button code="family.return" url="principal/index.do'" />

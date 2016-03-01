@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
+import domain.Coach;
 import domain.Family;
 import domain.Player;
 import domain.Recruitment;
+import forms.CoachForm;
 import forms.FamilyForm;
 import services.FamilyService;
 import services.PlayerService;
@@ -99,6 +101,60 @@ public class FamilyController extends ErrorController {
 			return result;
 		}
 		
+		// VER PERFIL --------------------------------------------------------------
+		
+					@RequestMapping(value = "/displayA", method = RequestMethod.GET)
+					public ModelAndView displayA(){
+						ModelAndView result;
+						Family c = familyService.findByPrincipal();
+						
+						FamilyForm family = familyService.createForm(c);
+//						Assert.notNull(player);
+						result = createModelAndView1(family);
+						
+						result.addObject("requestURI", "family/displayA.do?familyId="+c.getId());
+						result.addObject("detailsFamily",true);
+						
+						return result;
+					}
+					
+					// EDITAR PERFIL --------------------------------------------------------------
+					@RequestMapping(value = "/displayB", method = RequestMethod.GET)
+					public ModelAndView displayB(){
+						ModelAndView result;
+						Family c = familyService.findByPrincipal();
+						
+						FamilyForm family = familyService.createForm(c);
+//						Assert.notNull(player);
+						result = createModelAndView1(family);
+						
+						result.addObject("requestURI", "family/displayB.do?familyId="+c.getId());
+						result.addObject("detailsFamily",false);
+						
+						return result;
+					}
+					@RequestMapping(value = "/displayB", method = RequestMethod.POST, params = "save1")
+					public ModelAndView save1(@Valid FamilyForm family, BindingResult binding) {
+						ModelAndView result;
+						Family c;
+						if (binding.hasErrors()) {
+							result = createModelAndView1(family);
+							result.addObject("detailsFamily",false);
+						} else {
+							try {
+								c = familyService.reconstructor2(family);
+								familyService.save(c);
+								result = new ModelAndView("redirect:../principal/index.do");
+				
+							} catch (Throwable error) {
+								result = createModelAndView1(family, "family.commit.error");	
+								result.addObject("detailsFamily",false);
+							}
+						}
+
+						return result;
+					}
+		
 		
 		
 
@@ -126,6 +182,25 @@ public class FamilyController extends ErrorController {
 				result.addObject("isCoach", false);
 				
 
+				return result;
+			}
+			
+			protected ModelAndView createModelAndView1(FamilyForm family) {
+				ModelAndView result;
+
+				result = createModelAndView1(family, null);
+
+				return result;
+			}
+
+			protected ModelAndView createModelAndView1(FamilyForm family, String message) {
+				ModelAndView result;
+
+				result = new ModelAndView("family/display");
+				result.addObject("family", family);
+				
+				result.addObject("message", message);
+			
 				return result;
 			}
 
