@@ -1,5 +1,7 @@
 package controllers.family;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +44,21 @@ public class PlayerFamilyController extends ErrorController {
 		
 		return result;
 	}
+	
+	// Listar los jugadores pertenecientes a un Recruitment
+		@RequestMapping(value = "/listPlayersByRecruitment", method = RequestMethod.GET)
+		public ModelAndView listPlayersByRecruitment(@RequestParam int recruitmentId) {
+			ModelAndView result;
+			Collection<Player> players;
+
+			players = playerService.findPlayersByRecruitment(recruitmentId);
+
+			result = new ModelAndView("player/list");
+			result.addObject("players", players);
+			result.addObject("requestURI", "player/f/listPlayersByRecruitment.do");
+
+			return result;
+		}
 	
 	protected ModelAndView createModelAndView1(PlayerForm player) {
 		ModelAndView result;

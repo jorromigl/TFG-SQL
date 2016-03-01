@@ -46,6 +46,15 @@
 		</display:column>
 
 	</security:authorize>
+	
+	<security:authorize access="hasRole('FAMILY')">
+
+		<display:column>
+			<a href="player/f/listPlayersByRecruitment.do?recruitmentId=${row.id}"><spring:message
+					code="recruitment.player" /></a>
+		</display:column>
+
+	</security:authorize>
 
 
 
