@@ -105,6 +105,8 @@ public class PlayerController extends ErrorController {
 
 		return result;
 	}
+	
+	
 
 	// REGISTRAR --------------------------------------------------------------
 

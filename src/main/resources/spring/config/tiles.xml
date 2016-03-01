@@ -19,6 +19,7 @@
 		<value>/views/player/tiles.xml</value>
 		<value>/views/comment/tiles.xml</value>
 		<value>/views/profile/tiles.xml</value>
+		<value>/views/family/tiles.xml</value>
 		
 		<value>/views/match/tiles.xml</value>
 		<value>/views/summary/tiles.xml</value>

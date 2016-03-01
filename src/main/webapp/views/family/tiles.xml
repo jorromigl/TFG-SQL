@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+		<definition name="family/list" extends="principal.page">	
+		<put-attribute name="title" value="List families" />
+		<put-attribute name="body" value="/views/family/list.jsp" />
+	</definition>
+	
+		<definition name="family/display" extends="principal.page">	
+		<put-attribute name="title" value="Display family" />
+		<put-attribute name="body" value="/views/family/display.jsp" />
+	</definition>
+	
+	<definition name="family/edit" extends="principal.page">	
+		<put-attribute name="title" value="family" />
+		<put-attribute name="body" value="/views/family/edit.jsp" />
+	</definition>
+	
+	
+</tiles-definitions>

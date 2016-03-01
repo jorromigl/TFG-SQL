@@ -93,6 +93,8 @@
 										code="master.page.coach.recruitmentsListFuture" /> </a></li>
 							<li><a href="squadra/player/displaySquadra.do"><spring:message
 										code="master.page.player.mySquadra" /> </a></li>
+							<li><a href="familiers/player/viewMyFamily.do"><spring:message
+										code="master.page.player.myFamily" /> </a></li>
 
 						</security:authorize>
 						

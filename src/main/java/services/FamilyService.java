@@ -12,6 +12,8 @@ import org.springframework.util.Assert;
 import domain.Comment;
 import domain.Family;
 import domain.Folder;
+import domain.Player;
+import domain.Squadra;
 import forms.FamilyForm;
 import repositories.FamilyRepository;
 import security.Authority;
@@ -29,7 +31,9 @@ public class FamilyService {
 	
 	@Autowired
 	private FolderService folderService;
-
+	
+	@Autowired
+	private PlayerService playerService;
 
 	// Services	
 	
@@ -136,6 +140,12 @@ public class FamilyService {
 		
 		familyRepository.save(family);
 					
+	}
+
+	public Collection<Family> findMyFamily() {
+		Player playerConnect = playerService.findByPrincipal();
+		Collection<Family> families = familyRepository.findMyFamily(playerConnect.getId());
+		return families;
 	}
 	
 }
