@@ -16,6 +16,7 @@ import domain.Player;
 import domain.Squadra;
 import forms.FamilyForm;
 import repositories.FamilyRepository;
+import repositories.PlayerRepository;
 import security.Authority;
 import security.LoginService;
 import security.UserAccount;
@@ -28,6 +29,9 @@ public class FamilyService {
 	
 	@Autowired
 	private FamilyRepository familyRepository;
+	
+	@Autowired
+	private PlayerRepository playerRepository;
 	
 	@Autowired
 	private FolderService folderService;
@@ -128,6 +132,14 @@ public class FamilyService {
 	
 	public Collection<Family> findAll(){
 		return familyRepository.findAll();
+	}	
+	
+	public Collection<Player> playerSameCategory(){
+		Family f= findByPrincipal();
+		String category= f.getPlayer().getCategory().getCname();
+		Collection<Player> players= playerRepository.findAllPlayersSameCategory(category);
+		players.remove(f.getPlayer());
+		return players;
 	}	
 	
 	public Family findOne(int id){

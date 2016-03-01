@@ -110,6 +110,8 @@
 										code="master.page.coach.recruitmentsListPast" /> </a></li>
 							<li><a href="recruitment/family/listFuture.do"><spring:message
 										code="master.page.coach.recruitmentsListFuture" /> </a></li>
+							<li><a href="family/listPlayerSameCategory.do"><spring:message
+										code="master.page.family.listPlayerCategory" /> </a></li>
 							
 						</security:authorize>
 

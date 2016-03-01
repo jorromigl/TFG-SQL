@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import controllers.ErrorController;
 import domain.Family;
 import domain.Player;
+import domain.Recruitment;
 import forms.FamilyForm;
 import services.FamilyService;
 import services.PlayerService;
@@ -83,6 +84,20 @@ public class FamilyController extends ErrorController {
 			return result;
 		}
 		
+		// List players same category family's player
+		@RequestMapping(value = "/listPlayerSameCategory", method = RequestMethod.GET)
+		public ModelAndView listPlayerSameCategory() {
+			ModelAndView result;
+			Collection<Player> players;
+			
+			players = familyService.playerSameCategory();
+									
+			result = new ModelAndView("player/list");
+			result.addObject("players", players);
+			result.addObject("requestURI", "family/listPlayerSameCategory.do");
+
+			return result;
+		}
 		
 		
 		

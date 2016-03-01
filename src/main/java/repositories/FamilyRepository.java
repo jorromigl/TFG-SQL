@@ -18,5 +18,5 @@ public interface FamilyRepository extends JpaRepository<Family, Integer> {
 	//Devuelve el familiar de un player
 	@Query("select a from Family a where a.player.id=?1")
 	Collection<Family> findMyFamily(int id);
-
+	
 }
