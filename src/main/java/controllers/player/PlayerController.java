@@ -55,6 +55,21 @@ public class PlayerController extends ErrorController {
 
 		return result;
 	}
+	
+	// Listar los jugadores pertenecientes a un Recruitment 
+		@RequestMapping(value = "/listPlayersByRecruitment", method = RequestMethod.GET)
+		public ModelAndView listPlayersByRecruitment(@RequestParam int recruitmentId) {
+			ModelAndView result;
+			Collection<Player> players;
+
+			players = playerService.findPlayersByRecruitment(recruitmentId);
+
+			result = new ModelAndView("player/list");
+			result.addObject("players", players);
+			result.addObject("requestURI", "player/listPlayersByRecruitment.do");
+
+			return result;
+		}
 
 	// Ver el perfil de un jugador
 	@RequestMapping(value = "/verPerfilJugador", method = RequestMethod.GET)

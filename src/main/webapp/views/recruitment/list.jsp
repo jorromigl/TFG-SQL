@@ -9,29 +9,47 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<display:table name="recruitments" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
+<display:table name="recruitments" id="row" requestURI="${requestURI}"
+	pagesize="5" class="displaytag">
 
 	<spring:message code="recruitment.match.rival" var="rival" />
-	<display:column property="match.rival" title="${rival}" sortable="${true}" />
-	
+	<display:column property="match.rival" title="${rival}"
+		sortable="${true}" />
+
 	<spring:message code="recruitment.match.location" var="location" />
 	<display:column property="match.location" title="${location}" />
-	
+
 	<spring:message code="recruitment.match.moment" var="moment" />
-	<display:column property="match.moment" title="${moment}"  />
-	
-	<display:column >
-		<a href="player/c/listPlayersByRecruitment.do?recruitmentId=${row.id}" ><spring:message code="recruitment.player" /></a>
-	</display:column>
-	<jstl:if test="${isFuture==true}">
-		<display:column >
-		<a href="player/c/listPlayersSquadra.do?scuadraId=${squadraId}" ><spring:message code="player.addRecreutment" /></a>
-	</display:column>
-	</jstl:if>
-	
-	
-			
+	<display:column property="match.moment" title="${moment}" />
+
+	<security:authorize access="hasRole('COACH')">
+
+		<display:column>
+			<a href="player/c/listPlayersByRecruitment.do?recruitmentId=${row.id}"><spring:message
+					code="recruitment.player" /></a>
+		</display:column>
+
+		<jstl:if test="${isFuture==true}">
+			<display:column>
+				<a href="player/c/listPlayersSquadra.do?scuadraId=${squadraId}"><spring:message
+						code="player.addRecreutment" /></a>
+			</display:column>
+
+		</jstl:if>
+	</security:authorize>
+
+
+	<security:authorize access="hasRole('PLAYER')">
+		<display:column>
+			<a href="player/listPlayersByRecruitment.do?recruitmentId=${row.id}"><spring:message
+					code="recruitment.player" /></a>
+		</display:column>
+
+	</security:authorize>
+
+
+
 </display:table>
-	
-	<tag:button code="recruitment.return" url="principal/index.do'" />
+
+<tag:button code="recruitment.return" url="principal/index.do'" />
 
