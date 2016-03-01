@@ -15,15 +15,18 @@
 	<form:hidden path="id" />
 	<form:hidden path="version" />
 
+	<ul>
 
-		<ul>
-			<li><b><spring:message code="coach.name" /></b> <jstl:out
-					value="${name}"></jstl:out></li>
-			<li><b><spring:message code="coach.surname" /></b> <jstl:out
-					value="${surname}"></jstl:out></li>
-		</ul>
-
+		<li><b><spring:message code="coach.name" /></b> <jstl:out
+				value="${coach.name}"></jstl:out></li>
+		<li><b><spring:message code="coach.surname" /></b> <jstl:out
+				value="${coach.surname}"></jstl:out></li>
+	</ul>
 	
+		<a href="player/verPerfilCoach.do?coachId=${coach.id}" ><spring:message code="coach.profile" /></a>
+
+
+
 	<br>
 	<br>
 	<acme:cancel code="coach.return" url="principal/index.do" />
