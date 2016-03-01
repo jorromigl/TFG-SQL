@@ -166,7 +166,7 @@ public class FamilyService {
 		return families;
 	}
 	
-	// MIO CONCHI
+
 		public Family reconstructor2(FamilyForm familyForm) throws SerialException, SQLException {
 			Family result;
 
@@ -176,6 +176,7 @@ public class FamilyService {
 			result.setVersion(familyForm.getVersion());
 
 			result.setEmail(familyForm.getEmail());
+			result.setPlayer(familyForm.getPlayer());
 			result.setName(familyForm.getName());
 			result.setPhone(familyForm.getPhone());
 			result.setSurname(familyForm.getSurname());
@@ -192,7 +193,7 @@ public class FamilyService {
 			familyForm.setId(family.getId());
 			familyForm.setVersion(family.getVersion());
 			familyForm.setEmail(family.getEmail());
-
+			familyForm.setPlayer(family.getPlayer());
 			familyForm.setName(family.getName());
 			familyForm.setPhone(family.getPhone());
 			familyForm.setSurname(family.getSurname());

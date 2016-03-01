@@ -23,7 +23,8 @@
 		<tag:textbox code="display.surname" path="surname" readonly="true"/>
 		<tag:textbox code="display.email" path="email" readonly="true" />
 		<tag:textbox code="display.phone" path="phone" readonly="true"/>
-		<tag:textbox code="display.address" path="address" readonly="true"/>
+		<tag:textbox code="display.address" path="address" readonly="true"/>	
+		<tag:textbox code="display.player" path="player.name" readonly="true"/>
 	
 	<%-- <jstl:if test="${incidence.photo!=null}">
 		<b><spring:message code="incidence.photo" /></b><br/><br/>
@@ -53,7 +54,8 @@
 		<tag:textbox code="display.surname" path="surname"/>
 		<tag:textbox code="display.email" path="email" />
 		<tag:textbox code="display.phone" path="phone"/>
-		<tag:textbox code="display.address" path="address"/>
+		<tag:textbox code="display.address" path="address"/>	
+		<tag:textbox code="display.player" path="player.name" readonly="true"/>
 	
 	<%-- <jstl:if test="${incidence.photo!=null}">
 		<b><spring:message code="incidence.photo" /></b><br/><br/>
@@ -83,6 +85,10 @@
 		<tag:textbox code="display.email" path="email" readonly="true" />
 		<tag:textbox code="display.phone" path="phone" readonly="true"/>
 		<tag:textbox code="display.address" path="address" readonly="true"/>
+		<tag:textbox code="display.player" path="player.name" readonly="true"/>
+		
+<%-- 		<tag:select code="register.players" path="player" items="${players}" --%>
+<%-- 					itemLabel="fullName" /> --%>
 	
 	<%-- <jstl:if test="${incidence.photo!=null}">
 		<b><spring:message code="incidence.photo" /></b><br/><br/>

@@ -112,6 +112,8 @@
 										code="master.page.coach.recruitmentsListFuture" /> </a></li>
 							<li><a href="family/listPlayerSameCategory.do"><spring:message
 										code="master.page.family.listPlayerCategory" /> </a></li>
+							<li><a href="family/displayA.do"><spring:message
+										code="master.page.family.profile" /> </a></li>
 							
 						</security:authorize>
 
