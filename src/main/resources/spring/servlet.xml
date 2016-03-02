@@ -11,7 +11,7 @@
 	    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
 	">
-	
+
 	<!-- Context -->
 
 	<import resource="config/packages.xml" />
@@ -29,12 +29,12 @@
 		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<property name="converters" ref="converters" />
 	</bean>
-	
+
 	<!-- Data -->
 
 	<import resource="datasource.xml" />
 
- 	
+
 	<bean id="openEntityManagerInViewInterceptor"
 		class="org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor" />
 
@@ -113,6 +113,13 @@
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.tiles2.TilesView" />
+	</bean>
+
+	<!-- Upload photo -->
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="100000" />
 	</bean>
 
 </beans>

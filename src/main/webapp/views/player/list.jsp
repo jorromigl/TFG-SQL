@@ -19,6 +19,19 @@
 	<spring:message code="player.category" var="cname" />
 	<display:column property="category.cname" title="${cname}" />
 	
+	<jstl:if test="${row.file == null }">
+	<display:column>
+		<spring:message code = "player.notImage"></spring:message>
+	</display:column>
+	</jstl:if>
+	
+	<jstl:if test="${row.file != null }">
+	<display:column>
+		<img style="width: 50px; height: 50px;" src="player/showImage.do?playerId=${row.id}"/>
+	</display:column>
+	</jstl:if>
+	
+	
 	<security:authorize access="hasRole('PLAYER')">
 	<display:column >
 		<a href="player/verPerfilJugador.do?playerId=${row.id}" ><spring:message code="player.profile" /></a>

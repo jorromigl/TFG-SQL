@@ -124,6 +124,8 @@ public class PlayerService {
 		result.setDate(playerForm.getDate());
 		result.getUserAccount().setUsername(playerForm.getUsername());
 		result.getUserAccount().setPassword(playerForm.getPassword());
+		
+		result.setFile(playerForm.getFile());
 
 		return result;
 	}
@@ -146,6 +148,8 @@ public class PlayerService {
 		result.setDate(playerForm.getDate());
 		result.getUserAccount().setUsername(playerForm.getUsername());
 		result.getUserAccount().setPassword(playerForm.getPassword());
+		
+		result.setFile(playerForm.getFile());
 		return result;
 	}
 
@@ -169,6 +173,8 @@ public class PlayerService {
 		playerForm.setDate(player.getDate());
 		playerForm.setUsername(player.getUserAccount().getUsername());
 		playerForm.setPassword(player.getUserAccount().getPassword());
+		
+		playerForm.setFile(player.getFile());
 
 		return playerForm;
 	}
