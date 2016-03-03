@@ -27,6 +27,8 @@
 		
 		<security:intercept-url pattern="/player/showImage.do" access="permitAll" />
 		<security:intercept-url pattern="/family/showImage.do" access="permitAll" />
+		<security:intercept-url pattern="/coach/showImage.do" access="permitAll" />
+		
 		
 	
 

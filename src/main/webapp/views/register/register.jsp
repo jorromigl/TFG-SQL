@@ -87,7 +87,7 @@
 
 
 		<jstl:if test="${isPlayer==false && isCoach== true}">
-			<form:form action="coach/register.do" modelAttribute="coachForm">
+			<form:form action="coach/register.do" modelAttribute="coachForm" enctype = "multipart/form-data">
 				<h1>
 					<spring:message code="register.registerCoach" />
 				</h1>
@@ -105,6 +105,10 @@
 				<tag:textboxstyle code="register.email" path="email" />
 				<tag:textboxstyle code="register.phone" path="phone" />
 				<tag:textboxstyle code="register.address" path="address" />
+				
+				<form:label path="file"> <spring:message code ="player.file"></spring:message></form:label>
+				<form:input path="file" type = "file" />
+				<form:errors cssClass= "error" path ="file"> </form:errors>
 
 				<tag:checkbox path="available" url="law/law.do"
 					code="register.available" />

@@ -17,7 +17,6 @@ public class CoachForm {
 	private int version;
 	private Category category;
 	private boolean available;
-//	private byte[] photo;
 	private String username;
 	private String password;
 	private String verifyPassword;
@@ -26,6 +25,17 @@ public class CoachForm {
 	private String email;
 	private String phone;
 	private String address;	
+	private byte[] file;
+	
+	
+	@Lob
+	public byte[] getFile(){
+		return file;
+	}
+	
+	public void setFile(byte[] file){
+		this.file = file;
+	}
 	
 	
 	

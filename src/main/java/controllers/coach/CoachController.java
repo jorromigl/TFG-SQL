@@ -2,18 +2,26 @@ package controllers.coach;
 
 import java.util.Collection;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
 import domain.Coach;
+import domain.Family;
 import domain.Player;
 import forms.CoachForm;
 import forms.PlayerForm;
@@ -116,6 +124,28 @@ public class CoachController extends ErrorController {
 					result = createModelAndView(coach, "coach.commit.error");
 				}
 				return result;
+			}
+			
+			//Subir foto
+			@InitBinder
+			protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception{
+				binder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
+			}
+			
+			//recuperar la foto de la BD
+			
+			@RequestMapping(value ="/showImage")
+			public ModelAndView showImage(HttpServletResponse response, @RequestParam int coachId) throws Exception{
+				Coach coach = coachService.findOneToEdit(coachId);
+				
+				response.setContentType(MediaType.IMAGE_JPEG_VALUE);
+				response.setContentLength(coach.getFile().length);
+				response.setHeader("Content-Disposition", "attachment; filename=\""+ coach.getName()+"\"");
+				
+				FileCopyUtils.copy(coach.getFile(), response.getOutputStream());
+				
+				return null;
+				
 			}
 			
 			// VER PERFIL --------------------------------------------------------------

@@ -109,6 +109,7 @@ public class CoachService {
 		result.setPhone(coachForm.getPhone());
 		result.setSurname(coachForm.getSurname());
 		result.setAddress(coachForm.getAddress());
+		result.setFile(coachForm.getFile());
 		result.setCategory(coachForm.getCategory());
 		result.getUserAccount().setUsername(coachForm.getUsername());
 		result.getUserAccount().setPassword(coachForm.getPassword());
@@ -129,6 +130,7 @@ public class CoachService {
 		result.setName(coachForm.getName());
 		result.setPhone(coachForm.getPhone());
 		result.setSurname(coachForm.getSurname());
+		result.setFile(coachForm.getFile());
 		result.setAddress(coachForm.getAddress());
 		result.getCategory().setCname(coachForm.getCategory().getCname());
 		result.getUserAccount().setUsername(coachForm.getUsername());
@@ -148,6 +150,7 @@ public class CoachService {
 		coachForm.setPhone(coach.getPhone());
 		coachForm.setSurname(coach.getSurname());
 		coachForm.setAddress(coach.getAddress());
+		coachForm.setFile(coach.getFile());
 		coachForm.setAvailable(true);
 		Category c = new Category();
 		c.setCname(coach.getCategory().getCname());
