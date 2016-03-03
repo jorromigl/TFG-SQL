@@ -1,6 +1,7 @@
 package forms;
 
 
+import javax.persistence.Lob;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -25,6 +26,9 @@ public class CoachForm {
 	private String email;
 	private String phone;
 	private String address;	
+	
+	
+	
 	
 	@NotBlank
 	@Size(min = 5, max = 32)

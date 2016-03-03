@@ -3,6 +3,7 @@ package domain;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
@@ -16,6 +17,17 @@ public class Family extends User {
 	}
 	private Player player;
 //	private Collection<Comment> comments;
+	private byte[] file;
+	
+	
+	@Lob
+	public byte[] getFile(){
+		return file;
+	}
+	
+	public void setFile(byte[] file){
+		this.file = file;
+	}
 	
 	@Valid
 	@ManyToOne(optional = true)

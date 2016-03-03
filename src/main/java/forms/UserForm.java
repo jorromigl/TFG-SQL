@@ -1,5 +1,6 @@
 package forms;
 
+import javax.persistence.Lob;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -19,7 +20,7 @@ public class UserForm {
 	private String surname;
 	private String email;
 	private String phone;
-
+	
 	
 	
 	@Size(min = 5, max = 32)

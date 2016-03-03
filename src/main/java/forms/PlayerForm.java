@@ -33,7 +33,7 @@ public class PlayerForm {
 	private String phone;
 	private String address;	
 	
-private byte[] file;
+	private byte[] file;
 	
 	
 	@Lob

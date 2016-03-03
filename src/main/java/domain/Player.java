@@ -40,6 +40,7 @@ public class Player extends User {
 	public void setFile(byte[] file){
 		this.file = file;
 	}
+
 	
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)

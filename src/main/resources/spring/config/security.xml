@@ -26,6 +26,7 @@
 		<security:intercept-url pattern="/security/loginFailure.do" access="permitAll" />
 		
 		<security:intercept-url pattern="/player/showImage.do" access="permitAll" />
+		<security:intercept-url pattern="/family/showImage.do" access="permitAll" />
 		
 	
 

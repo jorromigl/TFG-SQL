@@ -110,7 +110,6 @@ public class CoachService {
 		result.setSurname(coachForm.getSurname());
 		result.setAddress(coachForm.getAddress());
 		result.setCategory(coachForm.getCategory());
-		// result.setPhoto(coachForm.getPhoto());
 		result.getUserAccount().setUsername(coachForm.getUsername());
 		result.getUserAccount().setPassword(coachForm.getPassword());
 
@@ -145,7 +144,6 @@ public class CoachService {
 		coachForm.setId(coach.getId());
 		coachForm.setVersion(coach.getVersion());
 		coachForm.setEmail(coach.getEmail());
-
 		coachForm.setName(coach.getName());
 		coachForm.setPhone(coach.getPhone());
 		coachForm.setSurname(coach.getSurname());

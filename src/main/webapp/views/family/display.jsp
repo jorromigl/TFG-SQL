@@ -10,7 +10,7 @@
 
 <security:authorize access="hasRole('FAMILY')">
 <jstl:if test="${detailsFamily==true}">
-<form:form action="${requestURI}" method="post"  modelAttribute="family">
+<form:form action="${requestURI}" method="post"  modelAttribute="family" enctype="multipart/form-data">
 		
 <!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form	 -->
 
@@ -25,15 +25,16 @@
 		<tag:textbox code="display.phone" path="phone" readonly="true"/>
 		<tag:textbox code="display.address" path="address" readonly="true"/>	
 		<tag:textbox code="display.player" path="player.name" readonly="true"/>
+		
+		<jstl:if test="${family.file == null }">
+					<spring:message code="family.notImage"></spring:message>
+			</jstl:if>
+
+			<jstl:if test="${family.file != null }">
+					<img style="width: 50px; height: 50px;"
+						src="family/showImage.do?familyId=${family.id}" />
+			</jstl:if>
 	
-	<%-- <jstl:if test="${incidence.photo!=null}">
-		<b><spring:message code="incidence.photo" /></b><br/><br/>
-		<img class="img-responsive img-rounded" src="photo/displayImage.do?incidenceId=${incidence.id}" height="350" width="590" />
-	</jstl:if> 
-	<jstl:if test="${incidence.photo==null}">
-		<b><spring:message code="incidence.photo" /></b><br/><br/>
-		<img class="img-responsive img-rounded" src="images/no-image.png" height="350" width="590" />
-	</jstl:if> --%>
 	<tag:button code="display.edit" url="family/displayB.do'" />
 	<tag:button code="display.cancel" url="principal/index.do'" />
 </form:form>

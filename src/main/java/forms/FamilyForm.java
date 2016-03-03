@@ -1,5 +1,6 @@
 package forms;
 
+import javax.persistence.Lob;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -21,6 +22,17 @@ public class FamilyForm {
 	private String email;
 	private String phone;
 	private String address;	
+	private byte[] file;
+	
+	
+	@Lob
+	public byte[] getFile(){
+		return file;
+	}
+	
+	public void setFile(byte[] file){
+		this.file = file;
+	}
 	
 	@NotBlank
 	@Size(min = 5, max = 32)

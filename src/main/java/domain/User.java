@@ -7,6 +7,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
@@ -35,7 +36,8 @@ public abstract class User extends DomainEntity {
 //	private byte[] photo;
 	@SuppressWarnings("unused")
 	private String fullName;
-
+	
+	
 	@NotBlank
 	public String getName() {
 		return name;

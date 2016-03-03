@@ -113,9 +113,8 @@ public class FamilyService {
 		result.setPhone(familyForm.getPhone());
 		result.setSurname(familyForm.getSurname());
 		result.setAddress(familyForm.getAddress());
-		
 		result.setPlayer(familyForm.getPlayer());
-			
+		result.setFile(familyForm.getFile());
 		result.getUserAccount().setUsername(familyForm.getUsername());
 		result.getUserAccount().setPassword(familyForm.getPassword());
 			
@@ -181,6 +180,7 @@ public class FamilyService {
 			result.setPhone(familyForm.getPhone());
 			result.setSurname(familyForm.getSurname());
 			result.setAddress(familyForm.getAddress());
+			result.setFile(familyForm.getFile());
 			result.getUserAccount().setUsername(familyForm.getUsername());
 			result.getUserAccount().setPassword(familyForm.getPassword());
 			return result;
@@ -199,6 +199,7 @@ public class FamilyService {
 			familyForm.setSurname(family.getSurname());
 			familyForm.setAddress(family.getAddress());
 			familyForm.setAvailable(true);
+			familyForm.setFile(family.getFile());
 			
 			familyForm.setUsername(family.getUserAccount().getUsername());
 			familyForm.setPassword(family.getUserAccount().getPassword());
