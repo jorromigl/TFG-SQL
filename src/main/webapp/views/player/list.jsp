@@ -47,6 +47,11 @@
 		<a href="player/c/AddPlayers.do?playerId=${row.id}&squadraId=${squadraId}" ><spring:message code="player.addSquadra" /></a>
 	</display:column>
 	</jstl:if>
+	<jstl:if test="${mysquadra==true}">
+	<display:column >
+		<a href="player/c/AddPlayersRecruitment.do?playerId=${row.id}&recruitmentId=${recruitmentId}" ><spring:message code="player.addRecruitment" /></a>
+	</display:column>
+	</jstl:if>
 	</security:authorize>
 	<security:authorize access="hasRole('FAMILY')">
 	<display:column >

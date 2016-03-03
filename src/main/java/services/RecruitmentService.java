@@ -147,6 +147,16 @@ public class RecruitmentService {
 			 return recruitmentRepository.findAll();
 		}
 		
+		public void addPlayerRecruitment(int recruitmentId, int playerId){
+			
+			Recruitment r= findOne(recruitmentId);
+			Player p= playerService.findOne(playerId);
+			r.addPlayerRecruitment(p);
+			
+		}
+		
+
+		
 
 }
 

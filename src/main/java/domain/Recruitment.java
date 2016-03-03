@@ -36,6 +36,16 @@ public class Recruitment extends DomainEntity{
 		this.players = players;
 	}
 	
+	public void addPlayerRecruitment(Player player) {
+		players.add(player);
+		player.getRecruitments().add(this);
+	}
+
+	public void removePlayer(Player player) {
+		players.remove(player);
+		player.getRecruitments().remove(this);
+	}
+	
 	
 
 }

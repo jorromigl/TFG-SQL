@@ -115,6 +115,36 @@ public class PlayerCoachController extends ErrorController {
 //
 //			return result;
 //		}
+	
+	// Lista de jugadores de su equipo
+	@RequestMapping(value = "/listPlayersSquadraToRecruit", method = RequestMethod.GET)
+	public ModelAndView listPlayersSquadraToRecruit(@RequestParam int squadraId, int recruitmentId) {
+		ModelAndView result;
+		Collection<Player> players;
+
+		players = playerService.findPlayersSquadraToRecruit(squadraId, recruitmentId);
+
+		result = new ModelAndView("player/list");
+		result.addObject("players", players);
+		result.addObject("mysquadra", true);
+		result.addObject("recruitmentId", recruitmentId);
+		result.addObject("requestURI", "player/c/listPlayersSquadraToRecruit.do");
+
+		return result;
+	}
+	
+// Add players Recruitment
+
+	@RequestMapping(value = "/AddPlayersRecruitment", method = RequestMethod.GET)
+	public ModelAndView AddPlayersRecruitment(@RequestParam int recruitmentId, int playerId) {
+
+		recruitmentService.addPlayerRecruitment(recruitmentId,playerId);
+		ModelAndView result;
+
+		result = new ModelAndView("redirect:../../recruitment/coach/listFuture.do");
+
+		return result;
+	}
 
 	// Add players Squadra
 

@@ -18,7 +18,10 @@
 
 	<spring:message code="recruitment.match.location" var="location" />
 	<display:column property="match.location" title="${location}" />
-
+	
+	<spring:message code="recruitment.match.squadra" var="name" />
+	<display:column property="match.squadra.name" title="${name}" />
+	
 	<spring:message code="recruitment.match.moment" var="moment" />
 	<display:column property="match.moment" title="${moment}" />
 
@@ -29,10 +32,11 @@
 					code="recruitment.player" /></a>
 		</display:column>
 
+		
 		<jstl:if test="${isFuture==true}">
 			<display:column>
-				<a href="player/c/listPlayersSquadra.do?scuadraId=${squadraId}"><spring:message
-						code="player.addRecreutment" /></a>
+				<a href="player/c/listPlayersSquadraToRecruit.do?squadraId=${row.match.squadra.id}&recruitmentId=${row.id}"><spring:message
+						code="recruitment.addPlayer" /></a>
 			</display:column>
 
 		</jstl:if>
