@@ -16,6 +16,7 @@
 
 	<tag:textbox code="match.rival" path="rival" />
 	<tag:textbox code="match.location" path="location" />
+	<tag:select code="match.squadra" path="squadra" items="${squadras}" itemLabel= "name" />
 	<tag:textbox code="match.moment" path="moment" />
 	
 	

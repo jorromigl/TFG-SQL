@@ -66,6 +66,16 @@ public class Match extends DomainEntity {
 	private Summary summary;
 	private Recruitment recruitment;
 	private Collection<Comment> comments;
+	private Squadra squadra;
+	
+	@ManyToOne
+	public Squadra getSquadra() {
+		return squadra;
+	}
+
+	public void setSquadra(Squadra squadra) {
+		this.squadra = squadra;
+	}
 
 //	@ManyToOne(optional=false)
 	@ManyToOne //para populate

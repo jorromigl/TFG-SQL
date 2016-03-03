@@ -63,7 +63,7 @@ public class SquadraService {
 	public Collection<Squadra> findAll() {
 		return squadraRepository.findAll();
 	}
-	
+		
 	public void addPlayer(int squadraId, int playerId){
 		
 		Squadra s = findOne(squadraId);

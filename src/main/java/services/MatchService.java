@@ -51,6 +51,7 @@ public class MatchService {
 		Coach c= coachService.findOne(coachService.findByPrincipal().getId());
 		
 		m.setCoach(c);
+		
 		matchRepository.save(m);
 	}
 	

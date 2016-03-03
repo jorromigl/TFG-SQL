@@ -44,6 +44,16 @@ public class Squadra extends DomainEntity {
 	private Coach coach;
 	private Classification classification;
 	private Collection<Player> players;
+	private Collection<Match> matches;
+	
+	@OneToMany(mappedBy="squadra")
+	public Collection<Match> getMatches() {
+		return matches;
+	}
+
+	public void setMatches(Collection<Match> matches) {
+		this.matches = matches;
+	}
 
 //	@OneToOne(optional=false)
 	@ManyToOne(optional = false) //para populate

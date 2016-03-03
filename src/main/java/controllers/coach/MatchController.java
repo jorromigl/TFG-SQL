@@ -15,7 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
 import domain.Match;
+import domain.Squadra;
 import services.MatchService;
+import services.SquadraService;
 
 @Controller
 @RequestMapping("/match")
@@ -24,6 +26,9 @@ public class MatchController extends ErrorController {
 		
 			@Autowired
 			private MatchService matchService;
+			
+			@Autowired
+			private SquadraService squadraService;
 				
 		
 		// Constructors -----------------------------------------------------------
@@ -154,12 +159,13 @@ public class MatchController extends ErrorController {
 
 		protected ModelAndView createModelAndView(Match match, String message) {
 			ModelAndView result;
-
+			Collection<Squadra> squadras= squadraService.getMySquadra();
 			result = new ModelAndView("match/edit");
 
 			result.addObject("match", match);
 			result.addObject("message", message);
-		
+			result.addObject("squadras", squadras);
+			
 			return result;
 		}	
 		

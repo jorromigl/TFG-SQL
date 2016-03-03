@@ -412,6 +412,11 @@
 				<ref bean="player11" />
 			</list>
 		</property>
+		<property name="matches">
+			<list>
+			<ref bean="match1" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="squadra2" class="domain.Squadra">
@@ -907,6 +912,7 @@
 		<property name="location" value="Tomares" />
 		<property name="moment" value="25/08/2010 10:00" />
 		<property name="coach" ref="coach1" />
+		<property name="squadra" ref="squadra1" />
 		<property name="summary" ref="summary1"/>
 		<property name="recruitment" ref="recruitment1" />
 		<property name="comments">

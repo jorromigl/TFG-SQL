@@ -21,6 +21,9 @@
 	<spring:message code="match.location" var="location" />
 	<display:column property="location" title="${location}" />
 	
+	<spring:message code="match.squadra" var="name" />
+	<display:column property="squadra.name" title="${name}"  />
+	
 	<spring:message code="match.moment" var="moment" />
 	<display:column property="moment" title="${moment}"  />
 	
