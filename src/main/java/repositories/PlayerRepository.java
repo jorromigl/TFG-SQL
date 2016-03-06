@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import domain.Coach;
+import domain.Family;
 import domain.Player;
 
 @Repository
@@ -30,7 +31,9 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
     @Query("select p from Player p where p.category.cname = ?1")
 	Collection<Player> findAllPlayersSameCategory(String categoryUser);
 
-
+  //Devuelve el player de un familiar
+    @Query("select p from Player p where (select f from Family f where f.id = ?1) member of p.families")
+	Player findMyPlayer(int id);
 
 
     

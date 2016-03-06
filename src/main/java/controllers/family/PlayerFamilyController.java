@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
+import domain.Family;
 import domain.Player;
+import forms.FamilyForm;
 import forms.PlayerForm;
 import services.PlayerService;
 
@@ -39,7 +41,7 @@ public class PlayerFamilyController extends ErrorController {
 		PlayerForm player = playerService.createForm(p);
 		result = createModelAndView1(player);
 		
-		result.addObject("requestURI", "player/verPerfilJugador.do?playerId="+p.getId());
+		result.addObject("requestURI", "player/f/verPerfilJugador.do?playerId="+p.getId());
 		result.addObject("detailsPlayer",true);
 		
 		return result;
@@ -59,6 +61,20 @@ public class PlayerFamilyController extends ErrorController {
 
 			return result;
 		}
+		
+		// Ver su PLAYER
+				@RequestMapping(value = "/viewMyPlayer", method = RequestMethod.GET)
+				public ModelAndView viewMyFamily() {
+					ModelAndView result;
+					Player player;
+					player = playerService.findMyPlayer();
+					
+					result = new ModelAndView("player/edit");
+					result.addObject("player", player);
+					result.addObject("requestURI", "player/f/viewMyPlayer.do");
+
+					return result;
+				}
 	
 	protected ModelAndView createModelAndView1(PlayerForm player) {
 		ModelAndView result;

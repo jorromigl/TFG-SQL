@@ -53,6 +53,9 @@ public class PlayerService {
 
 	@Autowired
 	private RecruitmentService recruitmentService;
+	
+	@Autowired
+	private FamilyService familyService;
 
 	// Services
 
@@ -281,6 +284,14 @@ public class PlayerService {
 			players = playerRepository.findAllPlayersSameCategory(categoryUser);
 			return players;
 		}
+	
+	//Ver My Player
+	public Player findMyPlayer() {
+		Family familyConnect = familyService.findByPrincipal();
+		Player player = playerRepository.findMyPlayer(familyConnect.getId());
+		return player;
+	}
+
 	
 
 	}

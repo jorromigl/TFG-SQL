@@ -118,6 +118,8 @@
 										code="master.page.user.myFolder" /> </a></li>
 							<li><a href="squadra/family/displaySquadraP.do"><spring:message
 										code="master.page.user.SquadraMyPlayer" /> </a></li>
+							<li><a href="player/f/viewMyPlayer.do"><spring:message
+										code="master.page.user.MyPlayer" /> </a></li>
 							
 						</security:authorize>
 
