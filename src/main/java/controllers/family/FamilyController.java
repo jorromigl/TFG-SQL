@@ -26,6 +26,7 @@ import domain.Player;
 import domain.Recruitment;
 import forms.CoachForm;
 import forms.FamilyForm;
+import services.CoachService;
 import services.FamilyService;
 import services.PlayerService;
 
@@ -40,6 +41,9 @@ public class FamilyController extends ErrorController {
 		
 		@Autowired
 		private PlayerService playerService;
+		
+		@Autowired
+		private CoachService coachService;
 	
 	
 	// Constructors -----------------------------------------------------------
@@ -184,7 +188,8 @@ public class FamilyController extends ErrorController {
 
 						return result;
 					}
-		
+					
+				
 		
 		
 
@@ -233,5 +238,7 @@ public class FamilyController extends ErrorController {
 			
 				return result;
 			}
+			
+			
 
 }

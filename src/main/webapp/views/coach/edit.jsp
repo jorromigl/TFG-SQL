@@ -23,8 +23,13 @@
 				value="${coach.surname}"></jstl:out></li>
 	</ul>
 	
+		<security:authorize access="hasRole('PLAYER')">
 		<a href="player/verPerfilCoach.do?coachId=${coach.id}" ><spring:message code="coach.profile" /></a>
-
+		</security:authorize>
+		
+		<security:authorize access="hasRole('FAMILY')">
+		<a href="coach/f/verPerfilCoach.do?coachId=${coach.id}" ><spring:message code="coach.profile" /></a>
+		</security:authorize>
 
 
 	<br>

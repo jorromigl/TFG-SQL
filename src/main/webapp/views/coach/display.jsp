@@ -112,3 +112,33 @@
 		<tag:button code="display.cancel" url="principal/index.do'" />
 	</form:form>
 </security:authorize>
+	<security:authorize access="hasRole('FAMILY')">
+	<form:form action="${requestURI}" method="post" modelAttribute="coach">
+
+		<!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form-->
+
+		<form:hidden path="id" />
+		<form:hidden path="version" />
+
+
+		<tag:textbox code="display.username" path="username" readonly="true" />
+		<tag:textbox code="display.name" path="name" readonly="true" />
+		<tag:textbox code="display.surname" path="surname" readonly="true" />
+		<tag:textbox code="display.category" path="category.cname"
+			readonly="true" />
+		<tag:textbox code="display.email" path="email" readonly="true" />
+		<tag:textbox code="display.phone" path="phone" readonly="true" />
+		<tag:textbox code="display.address" path="address" readonly="true" />
+
+		<jstl:if test="${player.file == null }">
+			<spring:message code="coach.notImage"></spring:message>
+		</jstl:if>
+
+		<jstl:if test="${player.file != null }">
+			<img style="width: 50px; height: 50px;"
+				src="coach/showImage.do?coachId=${coach.id}" />
+		</jstl:if>
+
+		<tag:button code="display.cancel" url="principal/index.do'" />
+	</form:form>
+</security:authorize>
