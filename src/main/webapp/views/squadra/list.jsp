@@ -8,7 +8,8 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<display:table name="squadras" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
+<div class="x_panel">
+<display:table name="squadras" id="row" requestURI="${requestURI}" pagesize="5" class="table table-hover">
 
 
 	<spring:message code="squadra.name" var="name" />
@@ -21,5 +22,5 @@
 		<a href="player/c/findInItsCategoryAndNotHaveSquadra.do?squadraId=${row.id}" ><spring:message code="squadra.players.add" /></a>
 	</display:column>
 </display:table>
-	
+</div>
 	<tag:button code="squadra.return" url="principal/index.do'" />

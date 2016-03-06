@@ -31,8 +31,6 @@
 			<tag:textbox code="display.phone" path="phone" readonly="true" />
 			<tag:textbox code="display.address" path="address" readonly="true" />
 
-			<!-- 			<img style="Width: 50px; height: 50px;" -->
-			<%-- 				src="player/showImage.do?playerId =${player.id}" /> --%>
 
 			<jstl:if test="${player.file == null }">
 				<spring:message code="player.notImage"></spring:message>
@@ -58,7 +56,6 @@
 		<form:form action="${requestURI}" method="post"
 			modelAttribute="player" enctype="multipart/form-data">
 
-			<%-- <!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form-->	 --%>
 
 			<form:hidden path="id" />
 			<form:hidden path="version" />

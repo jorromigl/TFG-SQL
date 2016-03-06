@@ -12,8 +12,8 @@
 	<!-- page content -->
 			
 						
-
-<display:table name="matches" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
+<div class="x_panel">
+<display:table name="matches" id="row" requestURI="${requestURI}" pagesize="5" class="table table-hover">
 
 	<spring:message code="match.rival" var="rival" />
 	<display:column property="rival" title="${rival}" sortable="${true}" />
@@ -85,7 +85,7 @@
 	</security:authorize>
 			
 </display:table>
-	
+</div>
 	<tag:button code="match.return" url="principal/index.do'" />
 
 						

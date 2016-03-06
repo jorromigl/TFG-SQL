@@ -11,8 +11,8 @@
 
 
 
-
-<display:table name="families" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
+<div class="x_panel">
+<display:table name="families" id="row" requestURI="${requestURI}" pagesize="5" class="table table-hover">
 	
 	<spring:message code="family.name" var="name" />
 	<display:column property="name" title="${name}" sortable="${true}" />
@@ -26,6 +26,6 @@
 	</display:column>
 	</security:authorize>
 </display:table>
-	
+</div>
 	<tag:button code="family.return" url="principal/index.do'" />
 

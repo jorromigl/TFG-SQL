@@ -9,29 +9,34 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<display:table name="comments" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
 
-	<spring:message code="comment.subject" var="subject" />
-	<display:column property="subject" title="${subject}" sortable="${true}" />
-	
-	<spring:message code="comment.text" var="text" />
-	<display:column property="text" title="${text}" />
-	
-	<spring:message code="comment.user" var="fullName" />
-	<display:column property="user.fullName" title="${fullName}" />
-	
-	<spring:message code="comment.moment" var="moment" />
-	<display:column property="moment" title="${moment}"  />
+<div class="x_panel">
+	<display:table name="comments" id="row" requestURI="${requestURI}"
+		pagesize="5" class="table table-hover">
 
-	<display:column >
+		<spring:message code="comment.subject" var="subject" />
+		<display:column property="subject" title="${subject}"
+			sortable="${true}" />
 
-		<a href="comment/display.do?commentId=${row.id}" ><spring:message code="comment.display" /></a>
+		<spring:message code="comment.text" var="text" />
+		<display:column property="text" title="${text}" />
 
-	</display:column>
-	
-			
-</display:table>
-	
-	
-	<tag:button code="comment.return" url="principal/index.do'" />
-	
+		<spring:message code="comment.user" var="fullName" />
+		<display:column property="user.fullName" title="${fullName}" />
+
+		<spring:message code="comment.moment" var="moment" />
+		<display:column property="moment" title="${moment}" />
+
+		<display:column>
+
+			<a href="comment/display.do?commentId=${row.id}"><spring:message
+					code="comment.display" /></a>
+
+		</display:column>
+
+
+	</display:table>
+
+</div>
+<tag:button code="comment.return" url="principal/index.do'" />
+

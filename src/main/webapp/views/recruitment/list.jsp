@@ -9,8 +9,9 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
+<div class="x_panel">
 <display:table name="recruitments" id="row" requestURI="${requestURI}"
-	pagesize="5" class="displaytag">
+	pagesize="5" class="table table-hover">
 
 	<spring:message code="recruitment.match.rival" var="rival" />
 	<display:column property="match.rival" title="${rival}"
@@ -63,6 +64,6 @@
 
 
 </display:table>
-
+</div>
 <tag:button code="recruitment.return" url="principal/index.do'" />
 

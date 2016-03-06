@@ -9,8 +9,8 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-
-<display:table pagesize="5" class="displaytag" name="folder.messages"
+<div class="x_panel">
+<display:table pagesize="5" class="table table-hover" name="folder.messages"
 	requestURI="${requestURI}" id="row">
 
 	<!-- Attributes -->
@@ -38,6 +38,7 @@
 	</display:column>
 
 </display:table>
+</div>
 
 <a href="message/user/send.do"><spring:message code="msg.new.send" /></a>
 

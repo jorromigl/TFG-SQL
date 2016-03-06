@@ -9,7 +9,8 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<display:table name="folders" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
+<div class="x_panel">
+<display:table name="folders" id="row" requestURI="${requestURI}" pagesize="5" class="table table-hover">
 
 	<spring:message code="folder.name" var="name" />
 	<display:column property="name" title="${name}" sortable="${true}" />
@@ -26,6 +27,7 @@
 	
 			
 </display:table>
+</div>
 	
 	<tag:button code="folder.return" url="principal/index.do'" />
 

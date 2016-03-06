@@ -8,7 +8,8 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<display:table name="players" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
+<div class="x_panel">
+<display:table name="players" id="row" requestURI="${requestURI}" pagesize="5" class="table table-hover">
 
 	<spring:message code="player.name" var="name" />
 	<display:column property="name" title="${name}" />
@@ -59,5 +60,5 @@
 	</display:column>
 	</security:authorize>
 </display:table>
-	
+</div>	
 	<tag:button code="match.return" url="principal/index.do'" />
