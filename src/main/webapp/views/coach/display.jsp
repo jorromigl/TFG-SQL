@@ -62,7 +62,6 @@
 			<tag:textbox code="display.email" path="email" />
 			<tag:textbox code="display.phone" path="phone" />
 			<tag:textbox code="display.address" path="address" />
-			<tag:textbox code="display.admin" path="admin.name" readonly="true"/>
 			
 			
 			<jstl:if test="${player.file == null }">

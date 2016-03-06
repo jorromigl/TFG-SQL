@@ -210,5 +210,5 @@ public class CoachService {
 
 		return coachRepository.findCoachSquadra(squadraid);
 	}
-
+	
 }

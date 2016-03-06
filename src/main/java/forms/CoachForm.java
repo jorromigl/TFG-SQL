@@ -1,6 +1,7 @@
 package forms;
 
 
+import javax.persistence.Basic;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
@@ -32,6 +33,7 @@ public class CoachForm {
 	
 	
 	@Lob
+	@Basic(optional = true)
 	public byte[] getFile(){
 		return file;
 	}

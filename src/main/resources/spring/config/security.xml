@@ -70,6 +70,8 @@
 		<security:intercept-url pattern="/family/displayA.do" access="hasRole('FAMILY')" />
 		<security:intercept-url pattern="/family/displayB.do" access="hasRole('FAMILY')" />
 		
+		<security:intercept-url pattern="/squadra/family/**" access="hasRole('FAMILY')" />
+		
 		<security:intercept-url pattern="/recruitment/family/**" access="hasRole('FAMILY')" />
 		<security:intercept-url pattern="/family/listPlayerSameCategory.do" access="hasRole('FAMILY')" />
 		<security:intercept-url pattern="/player/f/**" access="hasRole('FAMILY')" />

@@ -16,4 +16,5 @@ public interface CoachRepository extends JpaRepository<Coach, Integer> {
 	//Devuelve el entrenador del equipo
     @Query("select c from Coach c where (select s from Squadra s where s.id = ?1) member of c.squadras")
 	Coach findCoachSquadra(int squadraid);
+
 }

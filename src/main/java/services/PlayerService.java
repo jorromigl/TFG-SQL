@@ -179,55 +179,7 @@ public class PlayerService {
 		return playerForm;
 	}
 
-	// public Player reconstructor2(PlayerRegistrationForm playerForm) throws
-	// SerialException, SQLException{
-	// Player result;
-	//
-	//
-	// result = playerRepository.findOne(playerForm.getId());
-	//
-	// result.setId(playerForm.getId());
-	// result.setVersion(playerForm.getVersion());
-	//
-	// result.setEmail(playerForm.getRegistrationForm().getEmail());
-	// result.setName(playerForm.getRegistrationForm().getName());
-	// result.setPhone(playerForm.getRegistrationForm().getPhone());
-	// result.setSurname(playerForm.getRegistrationForm().getSurname());
-	// result.setAddress(playerForm.getRegistrationForm().getAddress());
-	// result.getCategory().setCname(playerForm.getCategory().getCname());
-	// result.setDate(playerForm.getDate());
-	// result.getUserAccount().setUsername(playerForm.getRegistrationForm().getUsername());
-	// result.getUserAccount().setPassword(playerForm.getRegistrationForm().getPassword());
-	// return result;
-	// }
-
-	// public PlayerRegistrationForm createForm(Player player){
-	//
-	// PlayerRegistrationForm playerForm = new PlayerRegistrationForm();
-	//
-	//
-	// playerForm.setId(player.getId());
-	// playerForm.setVersion(player.getVersion());
-	// RegistrationForm form= new RegistrationForm();
-	// form.setEmail(player.getEmail());
-	//// playerForm.setRegistrationForm().setEmail(player.getEmail());
-	//
-	// playerForm.setRegistrationForm(form);
-	// playerForm.getRegistrationForm().setName(player.getName());
-	// playerForm.getRegistrationForm().setPhone(player.getPhone());
-	// playerForm.getRegistrationForm().setSurname(player.getSurname());
-	// playerForm.getRegistrationForm().setAddress(player.getAddress());
-	// playerForm.setAvailable(true);
-	// Category c = new Category();
-	// c.setCname(player.getCategory().getCname());
-	// playerForm.setCategory(c);
-	// playerForm.setDate(player.getDate());
-	// playerForm.getRegistrationForm().setUsername(player.getUserAccount().getUsername());
-	// playerForm.getRegistrationForm().setPassword(player.getUserAccount().getPassword());
-	//
-	// return playerForm;
-	// }
-	//
+	
 
 	public Player findByPrincipal() {
 		UserAccount playerAccount = LoginService.getPrincipal();
@@ -275,12 +227,6 @@ public class PlayerService {
 	//Listar jugadores de su equipo  
 	public Collection<Player> findPlayersSquadra(int squadraid) {
 
-//		Collection<Player> players = findAll();
-//		for (Player p : players) {
-//			if (p.getSquadra().getId() != squadraid)
-//				players.remove(p);
-//		}
-//		return players;
 		
 		return playerRepository.findAllPlayersSquadra(squadraid);
 	}
@@ -337,11 +283,4 @@ public class PlayerService {
 		}
 	}
 	
-	// Devuelve una coleccion de los jugadores de mi equipo que no están esa en la convocatoria 
-	//por lo tanto se puede agregar
-//		public Collection<Player> findPlayersNotRecruitment(int recruitmentId, int squadraid) {
-//			
-//			Collection<Player> players= playerRepository.findAllPlayersNotReqcruitment(squadraid, recruitmentId);
-//			return players;
-//		}
 

@@ -116,6 +116,8 @@
 										code="master.page.family.profile" /> </a></li>
 							<li><a href="folder/user/list.do"><spring:message
 										code="master.page.user.myFolder" /> </a></li>
+							<li><a href="squadra/family/displaySquadraP.do"><spring:message
+										code="master.page.user.SquadraMyPlayer" /> </a></li>
 							
 						</security:authorize>
 

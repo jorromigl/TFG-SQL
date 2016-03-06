@@ -29,6 +29,9 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
 
     @Query("select p from Player p where p.category.cname = ?1")
 	Collection<Player> findAllPlayersSameCategory(String categoryUser);
+
+
+
     
     
     

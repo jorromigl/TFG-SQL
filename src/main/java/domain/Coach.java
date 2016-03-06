@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
@@ -23,6 +24,7 @@ public class Coach extends User {
 	
 	
 	@Lob
+	@Basic(optional = true)
 	public byte[] getFile(){
 		return file;
 	}

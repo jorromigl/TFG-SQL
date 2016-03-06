@@ -2,6 +2,7 @@ package forms;
 
 import java.util.Date;
 
+import javax.persistence.Basic;
 import javax.persistence.Lob;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;

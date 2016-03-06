@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Coach;
+import domain.Family;
 import domain.Player;
 import domain.Squadra;
 import repositories.SquadraRepository;
@@ -26,6 +27,9 @@ public class SquadraService {
 
 	@Autowired
 	private PlayerService playerService;
+	
+	@Autowired
+	private FamilyService familyService;
 
 	// Constructor
 	public SquadraService() {
@@ -75,6 +79,13 @@ public class SquadraService {
 	public Squadra getMySquadraPlayer() {
 		Player playerConnect = playerService.findByPrincipal();
 		Squadra squadra = squadraRepository.getMySquadraPlayer(playerConnect.getId());
+		return squadra;
+	}
+	
+	//El equipo de su hijo
+	public Squadra getMySquadraPlayerP() {
+		Family familyConnect = familyService.findByPrincipal();
+		Squadra squadra = squadraRepository.getMySquadraPlayerP(familyConnect.getId());
 		return squadra;
 	}
 
