@@ -281,6 +281,8 @@ public class PlayerService {
 			players = playerRepository.findAllPlayersSameCategory(categoryUser);
 			return players;
 		}
+	
+
 	}
 	
 

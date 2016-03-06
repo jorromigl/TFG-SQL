@@ -30,42 +30,45 @@ public class SquadraFamilyController extends ErrorController {
 			private FamilyService familyService;
 			
 			@Autowired
+			private PlayerService playerService;
+			
+			@Autowired
 			private CoachService coachService;
 			// Constructors -----------------------------------------------------------
 
 			public SquadraFamilyController() {
 				super();
 			}
-//			// Lista de jugadores del equipo de su jugador
-//			@RequestMapping(value = "/listPlayersSquadraP", method = RequestMethod.GET)
-//			public ModelAndView listPlayersSquadraP(@RequestParam int squadraId) {
-//				ModelAndView result;
-//				Collection<Player> players;
-//
-//				players = familyService.findPlayersSquadraP(squadraId);
-//
-//				result = new ModelAndView("player/list");
-//				result.addObject("players", players);
-//				result.addObject("mysquadra", true);
-//				result.addObject("requestURI", "squadra/family/listPlayersSquadraP.do");
-//
-//				return result;
-//			}
+			// Lista de jugadores del equipo de su jugador
+			@RequestMapping(value = "/listPlayersSquadra", method = RequestMethod.GET)
+			public ModelAndView listPlayersSquadra(@RequestParam int squadraId) {
+				ModelAndView result;
+				Collection<Player> players;
+
+				players = playerService.findPlayersSquadra(squadraId);
+
+				result = new ModelAndView("player/list");
+				result.addObject("players", players);
+				result.addObject("mysquadra", true);
+				result.addObject("requestURI", "squadra/family/listPlayersSquadra.do");
+
+				return result;
+			}
 			
-//			// Ver el entrenador del equipo de su hijo
-//					@RequestMapping(value = "/viewCoachSquadraP", method = RequestMethod.GET)
-//					public ModelAndView viewCoachSquadraP(@RequestParam int squadraId) {
-//						ModelAndView result;
-//						Coach coach;
-//						coach = coachService.findCoachSquadraP(squadraId);
-//						
-//						result = new ModelAndView("coach/edit");
-//						result.addObject("coach", coach);
-//						result.addObject("mysquadra", true);
-//						result.addObject("requestURI", "squadra/family/viewCoachSquadraP.do");
-//
-//						return result;
-//					}
+			// Ver el entrenador del equipo de su hijo
+					@RequestMapping(value = "/viewCoachSquadra", method = RequestMethod.GET)
+					public ModelAndView viewCoachSquadra(@RequestParam int squadraId) {
+						ModelAndView result;
+						Coach coach;
+						coach = coachService.findCoachSquadra(squadraId);
+						
+						result = new ModelAndView("coach/edit");
+						result.addObject("coach", coach);
+						result.addObject("mysquadra", true);
+						result.addObject("requestURI", "squadra/family/viewCoachSquadra.do");
+
+						return result;
+					}
 					
 			
 

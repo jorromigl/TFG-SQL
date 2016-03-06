@@ -45,6 +45,17 @@
 						code="coach.squadra" /></a>
 			
 		</security:authorize>
+		
+		<security:authorize access="hasRole('FAMILY')">
+			
+				<a href="squadra/family/listPlayersSquadra.do?squadraId=${squadra.id}"><spring:message
+						code="players.squadra" /></a>
+						
+				<br>
+				<a href="squadra/family/viewCoachSquadra.do?squadraId=${squadra.id}"><spring:message
+						code="coach.squadra" /></a> 
+			
+		</security:authorize>
 
 		<%-- 	<tag:select code="squadra.players.add" path="player"  id="player" items="players" itemLabel="name"/> --%>
 
