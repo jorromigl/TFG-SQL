@@ -2,6 +2,7 @@ package forms;
 
 
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -10,6 +11,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
+import domain.Admin;
 import domain.Category;
 
 public class CoachForm {
@@ -25,6 +27,7 @@ public class CoachForm {
 	private String email;
 	private String phone;
 	private String address;	
+	private Admin admin;
 	private byte[] file;
 	
 	
@@ -171,6 +174,16 @@ public class CoachForm {
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
+	
+	@ManyToOne(optional=false)
+	public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+	
 	
 
 }
