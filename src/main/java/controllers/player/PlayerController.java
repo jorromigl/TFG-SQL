@@ -317,20 +317,21 @@ public class PlayerController extends ErrorController {
 		return result;
 	}
 
-	protected ModelAndView createModelAndView1(PlayerForm player) {
+	protected ModelAndView createModelAndView1(PlayerForm playerForm) {
 		ModelAndView result;
 
-		result = createModelAndView1(player, null);
+		result = createModelAndView1(playerForm, null);
 
 		return result;
 	}
 
-	protected ModelAndView createModelAndView1(PlayerForm player, String message) {
+	protected ModelAndView createModelAndView1(PlayerForm playerForm, String message) {
 		ModelAndView result;
+		
+//		Player player1 = playerService.create();
 
 		result = new ModelAndView("player/display");
-		result.addObject("player", player);
-
+		result.addObject("player", playerForm);
 		result.addObject("message", message);
 
 		return result;
