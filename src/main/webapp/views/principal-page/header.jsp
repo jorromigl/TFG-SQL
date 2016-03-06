@@ -4,8 +4,16 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+
+
 
 <security:authorize access="isAuthenticated()">
+
+
 	<!-- <div> -->
 	<!-- 	<a href="principal/index.do"> <img src="images/logo.png" alt="EscuelaFutbol" /></a> -->
 	<!-- </div> -->
@@ -28,8 +36,10 @@
 					</security:authorize>
 					<li class=""><a href="javascript:;"
 						class="user-profile dropdown-toggle" data-toggle="dropdown"
-						aria-expanded="false"> <img src="images/img.jpg" alt="">John
-							Doe <span class=" fa fa-angle-down"></span>
+						aria-expanded="false"> <img src="images/img.jpg" alt="">
+						<sec:authentication property="principal.username" />
+							<span class=" fa fa-angle-down"></span>
+							 
 					</a>
 						<ul
 							class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
