@@ -53,6 +53,11 @@
 		<a href="player/c/AddPlayersRecruitment.do?playerId=${row.id}&recruitmentId=${recruitmentId}" ><spring:message code="player.addRecruitment" /></a>
 	</display:column>
 	</jstl:if>
+	<jstl:if test="${recruitment==true}">
+	<display:column >
+		<a href="player/c/deletePlayerRecruitment.do?playerId=${row.id}&recruitmentId=${recruitmentId}" ><spring:message code="player.deletePlayerRecruitment" /></a>
+	</display:column>
+	</jstl:if>
 	</security:authorize>
 	<security:authorize access="hasRole('FAMILY')">
 	<display:column >

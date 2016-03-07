@@ -53,7 +53,7 @@ public class PlayerService {
 
 	@Autowired
 	private RecruitmentService recruitmentService;
-	
+		
 	@Autowired
 	private FamilyService familyService;
 
@@ -290,6 +290,13 @@ public class PlayerService {
 		Family familyConnect = familyService.findByPrincipal();
 		Player player = playerRepository.findMyPlayer(familyConnect.getId());
 		return player;
+	}
+	
+
+	//Delete from Future Recruitment 
+	public void deleteFromRecruitment(Player player, int recruitmentId) {
+		Recruitment r= recruitmentService.findOne(recruitmentId);
+		r.removePlayer(player);
 	}
 
 	

@@ -39,7 +39,7 @@ public class PlayerCoachController extends ErrorController {
 
 	@Autowired
 	private CoachService coachService;
-	
+
 	@Autowired
 	private RecruitmentService recruitmentService;
 
@@ -76,7 +76,7 @@ public class PlayerCoachController extends ErrorController {
 		players = playerService.findInItsCategoryAndNotHaveSquadra(s);
 
 		result = new ModelAndView("player/list");
-		result.addObject("squadraId",squadraId);
+		result.addObject("squadraId", squadraId);
 		result.addObject("players", players);
 		result.addObject("mysquadra", false);
 		result.addObject("requestURI", "player/c/findInItsCategoryAndNotHaveSquadra.do");
@@ -99,23 +99,26 @@ public class PlayerCoachController extends ErrorController {
 
 		return result;
 	}
-	
+
 	// Lista de jugadores de su equipo que no están en esa convocatoria
-//		@RequestMapping(value = "/listPlayersNotRecruitment", method = RequestMethod.GET)
-//		public ModelAndView listPlayersNotRecruitment(@RequestParam int squadraId, int recruitmentId) {
-//			ModelAndView result;
-//			Collection<Player> players;
-//
-//			players = playerService.findPlayersNotRecruitment(recruitmentId, squadraId);
-//
-//			result = new ModelAndView("player/list");
-//			result.addObject("players", players);
-//			result.addObject("mysquadra", true);
-//			result.addObject("requestURI", "player/c/listPlayersNotRecruitment.do");
-//
-//			return result;
-//		}
-	
+	// @RequestMapping(value = "/listPlayersNotRecruitment", method =
+	// RequestMethod.GET)
+	// public ModelAndView listPlayersNotRecruitment(@RequestParam int
+	// squadraId, int recruitmentId) {
+	// ModelAndView result;
+	// Collection<Player> players;
+	//
+	// players = playerService.findPlayersNotRecruitment(recruitmentId,
+	// squadraId);
+	//
+	// result = new ModelAndView("player/list");
+	// result.addObject("players", players);
+	// result.addObject("mysquadra", true);
+	// result.addObject("requestURI", "player/c/listPlayersNotRecruitment.do");
+	//
+	// return result;
+	// }
+
 	// Lista de jugadores de su equipo
 	@RequestMapping(value = "/listPlayersSquadraToRecruit", method = RequestMethod.GET)
 	public ModelAndView listPlayersSquadraToRecruit(@RequestParam int squadraId, int recruitmentId) {
@@ -132,13 +135,13 @@ public class PlayerCoachController extends ErrorController {
 
 		return result;
 	}
-	
-// Add players Recruitment
+
+	// Add players Recruitment
 
 	@RequestMapping(value = "/AddPlayersRecruitment", method = RequestMethod.GET)
 	public ModelAndView AddPlayersRecruitment(@RequestParam int recruitmentId, int playerId) {
 
-		recruitmentService.addPlayerRecruitment(recruitmentId,playerId);
+		recruitmentService.addPlayerRecruitment(recruitmentId, playerId);
 		ModelAndView result;
 
 		result = new ModelAndView("redirect:../../recruitment/coach/listFuture.do");
@@ -146,12 +149,29 @@ public class PlayerCoachController extends ErrorController {
 		return result;
 	}
 
+	// Delete
+
+		@RequestMapping(value = "/deletePlayerRecruitment", method = RequestMethod.GET)
+		public ModelAndView delete(@RequestParam int playerId, int recruitmentId) {
+			ModelAndView result;
+			Player player;
+			
+			player = playerService.findOne(playerId);
+			try {
+				playerService.deleteFromRecruitment(player, recruitmentId);
+				result = new ModelAndView("redirect:../../player/c/listPlayersByRecruitment.do?recruitmentId="+ recruitmentId);
+			} catch (Throwable error) {
+				result = createModelAndView(player, "player.commit.error");
+			}
+			return result;
+		}
+		
 	// Add players Squadra
 
 	@RequestMapping(value = "/AddPlayers", method = RequestMethod.GET)
 	public ModelAndView AddPlayers(@RequestParam int squadraId, int playerId) {
 
-		squadraService.addPlayer(squadraId,playerId);
+		squadraService.addPlayer(squadraId, playerId);
 		ModelAndView result;
 
 		result = new ModelAndView("redirect:../../squadra/coach/mysquadra.do");
@@ -160,26 +180,28 @@ public class PlayerCoachController extends ErrorController {
 	}
 
 	// save de añadir players al equipo
-//	@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "save")
-//	public ModelAndView save(@Valid Player player, BindingResult binding) {
-//
-//		ModelAndView result;
-//		if (binding.hasErrors()) {
-//			result = createModelAndView(player);
-//		} else {
-//			try {
-//				playerService.save(player);
-//				result = new ModelAndView("redirect:../../player/coach/listPlayersSquadra.do");
-//			} catch (Throwable oops) {
-//				result = createModelAndView(player, "player.commit.error");
-//			}
-//		}
-//
-//		return result;
-//
-//	}
-	
-	// Listar los jugadores pertenecientes a un Recruitment 
+	// @RequestMapping(value = "/edit", method = RequestMethod.POST, params =
+	// "save")
+	// public ModelAndView save(@Valid Player player, BindingResult binding) {
+	//
+	// ModelAndView result;
+	// if (binding.hasErrors()) {
+	// result = createModelAndView(player);
+	// } else {
+	// try {
+	// playerService.save(player);
+	// result = new
+	// ModelAndView("redirect:../../player/coach/listPlayersSquadra.do");
+	// } catch (Throwable oops) {
+	// result = createModelAndView(player, "player.commit.error");
+	// }
+	// }
+	//
+	// return result;
+	//
+	// }
+
+	// Listar los jugadores pertenecientes a un Recruitment
 	@RequestMapping(value = "/listPlayersByRecruitment", method = RequestMethod.GET)
 	public ModelAndView listPlayersByRecruitment(@RequestParam int recruitmentId) {
 		ModelAndView result;
@@ -189,24 +211,27 @@ public class PlayerCoachController extends ErrorController {
 
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
+		result.addObject("recruitment", true);
+		result.addObject("recruitmentId", recruitmentId);
 		result.addObject("requestURI", "player/c/listPlayersByRecruitment.do");
 
 		return result;
 	}
 	
-	//Ver el perfil de un jugador
+
+	// Ver el perfil de un jugador
 	@RequestMapping(value = "/verPerfilJugador", method = RequestMethod.GET)
-	public ModelAndView verPerfilJugador(@RequestParam int playerId){
+	public ModelAndView verPerfilJugador(@RequestParam int playerId) {
 		ModelAndView result;
 		Player p = playerService.findOne(playerId);
-		
+
 		PlayerForm player = playerService.createForm(p);
-//		Assert.notNull(player);
+		// Assert.notNull(player);
 		result = createModelAndView1(player);
-		
-		result.addObject("requestURI", "player/verPerfilJugador.do?playerId="+p.getId());
-		result.addObject("detailsPlayer",true);
-		
+
+		result.addObject("requestURI", "player/verPerfilJugador.do?playerId=" + p.getId());
+		result.addObject("detailsPlayer", true);
+
 		return result;
 	}
 
@@ -229,7 +254,7 @@ public class PlayerCoachController extends ErrorController {
 
 		return result;
 	}
-	
+
 	protected ModelAndView createModelAndView1(PlayerForm player) {
 		ModelAndView result;
 
@@ -243,9 +268,9 @@ public class PlayerCoachController extends ErrorController {
 
 		result = new ModelAndView("player/display");
 		result.addObject("player", player);
-		
+
 		result.addObject("message", message);
-	
+
 		return result;
 	}
 
