@@ -173,13 +173,12 @@ public class CoachController extends ErrorController {
 				ModelAndView result;
 				Coach c = coachService.findByPrincipal();
 				
-				CoachForm coach = coachService.createForm(c);
+				CoachForm coachForm = coachService.createForm(c);
 //				Assert.notNull(player);
-				result = createModelAndView1(coach);
+				result = createModelAndView1(coachForm);
 				
 				result.addObject("requestURI", "coach/displayB.do?coachId="+c.getId());
 				result.addObject("detailsCoach",false);
-				
 				return result;
 			}
 			@RequestMapping(value = "/displayB", method = RequestMethod.POST, params = "save1")
@@ -192,7 +191,7 @@ public class CoachController extends ErrorController {
 				} else {
 					try {
 						c = coachService.reconstructor2(coach);
-						coachService.save(c);
+						coachService.save2(c);
 						result = new ModelAndView("redirect:../principal/index.do");
 		
 					} catch (Throwable error) {

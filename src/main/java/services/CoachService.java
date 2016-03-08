@@ -39,6 +39,7 @@ public class CoachService {
 
 	@Autowired
 	private AdminService adminService;
+	
 
 	// Services
 
@@ -122,7 +123,7 @@ public class CoachService {
 	public Coach reconstructor2(CoachForm coachForm) throws SerialException, SQLException {
 		Coach result;
 
-		result = coachRepository.findOne(coachForm.getId());
+		result = findByPrincipal();
 
 		result.setId(coachForm.getId());
 		result.setVersion(coachForm.getVersion());
@@ -202,7 +203,12 @@ public class CoachService {
 
 	public void save2(Coach coach) {
 		Assert.notNull(coach);
-
+		
+		String password = coach.getUserAccount().getPassword();
+		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
+		password = encoder.encodePassword(password, null);
+		coach.getUserAccount().setPassword(password);
+		
 		coachRepository.save(coach);
 
 	}
