@@ -28,7 +28,7 @@ public class CoachForm {
 	private String email;
 	private String phone;
 	private String address;	
-	private Admin admin;
+
 	private byte[] file;
 	
 	
@@ -175,18 +175,7 @@ public class CoachForm {
 
 	public void setAvailable(boolean available) {
 		this.available = available;
-	}
-	
-	@NotNull
-    @Valid
-	public Admin getAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(Admin admin) {
-		this.admin = admin;
-	}
-	
+	}	
 	
 
 }

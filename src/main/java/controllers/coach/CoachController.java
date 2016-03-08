@@ -25,6 +25,7 @@ import domain.Family;
 import domain.Player;
 import forms.CoachForm;
 import forms.PlayerForm;
+import services.AdminService;
 import services.CoachService;
 
 @Controller
@@ -34,6 +35,9 @@ public class CoachController extends ErrorController {
 		
 			@Autowired
 			private CoachService coachService;
+			
+			@Autowired
+			private AdminService adminService;
 				
 		
 		// Constructors -----------------------------------------------------------
@@ -66,7 +70,6 @@ public class CoachController extends ErrorController {
 				
 				ModelAndView result;
 				CoachForm coachForm = new CoachForm();
-				
 				result = createModelAndView(coachForm);
 				
 				
@@ -86,7 +89,7 @@ public class CoachController extends ErrorController {
 				if(coachForm.getAvailable() && coachForm.getVerifyPassword().equals(coachForm.getPassword())){
 					
 					if (bindingResult.hasErrors()) {
-						result = createModelAndView(coachForm);
+						result = createModelAndView(coach);
 
 					}else{
 						try{
@@ -156,7 +159,6 @@ public class CoachController extends ErrorController {
 				Coach c = coachService.findByPrincipal();
 				
 				CoachForm coach = coachService.createForm(c);
-//				Assert.notNull(player);
 				result = createModelAndView1(coach);
 				
 				result.addObject("requestURI", "coach/displayA.do?coachId="+c.getId());

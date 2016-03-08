@@ -111,7 +111,7 @@ public class CoachService {
 		result.setAddress(coachForm.getAddress());
 		result.setFile(coachForm.getFile());
 		result.setCategory(coachForm.getCategory());
-		result.setAdmin(coachForm.getAdmin());
+		result.setAdmin(adminService.findByPrincipal());
 		result.getUserAccount().setUsername(coachForm.getUsername());
 		result.getUserAccount().setPassword(coachForm.getPassword());
 
@@ -126,7 +126,7 @@ public class CoachService {
 
 		result.setId(coachForm.getId());
 		result.setVersion(coachForm.getVersion());
-		result.setAdmin(coachForm.getAdmin());
+//		result.setAdmin(coachForm.getAdmin());
 
 		result.setEmail(coachForm.getEmail());
 		result.setName(coachForm.getName());
@@ -134,7 +134,7 @@ public class CoachService {
 		result.setSurname(coachForm.getSurname());
 		result.setFile(coachForm.getFile());
 		result.setAddress(coachForm.getAddress());
-		result.setAdmin(coachForm.getAdmin());
+//		result.setAdmin(coachForm.getAdmin());
 		result.getCategory().setCname(coachForm.getCategory().getCname());
 		result.getUserAccount().setUsername(coachForm.getUsername());
 		result.getUserAccount().setPassword(coachForm.getPassword());
@@ -158,7 +158,7 @@ public class CoachService {
 		coachForm.setFile(coach.getFile());
 		coachForm.setAvailable(true);
 		
-		coachForm.setAdmin(coach.getAdmin());
+//		coachForm.setAdmin(coach.getAdmin());
 		Category c = new Category();
 		c.setCname(coach.getCategory().getCname());
 		coachForm.setCategory(c);
