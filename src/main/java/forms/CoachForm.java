@@ -177,7 +177,8 @@ public class CoachForm {
 		this.available = available;
 	}
 	
-	@ManyToOne(optional=false)
+	@NotNull
+    @Valid
 	public Admin getAdmin() {
 		return admin;
 	}

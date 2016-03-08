@@ -126,6 +126,7 @@ public class CoachService {
 
 		result.setId(coachForm.getId());
 		result.setVersion(coachForm.getVersion());
+		result.setAdmin(coachForm.getAdmin());
 
 		result.setEmail(coachForm.getEmail());
 		result.setName(coachForm.getName());
@@ -156,6 +157,7 @@ public class CoachService {
 		coachForm.setAddress(coach.getAddress());
 		coachForm.setFile(coach.getFile());
 		coachForm.setAvailable(true);
+		
 		coachForm.setAdmin(coach.getAdmin());
 		Category c = new Category();
 		c.setCname(coach.getCategory().getCname());
