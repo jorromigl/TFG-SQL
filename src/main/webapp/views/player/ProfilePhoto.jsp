@@ -29,6 +29,6 @@
 				
 				</form:errors>
 
-			<tag:submit code="display.save" name="save1" />
+			<tag:submit code="display.save" name="save2" />
 			<tag:button code="display.cancel" url="principal/index.do'" />
 		</form:form>

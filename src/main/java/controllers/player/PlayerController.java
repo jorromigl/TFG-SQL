@@ -280,6 +280,27 @@ public class PlayerController extends ErrorController {
 
 			return result;
 		}
+		
+		@RequestMapping(value = "/ProfilePhoto", method = RequestMethod.POST, params = "save2")
+		public ModelAndView save2(@Valid PlayerForm player, BindingResult binding) {
+			ModelAndView result;
+			Player p;
+			if (binding.hasErrors()) {
+				result = createModelAndView3(player);
+			} else {
+				try {
+					
+					p = playerService.reconstructor2(player);
+					playerService.save(p);
+					result = new ModelAndView("redirect:../principal/index.do");
+
+				} catch (Throwable error) {
+					result = createModelAndView1(player, "player.commit.error");
+				}
+			}
+
+			return result;
+		}
 	
 	//Subir foto
 	@InitBinder

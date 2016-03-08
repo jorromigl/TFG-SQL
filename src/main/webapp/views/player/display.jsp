@@ -73,10 +73,7 @@
 			<tag:textbox code="display.address" path="address" />
 
 			<jstl:if test="${player.file == null }">
-				<spring:message code="player.AddNew"></spring:message>
-				
-			<a href="player/ProfilePhoto.do?playerId=${player.id}" ><spring:message code="player.AddNew" /></a>
-	
+				<a href="player/ProfilePhoto.do?playerId=${player.id}" ><spring:message code="player.AddNew" /></a>	
 			</jstl:if>
 
 			<jstl:if test="${player.file != null }">s
@@ -92,6 +89,7 @@
 				
 				</form:errors>
 			</jstl:if>
+			<br>
 
 
 			<tag:submit code="display.save" name="save1" />
