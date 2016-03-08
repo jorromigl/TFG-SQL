@@ -36,6 +36,8 @@
 		
 		<security:intercept-url pattern="/player/displayA.do" access="hasRole('PLAYER')" />
 		<security:intercept-url pattern="/player/displayB.do" access="hasRole('PLAYER')" />
+		<security:intercept-url pattern="/player/ProfilePhoto.do" access="hasRole('PLAYER')" />
+	
 		
 		<security:intercept-url pattern="/match/player/**" access="hasRole('PLAYER')" />
 		

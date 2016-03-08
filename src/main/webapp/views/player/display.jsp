@@ -10,6 +10,7 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
+
 <security:authorize access="hasRole('PLAYER')">
 	<jstl:if test="${detailsPlayer==true}">
 		<form:form action="${requestURI}" method="post"
@@ -72,17 +73,13 @@
 			<tag:textbox code="display.address" path="address" />
 
 			<jstl:if test="${player.file == null }">
-				<spring:message code="player.notImage"></spring:message>
 				<spring:message code="player.AddNew"></spring:message>
-				<form:label path="file">
-					<spring:message code="player.file"></spring:message>
-				</form:label>
-				<form:input path="file" type="file" />
-				<form:errors cssClass="error" path="file">
-				</form:errors>
+				
+			<a href="player/ProfilePhoto.do?playerId=${player.id}" ><spring:message code="player.AddNew" /></a>
+	
 			</jstl:if>
 
-			<jstl:if test="${player.file != null }">
+			<jstl:if test="${player.file != null }">s
 				<img style="width: 50px; height: 50px;"
 					src="player/showImage.do?playerId=${player.id}" />
 				<spring:message code="player.ModifyImage"></spring:message>
@@ -167,3 +164,4 @@
 		<tag:button code="display.cancel" url="principal/index.do'" />
 	</form:form>
 </security:authorize>
+

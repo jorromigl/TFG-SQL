@@ -267,6 +267,20 @@ public class PlayerController extends ErrorController {
 		return result;
 	}
 	
+	// Editar foto de perfil
+		@RequestMapping(value = "/ProfilePhoto", method = RequestMethod.GET)
+		public ModelAndView ProfilePhoto() {
+			ModelAndView result;
+			Player p = playerService.findByPrincipal();
+
+			PlayerForm player = playerService.createForm(p);
+			result = createModelAndView3(player);
+
+			result.addObject("requestURI", "player/ProfilePhoto.do?playerId=" + p.getId());
+
+			return result;
+		}
+	
 	//Subir foto
 	@InitBinder
 	protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception{
@@ -355,4 +369,25 @@ public class PlayerController extends ErrorController {
 
 		return result;
 	}
+	
+	protected ModelAndView createModelAndView3(PlayerForm playerForm) {
+		ModelAndView result;
+
+		result = createModelAndView3(playerForm, null);
+
+		return result;
+	}
+
+	protected ModelAndView createModelAndView3(PlayerForm playerForm, String message) {
+		ModelAndView result;
+		
+//		Player player1 = playerService.create();
+
+		result = new ModelAndView("player/ProfilePhoto");
+		result.addObject("player", playerForm);
+		result.addObject("message", message);
+
+		return result;
+	}
+	
 }
