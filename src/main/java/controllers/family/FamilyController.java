@@ -158,9 +158,9 @@ public class FamilyController extends ErrorController {
 						ModelAndView result;
 						Family c = familyService.findByPrincipal();
 						
-						FamilyForm family = familyService.createForm(c);
+						FamilyForm familyForm = familyService.createForm(c);
 //						Assert.notNull(player);
-						result = createModelAndView1(family);
+						result = createModelAndView1(familyForm);
 						
 						result.addObject("requestURI", "family/displayB.do?familyId="+c.getId());
 						result.addObject("detailsFamily",false);
@@ -168,20 +168,20 @@ public class FamilyController extends ErrorController {
 						return result;
 					}
 					@RequestMapping(value = "/displayB", method = RequestMethod.POST, params = "save1")
-					public ModelAndView save1(@Valid FamilyForm family, BindingResult binding) {
+					public ModelAndView save1(@Valid FamilyForm familyForm, BindingResult binding) {
 						ModelAndView result;
 						Family c;
 						if (binding.hasErrors()) {
-							result = createModelAndView1(family);
+							result = createModelAndView1(familyForm);
 							result.addObject("detailsFamily",false);
 						} else {
 							try {
-								c = familyService.reconstructor2(family);
+								c = familyService.reconstructor2(familyForm);
 								familyService.save(c);
 								result = new ModelAndView("redirect:../principal/index.do");
 				
 							} catch (Throwable error) {
-								result = createModelAndView1(family, "family.commit.error");	
+								result = createModelAndView1(familyForm, "family.commit.error");	
 								result.addObject("detailsFamily",false);
 							}
 						}
