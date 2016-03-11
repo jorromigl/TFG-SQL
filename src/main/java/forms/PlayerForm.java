@@ -34,18 +34,18 @@ public class PlayerForm {
 	private String phone;
 	private String address;	
 	
-	private byte[] file;
-	
-	
-	@Lob
-	public byte[] getFile(){
-		return file;
-	}
-	
-	public void setFile(byte[] file){
-		this.file = file;
-	}
-	
+//	private byte[] file;
+//	
+//	
+//	@Lob
+//	public byte[] getFile(){
+//		return file;
+//	}
+//	
+//	public void setFile(byte[] file){
+//		this.file = file;
+//	}
+//	
 	@NotBlank
 	@Size(min = 5, max = 32)
 //	@SafeHtml(whitelistType = WhiteListType.NONE)

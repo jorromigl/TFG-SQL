@@ -22,6 +22,7 @@ import domain.Player;
 import domain.Recruitment;
 import domain.Squadra;
 import forms.PlayerForm;
+import forms.PlayerForm2;
 //import forms.PlayerRegistrationForm;
 //import forms.RegistrationForm;
 import repositories.PlayerRepository;
@@ -128,7 +129,7 @@ public class PlayerService {
 		result.getUserAccount().setUsername(playerForm.getUsername());
 		result.getUserAccount().setPassword(playerForm.getPassword());
 		
-		result.setFile(playerForm.getFile());
+//		result.setFile(playerForm.getFile());
 
 		return result;
 	}
@@ -152,10 +153,21 @@ public class PlayerService {
 		result.getUserAccount().setUsername(playerForm.getUsername());
 		result.getUserAccount().setPassword(playerForm.getPassword());
 		
-		result.setFile(playerForm.getFile());
+//		result.setFile(playerForm.getFile());
 		return result;
 	}
 
+	public Player reconstructor3(PlayerForm2 playerForm2) throws SerialException, SQLException {
+		Player result;
+
+		result = playerRepository.findOne(playerForm2.getId());
+
+		result.setId(playerForm2.getId());
+		result.setVersion(playerForm2.getVersion());
+		result.setFile(playerForm2.getFile());
+		return result;
+	}
+	
 	// MIO CONCHI
 	public PlayerForm createForm(Player player) {
 
@@ -177,9 +189,21 @@ public class PlayerService {
 		playerForm.setUsername(player.getUserAccount().getUsername());
 		playerForm.setPassword(player.getUserAccount().getPassword());
 		
-		playerForm.setFile(player.getFile());
+//		playerForm.setFile(player.getFile());
 
 		return playerForm;
+	}
+	
+	public PlayerForm2 createForm2(Player player) {
+
+		PlayerForm2 playerForm2 = new PlayerForm2();
+
+		playerForm2.setId(player.getId());
+		playerForm2.setVersion(player.getVersion());		
+		
+		playerForm2.setFile(player.getFile());
+
+		return playerForm2;
 	}
 
 	

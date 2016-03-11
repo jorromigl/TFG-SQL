@@ -16,7 +16,7 @@ public class Family extends User {
 
 	}
 	private Player player;
-//	private Collection<Comment> comments;
+
 	private byte[] file;
 	
 	
@@ -37,15 +37,6 @@ public class Family extends User {
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
-	
-//	@OneToMany(mappedBy="family")
-//	@OneToMany
-//	public Collection<Comment> getComments() {
-//		return comments;
-//	}
-//	public void setComments(Collection<Comment> comments) {
-//		this.comments = comments;
-//	}
 
 	
 

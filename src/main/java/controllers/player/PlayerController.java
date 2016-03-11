@@ -24,6 +24,9 @@ import domain.Coach;
 import domain.Player;
 import forms.CoachForm;
 import forms.PlayerForm;
+import forms.PlayerForm2;
+import security.Authority;
+import security.UserAccount;
 import services.CoachService;
 //import forms.PlayerRegistrationForm;
 import services.PlayerService;
@@ -84,9 +87,8 @@ public class PlayerController extends ErrorController {
 		ModelAndView result;
 		Player p = playerService.findOne(playerId);
 
-		PlayerForm player = playerService.createForm(p);
 		// Assert.notNull(player);
-		result = createModelAndView1(player);
+		result = createModelAndView1(p);
 
 		result.addObject("requestURI", "player/verPerfilJugador.do?playerId=" + p.getId());
 		result.addObject("viewProfileOther", true);
@@ -215,9 +217,9 @@ public class PlayerController extends ErrorController {
 		ModelAndView result;
 		Player p = playerService.findByPrincipal();
 
-		PlayerForm player = playerService.createForm(p);
+//		PlayerForm player = playerService.createForm(p);
 		// Assert.notNull(player);
-		result = createModelAndView1(player);
+		result = createModelAndView1(p);
 
 		result.addObject("requestURI", "player/displayA.do?playerId=" + p.getId());
 		result.addObject("detailsPlayer", true);
@@ -235,10 +237,11 @@ public class PlayerController extends ErrorController {
 
 		PlayerForm player = playerService.createForm(p);
 		// Assert.notNull(player);
-		result = createModelAndView1(player);
+		result = createModelAndView4(player);
 
 		result.addObject("requestURI", "player/displayB.do?playerId=" + p.getId());
 		result.addObject("detailsPlayer", false);
+		result.addObject("editPhoto", false);
 		result.addObject("viewProfileOther", false);
 
 		return result;
@@ -249,8 +252,9 @@ public class PlayerController extends ErrorController {
 		ModelAndView result;
 		Player p;
 		if (binding.hasErrors()) {
-			result = createModelAndView1(player);
+			result = createModelAndView4(player);
 			result.addObject("detailsPlayer", false);
+			result.addObject("editPhoto", false);
 		} else {
 			try {
 				p = playerService.reconstructor2(player);
@@ -258,8 +262,9 @@ public class PlayerController extends ErrorController {
 				result = new ModelAndView("redirect:../principal/index.do");
 
 			} catch (Throwable error) {
-				result = createModelAndView1(player, "player.commit.error");
+				result = createModelAndView4(player, "player.commit.error");
 				result.addObject("detailsPlayer", false);
+				result.addObject("editPhoto", false);
 				result.addObject("viewProfileOther", false);
 			}
 		}
@@ -267,40 +272,81 @@ public class PlayerController extends ErrorController {
 		return result;
 	}
 	
-	// Editar foto de perfil
-		@RequestMapping(value = "/ProfilePhoto", method = RequestMethod.GET)
-		public ModelAndView ProfilePhoto() {
-			ModelAndView result;
-			Player p = playerService.findByPrincipal();
+	//EDITAR FOTO PERFIL
+	// --------------------------------------------------------------
+	@RequestMapping(value = "/displayC", method = RequestMethod.GET)
+	public ModelAndView displayC() {
+		ModelAndView result;
+		Player p = playerService.findByPrincipal();
 
-			PlayerForm player = playerService.createForm(p);
-			result = createModelAndView3(player);
+		PlayerForm2 player = playerService.createForm2(p);
+		result = createModelAndView3(player);
 
-			result.addObject("requestURI", "player/ProfilePhoto.do?playerId=" + p.getId());
+		result.addObject("requestURI", "player/displayC.do?playerId=" + p.getId());
+		result.addObject("detailsPlayer", false);
+		result.addObject("editPhoto", true);
+		result.addObject("viewProfileOther", false);
 
-			return result;
-		}
-		
-		@RequestMapping(value = "/ProfilePhoto", method = RequestMethod.POST, params = "save2")
-		public ModelAndView save2(@Valid PlayerForm player, BindingResult binding) {
-			ModelAndView result;
-			Player p;
-			if (binding.hasErrors()) {
-				result = createModelAndView3(player);
-			} else {
-				try {
-					
-					p = playerService.reconstructor2(player);
-					playerService.save(p);
-					result = new ModelAndView("redirect:../principal/index.do");
+		return result;
+	}
 
-				} catch (Throwable error) {
-					result = createModelAndView1(player, "player.commit.error");
-				}
+	@RequestMapping(value = "/displayC", method = RequestMethod.POST, params = "save2")
+	public ModelAndView save2(@Valid PlayerForm2 playerForm2, BindingResult binding) {
+		ModelAndView result;
+		Player p;
+		if (binding.hasErrors()) {
+			result = createModelAndView3(playerForm2);
+			result.addObject("editPhoto", true);
+		} else {
+			try {
+				p = playerService.reconstructor3(playerForm2);
+				playerService.save(p);
+				result = new ModelAndView("redirect:../principal/index.do");
+
+			} catch (Throwable error) {
+				result = createModelAndView3(playerForm2, "player.commit.error");
+				result.addObject("detailsPlayer", false);
+				result.addObject("editPhoto", true);
+				result.addObject("viewProfileOther", false);
 			}
-
-			return result;
 		}
+
+		return result;
+	}
+	
+	
+//	
+//	// Editar foto de perfil
+//		@RequestMapping(value = "/ProfilePhoto", method = RequestMethod.GET)
+//		public ModelAndView ProfilePhoto() {
+//			ModelAndView result;
+//			Player p = playerService.findByPrincipal();
+//
+//			result = createModelAndView3(p);
+//
+//			result.addObject("requestURI", "player/ProfilePhoto.do?playerId=" + p.getId());
+//
+//			return result;
+//		}
+//		
+//		@RequestMapping(value = "/ProfilePhoto", method = RequestMethod.POST, params = "save2")
+//		public ModelAndView save2(@Valid Player player, BindingResult binding) {
+//			ModelAndView result;
+//			if (binding.hasErrors()) {
+//				result = createModelAndView3(player);
+//			} else {
+//				try {
+//					
+//					playerService.save3(player);
+//					result = new ModelAndView("redirect:../principal/index.do");
+//
+//				} catch (Throwable error) {
+//					result = createModelAndView3(player, "player.commit.error");
+//				}
+//			}
+//
+//			return result;
+//		}
 	
 	//Subir foto
 	@InitBinder
@@ -352,21 +398,21 @@ public class PlayerController extends ErrorController {
 		return result;
 	}
 
-	protected ModelAndView createModelAndView1(PlayerForm playerForm) {
+	protected ModelAndView createModelAndView1(Player player) {
 		ModelAndView result;
 
-		result = createModelAndView1(playerForm, null);
+		result = createModelAndView1(player, null);
 
 		return result;
 	}
 
-	protected ModelAndView createModelAndView1(PlayerForm playerForm, String message) {
+	protected ModelAndView createModelAndView1(Player player, String message) {
 		ModelAndView result;
 		
 //		Player player1 = playerService.create();
 
 		result = new ModelAndView("player/display");
-		result.addObject("player", playerForm);
+		result.addObject("player", player);
 		result.addObject("message", message);
 
 		return result;
@@ -391,20 +437,40 @@ public class PlayerController extends ErrorController {
 		return result;
 	}
 	
-	protected ModelAndView createModelAndView3(PlayerForm playerForm) {
+	protected ModelAndView createModelAndView3(PlayerForm2 playerForm2) {
 		ModelAndView result;
 
-		result = createModelAndView3(playerForm, null);
+		result = createModelAndView3(playerForm2, null);
 
 		return result;
 	}
 
-	protected ModelAndView createModelAndView3(PlayerForm playerForm, String message) {
+	protected ModelAndView createModelAndView3(PlayerForm2 playerForm2, String message) {
+		ModelAndView result;
+		
+
+		
+		result = new ModelAndView("player/display");
+		result.addObject("player", playerForm2);
+		result.addObject("message", message);
+
+		return result;
+	}
+	
+	protected ModelAndView createModelAndView4(PlayerForm playerForm) {
+		ModelAndView result;
+
+		result = createModelAndView4(playerForm, null);
+
+		return result;
+	}
+
+	protected ModelAndView createModelAndView4(PlayerForm playerForm, String message) {
 		ModelAndView result;
 		
 //		Player player1 = playerService.create();
 
-		result = new ModelAndView("player/ProfilePhoto");
+		result = new ModelAndView("player/display");
 		result.addObject("player", playerForm);
 		result.addObject("message", message);
 

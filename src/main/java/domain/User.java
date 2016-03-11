@@ -33,7 +33,6 @@ public abstract class User extends DomainEntity {
 	private String email;
 	private String phone;
 	private String address;
-//	private byte[] photo;
 	@SuppressWarnings("unused")
 	private String fullName;
 	
@@ -69,7 +68,6 @@ public abstract class User extends DomainEntity {
 	
 	@NotBlank
 	@Pattern(regexp = "^\\+\\d{2,3}\\d{7,14}$")
-
 	public String getPhone() {
 		return phone;
 	}

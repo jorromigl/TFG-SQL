@@ -40,10 +40,10 @@
 				<tag:textboxstyle code="register.phone" path="phone" />
 				<tag:textboxstyle code="register.address" path="address" />
 				
-				<form:label path="file"> <spring:message code ="player.file"></spring:message></form:label>
+				<%-- <form:label path="file"> <spring:message code ="player.file"></spring:message></form:label>
 				<form:input path="file" type = "file" />
 				<form:errors cssClass= "error" path ="file"> </form:errors>
-
+ --%>
 				<tag:checkbox path="available" url="law/law.do"
 					code="register.available" />
 				<br />

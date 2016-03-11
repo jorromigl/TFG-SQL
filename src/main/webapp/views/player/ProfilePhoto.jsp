@@ -16,9 +16,9 @@
 
 			<form:hidden path="id" />
 			<form:hidden path="version" />
-
+<%-- 
 				<img style="width: 50px; height: 50px;"
-					src="player/showImage.do?playerId=${player.id}" />
+					src="player/showImage.do?playerId=${player.id}" /> --%>
 				<spring:message code="player.ModifyImage"></spring:message>
 				
 				<form:label path="file">
