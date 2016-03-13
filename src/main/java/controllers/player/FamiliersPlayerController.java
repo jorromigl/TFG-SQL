@@ -61,9 +61,9 @@ public class FamiliersPlayerController extends ErrorController {
 			ModelAndView result;
 			Family p = familyService.findOne(familyId);
 
-			FamilyForm family = familyService.createForm(p);
+//			FamilyForm family = familyService.createForm(p);
 			// Assert.notNull(player);
-			result = createModelAndView2(family);
+			result = createModelAndView1(p);
 
 			result.addObject("requestURI", "player/verPerfilFamily.do?familyId=" + p.getId());
 			result.addObject("viewProfileOther", true);
@@ -93,6 +93,25 @@ public class FamiliersPlayerController extends ErrorController {
 				result.addObject("message", message);
 				
 		
+				return result;
+			}
+			
+			protected ModelAndView createModelAndView1(Family family) {
+				ModelAndView result;
+
+				result = createModelAndView1(family, null);
+
+				return result;
+			}
+
+			protected ModelAndView createModelAndView1(Family family, String message) {
+				ModelAndView result;
+
+				result = new ModelAndView("family/display");
+				result.addObject("family", family);
+
+				result.addObject("message", message);
+
 				return result;
 			}
 			

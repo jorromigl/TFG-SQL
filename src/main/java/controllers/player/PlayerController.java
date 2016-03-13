@@ -104,9 +104,9 @@ public class PlayerController extends ErrorController {
 		ModelAndView result;
 		Coach p = coachService.findOne(coachId);
 
-		CoachForm coach = coachService.createForm(p);
+//		CoachForm coach = coachService.createForm(p);
 		// Assert.notNull(player);
-		result = createModelAndView2(coach);
+		result = createModelAndView2(p);
 
 		result.addObject("requestURI", "player/verPerfilCoach.do?coachId=" + p.getId());
 		result.addObject("viewProfileOther", true);
@@ -418,7 +418,7 @@ public class PlayerController extends ErrorController {
 		return result;
 	}
 	
-	protected ModelAndView createModelAndView2(CoachForm coach) {
+	protected ModelAndView createModelAndView2(Coach coach) {
 		ModelAndView result;
 
 		result = createModelAndView2(coach, null);
@@ -426,7 +426,7 @@ public class PlayerController extends ErrorController {
 		return result;
 	}
 
-	protected ModelAndView createModelAndView2(CoachForm coach, String message) {
+	protected ModelAndView createModelAndView2(Coach coach, String message) {
 		ModelAndView result;
 
 		result = new ModelAndView("coach/display");

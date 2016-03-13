@@ -4,6 +4,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
+	<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <security:authorize access="isAuthenticated()">
 	<!-- Boostrap -->
@@ -97,7 +98,7 @@
 										code="master.page.player.myFamily" /> </a></li>
 
 						</security:authorize>
-						
+
 						<security:authorize access="hasRole('FAMILY')">
 
 							<li><a href="match/listAll.do"><spring:message
@@ -120,7 +121,7 @@
 										code="master.page.user.SquadraMyPlayer" /> </a></li>
 							<li><a href="player/f/viewMyPlayer.do"><spring:message
 										code="master.page.user.MyPlayer" /> </a></li>
-							
+
 						</security:authorize>
 
 						<security:authorize access="hasRole('ADMIN')">
@@ -167,6 +168,6 @@
 
 
 
-	<a class="fNiv"></a>
-	<!-- 	<ul id="jMenu"> -->
-	<!-- Do not forget the "fNiv" class for the first level links !! -->
+<a class="fNiv"></a>
+<!-- 	<ul id="jMenu"> -->
+<!-- Do not forget the "fNiv" class for the first level links !! -->
