@@ -24,7 +24,6 @@ public class Coach extends User {
 	
 	
 	@Lob
-	@Basic(optional = true)
 	public byte[] getFile(){
 		return file;
 	}

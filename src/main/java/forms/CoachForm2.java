@@ -2,7 +2,7 @@ package forms;
 
 import javax.persistence.Lob;
 
-public class PlayerForm2 {
+public class CoachForm2 {
 	
 	private int id;
 	private int version;
@@ -35,7 +35,5 @@ public class PlayerForm2 {
 	public void setVersion(int version) {
 		this.version= version;
 	}
-	
-	
 
 }

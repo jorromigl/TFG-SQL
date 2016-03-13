@@ -19,7 +19,9 @@ import domain.Comment;
 import domain.Folder;
 import domain.Player;
 import forms.CoachForm;
+import forms.CoachForm2;
 import forms.PlayerForm;
+import forms.PlayerForm2;
 import repositories.CoachRepository;
 import security.Authority;
 import security.LoginService;
@@ -110,7 +112,6 @@ public class CoachService {
 		result.setPhone(coachForm.getPhone());
 		result.setSurname(coachForm.getSurname());
 		result.setAddress(coachForm.getAddress());
-		result.setFile(coachForm.getFile());
 		result.setCategory(coachForm.getCategory());
 		result.setAdmin(adminService.findByPrincipal());
 		result.getUserAccount().setUsername(coachForm.getUsername());
@@ -127,20 +128,28 @@ public class CoachService {
 
 		result.setId(coachForm.getId());
 		result.setVersion(coachForm.getVersion());
-//		result.setAdmin(coachForm.getAdmin());
 
 		result.setEmail(coachForm.getEmail());
 		result.setName(coachForm.getName());
 		result.setPhone(coachForm.getPhone());
 		result.setSurname(coachForm.getSurname());
-		result.setFile(coachForm.getFile());
 		result.setAddress(coachForm.getAddress());
-//		result.setAdmin(coachForm.getAdmin());
 		result.getCategory().setCname(coachForm.getCategory().getCname());
 		result.getUserAccount().setUsername(coachForm.getUsername());
 		result.getUserAccount().setPassword(coachForm.getPassword());
 		
 		
+		return result;
+	}
+	
+	public Coach reconstructor3(CoachForm2 coachForm2) throws SerialException, SQLException {
+		Coach result;
+
+		result = findByPrincipal();
+		
+		result.setId(coachForm2.getId());
+		result.setVersion(coachForm2.getVersion());
+		result.setFile(coachForm2.getFile());
 		return result;
 	}
 
@@ -156,10 +165,7 @@ public class CoachService {
 		coachForm.setPhone(coach.getPhone());
 		coachForm.setSurname(coach.getSurname());
 		coachForm.setAddress(coach.getAddress());
-		coachForm.setFile(coach.getFile());
 		coachForm.setAvailable(true);
-		
-//		coachForm.setAdmin(coach.getAdmin());
 		Category c = new Category();
 		c.setCname(coach.getCategory().getCname());
 		coachForm.setCategory(c);
@@ -167,6 +173,18 @@ public class CoachService {
 		coachForm.setPassword(coach.getUserAccount().getPassword());
 
 		return coachForm;
+	}
+	
+	public CoachForm2 createForm2(Coach coach) {
+
+		CoachForm2 coachForm2 = new CoachForm2();
+
+		coachForm2.setId(coach.getId());
+		coachForm2.setVersion(coach.getVersion());		
+		
+		coachForm2.setFile(coach.getFile());
+
+		return coachForm2;
 	}
 
 	public Coach findByPrincipal() {
@@ -181,17 +199,7 @@ public class CoachService {
 		return result;
 	}
 
-	// public void addImageToPhoto(int coachId, byte[] bytes) {
-	// Coach c= findOne(coachId);
-	// if(bytes.length==0){
-	//
-	// c.setPhoto(null);
-	// }else{
-	// c.setPhoto(bytes);
-	// }
-	//
-	// save(c);
-	// }
+	
 
 	public Collection<Coach> findAll() {
 		return coachRepository.findAll();
@@ -208,6 +216,21 @@ public class CoachService {
 		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
 		password = encoder.encodePassword(password, null);
 		coach.getUserAccount().setPassword(password);
+		
+		coachRepository.save(coach);
+
+	}
+	
+	public void save3(Coach coach) {
+		Assert.notNull(coach);
+//		
+//		String password = coach.getUserAccount().getPassword();
+//		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
+//		password = encoder.encodePassword(password, null);
+//		coach.getUserAccount().setPassword(password);
+		
+		
+		coach.getAdmin();
 		
 		coachRepository.save(coach);
 

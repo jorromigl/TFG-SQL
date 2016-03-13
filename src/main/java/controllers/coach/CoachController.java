@@ -21,10 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
 import domain.Coach;
-import domain.Family;
-import domain.Player;
 import forms.CoachForm;
-import forms.PlayerForm;
+import forms.CoachForm2;
 import services.AdminService;
 import services.CoachService;
 
@@ -158,8 +156,8 @@ public class CoachController extends ErrorController {
 				ModelAndView result;
 				Coach c = coachService.findByPrincipal();
 				
-				CoachForm coach = coachService.createForm(c);
-				result = createModelAndView1(coach);
+//				CoachForm coach = coachService.createForm(c);
+				result = createModelAndView2(c);
 				
 				result.addObject("requestURI", "coach/displayA.do?coachId="+c.getId());
 				result.addObject("detailsCoach",true);
@@ -179,6 +177,7 @@ public class CoachController extends ErrorController {
 				
 				result.addObject("requestURI", "coach/displayB.do?coachId="+c.getId());
 				result.addObject("detailsCoach",false);
+				result.addObject("editPhoto", false);
 				return result;
 			}
 			@RequestMapping(value = "/displayB", method = RequestMethod.POST, params = "save1")
@@ -188,6 +187,7 @@ public class CoachController extends ErrorController {
 				if (binding.hasErrors()) {
 					result = createModelAndView1(coach);
 					result.addObject("detailsCoach",false);
+					result.addObject("editPhoto", false);
 				} else {
 					try {
 						c = coachService.reconstructor2(coach);
@@ -197,6 +197,47 @@ public class CoachController extends ErrorController {
 					} catch (Throwable error) {
 						result = createModelAndView1(coach, "coach.commit.error");	
 						result.addObject("detailsCoach",false);
+						result.addObject("editPhoto", false);
+					}
+				}
+
+				return result;
+			}
+			
+			//EDITAR FOTO PERFIL
+			// --------------------------------------------------------------
+			@RequestMapping(value = "/displayC", method = RequestMethod.GET)
+			public ModelAndView displayC() {
+				ModelAndView result;
+				Coach c = coachService.findByPrincipal();
+
+				CoachForm2 coach = coachService.createForm2(c);
+				result = createModelAndView3(coach);
+
+				result.addObject("requestURI", "coach/displayC.do?coachId=" + c.getId());
+				result.addObject("detailsCoach", false);
+				result.addObject("editPhoto", true);
+
+				return result;
+			}
+
+			@RequestMapping(value = "/displayC", method = RequestMethod.POST, params = "save2")
+			public ModelAndView save2(@Valid CoachForm2 coachForm2, BindingResult binding) {
+				ModelAndView result;
+				Coach c;
+				if (binding.hasErrors()) {
+					result = createModelAndView3(coachForm2);
+					result.addObject("editPhoto", true);
+				} else {
+					try {
+						c = coachService.reconstructor3(coachForm2);
+						coachService.save3(c);
+						result = new ModelAndView("redirect:../principal/index.do");
+
+					} catch (Throwable error) {
+						result = createModelAndView3(coachForm2, "coach.commit.error");
+						result.addObject("detailsCoach", false);
+						result.addObject("editPhoto", true);
 					}
 				}
 
@@ -267,6 +308,45 @@ public class CoachController extends ErrorController {
 					
 					result.addObject("message", message);
 				
+					return result;
+				}
+				
+				protected ModelAndView createModelAndView3(CoachForm2 coachForm2) {
+					ModelAndView result;
+
+					result = createModelAndView3(coachForm2, null);
+
+					return result;
+				}
+
+				protected ModelAndView createModelAndView3(CoachForm2 coachForm2, String message) {
+					ModelAndView result;
+					
+
+					
+					result = new ModelAndView("coach/display");
+					result.addObject("coach", coachForm2);
+					result.addObject("message", message);
+
+					return result;
+				}
+				
+				protected ModelAndView createModelAndView2(Coach coach) {
+					ModelAndView result;
+
+					result = createModelAndView2(coach, null);
+
+					return result;
+				}
+
+				protected ModelAndView createModelAndView2(Coach coach, String message) {
+					ModelAndView result;
+
+
+					result = new ModelAndView("coach/display");
+					result.addObject("coach", coach);
+					result.addObject("message", message);
+
 					return result;
 				}
 	}

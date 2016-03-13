@@ -1,9 +1,7 @@
 package forms;
 
 
-import javax.persistence.Basic;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -12,7 +10,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
-import domain.Admin;
+
 import domain.Category;
 
 public class CoachForm {
@@ -29,22 +27,7 @@ public class CoachForm {
 	private String phone;
 	private String address;	
 
-	private byte[] file;
-	
-	
-	@Lob
-	@Basic(optional = true)
-	public byte[] getFile(){
-		return file;
-	}
-	
-	public void setFile(byte[] file){
-		this.file = file;
-	}
-	
-	
-	
-	
+
 	@NotBlank
 	@Size(min = 5, max = 32)
 //	@SafeHtml(whitelistType = WhiteListType.NONE)
@@ -148,16 +131,7 @@ public class CoachForm {
 		this.version = version;
 	}
 	
-//	public byte[] getPhoto() {
-//		return photo;
-//	}
-//
-//	public void setPhoto(byte[] photo) {
-//		this.photo= photo;
-//	}
-	
-	
-	
+
 	@NotNull
 	@Valid
 	public Category getCategory() {

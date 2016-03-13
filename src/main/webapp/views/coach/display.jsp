@@ -21,7 +21,7 @@
 			<form:hidden path="version" />
 
 
-			<tag:textbox code="display.username" path="username" readonly="true" />
+			<tag:textbox code="display.username" path="userAccount.username" readonly="true" />
 			<tag:textbox code="display.name" path="name" readonly="true" />
 			<tag:textbox code="display.surname" path="surname" readonly="true" />
 			<tag:textbox code="display.category" path="category.cname"
@@ -30,60 +30,71 @@
 			<tag:textbox code="display.phone" path="phone" readonly="true" />
 			<tag:textbox code="display.address" path="address" readonly="true" />
 
-			<jstl:if test="${player.file == null }">
+			<jstl:if test="${coach.file == null }">
 				<spring:message code="coach.notImage"></spring:message>
 			</jstl:if>
 
-			<jstl:if test="${player.file != null }">
+			<jstl:if test="${coach.file != null }">
 				<img style="width: 50px; height: 50px;"
 					src="coach/showImage.do?coachId=${coach.id}" />
 			</jstl:if>
 
 
 			<tag:button code="display.edit" url="coach/displayB.do'" />
+			<tag:button code="display.edit2" url="coach/displayC.do'" />
 			<tag:button code="display.cancel" url="principal/index.do'" />
 		</form:form>
 	</jstl:if>
 
 	<jstl:if test="${detailsCoach==false}">
-		<form:form action="${requestURI}" method="post" modelAttribute="coach"
-			enctype="multipart/form-data">
+		<jstl:if test="${editPhoto==false }">
 
-			<!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form-->
-
-			<form:hidden path="id" />
-			<form:hidden path="version" />
-
-			<tag:textbox code="display.username" path="username" />
-			<tag:password code="display.password" path="password" />
-			<tag:password code="display.password2" path="verifyPassword" />
-			<tag:textbox code="display.name" path="name" />
-			<tag:textbox code="display.surname" path="surname" />
-			<tag:textbox code="display.category" path="category.cname" />
-			<tag:textbox code="display.email" path="email" />
-			<tag:textbox code="display.phone" path="phone" />
-			<tag:textbox code="display.address" path="address" />
+			<form:form action="${requestURI}" method="post"
+				modelAttribute="coach" enctype="multipart/form-data">
 
 
-			<jstl:if test="${player.file == null }">
-				<spring:message code="coach.notImage"></spring:message>
-			</jstl:if>
 
-			<jstl:if test="${player.file != null }">
-				<img style="width: 50px; height: 50px;"
-					src="coach/showImage.do?coachId=${coach.id}" />
-			</jstl:if>
+				<form:hidden path="id" />
+				<form:hidden path="version" />
 
-			<form:label path="file">
-				<spring:message code="coach.file"></spring:message>
-			</form:label>
-			<form:input path="file" type="file" />
-			<form:errors cssClass="error" path="file">
-			</form:errors>
+				<tag:textbox code="display.username" path="username" />
+				<tag:password code="display.password" path="password" />
+				<tag:password code="display.password2" path="verifyPassword" />
+				<tag:textbox code="display.name" path="name" />
+				<tag:textbox code="display.surname" path="surname" />
+				<tag:textbox code="display.category" path="category.cname" />
+				<tag:textbox code="display.email" path="email" />
+				<tag:textbox code="display.phone" path="phone" />
+				<tag:textbox code="display.address" path="address" />
 
-			<tag:submit code="display.save" name="save1" />
-			<tag:button code="display.cancel" url="principal/index.do'" />
-		</form:form>
+
+
+
+				<tag:submit code="display.save" name="save1" />
+				<tag:button code="display.cancel" url="principal/index.do'" />
+			</form:form>
+		</jstl:if>
+
+		<jstl:if test="${editPhoto==true }">
+
+			<form:form action="${requestURI}" method="post"
+				modelAttribute="coach" enctype="multipart/form-data">
+
+				<form:hidden path="id" />
+				<form:hidden path="version" />
+
+				<form:label path="file">
+					<spring:message code="coach.file"></spring:message>
+				</form:label>
+				<form:input path="file" type="file" />
+				<form:errors cssClass="error" path="file">
+
+				</form:errors>
+				<br>
+				<tag:submit code="display.save" name="save2" />
+				<tag:button code="display.cancel" url="principal/index.do'" />
+			</form:form>
+		</jstl:if>
 	</jstl:if>
 </security:authorize>
 <security:authorize access="hasRole('PLAYER')">
