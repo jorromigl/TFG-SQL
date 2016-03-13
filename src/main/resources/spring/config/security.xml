@@ -75,6 +75,7 @@
 		
 		<security:intercept-url pattern="/family/displayA.do" access="hasRole('FAMILY')" />
 		<security:intercept-url pattern="/family/displayB.do" access="hasRole('FAMILY')" />
+		<security:intercept-url pattern="/family/displayC.do" access="hasRole('FAMILY')" />
 		<security:intercept-url pattern="/coach/displayC.do" access="hasRole('COACH')" />
 		
 		<security:intercept-url pattern="/squadra/family/**" access="hasRole('FAMILY')" />

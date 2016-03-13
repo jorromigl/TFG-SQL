@@ -24,7 +24,9 @@ import domain.Folder;
 import domain.Player;
 import domain.Squadra;
 import forms.CoachForm;
+import forms.CoachForm2;
 import forms.FamilyForm;
+import forms.FamilyForm2;
 import repositories.FamilyRepository;
 import repositories.PlayerRepository;
 import security.Authority;
@@ -118,7 +120,6 @@ public class FamilyService {
 		result.setSurname(familyForm.getSurname());
 		result.setAddress(familyForm.getAddress());
 		result.setPlayer(familyForm.getPlayer());
-		result.setFile(familyForm.getFile());
 		result.getUserAccount().setUsername(familyForm.getUsername());
 		result.getUserAccount().setPassword(familyForm.getPassword());
 			
@@ -158,6 +159,7 @@ public class FamilyService {
 
 	public void save2(Family family){
 		Assert.notNull(family);
+		family.getPlayer();
 		
 		familyRepository.save(family);
 					
@@ -184,9 +186,19 @@ public class FamilyService {
 			result.setPhone(familyForm.getPhone());
 			result.setSurname(familyForm.getSurname());
 			result.setAddress(familyForm.getAddress());
-			result.setFile(familyForm.getFile());
 			result.getUserAccount().setUsername(familyForm.getUsername());
 			result.getUserAccount().setPassword(familyForm.getPassword());
+			return result;
+		}
+		
+		public Family reconstructor3(FamilyForm2 familyForm2) throws SerialException, SQLException {
+			Family result;
+
+			result = findByPrincipal();
+			
+			result.setId(familyForm2.getId());
+			result.setVersion(familyForm2.getVersion());
+			result.setFile(familyForm2.getFile());
 			return result;
 		}
 
@@ -203,12 +215,23 @@ public class FamilyService {
 			familyForm.setSurname(family.getSurname());
 			familyForm.setAddress(family.getAddress());
 			familyForm.setAvailable(true);
-			familyForm.setFile(family.getFile());
 			
 			familyForm.setUsername(family.getUserAccount().getUsername());
 			familyForm.setPassword(family.getUserAccount().getPassword());
 
 			return familyForm;
+		}
+		
+		public FamilyForm2 createForm2(Family family) {
+
+			FamilyForm2 familyForm2 = new FamilyForm2();
+
+			familyForm2.setId(family.getId());
+			familyForm2.setVersion(family.getVersion());		
+			
+			familyForm2.setFile(family.getFile());
+
+			return familyForm2;
 		}
 		
 	

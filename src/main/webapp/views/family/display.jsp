@@ -18,7 +18,7 @@
 	<form:hidden path="version"/>
 	<form:hidden path="player"/>
 	
-		<tag:textbox code="display.username" path="username" readonly="true" />
+		<tag:textbox code="display.username" path="userAccount.username" readonly="true" />
 		<tag:textbox code="display.name" path="name" readonly="true"/>
 		<tag:textbox code="display.surname" path="surname" readonly="true"/>
 		<tag:textbox code="display.email" path="email" readonly="true" />
@@ -36,11 +36,13 @@
 			</jstl:if>
 	
 	<tag:button code="display.edit" url="family/displayB.do'" />
+	<tag:button code="display.edit2" url="family/displayC.do'" />
 	<tag:button code="display.cancel" url="principal/index.do'" />
 </form:form>
 </jstl:if>
 
 <jstl:if test="${detailsFamily==false}">
+<jstl:if test="${editPhoto==false }">
 <form:form action="${requestURI}" method="post"  modelAttribute="family">
 		
 <!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form	 -->
@@ -57,20 +59,32 @@
 		<tag:textbox code="display.email" path="email" />
 		<tag:textbox code="display.phone" path="phone"/>
 		<tag:textbox code="display.address" path="address"/>	
-	<%-- 	<tag:textbox code="display.player" path="player.name" readonly="true"/> --%>
 	
-	<%-- <jstl:if test="${incidence.photo!=null}">
-		<b><spring:message code="incidence.photo" /></b><br/><br/>
-		<img class="img-responsive img-rounded" src="photo/displayImage.do?incidenceId=${incidence.id}" height="350" width="590" />
-	</jstl:if> 
-	<jstl:if test="${incidence.photo==null}">
-		<b><spring:message code="incidence.photo" /></b><br/><br/>
-		<img class="img-responsive img-rounded" src="images/no-image.png" height="350" width="590" />
-	</jstl:if> --%>
 	<tag:submit code="display.save" name="save1" />
 	<tag:button code="display.cancel" url="principal/index.do'" />
 </form:form>
 </jstl:if>
+
+<jstl:if test="${editPhoto==true }">
+<form:form action="${requestURI}" method="post"
+				modelAttribute="family" enctype="multipart/form-data">
+
+				<form:hidden path="id" />
+				<form:hidden path="version" />
+
+				<form:label path="file">
+					<spring:message code="family.file"></spring:message>
+				</form:label>
+				<form:input path="file" type="file" />
+				<form:errors cssClass="error" path="file">
+
+				</form:errors>
+				<br>
+				<tag:submit code="display.save" name="save2" />
+				<tag:button code="display.cancel" url="principal/index.do'" />
+			</form:form>
+		</jstl:if>
+	</jstl:if>
 </security:authorize>
 <security:authorize access="hasRole('PLAYER')">
 <form:form action="${requestURI}" method="post"  modelAttribute="family">
@@ -79,8 +93,6 @@
 
 	<form:hidden path="id"/>
 	<form:hidden path="version"/>
-	<form:hidden path="player"/>
-	
 	
 		<tag:textbox code="display.username" path="username" readonly="true" />
 		<tag:textbox code="display.name" path="name" readonly="true"/>
