@@ -38,8 +38,8 @@ public class PlayerFamilyController extends ErrorController {
 		ModelAndView result;
 		Player p = playerService.findOne(playerId);
 		
-		PlayerForm player = playerService.createForm(p);
-		result = createModelAndView1(player);
+//		PlayerForm player = playerService.createForm(p);
+		result = createModelAndView1(p);
 		
 		result.addObject("requestURI", "player/f/verPerfilJugador.do?playerId="+p.getId());
 		result.addObject("detailsPlayer",true);
@@ -76,7 +76,7 @@ public class PlayerFamilyController extends ErrorController {
 					return result;
 				}
 	
-	protected ModelAndView createModelAndView1(PlayerForm player) {
+	protected ModelAndView createModelAndView1(Player player) {
 		ModelAndView result;
 
 		result = createModelAndView1(player, null);
@@ -84,7 +84,7 @@ public class PlayerFamilyController extends ErrorController {
 		return result;
 	}
 
-	protected ModelAndView createModelAndView1(PlayerForm player, String message) {
+	protected ModelAndView createModelAndView1(Player player, String message) {
 		ModelAndView result;
 
 		result = new ModelAndView("player/display");
