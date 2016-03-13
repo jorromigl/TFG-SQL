@@ -27,18 +27,24 @@
 	<display:column property="match.moment" title="${moment}" />
 
 	<security:authorize access="hasRole('COACH')">
-
+	
+	<jstl:if test="${isFuture==false}">
 		<display:column>
-			<a href="player/c/listPlayersByRecruitment.do?recruitmentId=${row.id}"><spring:message
+			<a href="player/c/listPlayersByRecruitmentPast.do?recruitmentId=${row.id}"><spring:message
 					code="recruitment.player" /></a>
 		</display:column>
-
+	</jstl:if>
 		
 		<jstl:if test="${isFuture==true}">
 			<display:column>
 				<a href="player/c/listPlayersSquadraToRecruit.do?squadraId=${row.match.squadra.id}&recruitmentId=${row.id}"><spring:message
 						code="recruitment.addPlayer" /></a>
 			</display:column>
+			
+			<display:column>
+			<a href="player/c/listPlayersByRecruitmentFuture.do?recruitmentId=${row.id}"><spring:message
+					code="recruitment.player" /></a>
+		</display:column>
 
 		</jstl:if>
 	</security:authorize>

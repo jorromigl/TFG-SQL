@@ -159,7 +159,7 @@ public class PlayerCoachController extends ErrorController {
 			player = playerService.findOne(playerId);
 			try {
 				playerService.deleteFromRecruitment(player, recruitmentId);
-				result = new ModelAndView("redirect:../../player/c/listPlayersByRecruitment.do?recruitmentId="+ recruitmentId);
+				result = new ModelAndView("redirect:../../player/c/listPlayersByRecruitmentFuture.do?recruitmentId="+ recruitmentId);
 			} catch (Throwable error) {
 				result = createModelAndView(player, "player.commit.error");
 			}
@@ -201,9 +201,9 @@ public class PlayerCoachController extends ErrorController {
 	//
 	// }
 
-	// Listar los jugadores pertenecientes a un Recruitment
-	@RequestMapping(value = "/listPlayersByRecruitment", method = RequestMethod.GET)
-	public ModelAndView listPlayersByRecruitment(@RequestParam int recruitmentId) {
+	// Listar los jugadores pertenecientes a un Recruitment futuro
+	@RequestMapping(value = "/listPlayersByRecruitmentFuture", method = RequestMethod.GET)
+	public ModelAndView listPlayersByRecruitmentFuture(@RequestParam int recruitmentId) {
 		ModelAndView result;
 		Collection<Player> players;
 
@@ -213,10 +213,26 @@ public class PlayerCoachController extends ErrorController {
 		result.addObject("players", players);
 		result.addObject("recruitment", true);
 		result.addObject("recruitmentId", recruitmentId);
-		result.addObject("requestURI", "player/c/listPlayersByRecruitment.do");
+		result.addObject("requestURI", "player/c/listPlayersByRecruitmentFuture.do");
 
 		return result;
 	}
+	
+	// Listar los jugadores pertenecientes a un Recruitment pasado
+		@RequestMapping(value = "/listPlayersByRecruitmentPast", method = RequestMethod.GET)
+		public ModelAndView listPlayersByRecruitmentPast(@RequestParam int recruitmentId) {
+			ModelAndView result;
+			Collection<Player> players;
+
+			players = playerService.findPlayersByRecruitment(recruitmentId);
+
+			result = new ModelAndView("player/list");
+			result.addObject("players", players);
+			result.addObject("recruitmentId", recruitmentId);
+			result.addObject("requestURI", "player/c/listPlayersByRecruitmentPast.do");
+
+			return result;
+		}
 	
 
 	// Ver el perfil de un jugador
