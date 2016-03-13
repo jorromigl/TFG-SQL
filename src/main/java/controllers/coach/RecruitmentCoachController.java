@@ -82,9 +82,10 @@ public class RecruitmentCoachController extends ErrorController  {
 				Recruitment r;
 
 				r = recruitmentService.create(matchId);
-
-				result = createModelAndView(r);
-
+				
+				recruitmentService.save(r);
+				result = new ModelAndView("redirect:/recruitment/coach/listFuture.do");
+				
 				return result;
 			}
 			

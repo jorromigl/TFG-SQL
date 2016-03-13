@@ -11,6 +11,7 @@ import org.springframework.util.Assert;
 
 import domain.Coach;
 import domain.Family;
+import domain.Match;
 import domain.Player;
 import domain.Recruitment;
 import repositories.RecruitmentRepository;
@@ -44,7 +45,9 @@ public class RecruitmentService {
 		
 		public Recruitment create(int id){	
 			Recruitment c = new Recruitment();
-			c.setMatch(matchService.findOne(id));
+			Match m= matchService.findOne(id);
+			c.setMatch(m);
+			m.setRecruitment(c);
 			return c;
 		}
 		
