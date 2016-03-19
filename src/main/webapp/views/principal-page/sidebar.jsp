@@ -197,27 +197,78 @@
 						</security:authorize>
 
 						<security:authorize access="hasRole('FAMILY')">
+						
+						<li class="nv active"><a><i class="fa fa-futbol-o"></i> <spring:message
+										code="master.page.match" /> <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"> <a href="match/listAll.do"><spring:message
+										code="master.page.match.listAll" /></a>
+                                        </li>
+                                        <li><a href="match/family/listFuture.do"><spring:message
+										code="master.page.match.listFuture" /> </a>
+                                        </li>
+                                        <li><a href="match/family/listPast.do"><spring:message
+										code="master.page.match.listPast" /> </a>
+										 </li>
+                                    </ul>
+                         </li>
+							
+						<li class="nv active"><a><i class="fa fa-users"></i> <spring:message
+										code="master.page.players" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="family/listPlayerSameCategory.do"><spring:message
+										code="master.page.family.listPlayerCategory" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+                          
+                          <li class="nv active"><a><i class="fa fa-user-plus"></i> <spring:message
+										code="master.page.recruitment" /> <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="recruitment/family/listPast.do"><spring:message
+										code="master.page.coach.recruitmentsListPast" /> </a>
+                                        </li>
+                                         <li><a href="recruitment/family/listFuture.do"><spring:message
+										code="master.page.coach.recruitmentsListFuture" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+                          
+                           <li class="nv active"><a><i class="fa fa-home"></i><spring:message
+										code="master.page.squadra" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="squadra/family/displaySquadraP.do"><spring:message
+										code="master.page.user.SquadraMyPlayer" /> </a>
+                                        </li>
+                                    </ul>
+                          </li>
+						
+							 <li class="nv active"><a><i class="fa fa-folder-open"></i><spring:message
+										code="master.page.folder" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="folder/user/list.do"><spring:message
+										code="master.page.user.myFolder" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+                          
+                           <li class="nv active"><a><i class="fa fa-heart"></i><spring:message
+										code="master.page.player" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="player/f/viewMyPlayer.do"><spring:message
+										code="master.page.user.MyPlayer" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
 
-							<li><a href="match/listAll.do"><spring:message
-										code="master.page.match.listAll" /></a></li>
-							<li><a href="match/family/listFuture.do"><spring:message
-										code="master.page.match.listFuture" /> </a></li>
-							<li><a href="match/family/listPast.do"><spring:message
-										code="master.page.match.listPast" /> </a></li>
-							<li><a href="recruitment/family/listPast.do"><spring:message
-										code="master.page.coach.recruitmentsListPast" /> </a></li>
-							<li><a href="recruitment/family/listFuture.do"><spring:message
-										code="master.page.coach.recruitmentsListFuture" /> </a></li>
-							<li><a href="family/listPlayerSameCategory.do"><spring:message
-										code="master.page.family.listPlayerCategory" /> </a></li>
+							
 							<li><a href="family/displayA.do"><spring:message
 										code="master.page.family.profile" /> </a></li>
-							<li><a href="folder/user/list.do"><spring:message
-										code="master.page.user.myFolder" /> </a></li>
-							<li><a href="squadra/family/displaySquadraP.do"><spring:message
-										code="master.page.user.SquadraMyPlayer" /> </a></li>
-							<li><a href="player/f/viewMyPlayer.do"><spring:message
-										code="master.page.user.MyPlayer" /> </a></li>
+							
 
 						</security:authorize>
 
