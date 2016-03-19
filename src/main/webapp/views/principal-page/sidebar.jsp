@@ -103,7 +103,7 @@
                                     </ul>
                           </li>
 						
-							 <li class="nv active"><a><i class="fa fa-folder-open"></i></i><spring:message
+							 <li class="nv active"><a><i class="fa fa-folder-open"></i><spring:message
 										code="master.page.folder" /><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: block;">
                                         <li class="current-page"><a href="folder/user/list.do"><spring:message
@@ -119,27 +119,80 @@
 						</security:authorize>
 
 						<security:authorize access="hasRole('PLAYER')">
+						
+						<li class="nv active"><a><i class="fa fa-futbol-o"></i> <spring:message
+										code="master.page.match" /> <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"> <a href="match/listAll.do"><spring:message
+										code="master.page.match.listAll" /></a>
+                                        </li>
+                                        <li><a href="match/player/listFuture.do"><spring:message
+										code="master.page.match.listFuture" /> </a>
+                                        </li>
+                                        <li><a href="match/player/listPast.do"><spring:message
+										code="master.page.match.listPast" /> </a>
+										 </li>
+                                    </ul>
+                          </li>
+                         
+							
+							
+							
+						<li class="nv active"><a><i class="fa fa-users"></i> <spring:message
+										code="master.page.players" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="player/listPlayerSameCategory.do"><spring:message
+										code="master.page.coach.listPlayerCategory" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+                          
+                          <li class="nv active"><a><i class="fa fa-user-plus"></i> <spring:message
+										code="master.page.recruitment" /> <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="recruitment/player/listPast.do"><spring:message
+										code="master.page.coach.recruitmentsListPast" /> </a>
+                                        </li>
+                                         <li><a href="recruitment/player/listFuture.do"><spring:message
+										code="master.page.coach.recruitmentsListFuture" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+                          
+                           <li class="nv active"><a><i class="fa fa-home"></i><spring:message
+										code="master.page.squadra" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="squadra/player/displaySquadra.do"><spring:message
+										code="master.page.player.mySquadra" /> </a>
+                                        </li>
+                                    </ul>
+                          </li>
+						
+							 <li class="nv active"><a><i class="fa fa-folder-open"></i><spring:message
+										code="master.page.folder" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="folder/user/list.do"><spring:message
+										code="master.page.user.myFolder" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+                          
+                           <li class="nv active"><a><i class="fa fa-heart"></i><spring:message
+										code="master.page.family" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="familiers/player/viewMyFamily.do"><spring:message
+										code="master.page.player.myFamily" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
 
 							<li><a href="player/displayA.do"><spring:message
 										code="master.page.display" /> </a></li>
-							<li><a href="match/listAll.do"><spring:message
-										code="master.page.match.listAll" /></a></li>
-							<li><a href="match/player/listFuture.do"><spring:message
-										code="master.page.match.listFuture" /> </a></li>
-							<li><a href="match/player/listPast.do"><spring:message
-										code="master.page.match.listPast" /> </a></li>
-							<li><a href="player/listPlayerSameCategory.do"><spring:message
-										code="master.page.coach.listPlayerCategory" /> </a></li>
-							<li><a href="folder/user/list.do"><spring:message
-										code="master.page.user.myFolder" /> </a></li>
-							<li><a href="recruitment/player/listPast.do"><spring:message
-										code="master.page.coach.recruitmentsListPast" /> </a></li>
-							<li><a href="recruitment/player/listFuture.do"><spring:message
-										code="master.page.coach.recruitmentsListFuture" /> </a></li>
-							<li><a href="squadra/player/displaySquadra.do"><spring:message
-										code="master.page.player.mySquadra" /> </a></li>
-							<li><a href="familiers/player/viewMyFamily.do"><spring:message
-										code="master.page.player.myFamily" /> </a></li>
+							
 
 						</security:authorize>
 
