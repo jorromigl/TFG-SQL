@@ -43,4 +43,4 @@
 <a href="message/user/send.do"><spring:message code="msg.new.send" /></a>
 
 	
-		<tag:button code="message.return" url="folder/user/list.do'" />
+		<tag:buttonverde code="message.return" url="folder/user/list.do'" />

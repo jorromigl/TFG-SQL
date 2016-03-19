@@ -24,7 +24,7 @@
 		<br>
 		
 
-	<acme:submit code="recruitment.save" name="save" />
+	<acme:submitverde code="recruitment.save" name="save" />
 	<acme:cancel code="recruitment.cancel" url="/match/listFuture.do" />
 
 </form:form>

@@ -23,4 +23,4 @@
 	</display:column>
 </display:table>
 </div>
-	<tag:button code="squadra.return" url="principal/index.do'" />
+	<tag:buttonverde code="squadra.return" url="principal/index.do'" />

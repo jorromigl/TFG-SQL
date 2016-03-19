@@ -71,5 +71,5 @@
 
 </display:table>
 </div>
-<tag:button code="recruitment.return" url="principal/index.do'" />
+<tag:buttonverde code="recruitment.return" url="principal/index.do'" />
 

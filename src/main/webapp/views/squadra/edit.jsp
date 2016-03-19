@@ -20,7 +20,7 @@
 		<tag:textbox code="squadra.category.cname" path="category.cname" />
 		<tag:textbox code="squadra.name" path="name" />
 
-		<acme:submit code="squadra.save" name="save" />
+		<acme:submitverde code="squadra.save" name="save" />
 	</jstl:if>
 
 	<jstl:if test="${details==true}">
@@ -62,6 +62,6 @@
 	</jstl:if>
 	<br>
 	<br>
-	<acme:cancel code="squadra.cancel" url="principal/index.do" />
+	<acme:cancelazul code="squadra.cancel" url="principal/index.do" />
 
 </form:form>

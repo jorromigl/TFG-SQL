@@ -20,9 +20,9 @@
 	<tag:textbox code="match.moment" path="moment" />
 	
 	
-	<tag:submit code="match.save" name="save" />
+	<tag:submitverde code="match.save" name="save" />
 	<jstl:if test="${match.id != 0}">
-		<tag:submit code="match.delete" name="delete" />
+		<tag:submitverde code="match.delete" name="delete" />
 	</jstl:if>
 		
 	<tag:cancel code="match.cancel" url="principal/index.do" />

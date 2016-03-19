@@ -34,7 +34,7 @@
 	<tag:textarea code="msg.body" path="body" />
 
 
-	<tag:submit name="save" code="msg.send" />
+	<tag:submitverde name="save" code="msg.send" />
 	
 	<tag:cancel code="msg.cancel" url="principal/index.do" />
 

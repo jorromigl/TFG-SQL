@@ -29,5 +29,5 @@
 </display:table>
 </div>
 	
-	<tag:button code="folder.return" url="principal/index.do'" />
+	<tag:buttonverde code="folder.return" url="principal/index.do'" />
 
