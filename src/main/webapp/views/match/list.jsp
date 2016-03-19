@@ -87,6 +87,4 @@
 			
 </display:table>
 </div>
-	<tag:button code="match.return" url="principal/index.do'" />
-
-						
+	<tag:buttonverde  code="match.return" url="principal/index.do'" />

@@ -15,34 +15,79 @@
 		<form:form action="${requestURI}" method="post" modelAttribute="coach"
 			enctype="multipart/form-data">
 
-			<!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form-->
+			<div class="content">
+				<div class="col-md-8">
 
-			<form:hidden path="id" />
-			<form:hidden path="version" />
-
-
-			<tag:textbox code="display.username" path="userAccount.username" readonly="true" />
-			<tag:textbox code="display.name" path="name" readonly="true" />
-			<tag:textbox code="display.surname" path="surname" readonly="true" />
-			<tag:textbox code="display.category" path="category.cname"
-				readonly="true" />
-			<tag:textbox code="display.email" path="email" readonly="true" />
-			<tag:textbox code="display.phone" path="phone" readonly="true" />
-			<tag:textbox code="display.address" path="address" readonly="true" />
-
-			<jstl:if test="${coach.file == null }">
-				<spring:message code="coach.notImage"></spring:message>
-			</jstl:if>
-
-			<jstl:if test="${coach.file != null }">
-				<img style="width: 50px; height: 50px;"
-					src="coach/showImage.do?coachId=${coach.id}" />
-			</jstl:if>
+					<form:hidden path="id" />
+					<form:hidden path="version" />
 
 
-			<tag:button code="display.edit" url="coach/displayB.do'" />
-			<tag:button code="display.edit2" url="coach/displayC.do'" />
-			<tag:button code="display.cancel" url="principal/index.do'" />
+					<tag:textbox code="display.username" path="userAccount.username"
+						readonly="true" />
+					<tag:textbox code="display.name" path="name" readonly="true" />
+					<tag:textbox code="display.surname" path="surname" readonly="true" />
+					<tag:textbox code="display.category" path="category.cname"
+						readonly="true" />
+					<tag:textbox code="display.email" path="email" readonly="true" />
+					<tag:textbox code="display.phone" path="phone" readonly="true" />
+					<tag:textbox code="display.address" path="address" readonly="true" />
+
+					<br>
+					<tag:buttonverde code="display.edit" url="coach/displayB.do'" />
+
+					<tag:buttonazul code="display.cancel" url="principal/index.do'" />
+				</div>
+
+				<jstl:if test="${coach.file == null }">
+					<div class="col-xs-6 col-md-2">
+
+						<div class="thumbnail">
+							<div class=" view view-first">
+								<img style="width: 100%; display: block;"
+									src="images/user1.png" alt="image">
+								<div class="mask">
+									<p>
+										<spring:message code="coach.change"></spring:message>
+									</p>
+									<div class="tools tools-bottom">
+										<a href="coach/displayC.do"><i class="fa fa-pencil"></i></a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+
+<%-- 						<spring:message code="coach.notImage"></spring:message> --%>
+<%-- 						<tag:buttonverde code="display.edit22" url="coach/displayC.do'" /> --%>
+					</div>
+				</jstl:if>
+
+				<jstl:if test="${coach.file != null }">
+					<div class="col-xs-6 col-md-2">
+
+						<div class="thumbnail">
+							<div class=" view view-first">
+								<img style="width: 100%; display: block;"
+									src="coach/showImage.do?coachId=${coach.id}" alt="image">
+								<div class="mask">
+									<p>
+										<spring:message code="coach.change"></spring:message>
+									</p>
+									<div class="tools tools-bottom">
+										<a href="coach/displayC.do"><i class="fa fa-pencil"></i></a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<%-- 						<tag:buttonverde code="display.edit2" url="coach/displayC.do'" /> --%>
+					</div>
+				</jstl:if>
+
+
+			</div>
 		</form:form>
 	</jstl:if>
 
@@ -98,14 +143,16 @@
 	</jstl:if>
 </security:authorize>
 <security:authorize access="hasRole('PLAYER')">
-	<form:form action="${requestURI}" method="post" modelAttribute="coach" enctype="multipart/form-data">
+	<form:form action="${requestURI}" method="post" modelAttribute="coach"
+		enctype="multipart/form-data">
 
-	
+
 		<form:hidden path="id" />
 		<form:hidden path="version" />
 
 
-		<tag:textbox code="display.username" path="userAccount.username" readonly="true" />
+		<tag:textbox code="display.username" path="userAccount.username"
+			readonly="true" />
 		<tag:textbox code="display.name" path="name" readonly="true" />
 		<tag:textbox code="display.surname" path="surname" readonly="true" />
 		<tag:textbox code="display.category" path="category.cname"
@@ -127,13 +174,15 @@
 	</form:form>
 </security:authorize>
 <security:authorize access="hasRole('FAMILY')">
-	<form:form action="${requestURI}" method="post" modelAttribute="coach" enctype="multipart/form-data">
+	<form:form action="${requestURI}" method="post" modelAttribute="coach"
+		enctype="multipart/form-data">
 
 		<form:hidden path="id" />
 		<form:hidden path="version" />
 
 
-		<tag:textbox code="display.username" path="userAccount.username" readonly="true" />
+		<tag:textbox code="display.username" path="userAccount.username"
+			readonly="true" />
 		<tag:textbox code="display.name" path="name" readonly="true" />
 		<tag:textbox code="display.surname" path="surname" readonly="true" />
 		<tag:textbox code="display.category" path="category.cname"
