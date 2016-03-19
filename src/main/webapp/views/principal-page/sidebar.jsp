@@ -48,27 +48,71 @@
 					<ul class="nav side-menu">
 
 						<security:authorize access="hasRole('COACH')">
-
-							<li><a href="match/listAll.do"><spring:message
-										code="master.page.match.listAll" /></a></li>
-							<li><a href="match/coach/listFuture.do"><spring:message
-										code="master.page.match.listFuture" /></a></li>
-							<li><a href="match/coach/listPast.do"><spring:message
-										code="master.page.match.listPast" /></a></li>
-							<li><a href="match/coach/create.do"><spring:message
-										code="master.page.coach.createMatch" /> </a></li>
-							<li><a href="player/c/listPlayerSameCategoryCoach.do"><spring:message
-										code="master.page.coach.listPlayerCategory" /> </a></li>
-							<li><a href="recruitment/coach/listPast.do"><spring:message
-										code="master.page.coach.recruitmentsListPast" /> </a></li>
-							<li><a href="recruitment/coach/listFuture.do"><spring:message
-										code="master.page.coach.recruitmentsListFuture" /> </a></li>
-							<li><a href="squadra/coach/create.do"><spring:message
-										code="master.page.coach.createSquadra" /> </a></li>
-							<li><a href="squadra/coach/mysquadra.do"><spring:message
-										code="master.page.coach.mySquadra" /> </a></li>
-							<li><a href="folder/user/list.do"><spring:message
-										code="master.page.user.myFolder" /> </a></li>
+						
+						<li class="nv active"><a><i class="fa fa-futbol-o"></i> <spring:message
+										code="master.page.match" /> <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="match/listAll.do"><spring:message
+										code="master.page.match.listAll" /></a>
+                                        </li>
+                                        <li><a href="match/coach/listFuture.do"><spring:message
+										code="master.page.match.listFuture" /></a>
+                                        </li>
+                                        <li><a href="match/coach/listPast.do"><spring:message
+										code="master.page.match.listPast" /></a>
+										 </li>
+										<li><a href="match/coach/create.do"><spring:message
+										code="master.page.coach.createMatch" /> </a>
+                                        </li>
+                                    </ul>
+                          </li>
+							
+						<li class="nv active"><a><i class="fa fa-users"></i> <spring:message
+										code="master.page.players" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="player/c/listPlayerSameCategoryCoach.do"><spring:message
+										code="master.page.coach.listPlayerCategory" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+                          
+                          <li class="nv active"><a><i class="fa fa-user-plus"></i> <spring:message
+										code="master.page.recruitment" /> <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="recruitment/coach/listPast.do"><spring:message
+										code="master.page.coach.recruitmentsListPast" /> </a>
+                                        </li>
+                                         <li><a href="recruitment/coach/listFuture.do"><spring:message
+										code="master.page.coach.recruitmentsListFuture" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+                          
+                           <li class="nv active"><a><i class="fa fa-home"></i><spring:message
+										code="master.page.squadra" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="squadra/coach/create.do"><spring:message
+										code="master.page.coach.createSquadra" /> </a>
+                                        </li>
+                                         <li><a href="squadra/coach/mysquadra.do"><spring:message
+										code="master.page.coach.mySquadra" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+						
+							 <li class="nv active"><a><i class="fa fa-folder-open"></i></i><spring:message
+										code="master.page.folder" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="folder/user/list.do"><spring:message
+										code="master.page.user.myFolder" /> </a>
+                                        </li>
+                                       
+                                    </ul>
+                          </li>
+	
 							<li><a href="coach/displayA.do"><spring:message
 										code="master.page.display" /> </a></li>
 
