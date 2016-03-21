@@ -49,6 +49,9 @@
 	</display:column>
 	</jstl:if>
 	<jstl:if test="${mysquadra==true}">
+		<a href="player/c/listPlayersSquadra" ><spring:message code="player.mysquadra" /></a>
+	</jstl:if>
+	<jstl:if test="${recruit==true}">
 	<display:column >
 		<a href="player/c/AddPlayersRecruitment.do?playerId=${row.id}&recruitmentId=${recruitmentId}" ><spring:message code="player.addRecruitment" /></a>
 	</display:column>

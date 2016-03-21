@@ -60,7 +60,7 @@ public class PlayerCoachController extends ErrorController {
 
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
-		result.addObject("mysquadra", true);
+		result.addObject("recruitment", false);
 		result.addObject("requestURI", "player/c/listPlayerSameCategoryCoach.do");
 
 		return result;
@@ -100,25 +100,6 @@ public class PlayerCoachController extends ErrorController {
 		return result;
 	}
 
-	// Lista de jugadores de su equipo que no están en esa convocatoria
-	// @RequestMapping(value = "/listPlayersNotRecruitment", method =
-	// RequestMethod.GET)
-	// public ModelAndView listPlayersNotRecruitment(@RequestParam int
-	// squadraId, int recruitmentId) {
-	// ModelAndView result;
-	// Collection<Player> players;
-	//
-	// players = playerService.findPlayersNotRecruitment(recruitmentId,
-	// squadraId);
-	//
-	// result = new ModelAndView("player/list");
-	// result.addObject("players", players);
-	// result.addObject("mysquadra", true);
-	// result.addObject("requestURI", "player/c/listPlayersNotRecruitment.do");
-	//
-	// return result;
-	// }
-
 	// Lista de jugadores de su equipo
 	@RequestMapping(value = "/listPlayersSquadraToRecruit", method = RequestMethod.GET)
 	public ModelAndView listPlayersSquadraToRecruit(@RequestParam int squadraId, int recruitmentId) {
@@ -129,7 +110,7 @@ public class PlayerCoachController extends ErrorController {
 
 		result = new ModelAndView("player/list");
 		result.addObject("players", players);
-		result.addObject("mysquadra", true);
+		result.addObject("recruit", true);
 		result.addObject("recruitmentId", recruitmentId);
 		result.addObject("requestURI", "player/c/listPlayersSquadraToRecruit.do");
 
@@ -178,28 +159,6 @@ public class PlayerCoachController extends ErrorController {
 
 		return result;
 	}
-
-	// save de añadir players al equipo
-	// @RequestMapping(value = "/edit", method = RequestMethod.POST, params =
-	// "save")
-	// public ModelAndView save(@Valid Player player, BindingResult binding) {
-	//
-	// ModelAndView result;
-	// if (binding.hasErrors()) {
-	// result = createModelAndView(player);
-	// } else {
-	// try {
-	// playerService.save(player);
-	// result = new
-	// ModelAndView("redirect:../../player/coach/listPlayersSquadra.do");
-	// } catch (Throwable oops) {
-	// result = createModelAndView(player, "player.commit.error");
-	// }
-	// }
-	//
-	// return result;
-	//
-	// }
 
 	// Listar los jugadores pertenecientes a un Recruitment futuro
 	@RequestMapping(value = "/listPlayersByRecruitmentFuture", method = RequestMethod.GET)
