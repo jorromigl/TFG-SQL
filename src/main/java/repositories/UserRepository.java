@@ -13,4 +13,8 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	@Query("select a from User a where a.userAccount.id=?1")
 	User findByUserAccountId(int id);
 	
+	@Query("select u from User u where u.email=?1")
+	User findByEmail(String email);
+			
+	
 }

@@ -10,5 +10,10 @@
 <!-- 		<put-attribute name="title" value="Login" /> -->
 		<put-attribute name="body" value="/views/security/login.jsp" />
 	</definition>
+	
+	<definition name="security/missPass" extends="principal.page">
+	<put-attribute name="title" value="Miss Password" />
+		<put-attribute name="body" value="/views/security/missPass.jsp" />
+	</definition>
 		
 </tiles-definitions>

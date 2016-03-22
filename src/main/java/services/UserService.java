@@ -1,18 +1,24 @@
 package services;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.User;
+import forms.PassForm;
 import forms.UserForm;
 import repositories.UserRepository;
 import security.LoginService;
 import security.UserAccount;
+import utilities.MailMail;
 
 @Service
 @Transactional
@@ -144,6 +150,13 @@ public class UserService {
 		
 	}
 	
+	public void save3(User user) {
+		Assert.notNull(user);
+
+		userRepository.save(user);
+		
+	}
+	
 	
 	
 	public void savePassword(User user) {
@@ -165,6 +178,24 @@ public class UserService {
 		Assert.isTrue(findByPrincipal().equals(u));
 		
 		
+	}
+		
+	public void sendPass(PassForm passForm){
+		
+		String email = passForm.getEmail();
+		User u= userRepository.findByEmail(email);
+				
+		String password = new BigInteger(50, new SecureRandom()).toString(32);
+		String password1 = password;
+		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
+		password1 = encoder.encodePassword(password, null);
+		u.getUserAccount().setPassword(password1);
+			
+		ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Mail.xml");
+		MailMail mm = (MailMail) context.getBean("mailMail");
+		mm.sendMail("teamschool8@gmail.com", email, "Recuperar Contraseña", "Me comunico con usted " + u.getFullName()+ " para facilitarle los datos de usuario nuevos."
+				+ "\n\n El usuario seguira siendo: " + u.getUserAccount().getUsername() + " y su password es: " + password + " \n\n Acceda"
+						+ "a su perfil para modificar la contraseña. \n\n Un saludo, gracias");
 	}
 	
 	

@@ -112,7 +112,7 @@
 		
 		<security:intercept-url pattern="/law/law.do" access="permitAll" />  
 		
-		
+		<security:intercept-url pattern="/security/missPass.do" access="permitAll" />	
 		
 		
 		
