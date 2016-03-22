@@ -7,6 +7,8 @@ import java.util.Collection;
 import javax.sql.rowset.serial.SerialException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +32,7 @@ import repositories.SquadraRepository;
 import security.Authority;
 import security.LoginService;
 import security.UserAccount;
+import utilities.MailMail;
 
 @Service
 @Transactional
@@ -226,6 +229,20 @@ public class PlayerService {
 
 	public Player findOne(int id) {
 		return playerRepository.findOne(id);
+	}
+	
+	public void sendEmail(Player p){
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Mail.xml");
+		MailMail mm = (MailMail) context.getBean("mailMail");
+		mm.sendMail("teamschool8@gmail.com", p.getEmail(), "Convocatoria Partido", "Le doy mi enhorabuena " + p.getFullName()+ " ,ha sido usted convocado para un partido. Consulte la página oficial de TeamSchool para más información. \n\n Un saludo, gracias");
+	}
+	
+	public void sendEmail2(Player p){
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Mail.xml");
+		MailMail mm = (MailMail) context.getBean("mailMail");
+		mm.sendMail("teamschool8@gmail.com", p.getEmail(), "Convocatoria Partido", p.getFullName()+ ", siento comunicarle que ha sido eliminado de una convocatoria para un partido. Consulte la página oficial de TeamSchool para más información. \n\n Un saludo, gracias");
 	}
 
 	public void delete(Player p) {

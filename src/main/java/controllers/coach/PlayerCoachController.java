@@ -5,6 +5,8 @@ import java.util.Collection;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.encoding.PlaintextPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -23,6 +25,7 @@ import services.CoachService;
 import services.PlayerService;
 import services.RecruitmentService;
 import services.SquadraService;
+import utilities.MailMail;
 
 @Controller
 @RequestMapping("/player/c")
@@ -123,6 +126,9 @@ public class PlayerCoachController extends ErrorController {
 	public ModelAndView AddPlayersRecruitment(@RequestParam int recruitmentId, int playerId) {
 
 		recruitmentService.addPlayerRecruitment(recruitmentId, playerId);
+		Player p = playerService.findOne(playerId);
+		playerService.sendEmail(p);
+		
 		ModelAndView result;
 
 		result = new ModelAndView("redirect:../../recruitment/coach/listFuture.do");
@@ -140,6 +146,7 @@ public class PlayerCoachController extends ErrorController {
 			player = playerService.findOne(playerId);
 			try {
 				playerService.deleteFromRecruitment(player, recruitmentId);
+				playerService.sendEmail2(player);
 				result = new ModelAndView("redirect:../../player/c/listPlayersByRecruitmentFuture.do?recruitmentId="+ recruitmentId);
 			} catch (Throwable error) {
 				result = createModelAndView(player, "player.commit.error");
