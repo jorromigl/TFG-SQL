@@ -9,21 +9,44 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<form:form action="match/coach/edit.do" modelAttribute="match">
-	<form:hidden path="id" />
-	<form:hidden path="version" />
-	
+<div class="x_panel">
+	<div class="x_title">
 
-	<tag:textbox code="match.rival" path="rival" />
-	<tag:textbox code="match.location" path="location" />
-	<tag:select code="match.squadra" path="squadra" items="${squadras}" itemLabel= "name" />
-	<tag:textbox code="match.moment" path="moment" />
-	
-	
-	<tag:submitverde code="match.save" name="save" />
-	<jstl:if test="${match.id != 0}">
-		<tag:submitverde code="match.delete" name="delete" />
-	</jstl:if>
-		
-	<tag:cancel code="match.cancel" url="principal/index.do" />
-</form:form>
+		<div class="clearfix"></div>
+	</div>
+	<div class="x_content">
+		<br>
+		<form:form action="match/coach/edit.do" modelAttribute="match"
+			id="demo-form2" data-parsley-validate=""
+			class="form-horizontal form-label-left" novalidate="">
+
+			<form:hidden path="id" />
+			<form:hidden path="version" />
+
+
+			<tag:textbox2 code="match.rival" path="rival" />
+			<tag:textbox2 code="match.location" path="location" />
+			<tag:selectstyle code="match.squadra" path="squadra" items="${squadras}"
+				itemLabel="name" />
+			<tag:textbox2 code="match.moment" path="moment" />
+
+			<div class="ln_solid"></div>
+			<div class="form-group">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+					<tag:submitverde code="match.save" name="save" />
+					<jstl:if test="${match.id != 0}">
+						<tag:submitverde code="match.delete" name="delete" />
+					</jstl:if>
+
+					<tag:buttonazul code="match.cancel" url="principal/index.do'" />
+				</div>
+			</div>
+
+
+
+		</form:form>
+
+	</div>
+</div>
+
+
