@@ -72,8 +72,8 @@
 
 				<div class="right_col" role="main">
 
-					<div class="page-title">
-						<tiles:insertAttribute name="title" />
+					<div class="page-header">
+						<h3><tiles:insertAttribute name="title" /></h3>
 
 					</div>
 					<div class="row">
@@ -341,8 +341,9 @@
 		<div>
 			<tiles:insertAttribute name="header" />
 		</div>
-		<div>
-					<h1><tiles:insertAttribute name="title" /></h1>
+		<div>		
+					<tiles:insertAttribute name="title" />
+					
 					<tiles:insertAttribute name="body" />
 					<jstl:if test="${message != null}">
 						<br />

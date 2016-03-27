@@ -7,19 +7,19 @@
 
 
 	<definition name="comment/list" extends="principal.page">	
-		<put-attribute name="title" value="List comment" />
+		<put-attribute name="title" value="Comments" />
 		<put-attribute name="body" value="/views/comment/list.jsp" />
 	</definition>
 	
 	
 
 	<definition name="comment/edit" extends="principal.page">	
-		<put-attribute name="title" value="Write comment" />
+		<put-attribute name="title" value="New Comment" />
 		<put-attribute name="body" value="/views/comment/edit.jsp" />
 	</definition>
 	
 	<definition name="comment/display" extends="principal.page">	
-		<put-attribute name="title" value="Show comment" />
+		<put-attribute name="title" value="Comment" />
 		<put-attribute name="body" value="/views/comment/display.jsp" />
 	</definition>
 	

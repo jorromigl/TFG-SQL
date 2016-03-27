@@ -7,12 +7,12 @@
 <tiles-definitions>
 
 	<definition name="recruitment/list" extends="principal.page">	
-		<put-attribute name="title" value="Listar Convocatorias" />
+		<put-attribute name="title" value="Convocatorias" />
 		<put-attribute name="body" value="/views/recruitment/list.jsp" />
 	</definition>
 
 <definition name="recruitment/edit" extends="principal.page">	
-		<put-attribute name="title" value="Crear Convocatoria" />
+		<put-attribute name="title" value="Nueva Convocatoria" />
 		<put-attribute name="body" value="/views/recruitment/edit.jsp" />
 	</definition>
 	

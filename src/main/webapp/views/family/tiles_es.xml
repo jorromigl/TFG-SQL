@@ -7,12 +7,12 @@
 <tiles-definitions>
 
 	<definition name="family/list" extends="principal.page">	
-		<put-attribute name="title" value="Listado Familiares" />
+		<put-attribute name="title" value="Familiares" />
 		<put-attribute name="body" value="/views/family/list.jsp" />
 	</definition>
 	
 	<definition name="family/display" extends="principal.page">	
-		<put-attribute name="title" value="Perfil family" />
+		<put-attribute name="title" value="Perfil" />
 		<put-attribute name="body" value="/views/family/display.jsp" />
 	</definition>
 	

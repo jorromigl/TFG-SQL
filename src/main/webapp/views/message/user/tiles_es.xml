@@ -7,12 +7,12 @@
 <tiles-definitions>
 
 	<definition name="message/user/list" extends="principal.page">	
-		<put-attribute name="title" value="Listar Mensajes" />
+		<put-attribute name="title" value="Mensajes" />
 		<put-attribute name="body" value="/views/message/user/list.jsp" />
 	</definition>
 
 	<definition name="message/user/display" extends="principal.page">	
-		<put-attribute name="title" value="Visualizar Mensaje" />
+		<put-attribute name="title" value="Mensaje" />
 		<put-attribute name="body" value="/views/message/user/display.jsp" />
 	</definition>
 	

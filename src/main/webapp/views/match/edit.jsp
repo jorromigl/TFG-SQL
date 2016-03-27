@@ -10,10 +10,6 @@
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
 <div class="x_panel">
-	<div class="x_title">
-
-		<div class="clearfix"></div>
-	</div>
 	<div class="x_content">
 		<br>
 		<form:form action="match/coach/edit.do" modelAttribute="match"

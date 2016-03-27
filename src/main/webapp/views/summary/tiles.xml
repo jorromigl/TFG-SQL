@@ -12,7 +12,7 @@
 	</definition>
 	
 	<definition name="summary/display" extends="principal.page">	
-		<put-attribute name="title" value="Summary Display" />
+		<put-attribute name="title" value="Summary" />
 		<put-attribute name="body" value="/views/summary/display.jsp" />
 	</definition>
 	

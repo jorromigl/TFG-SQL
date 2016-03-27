@@ -7,12 +7,12 @@
 <tiles-definitions>
 
 	<definition name="recruitment/list" extends="principal.page">	
-		<put-attribute name="title" value="List Recruitments" />
+		<put-attribute name="title" value="Recruitments" />
 		<put-attribute name="body" value="/views/recruitment/list.jsp" />
 	</definition>
 
 	<definition name="recruitment/edit" extends="principal.page">	
-		<put-attribute name="title" value="Create Recruitment" />
+		<put-attribute name="title" value="New Recruitment" />
 		<put-attribute name="body" value="/views/recruitment/edit.jsp" />
 	</definition>
 </tiles-definitions>

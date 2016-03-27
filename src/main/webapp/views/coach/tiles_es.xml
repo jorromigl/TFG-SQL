@@ -7,12 +7,12 @@
 <tiles-definitions>
 
 	<definition name="coach/list" extends="principal.page">	
-		<put-attribute name="title" value="Listado Entrenadores" />
+		<put-attribute name="title" value="Entrenadores" />
 		<put-attribute name="body" value="/views/coach/list.jsp" />
 	</definition>
 	
 	<definition name="coach/display" extends="principal.page">	
-		<put-attribute name="title" value="Perfil Coach" />
+		<put-attribute name="title" value="Perfil" />
 		<put-attribute name="body" value="/views/coach/display.jsp" />
 	</definition>
 	

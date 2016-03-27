@@ -7,12 +7,12 @@
 <tiles-definitions>
 
 	<definition name="match/list" extends="principal.page">	
-		<put-attribute name="title" value="List Matches" />
+		<put-attribute name="title" value="Matches" />
 		<put-attribute name="body" value="/views/match/list.jsp" />
 	</definition>
 	
 	<definition name="match/edit" extends="principal.page">	
-		<put-attribute name="title" value="Create Match" />
+		<put-attribute name="title" value="New Match" />
 		<put-attribute name="body" value="/views/match/edit.jsp" />
 	</definition>
 	

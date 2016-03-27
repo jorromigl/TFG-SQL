@@ -7,7 +7,7 @@
 <tiles-definitions>
 
 	<definition name="folder/user/list" extends="principal.page">	
-		<put-attribute name="title" value="Listar Carpetas" />
+		<put-attribute name="title" value="Carpetas" />
 		<put-attribute name="body" value="/views/folder/user/list.jsp" />
 	</definition>
 
