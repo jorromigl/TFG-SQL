@@ -10,7 +10,7 @@
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<form:form action="${requestURI}" modelAttribute="squadra">
+<form:form action="${requestURI}" modelAttribute="squadra" enctype="multipart/form-data">
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />

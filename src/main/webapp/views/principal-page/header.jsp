@@ -6,7 +6,10 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 
 
@@ -34,12 +37,14 @@
 									code="principal.page.logout" /> </a></li>
 
 					</security:authorize>
+
+					
 					<li class=""><a href="javascript:;"
 						class="user-profile dropdown-toggle" data-toggle="dropdown"
 						aria-expanded="false"> <img src="images/img.jpg" alt="">
-						<sec:authentication property="principal.username" />
-							<span class=" fa fa-angle-down"></span>
-							 
+							<sec:authentication property="principal.username" /> <span
+							class=" fa fa-angle-down"></span>
+
 					</a>
 						<ul
 							class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
@@ -96,7 +101,6 @@
 								</div>
 							</li>
 						</ul></li>
-
 				</ul>
 			</nav>
 		</div>

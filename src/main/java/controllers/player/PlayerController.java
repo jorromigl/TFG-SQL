@@ -207,7 +207,7 @@ public class PlayerController extends ErrorController {
 	// }
 	// return result;
 	// }
-
+	
 	// ----------------------------------------------------------------------
 	// VER SU PERFIL
 	// --------------------------------------------------------------
