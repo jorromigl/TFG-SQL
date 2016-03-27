@@ -16,70 +16,127 @@
 		<form:form action="${requestURI}" method="post"
 			modelAttribute="player" enctype="multipart/form-data">
 
-			<%-- <!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form-->	 --%>
-
-			<form:hidden path="id" />
-			<form:hidden path="version" />
-
-
-			<tag:textbox code="display.username" path="userAccount.username" readonly="true" />
-			<tag:textbox code="display.name" path="name" readonly="true" />
-			<tag:textbox code="display.surname" path="surname" readonly="true" />
-			<tag:textbox code="display.category" path="category.cname" readonly="true" />
-			<tag:textbox code="display.date" path="date" readonly="true" />
-			<tag:textbox code="display.email" path="email" readonly="true" />
-			<tag:textbox code="display.phone" path="phone" readonly="true" />
-			<tag:textbox code="display.address" path="address" readonly="true" />
+			<div class="content">
+				<div class="col-md-12">
+					<div class="x_panel">
 
 
-			<jstl:if test="${player.file == null }">
-				<spring:message code="player.notImage"></spring:message>
-				
-			</jstl:if>
+						<form:hidden path="id" />
+						<form:hidden path="version" />
 
-			<jstl:if test="${player.file != null }">
-				<img style="width: 50px; height: 50px;"
-					src="player/showImage.do?playerId=${player.id}" />
-			</jstl:if>
+						<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+							<jstl:if test="${player.file == null }">
+								<div class="thumbnail">
+									<div class=" view view-first">
+										<img style="width: 100%; display: block;"
+											src="images/user1.png" alt="image">
+										<div class="mask">
+											<p>
+												<spring:message code="player.change"></spring:message>
+											</p>
+											<div class="tools tools-bottom">
+												<a href="player/displayC.do"><i class="fa fa-pencil"></i></a>
+											</div>
+										</div>
+									</div>
 
-			<jstl:if test="${viewProfileOther==false}">
-				<tag:button code="display.edit" url="player/displayB.do'" />
-				<tag:button code="display.edit2" url="player/displayC.do'" />
-			</jstl:if>
-			<tag:button code="display.cancel" url="principal/index.do'" />
+								</div>
+							</jstl:if>
+
+							<jstl:if test="${player.file != null }">
+
+								<div class="avatar-view">
+									<div class=" view view-first">
+										<img style="width: 100%; display: block;"
+											src="player/showImage.do?playerId=${player.id}" alt="image">
+										<div class="mask">
+											<p>
+												<spring:message code="player.change"></spring:message>
+											</p>
+											<div class="tools tools-bottom">
+												<a href="player/displayC.do"><i class="fa fa-pencil"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</jstl:if>
+						</div>
+						<h3 class="title">
+							<jstl:out value="${player.name}"></jstl:out>
+							<jstl:out value="${player.surname}"></jstl:out>
+						</h3>
+						<H4>
+							<jstl:out value="${player.userAccount.username}"></jstl:out>
+						</H4>
+
+						<h5 class="fa fa-calendar">
+							<jstl:out value="${player.date}"></jstl:out>
+						</h5>
+						<br>
+						<h5 class="fa fa-envelope">
+							<jstl:out value="${player.email}"></jstl:out>
+						</h5>
+						<br>
+						<h5 class="fa fa-phone">
+							<jstl:out value="${player.phone}"></jstl:out>
+						</h5>
+						<br>
+						<h5 class="fa fa-home ">
+							<jstl:out value="${player.address}"></jstl:out>
+						</h5>
+						<br>
+						<h5 class="fa fa-futbol-o">
+							<jstl:out value="${player.category.cname}"></jstl:out>
+						</h5>
+
+						<br>
+					</div>
+
+
+					<jstl:if test="${viewProfileOther==false}">
+						<tag:buttonverde code="display.edit" url="player/displayB.do'" />
+					</jstl:if>
+					<tag:buttonazul code="display.cancel" url="principal/index.do'" />
+
+				</div>
+
+			</div>
 
 		</form:form>
 	</jstl:if>
 
 	<jstl:if test="${detailsPlayer==false }">
-		
+
 		<jstl:if test="${editPhoto==false }">
-		<form:form action="${requestURI}" method="post"
-			modelAttribute="player" enctype="multipart/form-data">
+			<div id="wrapper">
+				<section class="login_content">
+					<form:form action="${requestURI}" method="post"
+						modelAttribute="player" enctype="multipart/form-data">
 
 
-			<form:hidden path="id" />
-			<form:hidden path="version" />
-			<tag:textbox code="display.username" path="username" />
-			<tag:password code="display.password" path="password" />
-			<tag:password code="display.password2" path="verifyPassword" />
-			<tag:textbox code="display.name" path="name" />
-			<tag:textbox code="display.surname" path="surname" />
-			<tag:textbox code="display.category" path="category.cname" />
-			<tag:textbox code="display.date" path="date" readonly="true" />
-			<tag:textbox code="display.email" path="email" />
-			<tag:textbox code="display.phone" path="phone" />
-			<tag:textbox code="display.address" path="address" />
-			
-			
-			<br>
+						<form:hidden path="id" />
+						<form:hidden path="version" />
+						<tag:textboxstyle code="display.username" path="username" />
+						<tag:passwordstyle code="display.password" path="password" />
+						<tag:passwordstyle code="display.password2" path="verifyPassword" />
+						<tag:textboxstyle code="display.name" path="name" />
+						<tag:textboxstyle code="display.surname" path="surname" />
+						<tag:textboxstyle code="display.category" path="category.cname" />
+						<tag:textboxstyle code="display.date" path="date" readonly="true" />
+						<tag:textboxstyle code="display.email" path="email" />
+						<tag:textboxstyle code="display.phone" path="phone" />
+						<tag:textboxstyle code="display.address" path="address" />
 
 
-			<tag:submit code="display.save" name="save1" />
-			<tag:button code="display.cancel" url="principal/index.do'" />
-		</form:form>
+						<br>
+						<tag:submitverde code="display.save" name="save1" />
+						<tag:buttonazul code="display.cancel" url="principal/index.do'" />
+					</form:form>
+				</section>
+			</div>
 		</jstl:if>
-	
+
 		<jstl:if test="${editPhoto==true}">
 			<form:form action="${requestURI}" method="post"
 				modelAttribute="player" enctype="multipart/form-data">
@@ -89,24 +146,22 @@
 				<form:hidden path="version" />
 
 				<spring:message code="player.ModifyImage"></spring:message>
-				
+
 				<form:label path="file">
 					<spring:message code="player.file"></spring:message>
 				</form:label>
 				<form:input path="file" type="file" />
 				<form:errors cssClass="error" path="file">
-				
-				</form:errors> 
+
+				</form:errors>
 				<br>
-	
-	
 				<tag:submit code="display.save" name="save2" />
 				<tag:button code="display.cancel" url="principal/index.do'" />
 			</form:form>
-			</jstl:if>
 		</jstl:if>
-		
-	
+	</jstl:if>
+
+
 </security:authorize>
 <security:authorize access="hasRole('COACH')">
 	<form:form action="${requestURI}" method="post" modelAttribute="player"
@@ -116,7 +171,8 @@
 		<form:hidden path="version" />
 
 
-		<tag:textbox code="display.username" path="userAccount.username" readonly="true" />
+		<tag:textbox code="display.username" path="userAccount.username"
+			readonly="true" />
 		<tag:textbox code="display.name" path="name" readonly="true" />
 		<tag:textbox code="display.surname" path="surname" readonly="true" />
 		<tag:textbox code="display.category" path="category.cname"
@@ -125,7 +181,7 @@
 		<tag:textbox code="display.email" path="email" readonly="true" />
 		<tag:textbox code="display.phone" path="phone" readonly="true" />
 		<tag:textbox code="display.address" path="address" readonly="true" />
-		
+
 		<jstl:if test="${player.file == null }">
 			<spring:message code="player.notImage"></spring:message>
 		</jstl:if>
@@ -135,7 +191,7 @@
 				src="player/showImage.do?playerId=${player.id}" />
 		</jstl:if>
 
-	
+
 		<tag:button code="display.cancel" url="principal/index.do'" />
 	</form:form>
 </security:authorize>
@@ -149,7 +205,8 @@
 		<form:hidden path="version" />
 
 
-		<tag:textbox code="display.username" path="userAccount.username" readonly="true" />
+		<tag:textbox code="display.username" path="userAccount.username"
+			readonly="true" />
 		<tag:textbox code="display.name" path="name" readonly="true" />
 		<tag:textbox code="display.surname" path="surname" readonly="true" />
 		<tag:textbox code="display.category" path="category.cname"
@@ -158,7 +215,7 @@
 		<tag:textbox code="display.email" path="email" readonly="true" />
 		<tag:textbox code="display.phone" path="phone" readonly="true" />
 		<tag:textbox code="display.address" path="address" readonly="true" />
-		
+
 		<jstl:if test="${player.file == null }">
 			<spring:message code="player.notImage"></spring:message>
 		</jstl:if>
