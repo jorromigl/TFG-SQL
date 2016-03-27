@@ -45,7 +45,7 @@
 						</div>
 					</jstl:if>
 
-					<input class="btn btn-default submit" type="submit"
+					<input class="btn btn-success submit" type="submit"
 						value="<spring:message code="security.login" />" /> <br> <a
 						class="reset_pass" href="security/missPass.do"><spring:message
 							code="security.lostYourPassword" /></a>

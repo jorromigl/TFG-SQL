@@ -32,6 +32,14 @@
 
 					<tag:buttonazul code="pass.cancel" url="principal/index.do'" />
 				</form:form>
+
+				<div>
+					<h2>
+
+						<i class="fa fa fa-futbol-o" style="font-size: 26px;"></i>
+						<spring:message code="security.footballSchool" />
+					</h2>
+				</div>
 			</section>
 			<!-- content -->
 		</div>
