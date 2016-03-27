@@ -12,7 +12,7 @@
 	</definition>
 	
 	<definition name="security/missPass" extends="principal.page">
-	<put-attribute name="title" value="Miss Password" />
+	<put-attribute name="title" value="" />
 		<put-attribute name="body" value="/views/security/missPass.jsp" />
 	</definition>
 		

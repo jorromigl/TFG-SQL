@@ -70,7 +70,7 @@ public class CommentServiceTest {
 	    public void testCreateComment() {
 	        authenticate("coach1");
 	        Comment comment = new Comment();
-	        Match match = matchService.findOne(43);
+	        Match match = matchService.findOne(0);
 	        
 	        Date moment = new Date();
 	        comment.setMatch(match);
