@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
+import domain.Comment;
+import domain.Match;
 import domain.Player;
 import domain.Squadra;
 import services.PlayerService;
@@ -50,57 +52,79 @@ public class SquadraCoachController extends ErrorController {
 
 		result = new ModelAndView("squadra/list");
 		result.addObject("squadras", squadras);
-		result.addObject("requestURI", "squadra/coach/mysquadra.do");
 
 		return result;
 	}
 
-	// Create
-	@RequestMapping(value = "/create", method = RequestMethod.GET)
-	public ModelAndView create() {
-		ModelAndView result;
-		Squadra squadra;
+	// CREATE
+		@RequestMapping(value = "/create", method = RequestMethod.GET)
+		public ModelAndView create() {
+			ModelAndView result;
+	
+			Squadra s = squadraService.create();
 
-		squadra = squadraService.create();
+			result = createModelAndView1(s);
+			result.addObject("squadra", s);
+			result.addObject("details", false);
 
-		result = createModelAndView(squadra);
-		result.addObject("details", false);
-		return result;
-	}
-
-	// Details
-	@RequestMapping(value = "/details", method = RequestMethod.GET)
-	public ModelAndView edit(@RequestParam int squadraId) {
-		ModelAndView result;
-		Squadra squadra;
-
-		squadra = squadraService.findOne(squadraId);
-
-		result = new ModelAndView("squadra/edit");
-		result.addObject("squadra", squadra);
-		result.addObject("details", true);
-		return result;
-	}
-
-
-	// Save
-	@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "save")
-	public ModelAndView save(@Valid @ModelAttribute Squadra squadra, BindingResult bindingResult) {
-		ModelAndView result;
-
-		if (bindingResult.hasErrors()) {
-			result = createModelAndView(squadra);
-		} else {
-			try {
-				squadraService.save(squadra);
-				result = new ModelAndView("redirect:../../squadra/coach/mysquadra.do");
-			} catch (Throwable error) {
-				result = createModelAndView(squadra, "squadra.commit.error");
-			}
+			return result;
 		}
-		return result;
-	}
 
+		// SAVE
+		@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "save")
+		public ModelAndView save(@Valid @ModelAttribute Squadra s, BindingResult bindingResult) {
+			ModelAndView result;
+
+			if (bindingResult.hasErrors()) {
+				result = createModelAndView1(s);
+			} else {
+				try {
+					squadraService.save(s);
+					result = new ModelAndView("redirect:/match/listAll.do");
+				} catch (Throwable error) {
+					result = createModelAndView1(s, "squadra.commit.error");
+				}
+			}
+			return result;
+		}
+	
+	// Details
+		@RequestMapping(value = "/details", method = RequestMethod.GET)
+		public ModelAndView edit(@RequestParam int squadraId) {
+			ModelAndView result;
+			Squadra squadra;
+
+			squadra = squadraService.findOne(squadraId);
+
+			result = new ModelAndView("squadra/edit");
+			result.addObject("squadra", squadra);
+			result.addObject("details", true);
+			return result;
+		}
+
+
+		
+		protected ModelAndView createModelAndView1(Squadra squadra) {
+			ModelAndView result;
+
+			result = createModelAndView1(squadra, null);
+
+			return result;
+		}
+
+		protected ModelAndView createModelAndView1(Squadra squadra, String message) {
+			ModelAndView result;
+			result = new ModelAndView("squadra/edit");
+
+			result.addObject("squadra", squadra);
+			result.addObject("message", message);
+			result.addObject("details", false);
+			
+			return result;
+		}	
+		
+		
+		
 	protected ModelAndView createModelAndView(Squadra squadra) {
 		assert squadra != null;
 		ModelAndView result;

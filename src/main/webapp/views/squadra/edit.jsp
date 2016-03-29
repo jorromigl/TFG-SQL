@@ -8,9 +8,8 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
-<%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<form:form action="${requestURI}" modelAttribute="squadra" enctype="multipart/form-data">
+<form:form action="squadra/coach/edit.do" modelAttribute="squadra" enctype="multipart/form-data">
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />
@@ -20,7 +19,7 @@
 		<tag:textbox code="squadra.category.cname" path="category.cname" />
 		<tag:textbox code="squadra.name" path="name" />
 
-		<acme:submitverde code="squadra.save" name="save" />
+		<tag:submitverde code="squadra.save" name="save" />
 	</jstl:if>
 
 	<jstl:if test="${details==true}">
@@ -62,6 +61,6 @@
 	</jstl:if>
 	<br>
 	<br>
-	<acme:cancelazul code="squadra.cancel" url="principal/index.do" />
+	<tag:buttonazul code="squadra.cancel" url="principal/index.do" />
 
 </form:form>
