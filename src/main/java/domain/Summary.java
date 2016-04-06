@@ -68,9 +68,8 @@ public class Summary extends DomainEntity {
 		this.coach = coach;
 	}
 
-	
-//	@OneToOne(optional=false)
-	@OneToOne //para populate
+
+	@OneToOne(optional=false)
 	public Match getMatch() {
 		return match;
 	}

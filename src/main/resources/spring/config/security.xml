@@ -53,6 +53,7 @@
 		<security:intercept-url pattern="/player/listPlayerSameCategory.do" access="hasRole('PLAYER')" />
 		<security:intercept-url pattern="/player/verPerfilJugador.do" access="hasRole('PLAYER')" />
 		<security:intercept-url pattern="/player/verPerfilCoach.do" access="hasRole('PLAYER')" />
+		<security:intercept-url pattern="/coach/verPerfilCoach.do" access="hasRole('ADMIN')" />
 		<security:intercept-url pattern="/player/listPlayersByRecruitment.do" access="hasRole('PLAYER')" />
 
 			
@@ -88,6 +89,7 @@
 		
 		
 		<security:intercept-url pattern="/coach/displayA.do" access="hasRole('COACH')" />
+		<security:intercept-url pattern="/coach/displayC.do" access="permitAll" />
 		<security:intercept-url pattern="/coach/displayB.do" access="hasRole('COACH')" />
 		
 		<security:intercept-url pattern="/squadra/coach/**" access="hasRole('COACH')" />

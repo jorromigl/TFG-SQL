@@ -150,6 +150,19 @@ public class CoachController extends ErrorController {
 			}
 			
 			// VER PERFIL --------------------------------------------------------------
+			// Ver el perfil de un coach
+			@RequestMapping(value = "/verPerfilCoach", method = RequestMethod.GET)
+			public ModelAndView verPerfilCoach(@RequestParam int coachId) {
+				ModelAndView result;
+				Coach p = coachService.findOne(coachId);
+				result = createModelAndView4(p);
+
+				result.addObject("requestURI", "player/verPerfilCoach.do?coachId=" + p.getId());
+				result.addObject("viewProfileOther", true);
+				result.addObject("detailsPlayer", true);
+
+				return result;
+			}
 			
 			@RequestMapping(value = "/displayA", method = RequestMethod.GET)
 			public ModelAndView displayA(){
@@ -345,6 +358,25 @@ public class CoachController extends ErrorController {
 
 					result = new ModelAndView("coach/display");
 					result.addObject("coach", coach);
+					result.addObject("message", message);
+
+					return result;
+				}
+				
+				protected ModelAndView createModelAndView4(Coach coach) {
+					ModelAndView result;
+
+					result = createModelAndView4(coach, null);
+
+					return result;
+				}
+
+				protected ModelAndView createModelAndView4(Coach coach, String message) {
+					ModelAndView result;
+
+					result = new ModelAndView("coach/display");
+					result.addObject("coach", coach);
+
 					result.addObject("message", message);
 
 					return result;

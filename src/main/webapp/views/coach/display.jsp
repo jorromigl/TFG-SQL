@@ -211,6 +211,73 @@
 		</div>
 	</form:form>
 </security:authorize>
+<security:authorize access="hasRole('ADMIN')">
+	<form:form action="${requestURI}" method="post" modelAttribute="coach"
+		enctype="multipart/form-data">
+
+		<div class="content">
+			<div class="col-md-12">
+				<div class="x_panel">
+
+					<form:hidden path="id" />
+					<form:hidden path="version" />
+
+					<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+						<jstl:if test="${coach.file == null }">
+							<div class="thumbnail">
+								<div class=" view view-first">
+									<img style="width: 100%; display: block;"
+										src="images/user1.png" alt="image">
+								</div>
+
+							</div>
+						</jstl:if>
+
+						<jstl:if test="${coach.file != null }">
+
+							<div class="avatar-view">
+								<div class=" view view-first">
+									<img style="width: 100%; display: block;"
+										src="coach/showImage.do?coachId=${coach.id}" alt="image">
+								</div>
+							</div>
+
+						</jstl:if>
+					</div>
+
+
+					<h3 class="title">
+						<jstl:out value="${coach.name}"></jstl:out>
+						<jstl:out value="${coach.surname}"></jstl:out>
+					</h3>
+					<H4>
+						<jstl:out value="${coach.userAccount.username}"></jstl:out>
+					</H4>
+
+					<h5 class="fa fa-envelope">
+						<jstl:out value="${coach.email}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-phone">
+						<jstl:out value="${coach.phone}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-home ">
+						<jstl:out value="${coach.address}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-futbol-o">
+						<jstl:out value="${coach.category.cname}"></jstl:out>
+					</h5>
+
+					<br>
+				</div>
+				<tag:buttonazul code="display.cancel" url="principal/index.do'" />
+			</div>
+
+		</div>
+	</form:form>
+</security:authorize>
 <security:authorize access="hasRole('FAMILY')">
 	<form:form action="${requestURI}" method="post" modelAttribute="coach"
 		enctype="multipart/form-data">

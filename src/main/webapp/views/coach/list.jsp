@@ -24,7 +24,7 @@
 	<display:column property="phone" title="${phone}"  />
 	
 	<display:column >
-			<a href="coach/displayA.do?coachId=${row.id}" ><spring:message code="coach.display" /></a>
+			<a href="coach/verPerfilCoach.do?coachId=${row.id}" ><spring:message code="coach.display" /></a>
 	</display:column>
 	
 	<display:column >

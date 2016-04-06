@@ -20,7 +20,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
-@Table(name = "Macth")
+@Table(name = "Partido")
 public class Match extends DomainEntity {
 
 	
@@ -77,7 +77,6 @@ public class Match extends DomainEntity {
 		this.squadra = squadra;
 	}
 
-//	@ManyToOne(optional=false)
 	@ManyToOne //para populate
 	public Coach getCoach() {
 		return coach;
@@ -87,7 +86,7 @@ public class Match extends DomainEntity {
 		this.coach = coach;
 	}
 
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL, optional = true)
 	public Summary getSummary() {
 		return summary;
 	}

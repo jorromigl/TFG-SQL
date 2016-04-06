@@ -22,7 +22,11 @@
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/EscuelaFutbol" />
 		<property name="user" value="rome8" />
-		<property name="password" value="rome8" />
+		<property name="password" value="rome8" /> 
+		
+		<!-- <property name="jdbcUrl" value="jdbc:mysql://mysql29118-futbol.cloud.hostnet.nl/EscuelaFutbol" /> 
+ 				<property name="user" value="rome8" /> 
+ 				<property name="password" value="rome8" /> -->
 	</bean>
 
 	<!-- JPA -->
