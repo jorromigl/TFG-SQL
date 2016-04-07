@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,14 +115,14 @@ public class CoachController extends ErrorController {
 			@RequestMapping(value = "/delete", method = RequestMethod.GET)
 			public ModelAndView delete(@RequestParam int coachId) {
 				ModelAndView result;			
-//				Coach c = coachService.findOne(coachId);
+				Coach c = coachService.findOne(coachId);
 				try {
 					
 					coachService.deleteFolder(coachId);
 					coachService.deleteUser(coachId);
 					result = new ModelAndView("redirect:../coach/listAll.do");
 				} catch (Throwable error) {
-					result = new ModelAndView("redirect:../coach/listAll.do");
+					result = createModelAndView(c, "register.commit.error1");
 				}
 				return result;
 			}
