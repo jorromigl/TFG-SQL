@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -23,7 +24,7 @@
 
 
 	<p class="text-center">
-		©2016
+		Â©2016
 		<spring:message code="security.AllRightsReserved" />
 		<fmt:formatDate value="${date}" pattern="yyyy" />
 	</p>
