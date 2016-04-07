@@ -113,16 +113,15 @@ public class CoachController extends ErrorController {
 			
 			@RequestMapping(value = "/delete", method = RequestMethod.GET)
 			public ModelAndView delete(@RequestParam int coachId) {
-				ModelAndView result;
-				Coach coach;
-				
-				coach = coachService.findOne(coachId);
-				
+				ModelAndView result;			
+//				Coach c = coachService.findOne(coachId);
 				try {
-					coachService.delete(coach);
+					
+					coachService.deleteFolder(coachId);
+					coachService.deleteUser(coachId);
 					result = new ModelAndView("redirect:../coach/listAll.do");
 				} catch (Throwable error) {
-					result = createModelAndView(coach, "coach.commit.error");
+					result = new ModelAndView("redirect:../coach/listAll.do");
 				}
 				return result;
 			}

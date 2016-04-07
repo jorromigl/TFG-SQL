@@ -23,6 +23,8 @@ import forms.CoachForm2;
 import forms.PlayerForm;
 import forms.PlayerForm2;
 import repositories.CoachRepository;
+import repositories.FolderRepository;
+import repositories.UserRepository;
 import security.Authority;
 import security.LoginService;
 import security.UserAccount;
@@ -35,6 +37,12 @@ public class CoachService {
 
 	@Autowired
 	private CoachRepository coachRepository;
+	
+	@Autowired
+	private FolderRepository folderRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	@Autowired
 	private FolderService folderService;
@@ -72,10 +80,21 @@ public class CoachService {
 		return res;
 	}
 
-	public void delete(Coach c) {
-		Assert.notNull(c);
-
-		coachRepository.delete(c);
+	public void delete(int coachId) {
+		coachRepository.delete(coachId);
+	}
+	
+	public void deleteFolder(int coachId){
+		Coach c= findOne(coachId);
+		Collection<Folder> f = c.getFolders();
+		folderRepository.delete(f);
+		
+		
+	}
+	
+	public void deleteUser(int coachId){
+		
+		userRepository.delete(coachId);
 	}
 
 	public Coach findOneToEdit(int coachId) {

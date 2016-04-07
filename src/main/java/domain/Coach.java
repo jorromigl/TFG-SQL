@@ -42,7 +42,7 @@ public class Coach extends User {
 	
 	private Admin admin;
 	private Collection<Summary> summaries;
-	private Collection<Match> matches;
+//	private Collection<Match> matches;
 	private Collection<Squadra> squadras;
 
 
@@ -56,14 +56,14 @@ public class Coach extends User {
 		this.squadras = squadras;
 	}
 
-	@OneToMany(mappedBy="coach")
-	public Collection<Match> getMatches() {
-		return matches;
-	}
-
-	public void setMatches(Collection<Match> matches) {
-		this.matches = matches;
-	}
+//	@OneToMany(mappedBy="coach")
+//	public Collection<Match> getMatches() {
+//		return matches;
+//	}
+//
+//	public void setMatches(Collection<Match> matches) {
+//		this.matches = matches;
+//	}
 
 	@OneToMany(mappedBy = "coach")
 	public Collection<Summary> getSummaries() {
@@ -82,6 +82,8 @@ public class Coach extends User {
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
+	
+
 	
 	
 
