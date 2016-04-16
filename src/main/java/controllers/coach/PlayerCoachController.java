@@ -2,6 +2,7 @@ package controllers.coach;
 
 import java.util.Collection;
 
+import javax.swing.JOptionPane;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -127,12 +128,13 @@ public class PlayerCoachController extends ErrorController {
 
 		recruitmentService.addPlayerRecruitment(recruitmentId, playerId);
 		Player p = playerService.findOne(playerId);
+		JOptionPane.showMessageDialog(null, "Recruited successfully");
 		playerService.sendEmail(p);
 		
 		ModelAndView result;
 
 		result = new ModelAndView("redirect:../../recruitment/coach/listFuture.do");
-
+		
 		return result;
 	}
 
@@ -146,6 +148,7 @@ public class PlayerCoachController extends ErrorController {
 			player = playerService.findOne(playerId);
 			try {
 				playerService.deleteFromRecruitment(player, recruitmentId);
+				JOptionPane.showMessageDialog(null, "Delete from recruitment");
 				playerService.sendEmail2(player);
 				result = new ModelAndView("redirect:../../player/c/listPlayersByRecruitmentFuture.do?recruitmentId="+ recruitmentId);
 			} catch (Throwable error) {
