@@ -2,7 +2,7 @@ package controllers.player;
 
 import java.util.Collection;
 
-
+import javax.swing.JOptionPane;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -77,16 +77,20 @@ public class SquadraPlayerController extends ErrorController {
 				public ModelAndView displaySquadra(){
 					ModelAndView result;
 					Squadra squadra;
-
-					squadra = squadraService.getMySquadraPlayer();
-					result = createModelAndView(squadra);
-					result = new ModelAndView("squadra/edit");
-					result.addObject("squadra", squadra);
-					result.addObject("details", true);
-			
-				
 					
+					squadra = squadraService.getMySquadraPlayer();
+					if( squadra != null){
+						result = createModelAndView(squadra);
+						result = new ModelAndView("squadra/edit");
+						result.addObject("squadra", squadra);
+						result.addObject("details", true);		
+					
+					} else{
+						result = new ModelAndView("principal/index");
+						JOptionPane.showMessageDialog(null, "No Squadra");
+					}
 					return result;
+					
 				}
 				
 				

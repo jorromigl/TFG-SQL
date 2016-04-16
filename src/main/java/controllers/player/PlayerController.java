@@ -159,54 +159,6 @@ public class PlayerController extends ErrorController {
 		}
 		return result;
 	}
-
-	// @RequestMapping(value = "/register", method = RequestMethod.POST, params
-	// = "save")
-	// public ModelAndView save(@Valid PlayerRegistrationForm playerForm,
-	// BindingResult binding) {
-	//
-	// ModelAndView result;
-	// Player player;
-	//
-	//
-	// if (binding.hasErrors()) {
-	// result = createModelAndView(playerForm);
-	//
-	// } else {
-	//
-	// try {
-	// player = playerService.reconstruct(playerForm);
-	//
-	// playerService.save(player);
-	// result = new ModelAndView("redirect:../../security/login.do");
-	//
-	// } catch (DataIntegrityViolationException oops) {
-	// result = createModelAndView(playerForm,
-	// "register.commit.error");
-	//
-	// } catch (Throwable oops) {
-	// oops.getMessage();
-	//
-	// if
-	// (!playerForm.getRegistrationForm().getVerifyPassword().equals(playerForm.getRegistrationForm().getPassword()))
-	// {
-	// result = createModelAndView(playerForm,
-	// "register.commit.error");
-	// } else {
-	//
-	// if (playerForm.getAvailable()== false) {
-	// result = createModelAndView(playerForm,
-	// "register.commit.error1");
-	// }else{
-	// result = createModelAndView(playerForm,
-	// "register.commit.error2");
-	// }
-	// }
-	//
-	// }
-	// }
-	// return result;
-	// }
 	
 	// ----------------------------------------------------------------------
 	// VER SU PERFIL
@@ -313,41 +265,7 @@ public class PlayerController extends ErrorController {
 
 		return result;
 	}
-	
-	
-//	
-//	// Editar foto de perfil
-//		@RequestMapping(value = "/ProfilePhoto", method = RequestMethod.GET)
-//		public ModelAndView ProfilePhoto() {
-//			ModelAndView result;
-//			Player p = playerService.findByPrincipal();
-//
-//			result = createModelAndView3(p);
-//
-//			result.addObject("requestURI", "player/ProfilePhoto.do?playerId=" + p.getId());
-//
-//			return result;
-//		}
-//		
-//		@RequestMapping(value = "/ProfilePhoto", method = RequestMethod.POST, params = "save2")
-//		public ModelAndView save2(@Valid Player player, BindingResult binding) {
-//			ModelAndView result;
-//			if (binding.hasErrors()) {
-//				result = createModelAndView3(player);
-//			} else {
-//				try {
-//					
-//					playerService.save3(player);
-//					result = new ModelAndView("redirect:../principal/index.do");
-//
-//				} catch (Throwable error) {
-//					result = createModelAndView3(player, "player.commit.error");
-//				}
-//			}
-//
-//			return result;
-//		}
-	
+		
 	//Subir foto
 	@InitBinder
 	protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception{
