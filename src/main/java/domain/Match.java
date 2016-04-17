@@ -23,7 +23,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "Partido")
 public class Match extends DomainEntity {
 
-	
 	private String rival;
 	private String location;
 	private Date moment;
@@ -31,7 +30,6 @@ public class Match extends DomainEntity {
 	public Match() {
 		super();
 	}
-
 
 	@NotBlank
 	public String getLocation() {
@@ -41,16 +39,16 @@ public class Match extends DomainEntity {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	
+
 	@NotBlank
 	public String getRival() {
 		return rival;
 	}
 
 	public void setRival(String rival) {
-		this.rival= rival;
+		this.rival = rival;
 	}
-	
+
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
@@ -61,13 +59,13 @@ public class Match extends DomainEntity {
 	public void setMoment(Date moment) {
 		this.moment = moment;
 	}
-	
+
 	private Coach coach;
 	private Summary summary;
 	private Recruitment recruitment;
 	private Collection<Comment> comments;
 	private Squadra squadra;
-	
+
 	@ManyToOne
 	public Squadra getSquadra() {
 		return squadra;
@@ -77,7 +75,7 @@ public class Match extends DomainEntity {
 		this.squadra = squadra;
 	}
 
-	@ManyToOne //para populate
+	@ManyToOne
 	public Coach getCoach() {
 		return coach;
 	}
@@ -86,26 +84,24 @@ public class Match extends DomainEntity {
 		this.coach = coach;
 	}
 
-	@OneToOne(cascade=CascadeType.ALL, optional = true)
+	@OneToOne(cascade = CascadeType.ALL, optional = true)
 	public Summary getSummary() {
 		return summary;
 	}
-
 
 	public void setSummary(Summary summary) {
 		this.summary = summary;
 	}
 
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, optional = true)
 	public Recruitment getRecruitment() {
 		return recruitment;
 	}
 
-
 	public void setRecruitment(Recruitment recruitment) {
 		this.recruitment = recruitment;
 	}
-	
+
 	@OneToMany(mappedBy = "match")
 	public Collection<Comment> getComments() {
 		return comments;
@@ -114,11 +110,9 @@ public class Match extends DomainEntity {
 	public void setComments(Collection<Comment> comment) {
 		this.comments = comment;
 	}
-	
-	public String toString(){
-		return "rival = " + getRival() + "location= "+ getLocation()  + ", moment= " + getMoment();
+
+	public String toString() {
+		return "rival = " + getRival() + "location= " + getLocation() + ", moment= " + getMoment();
 	}
-	
-	
-	
+
 }

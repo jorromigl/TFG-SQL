@@ -115,15 +115,6 @@ public abstract class User extends DomainEntity {
 	public void setFolders(Collection<Folder> folders) {
 		this.folders = folders;
 	}
-	
-//	@Column(columnDefinition = "LONGBLOB")
-//	public byte[] getPhoto() {
-//		return photo;
-//	}
-//
-//	public void setPhoto(byte[] photo) {
-//		this.photo = photo;
-//	}
 
 	private UserAccount userAccount;
 

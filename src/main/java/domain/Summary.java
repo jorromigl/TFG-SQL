@@ -12,19 +12,15 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class Summary extends DomainEntity {
 
-	
 	private String text;
 	private String subject;
-//	private Date moment;
-	
 
 	public Summary() {
 		super();
 	}
 
-
 	@NotBlank
-//	@SafeHtml(whitelistType = WhiteListType.NONE)
+	// @SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getText() {
 		return text;
 	}
@@ -32,9 +28,9 @@ public class Summary extends DomainEntity {
 	public void setText(String text) {
 		this.text = text;
 	}
-	
+
 	@NotBlank
-//	@SafeHtml(whitelistType = WhiteListType.NONE)
+	// @SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getSubject() {
 		return subject;
 	}
@@ -42,44 +38,26 @@ public class Summary extends DomainEntity {
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-	
-//	@NotNull
-//	@Past
-//	@Temporal(TemporalType.TIMESTAMP)
-//	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
-//	public Date getMoment() {
-//		return moment;
-//	}
-//
-//	public void setMoment(Date moment) {
-//		this.moment = moment;
-//	}
-	
+
 	private Coach coach;
 	private Match match;
 
-	@ManyToOne(optional=true)
+	@ManyToOne(optional = true)
 	public Coach getCoach() {
 		return coach;
 	}
-
 
 	public void setCoach(Coach coach) {
 		this.coach = coach;
 	}
 
-
-	@OneToOne(optional=false)
+	@OneToOne(optional = false)
 	public Match getMatch() {
 		return match;
 	}
 
-
 	public void setMatch(Match match) {
 		this.match = match;
 	}
-	
-	
-	
-	
+
 }

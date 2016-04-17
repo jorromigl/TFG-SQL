@@ -15,23 +15,16 @@ public class Admin extends User {
 		super();
 
 	}
-	
-private Collection<Coach> coachs;
 
-@OneToMany(mappedBy="admin")
-public Collection<Coach> getCoachs() {
-	return coachs;
+	private Collection<Coach> coachs;
+
+	@OneToMany(mappedBy = "admin")
+	public Collection<Coach> getCoachs() {
+		return coachs;
+	}
+
+	public void setCoachs(Collection<Coach> coachs) {
+		this.coachs = coachs;
+	}
+
 }
-public void setCoachs(Collection<Coach> coachs) {
-	this.coachs = coachs;
-}
-
-
-	
-	
-	
-	
-	
-}
-
-

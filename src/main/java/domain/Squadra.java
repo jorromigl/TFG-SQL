@@ -19,10 +19,10 @@ public class Squadra extends DomainEntity {
 		super();
 
 	}
-	
+
 	private String name;
 	private Category category;
-	
+
 	@NotBlank
 	public String getName() {
 		return name;
@@ -31,6 +31,7 @@ public class Squadra extends DomainEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public Category getCategory() {
 		return category;
 	}
@@ -38,25 +39,12 @@ public class Squadra extends DomainEntity {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
-	
-	
+
 	private Coach coach;
 	private Classification classification;
 	private Collection<Player> players;
-	private Collection<Match> matches;
-	
-	@OneToMany(mappedBy="squadra")
-	public Collection<Match> getMatches() {
-		return matches;
-	}
 
-	public void setMatches(Collection<Match> matches) {
-		this.matches = matches;
-	}
-
-//	@OneToOne(optional=false)
-	@ManyToOne(optional = false) //para populate
+	@ManyToOne(optional = false)
 	public Coach getCoach() {
 		return coach;
 	}
@@ -64,8 +52,8 @@ public class Squadra extends DomainEntity {
 	public void setCoach(Coach coach) {
 		this.coach = coach;
 	}
-	
-	@OneToOne(optional=true)
+
+	@OneToOne(optional = true)
 	public Classification getClassification() {
 		return classification;
 	}
@@ -73,8 +61,8 @@ public class Squadra extends DomainEntity {
 	public void setClassification(Classification classification) {
 		this.classification = classification;
 	}
-	
-	@OneToMany(mappedBy="squadra")
+
+	@OneToMany(mappedBy = "squadra")
 	public Collection<Player> getPlayers() {
 		return players;
 	}
@@ -82,7 +70,7 @@ public class Squadra extends DomainEntity {
 	public void setPlayers(Collection<Player> players) {
 		this.players = players;
 	}
-	
+
 	public void addPlayer(Player player) {
 		players.add(player);
 		player.setSquadra(this);
@@ -92,7 +80,5 @@ public class Squadra extends DomainEntity {
 		players.remove(player);
 		player.setSquadra(null);
 	}
-	
-	
-	
+
 }

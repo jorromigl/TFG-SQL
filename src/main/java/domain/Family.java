@@ -15,29 +15,27 @@ public class Family extends User {
 		super();
 
 	}
-	private Player player;
 
+	private Player player;
 	private byte[] file;
-	
-	
+
 	@Lob
-	public byte[] getFile(){
+	public byte[] getFile() {
 		return file;
 	}
-	
-	public void setFile(byte[] file){
+
+	public void setFile(byte[] file) {
 		this.file = file;
 	}
-	
+
 	@Valid
 	@ManyToOne(optional = true)
 	public Player getPlayer() {
 		return player;
 	}
+
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
-
-	
 
 }

@@ -19,19 +19,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Access(AccessType.PROPERTY)
 public class Comment extends DomainEntity {
 
-	
 	private String text;
 	private String subject;
 	private Date moment;
-	
 
 	public Comment() {
 		super();
 	}
 
-
 	@NotBlank
-//	@SafeHtml(whitelistType = WhiteListType.NONE)
+	// @SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getText() {
 		return text;
 	}
@@ -39,9 +36,9 @@ public class Comment extends DomainEntity {
 	public void setText(String text) {
 		this.text = text;
 	}
-	
+
 	@NotBlank
-//	@SafeHtml(whitelistType = WhiteListType.NONE)
+	// @SafeHtml(whitelistType = WhiteListType.NONE)
 	public String getSubject() {
 		return subject;
 	}
@@ -49,7 +46,7 @@ public class Comment extends DomainEntity {
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-	
+
 	@NotNull
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
@@ -61,20 +58,19 @@ public class Comment extends DomainEntity {
 	public void setMoment(Date moment) {
 		this.moment = moment;
 	}
-	
+
 	private User user;
 	private Match match;
 
-	@ManyToOne(optional=false)
+	@ManyToOne(optional = false)
 	public User getUser() {
 		return user;
 	}
 
-
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
@@ -83,31 +79,7 @@ public class Comment extends DomainEntity {
 	}
 
 	public void setMatch(Match match) {
-		this.match= match;
+		this.match = match;
 	}
-	
 
-//	@ManyToOne(optional=false)
-//	public Family getFamily() {
-//		return family;
-//	}
-//
-//
-//	public void setFamily(Family family) {
-//		this.family = family;
-//	}
-//
-//	@ManyToOne(optional=false)
-//	public Player getPlayer() {
-//		return player;
-//	}
-//
-//
-//	public void setPlayer(Player player) {
-//		this.player = player;
-//	}
-	
-	
-	
-	
 }

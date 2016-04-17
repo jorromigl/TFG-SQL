@@ -18,17 +18,16 @@ public class Coach extends User {
 		super();
 
 	}
-	
+
 	private Category category;
 	private byte[] file;
-	
-	
+
 	@Lob
-	public byte[] getFile(){
+	public byte[] getFile() {
 		return file;
 	}
-	
-	public void setFile(byte[] file){
+
+	public void setFile(byte[] file) {
 		this.file = file;
 	}
 
@@ -39,15 +38,12 @@ public class Coach extends User {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
+
 	private Admin admin;
 	private Collection<Summary> summaries;
-//	private Collection<Match> matches;
 	private Collection<Squadra> squadras;
 
-
-//	@OneToOne(optional=false)
-	@OneToMany(mappedBy = "coach")//para populate
+	@OneToMany(mappedBy = "coach")
 	public Collection<Squadra> getSquadras() {
 		return squadras;
 	}
@@ -55,15 +51,6 @@ public class Coach extends User {
 	public void setSquadras(Collection<Squadra> squadras) {
 		this.squadras = squadras;
 	}
-
-//	@OneToMany(mappedBy="coach")
-//	public Collection<Match> getMatches() {
-//		return matches;
-//	}
-//
-//	public void setMatches(Collection<Match> matches) {
-//		this.matches = matches;
-//	}
 
 	@OneToMany(mappedBy = "coach")
 	public Collection<Summary> getSummaries() {
@@ -74,7 +61,7 @@ public class Coach extends User {
 		this.summaries = summaries;
 	}
 
-	@ManyToOne(optional=false)
+	@ManyToOne(optional = false)
 	public Admin getAdmin() {
 		return admin;
 	}
@@ -82,9 +69,5 @@ public class Coach extends User {
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
-	
-
-	
-	
 
 }
