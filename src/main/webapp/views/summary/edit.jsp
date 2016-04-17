@@ -13,6 +13,7 @@
 <form:form action="summary/coach/edit.do" modelAttribute="summary">
 	<form:hidden path="id" />
 	<form:hidden path="version" />
+	<form:hidden path="coach" />
 	<form:hidden path="match" />
 	
 	<tag:textbox code="summary.subject" path="subject" />

@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import controllers.ErrorController;
+import domain.Comment;
+import domain.Match;
 import domain.Summary;
+import services.MatchService;
 import services.SummaryService;
 
 @Controller
@@ -23,6 +26,9 @@ public class SummaryController extends ErrorController {
 
 	@Autowired
 	private SummaryService summaryService;
+	
+	@Autowired
+	private MatchService matchService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -49,40 +55,43 @@ public class SummaryController extends ErrorController {
 	@RequestMapping(value = "/coach/create", method = RequestMethod.GET)
 	public ModelAndView create(@RequestParam int matchId) {
 		ModelAndView result;
-		Summary summary;
+		Summary s;
+		Match m;
 
-		summary = summaryService.create(matchId);
+		m = matchService.findOne(matchId);
+		s = summaryService.create(m);
 
-		result = createModelAndView(summary);
+		result = createModelAndView(s);
+		result.addObject("match", m);
+
 		return result;
 	}
 
-	// Edit
-	@RequestMapping(value = "/coach/edit", method = RequestMethod.GET)
+	@RequestMapping(value = "coach/edit", method = RequestMethod.GET)
 	public ModelAndView edit(@RequestParam int summaryId) {
 		ModelAndView result;
-		Summary summary;
+		Summary s;
 
-		summary = summaryService.findOne(summaryId);
+		s = summaryService.findOne(summaryId);
 
-		result = createModelAndView(summary);
+		result = createModelAndView(s);
+		result.addObject("match", s.getMatch());
 		return result;
 	}
 
-	// Save
-	@RequestMapping(value = "/coach/edit", method = RequestMethod.POST, params = "save")
-	public ModelAndView save(@Valid @ModelAttribute Summary summary, BindingResult bindingResult) {
+	// SAVE
+	@RequestMapping(value = "coach/edit", method = RequestMethod.POST, params = "save")
+	public ModelAndView save(@Valid @ModelAttribute Summary s, BindingResult bindingResult) {
 		ModelAndView result;
 
 		if (bindingResult.hasErrors()) {
-			result = createModelAndView(summary);
+			result = createModelAndView(s);
 		} else {
 			try {
-
-				summaryService.save(summary);
-				result = new ModelAndView("redirect:../../match/coach/listPast.do");
+				summaryService.save(s);
+				result = new ModelAndView("redirect:/match/listAll.do");
 			} catch (Throwable error) {
-				result = createModelAndView(summary, "summary.commit.error");
+				result = createModelAndView(s, "comment.commit.error");
 			}
 		}
 		return result;

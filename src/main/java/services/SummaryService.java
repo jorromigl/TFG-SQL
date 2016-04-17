@@ -1,6 +1,7 @@
 package services;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Coach;
+import domain.Comment;
 import domain.Match;
 import domain.Summary;
 import repositories.SummaryRepository;
@@ -34,19 +36,19 @@ public class SummaryService {
 	}
 
 
-	public Summary create(int id) {
+	public Summary create(Match m) {
 		
 		Summary s = new Summary();
-		s.setMatch(matchService.findOne(id));
+		
+		s.setMatch(m);
+		s.setCoach(coachService.findByPrincipal());
 		
 		return s;
 	}
 	
-	public void save(Summary s){
+	public void save(Summary s) {   
 		Assert.notNull(s);
-
-		Coach c= coachService.findOne(coachService.findByPrincipal().getId());
-		s.setCoach(c);
+		s.setCoach(coachService.findByPrincipal());		
 		
 		summaryRepository.save(s);
 	}

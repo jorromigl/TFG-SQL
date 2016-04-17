@@ -17,94 +17,90 @@ import repositories.MatchRepository;
 @Service
 @Transactional
 public class MatchService {
-	
+
 	// Managed repository
 	@Autowired
 	private MatchRepository matchRepository;
 	// Services
-	
+
 	@Autowired
 	private CoachService coachService;
-	
+
 	@Autowired
 	private SummaryService summaryService;
-	
-	
-	
+
 	// Constructor
 	public MatchService() {
 		super();
 	}
-
 
 	public Match create() {
 		Match m = new Match();
 
 		return m;
 	}
-	
-	public void save(Match m){
+
+	public void save(Match m) {
 		Assert.notNull(m);
 		Date date = new Date();
-		date.setSeconds(date.getSeconds()+1);
+		date.setSeconds(date.getSeconds() + 1);
 		Assert.isTrue(m.getMoment().after(date));
-		Coach c= coachService.findOne(coachService.findByPrincipal().getId());
-		
+		Coach c = coachService.findOne(coachService.findByPrincipal().getId());
+
 		m.setCoach(c);
-		
+
 		matchRepository.save(m);
 	}
-	
+
 	public void delete(Match m) {
 		Assert.notNull(m);
 		matchRepository.delete(m);
 	}
-	
+
 	public Match findOne(int id) {
-		Match m= matchRepository.findOne(id);
+		Match m = matchRepository.findOne(id);
 
 		return m;
 	}
-	
-	public Collection<Match> findFuture(){
+
+	public Collection<Match> findFuture() {
 		Collection<Match> matches = matchRepository.findAll();
 		Collection<Match> future = new ArrayList<Match>();
-		Date date= new Date();
-		
-		for(Match m: matches){
-			if(m.getMoment().after(date))
+		Date date = new Date();
+
+		for (Match m : matches) {
+			if (m.getMoment().after(date))
 				future.add(m);
-			
+
 		}
-		
-		return 	future;
-		
+
+		return future;
+
 	}
-	
-	public Collection<Match> findPast(){
+
+	public Collection<Match> findPast() {
+
 		Collection<Match> matches = matchRepository.findAll();
 		Collection<Match> past = new ArrayList<Match>();
 		Collection<Summary> summaries = summaryService.findAll();
-		Date date= new Date();
-		for(Summary s: summaries){	
-		for(Match m: matches){
-			if(s.getMatch().getId()==m.getId()){
-				m.setSummary(s);
-			}
-		
-			if(m.getMoment().before(date))
+		Date date = new Date();
+		for (Match m : matches) {
+			if (m.getMoment().before(date) && !past.contains(m)){
 				past.add(m);
-			
+			}
+			for (Summary s : summaries) {
+				if (s.getMatch().getId() == m.getId()) {
+					m.setSummary(s);
+				}
 			}
 		}
-		
-		
-		return 	past;
-		
+
+		return past;
+
 	}
-	
-	public Collection<Match> findAll(){
-		 return matchRepository.findAll();
+
+	public Collection<Match> findAll() {
+		return matchRepository.findAll();
 	}
-	
+
 }
