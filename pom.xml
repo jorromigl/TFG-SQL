@@ -21,12 +21,8 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
-			<!-- <exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions> -->
+			<!-- <exclusions> <exclusion> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
+				</exclusion> </exclusions> -->
 		</dependency>
 
 
@@ -48,16 +44,18 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
-		<dependency> <groupId>org.springframework</groupId> 
-			<artifactId>spring-orm</artifactId> 
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
 			<version>${org.springframework-version}</version>
-			 </dependency>
-			 
-		<dependency> <groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId> 
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
 			<version>${org.springframework-version}</version>
-			 </dependency>
+		</dependency>
 
 		<!-- Logging -->
 		<dependency>
@@ -75,31 +73,14 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${org.slf4j-version}</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.15</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.mail</groupId>
-					<artifactId>mail</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.jms</groupId>
-					<artifactId>jms</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.sun.jdmk</groupId>
-					<artifactId>jmxtools</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.sun.jmx</groupId>
-					<artifactId>jmxri</artifactId>
-				</exclusion>
-			</exclusions>
-			<scope>runtime</scope>
-		</dependency> -->
-	
+		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
+			<version>1.2.15</version> <exclusions> <exclusion> <groupId>javax.mail</groupId> 
+			<artifactId>mail</artifactId> </exclusion> <exclusion> <groupId>javax.jms</groupId> 
+			<artifactId>jms</artifactId> </exclusion> <exclusion> <groupId>com.sun.jdmk</groupId> 
+			<artifactId>jmxtools</artifactId> </exclusion> <exclusion> <groupId>com.sun.jmx</groupId> 
+			<artifactId>jmxri</artifactId> </exclusion> </exclusions> <scope>runtime</scope> 
+			</dependency> -->
+
 		<!-- Javax -->
 
 		<dependency>
@@ -121,7 +102,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 		<!-- JUnit -->
 
 		<dependency>
@@ -130,7 +111,7 @@
 			<version>4.11</version>
 		</dependency>
 
-	<!-- Apache -->
+		<!-- Apache -->
 
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
@@ -150,7 +131,7 @@
 			<version>2.2.2</version>
 		</dependency>
 
-	<!-- JPA -->
+		<!-- JPA -->
 
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -158,7 +139,7 @@
 			<version>1.4.3.RELEASE</version>
 		</dependency>
 
-	<!-- Security -->
+		<!-- Security -->
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -178,10 +159,10 @@
 			<version>3.2.0.RELEASE</version>
 		</dependency>
 		<dependency>
-<groupId>javax.mail</groupId>
-<artifactId>mail</artifactId>
-<version>1.4.3</version>
-</dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.3</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -203,29 +184,29 @@
 			<artifactId>hibernate-c3p0</artifactId>
 			<version>4.2.3.Final</version>
 		</dependency>
-		
-		
+
+
 		<!-- VERSION 4.3.0 xq sino no pilla indexes -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.3.0.Final</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.3.1.Final</version>
 		</dependency>
-		
+
 		<!-- PARA EL @INDEX DE FOLDER -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.0.Final</version>
- 		</dependency>
-		
-		
+		</dependency>
+
+
 		<!-- Display Tag -->
 
 		<dependency>
@@ -244,21 +225,26 @@
 			<version>1.1.2</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- Upload Photo -->
-		
+
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.2</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.1</version>
+		</dependency>
 
 	</dependencies>
 

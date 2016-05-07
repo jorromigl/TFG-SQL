@@ -14,14 +14,14 @@
  
 	<body style="background: #F7F7F7;">
 
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
+<!-- 		<div class="collapse navbar-collapse" -->
+<!-- 			id="bs-example-navbar-collapse-1"> -->
 
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="security/login.do"><spring:message
-							code="principal.page.login" /></a></li>
-			</ul>
-		</div>
+<!-- 			<ul class="nav navbar-nav navbar-right"> -->
+<%-- 				<li><a href="security/login.do"><spring:message --%>
+<%-- 							code="principal.page.login" /></a></li> --%>
+<!-- 			</ul> -->
+<!-- 		</div> -->
 		<!-- banner area starts here -->
 		<section class="banner text-center" id="sec1">
 			<div class="container">
@@ -38,9 +38,13 @@
 					<p>
 						<spring:message code="texto.tres" />
 					</p>
+					<button class="know-more" onclick="javascript: window.location.replace('security/login.do');"><spring:message
+							code="principal.page.login" /></button>
+					<br><br>
 
 					<!-- 					<img src="images/camp2.jpg" alt=""><br> -->
-					<img src="images/pin.png" alt=""><br>
+					<img src="images/pin.png" alt="">
+					<br>
 
 				</div>
 			</div>
