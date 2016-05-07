@@ -41,7 +41,7 @@
 </display:table>
 </div>
 
-<a href="message/user/send.do"><spring:message code="msg.new.send" /></a>
+
 
 	
 		<tag:buttonverde code="message.return" url="folder/user/list.do'" />

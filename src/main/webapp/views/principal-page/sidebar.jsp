@@ -108,6 +108,9 @@
                                     <ul class="nav child_menu" style="display: block;">
                                         <li class="current-page"><a href="folder/user/list.do"><spring:message
 										code="master.page.user.myFolder" /> </a>
+										 </li>
+										<li class="current-page"><a href="message/user/send.do"><spring:message
+										code="master.page.user.send" /> </a>
                                         </li>
                                        
                                     </ul>
@@ -175,6 +178,9 @@
                                     <ul class="nav child_menu" style="display: block;">
                                         <li class="current-page"><a href="folder/user/list.do"><spring:message
 										code="master.page.user.myFolder" /> </a>
+										 </li>
+										<li class="current-page"><a href="message/user/send.do"><spring:message
+										code="master.page.user.send" /> </a>
                                         </li>
                                        
                                     </ul>
@@ -250,6 +256,9 @@
                                     <ul class="nav child_menu" style="display: block;">
                                         <li class="current-page"><a href="folder/user/list.do"><spring:message
 										code="master.page.user.myFolder" /> </a>
+										 </li>
+										<li class="current-page"><a href="message/user/send.do"><spring:message
+										code="master.page.user.send" /> </a>
                                         </li>
                                        
                                     </ul>
@@ -287,20 +296,6 @@
 
 			</div>
 			<!-- /sidebar menu -->
-
-			<!-- /menu footer buttons -->
-			<div class="sidebar-footer hidden-small">
-				<a data-toggle="tooltip" data-placement="top" title="Settings">
-					<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-				</a> <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-					<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-				</a> <a data-toggle="tooltip" data-placement="top" title="Lock"> <span
-					class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-				</a> <a data-toggle="tooltip" data-placement="top" title="Logout"> <span
-					class="glyphicon glyphicon-off" aria-hidden="true"></span>
-				</a>
-			</div>
-			<!-- /menu footer buttons -->
 		</div>
 	</div>
 

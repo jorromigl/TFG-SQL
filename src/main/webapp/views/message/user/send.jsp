@@ -9,33 +9,45 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<form:form action="message/user/send.do" modelAttribute="m">
 
-	<form:hidden path="id" />
-	<form:hidden path="version" />
-	<form:hidden path="sender" />
-	<form:hidden path="folder" />
-	<form:hidden path="moment" />
+<div class="x_panel">
+	<div class="x_content">
+		<br>
+		<form:form action="message/user/send.do" modelAttribute="m"
+			id="demo-form2" data-parsley-validate=""
+			class="form-horizontal form-label-left">
 
-	<jstl:if test="${m.recipient == null}">
+			<form:hidden path="id" />
+			<form:hidden path="version" />
+			<form:hidden path="sender" />
+			<form:hidden path="folder" />
+			<form:hidden path="moment" />
 
-		<tag:select items="${users}" itemLabel="userAccount.username"
-			code="msg.recipient" path="recipient" />
+			<jstl:if test="${m.recipient == null}">
 
-	</jstl:if>
+				<tag:selectstyle items="${users}" itemLabel="userAccount.username"
+					code="msg.recipient" path="recipient" />
 
-	<jstl:if test="${m.recipient != null}">
+			</jstl:if>
 
-		<form:hidden path="recipient" />
-	</jstl:if>
+			<jstl:if test="${m.recipient != null}">
 
-	<tag:textbox code="msg.subject" path="subject" />
+				<form:hidden path="recipient" />
+			</jstl:if>
 
-	<tag:textarea code="msg.body" path="body" />
+			<tag:textbox2 code="msg.subject" path="subject" />
 
+			<tag:textarea2 code="msg.body" path="body" />
+			<div class="ln_solid"></div>
+			<div class="form-group">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 
-	<tag:submitverde name="save" code="msg.send" />
-	
-	<tag:cancel code="msg.cancel" url="principal/index.do" />
+					<tag:submitverde name="save" code="msg.send" />
 
-</form:form>
+					<tag:buttonazul code="msg.cancel" url="principal/index.do'" />
+
+				</div>
+			</div>
+		</form:form>
+	</div>
+</div>
