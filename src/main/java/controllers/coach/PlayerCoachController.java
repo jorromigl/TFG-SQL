@@ -23,6 +23,7 @@ import domain.Recruitment;
 import domain.Squadra;
 import forms.PlayerForm;
 import services.CoachService;
+import services.MessageService;
 import services.PlayerService;
 import services.RecruitmentService;
 import services.SquadraService;
@@ -46,6 +47,9 @@ public class PlayerCoachController extends ErrorController {
 
 	@Autowired
 	private RecruitmentService recruitmentService;
+	
+	@Autowired
+	private MessageService messageService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -130,6 +134,7 @@ public class PlayerCoachController extends ErrorController {
 		Player p = playerService.findOne(playerId);
 		JOptionPane.showMessageDialog(null, "Recruited successfully");
 		playerService.sendEmail(p);
+		messageService.createAndSave(p,true);
 		
 		ModelAndView result;
 
@@ -150,6 +155,7 @@ public class PlayerCoachController extends ErrorController {
 				playerService.deleteFromRecruitment(player, recruitmentId);
 				JOptionPane.showMessageDialog(null, "Delete from recruitment");
 				playerService.sendEmail2(player);
+				messageService.createAndSave(player,false);
 				result = new ModelAndView("redirect:../../player/c/listPlayersByRecruitmentFuture.do?recruitmentId="+ recruitmentId);
 			} catch (Throwable error) {
 				result = createModelAndView(player, "player.commit.error");
