@@ -100,7 +100,7 @@ public class RecruitmentCoachController extends ErrorController  {
 					try {
 						recruitmentService.save(c);
 						result = new ModelAndView("redirect:/recruitment/coach/listFuture.do");
-					} catch (Throwable oops) {
+					} catch (Throwable error) {
 						result = createModelAndView(c, "recruitment.commit.error");
 					}
 				}

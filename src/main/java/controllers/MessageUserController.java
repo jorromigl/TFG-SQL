@@ -98,7 +98,7 @@ public class MessageUserController extends ErrorController {
 			try {
 				messageService.save(m);
 				result = new ModelAndView("redirect:../../folder/user/list.do");
-			} catch (Throwable oops) {
+			} catch (Throwable error) {
 
 				result = createNewModelAndView(m, "message.commit.error");
 
