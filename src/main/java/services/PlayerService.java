@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.sql.rowset.serial.SerialException;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -19,7 +20,6 @@ import domain.Coach;
 import domain.Comment;
 import domain.Family;
 import domain.Folder;
-import domain.Match;
 import domain.Player;
 import domain.Recruitment;
 import domain.Squadra;
@@ -57,7 +57,7 @@ public class PlayerService {
 
 	@Autowired
 	private RecruitmentService recruitmentService;
-		
+
 	@Autowired
 	private FamilyService familyService;
 
@@ -102,12 +102,20 @@ public class PlayerService {
 
 	public void save(Player player) {
 		Assert.notNull(player);
-
+		
 		String password = player.getUserAccount().getPassword();
 		Md5PasswordEncoder encoder = new Md5PasswordEncoder();
 		password = encoder.encodePassword(password, null);
 		player.getUserAccount().setPassword(password);
-
+		Assert.isTrue(
+				(player.getCategory().getCname().equals("Iniciacion"))|
+				(player.getCategory().getCname().equals("Prebenjamin"))|
+				(player.getCategory().getCname().equals("Benjamin"))|
+				(player.getCategory().getCname().equals("Alevin"))|
+				(player.getCategory().getCname().equals("Infantil"))|
+				(player.getCategory().getCname().equals("Cadete"))|
+				(player.getCategory().getCname().equals("Juvenil"))|
+				(player.getCategory().getCname().equals("Senior")));
 		Player saved = playerRepository.save(player);
 
 		folderService.createDefaultFolders(saved);
@@ -131,8 +139,8 @@ public class PlayerService {
 		result.setDate(playerForm.getDate());
 		result.getUserAccount().setUsername(playerForm.getUsername());
 		result.getUserAccount().setPassword(playerForm.getPassword());
-		
-//		result.setFile(playerForm.getFile());
+
+		// result.setFile(playerForm.getFile());
 
 		return result;
 	}
@@ -155,8 +163,8 @@ public class PlayerService {
 		result.setDate(playerForm.getDate());
 		result.getUserAccount().setUsername(playerForm.getUsername());
 		result.getUserAccount().setPassword(playerForm.getPassword());
-		
-//		result.setFile(playerForm.getFile());
+
+		// result.setFile(playerForm.getFile());
 		return result;
 	}
 
@@ -170,7 +178,7 @@ public class PlayerService {
 		result.setFile(playerForm2.getFile());
 		return result;
 	}
-	
+
 	// MIO CONCHI
 	public PlayerForm createForm(Player player) {
 
@@ -191,25 +199,30 @@ public class PlayerService {
 		playerForm.setDate(player.getDate());
 		playerForm.setUsername(player.getUserAccount().getUsername());
 		playerForm.setPassword(player.getUserAccount().getPassword());
-		
-//		playerForm.setFile(player.getFile());
+
+		// playerForm.setFile(player.getFile());
 
 		return playerForm;
 	}
-	
+
 	public PlayerForm2 createForm2(Player player) {
 
 		PlayerForm2 playerForm2 = new PlayerForm2();
 
 		playerForm2.setId(player.getId());
-		playerForm2.setVersion(player.getVersion());		
-		
+		playerForm2.setVersion(player.getVersion());
+
 		playerForm2.setFile(player.getFile());
 
 		return playerForm2;
 	}
 
-	
+	// Devuelve un paciente dado su username
+	public Player findForUsername(String username) {
+		Player player;
+		player = playerRepository.findForUsername(username);
+		return player;
+	}
 
 	public Player findByPrincipal() {
 		UserAccount playerAccount = LoginService.getPrincipal();
@@ -230,19 +243,22 @@ public class PlayerService {
 	public Player findOne(int id) {
 		return playerRepository.findOne(id);
 	}
-	
-	public void sendEmail(Player p){
-		
+
+	public void sendEmail(Player p) {
+
 		ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Mail.xml");
 		MailMail mm = (MailMail) context.getBean("mailMail");
-		mm.sendMail("teamschool8@gmail.com", p.getEmail(), "Convocatoria Partido", "Le doy mi enhorabuena " + p.getFullName()+ " ,ha sido usted convocado para un partido. Consulte la página oficial de TeamSchool para más información. \n\n Un saludo, gracias");
+		mm.sendMail("teamschool8@gmail.com", p.getEmail(), "Convocatoria Partido", "Le doy mi enhorabuena "
+				+ p.getFullName()
+				+ " ,ha sido usted convocado para un partido. Consulte la página oficial de TeamSchool para más información. \n\n Un saludo, gracias");
 	}
-	
-	public void sendEmail2(Player p){
-		
+
+	public void sendEmail2(Player p) {
+
 		ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Mail.xml");
 		MailMail mm = (MailMail) context.getBean("mailMail");
-		mm.sendMail("teamschool8@gmail.com", p.getEmail(), "Convocatoria Partido", p.getFullName()+ ", siento comunicarle que ha sido eliminado de una convocatoria para un partido. Consulte la página oficial de TeamSchool para más información. \n\n Un saludo, gracias");
+		mm.sendMail("teamschool8@gmail.com", p.getEmail(), "Convocatoria Partido", p.getFullName()
+				+ ", siento comunicarle que ha sido eliminado de una convocatoria para un partido. Consulte la página oficial de TeamSchool para más información. \n\n Un saludo, gracias");
 	}
 
 	public void delete(Player p) {
@@ -267,14 +283,11 @@ public class PlayerService {
 		return players;
 	}
 
-	
-	//Listar jugadores de su equipo  
+	// Listar jugadores de su equipo
 	public Collection<Player> findPlayersSquadra(int squadraid) {
 
-		
 		return playerRepository.findAllPlayersSquadra(squadraid);
 	}
-	
 
 	// Devuelve una colección con los jugadores que no tienen equipo asignado
 	// pero que tienen la misma categoria
@@ -299,49 +312,41 @@ public class PlayerService {
 
 		return playersSquadra;
 	}
-		
-	//Listar jugadores de su equipo que no estan en el recruitment dado 
+
+	// Listar jugadores de su equipo que no estan en el recruitment dado
 	public Collection<Player> findPlayersSquadraToRecruit(int squadraid, int recruitmentId) {
-		Collection<Player> players= playerRepository.findAllPlayersSquadra(squadraid);
-		Collection<Player> players2= playerRepository.findAllPlayersReqcruitment(recruitmentId);	
-		players.removeAll(players2);			
+		Collection<Player> players = playerRepository.findAllPlayersSquadra(squadraid);
+		Collection<Player> players2 = playerRepository.findAllPlayersReqcruitment(recruitmentId);
+		players.removeAll(players2);
 		return players;
 	}
-
 
 	// Devuelve una coleccion de los jugadores de esa convocatoria
 	public Collection<Player> findPlayersByRecruitment(int recruitmentId) {
 
-
-
 		return playerRepository.findAllPlayersReqcruitment(recruitmentId);
 	}
-	
-	//Listar Jugadores de la misma categoria
+
+	// Listar Jugadores de la misma categoria
 	public Collection<Player> findPlayerSameCategory() {
-			Player playerConnect = findByPrincipal();
-			String categoryUser = playerConnect.getCategory().getCname();
-			Collection<Player> players;
-			players = playerRepository.findAllPlayersSameCategory(categoryUser);
-			return players;
-		}
-	
-	//Ver My Player
+		Player playerConnect = findByPrincipal();
+		String categoryUser = playerConnect.getCategory().getCname();
+		Collection<Player> players;
+		players = playerRepository.findAllPlayersSameCategory(categoryUser);
+		return players;
+	}
+
+	// Ver My Player
 	public Player findMyPlayer() {
 		Family familyConnect = familyService.findByPrincipal();
 		Player player = playerRepository.findMyPlayer(familyConnect.getId());
 		return player;
 	}
-	
 
-	//Delete from Future Recruitment 
+	// Delete from Future Recruitment
 	public void deleteFromRecruitment(Player player, int recruitmentId) {
-		Recruitment r= recruitmentService.findOne(recruitmentId);
+		Recruitment r = recruitmentService.findOne(recruitmentId);
 		r.removePlayer(player);
 	}
 
-	
-
-	}
-	
-
+}

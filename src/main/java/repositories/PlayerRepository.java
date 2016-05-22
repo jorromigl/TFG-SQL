@@ -3,12 +3,9 @@ package repositories;
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import domain.Coach;
-import domain.Family;
 import domain.Player;
 
 @Repository
@@ -34,6 +31,10 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
   //Devuelve el player de un familiar
     @Query("select p from Player p where (select f from Family f where f.id = ?1) member of p.families")
 	Player findMyPlayer(int id);
+    
+  //Devuelve un paciente dado su username
+    @Query("select p from Player p where p.userAccount.username=?1")
+    Player findForUsername(String username);
 
 
     
