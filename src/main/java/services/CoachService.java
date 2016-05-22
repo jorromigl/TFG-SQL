@@ -114,7 +114,17 @@ public class CoachService {
 		coach.getUserAccount().setPassword(password);
 		Admin a = adminService.findByPrincipal();
 		coach.setAdmin(a);
+		Assert.isTrue(
+				(coach.getCategory().getCname().equals("Iniciacion"))|
+				(coach.getCategory().getCname().equals("Prebenjamin"))|
+				(coach.getCategory().getCname().equals("Benjamin"))|
+				(coach.getCategory().getCname().equals("Alevin"))|
+				(coach.getCategory().getCname().equals("Infantil"))|
+				(coach.getCategory().getCname().equals("Cadete"))|
+				(coach.getCategory().getCname().equals("Juvenil"))|
+				(coach.getCategory().getCname().equals("Senior")));
 		Coach saved = coachRepository.save(coach);
+		
 
 		folderService.createDefaultFolders(saved);
 
