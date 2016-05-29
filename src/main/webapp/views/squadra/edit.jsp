@@ -73,7 +73,8 @@
 							code="coach.squadra" /></a>
 
 				</security:authorize>
-
+				<br>
+			<br>
 				<%-- 	<tag:select code="squadra.players.add" path="player"  id="player" items="players" itemLabel="name"/> --%>
 				<tag:buttonazul code="squadra.cancel" url="principal/index.do" />
 			</jstl:if>

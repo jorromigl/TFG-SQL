@@ -32,7 +32,7 @@
 		<tag:submit code="match.delete" name="delete" />
 	</jstl:if> --%>
 
-					<tag:buttonazul code="summary.cancel" url="match/coach/listPast.do" />
+					<tag:buttonazul code="summary.cancel" url="match/coach/listPast.do'" />
 				</div>
 			</div>
 		</form:form>
