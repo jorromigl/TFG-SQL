@@ -10,25 +10,48 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<jstl:if test="${detailsSummary==true}">
-	<form:form action="${requestURI}" method="post"
-		modelAttribute="summary">
+<div class="x_panel">
+	<div class="x_content">
+		<br>
+		<jstl:if test="${detailsSummary==true}">
+			<form:form action="${requestURI}" method="post"
+				modelAttribute="summary">
 
-		<form:hidden path="id" />
-		<form:hidden path="version" />
+				<form:hidden path="id" />
+				<form:hidden path="version" />
 
-		<tag:textbox code="display.text" path="text" readonly="true" />
-		<tag:textbox code="display.subject" path="subject" readonly="true" />
+				<ul>
+					<li><b><spring:message code="display.text" /></b> <jstl:out
+							value="${summary.text}"></jstl:out></li>
+					<li><b><spring:message code="display.subject" /></b> <jstl:out
+							value="${summary.subject}"></jstl:out></li>
+				</ul>
 		
-		<security:authorize access="hasRole('COACH')">
-		<tag:button code="summary.edit" url="summary/coach/edit.do?summaryId=${summary.id}'" />
-		<tag:button code="display.return" url="match/coach/listPast.do'" />
-		</security:authorize>
-		<security:authorize access="hasRole('PLAYER')">
-		<tag:button code="display.return" url="match/player/listPast.do'" />
-		</security:authorize>
-		<security:authorize access="hasRole('FAMILY')">
-		<tag:button code="display.return" url="match/family/listPast.do'" />
-		</security:authorize>
-	</form:form>
-</jstl:if>
+
+				<security:authorize access="hasRole('COACH')">
+					<div class="ln_solid"></div>
+					<div class="form-group">
+						<tag:buttonverde code="summary.edit"
+							url="summary/coach/edit.do?summaryId=${summary.id}'" />
+						<tag:buttonazul code="display.return" url="match/coach/listPast.do'" />
+					</div>
+				</security:authorize>
+				<security:authorize access="hasRole('PLAYER')">
+					<div class="ln_solid"></div>
+					<div class="form-group">
+						<tag:buttonverde code="display.return"
+							url="match/player/listPast.do'" />
+					</div>
+				</security:authorize>
+				<security:authorize access="hasRole('FAMILY')">
+				<div class="ln_solid"></div>
+					<div class="form-group">
+					<tag:buttonverde code="display.return" url="match/family/listPast.do'" />
+				</div>
+				</security:authorize>
+			</form:form>
+		</jstl:if>
+
+
+	</div>
+</div>

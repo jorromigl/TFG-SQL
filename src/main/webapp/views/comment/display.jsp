@@ -32,7 +32,7 @@
 				
 					<tag:buttonverde code="display.return" url="match/listAll.do'" />
 				</div>
-			</div>
+		
 
 			<security:authorize access="hasRole('ADMIN')">
 
