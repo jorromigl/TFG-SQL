@@ -39,30 +39,33 @@
 
 					</security:authorize>
 
-					
+
 					<li class=""><a href="javascript:;"
 						class="user-profile dropdown-toggle" data-toggle="dropdown"
-						aria-expanded="false"> <img src="images/img.jpg" alt="">
-							<sec:authentication property="principal.username" /> <span
+						aria-expanded="false"> <sec:authentication
+								property="principal.username" /> <span
 							class=" fa fa-angle-down"></span>
 
 					</a>
 						<ul
 							class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-							<li><a href="javascript:;"> Profile</a></li>
-							<li><a href="javascript:;"> <span
-									class="badge bg-red pull-right">50%</span> <span>Settings</span>
-							</a></li>
-							<li><a href="javascript:;">Help</a></li>
-							<li><a href="login.html"><i
-									class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+							<security:authorize access="hasRole('COACH')">
+							<li><a href="coach/displayA.do"><spring:message
+										code="master.page.display" /> </a></li>				
+						</security:authorize>
+							<security:authorize access="hasRole('PLAYER')">
+							<li><a href="player/displayA.do"><spring:message
+										code="master.page.display" /> </a></li>					
+						</security:authorize>
+						<security:authorize access="hasRole('FAMILY')">
+							<li><a href="family/displayA.do"><spring:message
+										code="master.page.family.profile" /> </a></li>				
+						</security:authorize>
 						</ul></li>
 
 					<li role="presentation" class="dropdown"><a
 						href="javascript:;" class="dropdown-toggle info-number"
-						data-toggle="dropdown" aria-expanded="false"> <i
-							class="fa fa-envelope-o"></i> <span class="badge bg-green">6</span>
-					</a>
+						data-toggle="dropdown" aria-expanded="false"> </a>
 						<ul id="menu1"
 							class="dropdown-menu list-unstyled msg_list animated fadeInDown"
 							role="menu">

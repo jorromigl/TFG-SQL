@@ -9,21 +9,36 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
+<%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
-<form:form action="comment/edit.do" modelAttribute="comment">
-	
-	<form:hidden path="id" />
-	<form:hidden path="version" />
-	<form:hidden path="user" />
-	<form:hidden path="match" />
-	<form:hidden path="moment" />
+<div class="x_panel">
+	<div class="x_content">
+		<br>
+		<form:form action="comment/edit.do" modelAttribute="comment"
+			id="demo-form2" data-parsley-validate=""
+			class="form-horizontal form-label-left">
 
-	<acme:textbox code="comment.subject" path="subject" />
-	<acme:textarea code="comment.text" path="text" />
-	
-	<acme:submit code="comment.save" name="save" />
-	<acme:cancel code="comment.cancel" url="/../.." />
+			<form:hidden path="id" />
+			<form:hidden path="version" />
+			<form:hidden path="user" />
+			<form:hidden path="match" />
+			<form:hidden path="moment" />
 
-</form:form>
+			<tag:textbox2 code="comment.subject" path="subject" />
+			<tag:textarea2 code="comment.text" path="text" />
+
+			<div class="ln_solid"></div>
+			<div class="form-group">
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+					<tag:submitverde code="comment.save" name="save" />
+					<tag:buttonazul code="comment.cancel" url="principal/index.do'" />
+
+				</div>
+			</div>
 
 
+		</form:form>
+
+
+	</div>
+</div>

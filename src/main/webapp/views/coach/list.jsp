@@ -35,7 +35,7 @@
 </display:table>
 </div>
 	
-	<tag:button code="coach.return" url="principal/index.do'" />
+	<tag:buttonverde code="coach.return" url="principal/index.do'" />
 
 <div>
 <%-- <display:table name="coachs" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag"> --%>

@@ -23,15 +23,15 @@
 			<div class="clearfix"></div>
 
 			<!-- menu prile quick info -->
-			<div class="profile">
-				<div class="profile_pic">
-					<img src="images/logo.png" alt="..." class="img-circle profile_img">
-				</div>
-				<div class="profile_info">
-					<span>Welcome,</span>
-					<h2>Anthony Fernando</h2>
-				</div>
-			</div>
+<!-- 			<div class="profile"> -->
+<!-- 				<div class="profile_pic"> -->
+<!-- 					<img src="images/logo.png" alt="..." class="img-circle profile_img"> -->
+<!-- 				</div> -->
+<!-- 				<div class="profile_info"> -->
+<!-- 					<span>Welcome,</span> -->
+<!-- 					<h2>Anthony Fernando</h2> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 			<!-- /menu prile quick info -->
 
 			<br />
@@ -115,9 +115,19 @@
                                        
                                     </ul>
                           </li>
+                          
+                           <li class="nv active"><a><i class="fa fa-line-chart"></i><spring:message
+										code="master.page.classification" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="classificacion/list.do"><spring:message
+										code="master.page.user.classification" /> </a>
+										 </li>
+										
+                                    </ul>
+                          </li>
 	
-							<li><a href="coach/displayA.do"><spring:message
-										code="master.page.display" /> </a></li>
+<%-- 							<li><a href="coach/displayA.do"><spring:message --%>
+<%-- 										code="master.page.display" /> </a></li> --%>
 
 						</security:authorize>
 
@@ -196,8 +206,17 @@
                                     </ul>
                           </li>
 
-							<li><a href="player/displayA.do"><spring:message
-										code="master.page.display" /> </a></li>
+<%-- 							<li><a href="player/displayA.do"><spring:message --%>
+<%-- 										code="master.page.display" /> </a></li> --%>
+						   <li class="nv active"><a><i class="fa fa-line-chart"></i><spring:message
+										code="master.page.classification" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="classificacion/list.do"><spring:message
+										code="master.page.user.classification" /> </a>
+										 </li>
+										
+                                    </ul>
+                          </li>
 							
 
 						</security:authorize>
@@ -273,10 +292,20 @@
                                        
                                     </ul>
                           </li>
+                          
+                             <li class="nv active"><a><i class="fa fa-line-chart"></i><spring:message
+										code="master.page.classification" /><span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: block;">
+                                        <li class="current-page"><a href="classificacion/list.do"><spring:message
+										code="master.page.user.classification" /> </a>
+										 </li>
+										
+                                    </ul>
+                          </li>
 
 							
-							<li><a href="family/displayA.do"><spring:message
-										code="master.page.family.profile" /> </a></li>
+<%-- 							<li><a href="family/displayA.do"><spring:message --%>
+<%-- 										code="master.page.family.profile" /> </a></li> --%>
 							
 
 						</security:authorize>
