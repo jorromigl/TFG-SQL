@@ -107,4 +107,17 @@ public class ConvocarServiceTest {
 			int i = r.getPlayers().size();
 			Assert.isTrue(i ==12);
 	    }
+	    
+	    @Test()
+	    public void testEliminarConvocado() {
+	        authenticate("coach1");
+	        
+	        Player p = playerService.findOne(24);
+			playerService.deleteFromRecruitment(p, 38);
+			playerService.sendEmail2(p);
+			messageService.createAndSave(p,false);
+			Recruitment r = recruitmentService.findOne(38);
+			int i = r.getPlayers().size();
+			Assert.isTrue(i ==10);
+	    }
 	}
