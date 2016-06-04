@@ -11,12 +11,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 
 import domain.Category;
 import domain.Coach;
 import domain.Squadra;
 import forms.CoachForm;
 import security.LoginService;
+import services.PlayerService;
 import services.SquadraService;
 import utilities.PopulateDatabase;
 
@@ -27,6 +29,9 @@ public class SquadraServiceTest {
 
 	@Autowired
 	private SquadraService squadraService;
+	
+	@Autowired
+	private PlayerService playerService;
 
 	@Autowired
 	private LoginService loginService;
@@ -83,5 +88,18 @@ public class SquadraServiceTest {
 		squadra.setCategory(category);
 		squadra.setName("Mairena");
 		squadraService.save(squadra);
+	}
+	
+	@Test
+	public void testAddPlayerSquadra() {
+
+		authenticate("coach1");
+		
+		squadraService.addPlayer(23,36);
+		
+		int i= playerService.findPlayersSquadra(23).size();
+		
+		Assert.isTrue(i==13);
+		
 	}
 }
