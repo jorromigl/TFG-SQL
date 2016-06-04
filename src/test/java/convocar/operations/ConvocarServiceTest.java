@@ -1,4 +1,4 @@
-package message.operations;
+package convocar.operations;
 
 import java.util.Collection;
 import java.util.Date;
@@ -21,29 +21,35 @@ import domain.Folder;
 import domain.Match;
 import domain.Message;
 import domain.Player;
+import domain.Recruitment;
 import domain.User;
 import security.LoginService;
+import services.CoachService;
 import services.CommentService;
 import services.FolderService;
 import services.MatchService;
 import services.MessageService;
 import services.PlayerService;
+import services.RecruitmentService;
 import services.UserService;
 import utilities.PopulateDatabase;
 
 @ContextConfiguration(locations = { "classpath:spring/datasource.xml", "classpath:spring/config/packages.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-public class MessageServiceTest {
+public class ConvocarServiceTest {
 
 		@Autowired
-	    private MessageService messageService;
+	    private PlayerService playerService;
 		
 		@Autowired
-	    private FolderService folderService;
+	    private RecruitmentService recruitmentService;
 		
 		@Autowired
 	    private UserService userService;
+		
+		@Autowired
+	    private MessageService messageService;
 		
 	    @Autowired
 	    private LoginService loginService;
@@ -76,33 +82,29 @@ public class MessageServiceTest {
 	    }
 
 	    @Test()
-	    public void testSendMessage() {
+	    public void testConvocar() {
 	        authenticate("coach1");
 
-			Message message = messageService.create();
+			recruitmentService.addPlayerRecruitment(38, 35);
 			
-			message.setSubject("probando");
-			message.setBody("cuerpo mensaje");
-			User u = userService.findOne(24);
-			message.setRecipient(u);
-			
-			messageService.save(message);
-
+			Player p = playerService.findOne(35);
+			playerService.sendEmail(p);
+			messageService.createAndSave(p, true);
+			Recruitment r = recruitmentService.findOne(38);
+			int i = r.getPlayers().size();
+			Assert.isTrue(i ==12);
 	    }
 
-
 	    @Test(expected = IllegalArgumentException.class)
-	    public void testSendMessageNotAuthenticated() {
-	        desauthenticate();
-
-			Message message = messageService.create();
+	    public void testConvocarNotAuthenticated() {
+		    desauthenticate();
+			recruitmentService.addPlayerRecruitment(38, 35);
 			
-			message.setSubject("probando");
-			message.setBody("cuerpo mensaje");
-			User u = userService.findOne(24);
-			message.setRecipient(u);
-			
-			messageService.save(message);
-
+			Player p = playerService.findOne(35);
+			playerService.sendEmail(p);
+			messageService.createAndSave(p, true);
+			Recruitment r = recruitmentService.findOne(38);
+			int i = r.getPlayers().size();
+			Assert.isTrue(i ==12);
 	    }
 	}
