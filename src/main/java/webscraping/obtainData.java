@@ -3,18 +3,22 @@ package webscraping;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
+import org.apache.commons.io.IOUtils;
 import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
 public class obtainData {
 	
@@ -86,59 +90,74 @@ public class obtainData {
 	
 
 		
-	    public static final String url = "http://www.faf.es/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120&CodCompeticion=5619311&CodGrupo=5619312&CodTemporada=11&CodJornada=1&Sch_Codigo_Delegacion=9&Sch_Tipo_Juego=3";
-		
+	    public static final String url = "http://www.faf.es/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codjornada=26&codcompeticion=2646493&codgrupo=3764773&codjornada=26";
+	   
 	    public static void main (String args[]) throws IOException, ParserConfigurationException, Exception {
 			
 	        // Compruebo si me da un 200 al hacer la petición
 	        if (getStatusConnectionCode(url) == 200) {
 				
-	            // Obtengo el HTML de la web en un objeto Document
+	            // Obtengo el HTML de la web en un objeto Document (solo una vez por semana)
 	            Document document = getHtmlDocument(url);
+//	            System.out.println(document);
 	            
-	            String documentHTML = readFile(RUTA + "/Datos05062016.txt");
+	            String documentHTML = readFile(RUTA + "/clasificacion05062016.txt");
 	            
-	            
-	            
-//	            Document doc = builder.parse(new InputSource(new StringReader(documentHTML)));
-	            
-	            
-	            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();  
-	            DocumentBuilder builder;  
+	            // Convierto el String en Document
+	    		Document doc = Jsoup.parse(documentHTML);
 	           
-	                builder = factory.newDocumentBuilder();  
-	                org.w3c.dom.Document doc = builder.parse( new InputSource(new StringReader(documentHTML))); 
-	            
-	         
-	            System.out.println("Documento" + documentHTML);
 	            System.out.println(doc);
 				
 	            // Busco todas las entradas que estan dentro de: 
-	            Elements entradas = document.select("subtitulos");
+	         
+	            Elements entradas = doc.select("td");
 	            System.out.println("Número de entradas en la página inicial de Jarroba: "+entradas.size()+"\n");
-				
+				List<String> equipos = new ArrayList<String>();
+				List<String> resultados = new ArrayList<String>();
 	            // Paseo cada una de las entradas
 	            for (Element elem : entradas) {
-	                String titulo = elem.getElementsByClass("tituloPost").text();
-	                String autor = elem.getElementsByClass("autor").toString();
-	                String fecha = elem.getElementsByClass("fecha").text();
+	                String equipo = elem.getElementsByClass("fondotitulolistadosizq").text();
+	                equipos.add(equipo);
+	                String Listados = elem.getElementsByClass("fondolistados").text();
+					resultados.add(Listados);
 					
-	                System.out.println(titulo+"\n"+autor+"\n"+fecha+"\n\n");
+			
 					
-	                // Con el método "text()" obtengo el contenido que hay dentro de las etiquetas HTML
-	                // Con el método "toString()" obtengo todo el HTML con etiquetas incluidas
+					// Busco todas las entradas que estan dentro de: 
+			         
+//		            Elements filas = doc.select("tr");
+//					List<String> filaList = new ArrayList<String>();
+//					Element firstRow = filas.first();
+//					
+//					List<String> headers = new ArrayList<String>();
+//				
+//					
+//					
+//					System.out.println("FILAS" + filas);
+//					
+//		            for (Element elem2 : filas) {
+////		                String orden = 
+//		                filaList.add(elem2.getElementsByClass("FILA_OFF").text());
+//		               
+//	            }
+//	            System.out.println("FILAS_OFF" + filaList);
+	            
 	            }
-					
-	        }else
+	            
+	    		System.out.println("QEUIPO" + equipos);
+				System.out.println("Result" + resultados);
+				
+	        }else{
 	            System.out.println("El Status Code no es OK es: "+getStatusConnectionCode(url));
+	        }
+	        
+	      
 	    	
-	    	Document doc = Jsoup.connect("http://www.faf.es/").get();
-	    	Elements newsHeadlines = doc.select("subtitulos");
-	    	System.out.println("aqui"+ newsHeadlines);
 	    }
+}
 	    	
 	    	
-	}
+	
 
 
 

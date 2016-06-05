@@ -1,0 +1,606 @@
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=110020&amp;codgrupo=3764773"> OLIVARENSE ATLETICO "A" </a> &nbsp; </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">36</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">4</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">1</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">7</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">7</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">2</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">87</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">72</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;"> &nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="113424_1"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 8 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=113424&amp;codgrupo=3764773"> C.D. GELVES "A" </a> &nbsp; </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">33</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">6</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">1</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">5</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">4</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">2</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">6</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">81</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">70</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;"> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="150123_1"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 9 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=150123&amp;codgrupo=3764773"> C.D. SALTERAS "A" </a> &nbsp; </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">25</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">4</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">1</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">7</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">6</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">86</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">79</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;"> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="154624_1"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 10 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=154624&amp;codgrupo=3764773"> ATLETICO LIBERTAD "A" </a> &nbsp; </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">20</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">1</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">8</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">1</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">8</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">53</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">135</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;"> &nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="108830_1"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 11 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=108830&amp;codgrupo=3764773"> U.D. MAIRENA DEL ALJARAFE "A" </a> &nbsp; </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">18</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">1</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">8</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">2</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">2</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">8</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">70</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">122</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;"> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="163318_1"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 12 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=163318&amp;codgrupo=3764773"> U.D. LORETO </a> &nbsp; </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">9</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">1</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">11</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">52</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">145</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;"> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="117624_1"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 13 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=117624&amp;codgrupo=3764773"> R.C.D. NUEVA SEVILLA "A" </a> &nbsp; </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">18</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;">223</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px;"> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr> 
+          <td colspan="16"><br> 
+           <table width="100%" border="0" bordercolor="#000000" cellspacing="0" cellpadding="4"> 
+            <tbody>
+             <tr> 
+              <td> <a href="javascript: IrA(25);" class="bt banterior"> Anterior&nbsp; </a> </td> 
+              <td align="right"> </td> 
+             </tr> 
+            </tbody>
+           </table> </td>
+         </tr> 
+         <tr>
+          <td align="right" colspan="15"><br> 
+           <table border="0" cellspacing="0" cellpadding="2"> 
+            <tbody>
+             <tr height="6px"> 
+              <td width="12px" align="left" bgcolor="#5fcb5b">&nbsp;</td> 
+              <td nowrap align="right" class="" style="color:#999">&nbsp;Permanecen en catg&nbsp;&nbsp;&nbsp;</td> 
+             </tr> 
+            </tbody>
+           </table> </td>
+         </tr> 
+        </tbody>
+       </table> <br><br> 
+       <table width="760" border="0" bordercolor="#000000" cellspacing="0" cellpadding="4"> 
+        <tbody>
+         <tr align="center"> 
+          <td align="right" colspan="14" class="title_categoría">Equipos retirados de la Competición </td> 
+         </tr> 
+         <tr bgcolor="#EDEDED"> 
+          <td colspan="4" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Equipos Retirados</span> (Situación en el momento de retirarse)</td> 
+          <td colspan="4" align="center" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Partidos Casa</span></td> 
+          <td colspan="4" align="center" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Partidos Fuera</span></td> 
+          <td colspan="2" align="center" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Goles</span></td> 
+          <td align="center" class="fondotitulolistadostodo"><span class="OBLIGATORIO">Sanción</span></td> 
+         </tr> 
+         <tr bgcolor="#FBFBFB"> 
+          <td colspan="3" class="fondotitulolistados_notop_izq">&nbsp;</td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq"><b>Puntos</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Jugados"><b>J.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Ganados"><b>G.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Empatados"><b> E.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Perdidos"><b>P.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Jugados"><b>J.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Ganados"><b>G.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Empatados"><b> E.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Perdidos"><b>P.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Goles a Favor"><b>F.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop_izq" title="Goles en Contra"><b>C.</b></td> 
+          <td width="5%" align="center" class="fondotitulolistados_notop"><b>Puntos</b></td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')"> 
+          <td style="padding-top:0px; padding-bottom:0px; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;"> &nbsp; </td> 
+          <td align="center" class="fondolistados" style="border-left-color: white; !important" width="6%">0</td> 
+          <td class="fondolistados" style="padding-top:6px; padding-bottom:6px; padding-left:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=1017916&amp;codgrupo=3764773"> EL REGATE C.D. </a> </td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistadoscierre">0&nbsp;</td> 
+         </tr> 
+        </tbody>
+       </table> </span> 
+      <span id="CL_Resumen" style="display:"> 
+       <table width="760" border="0" bordercolor="#000000" cellspacing="0" cellpadding="0"> 
+        <tbody>
+         <tr> 
+          <td> <a href="/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&amp;codtemporada=11&amp;codcompeticion=2646493&amp;codgrupo=3764773&amp;CodJornada=26" class="bt bfecha">Ver Calendario</a>&nbsp; <a href="javascript: VerResultados();" class="bt btable">Ver Resultados</a>&nbsp; <a class="bt btable" href="#" onclick="new_window(&quot;NFG_VisTablaCruzada?cod_primaria=1000120&amp;CodGrupo=3764773&quot;, &quot;Cruzada&quot;, 800, 600); return false;">Ver Tabla Cruzada</a>&nbsp; <a class="bt btable" href="NFG_CMP_Goleadores?cod_primaria=1000120&amp;CodJornada=26&amp;codcompeticion=2646493&amp;codtemporada=11&amp;codgrupo=3764773">Tabla Goleadores</a>&nbsp; </td> 
+          <td align="right"> <a href="javascript: VerDetalle();" class="bt btable">Ver clasificación detallada</a> </td> 
+         </tr> 
+        </tbody>
+       </table> <br> 
+       <table width="760" border="0" bordercolor="#000000" cellspacing="0" cellpadding="0"> 
+        <tbody>
+         <tr bgcolor="#F9FFF2" style="padding-top:4px; padding-bottom:4px;padding-left:4px; padding-right:4px;"> 
+          <td colspan="4" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Equipos</span></td> 
+          <td colspan="4" align="center" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Partidos</span></td> 
+          <td colspan="2" align="center" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Goles</span></td> 
+          <td align="center" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Últimos</span></td> 
+          <td align="center" class="fondotitulolistadostodo"><span class="OBLIGATORIO">Sanción</span></td> 
+         </tr> 
+         <tr bgcolor="#FBFBFB" style="padding-top:4px; padding-bottom:4px;padding-left:4px; padding-right:4px;"> 
+          <td nowrap colspan="3" class="fondotitulolistados_notop_izq" align="right">Ordenar por:&nbsp;</td> 
+          <td nowrap width="7%" align="center" class="fondotitulolistados_solohoriz" onmouseover="fila_on_off(this, 'fondo')" onmouseout="fila_on_off(this, 'fondotitulolistados_solohoriz')" style="CURSOR: pointer; cursor: hand;" onclick="javascript: CargarOrdenacion(30,0);"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/abajo.gif"><b> Puntos</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_solohoriz" onmouseover="fila_on_off(this, 'fondo')" onmouseout="fila_on_off(this, 'fondotitulolistados_solohoriz')" style="CURSOR: pointer; cursor: hand;" onclick="javascript: CargarOrdenacion(5,0);" title="Jugados"><b> J.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_solohoriz" onmouseover="fila_on_off(this, 'fondo')" onmouseout="fila_on_off(this, 'fondotitulolistados_solohoriz')" style="CURSOR: pointer; cursor: hand;" onclick="javascript: CargarOrdenacion(7,0);" title="Ganados"><b> G.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_solohoriz" onmouseover="fila_on_off(this, 'fondo')" onmouseout="fila_on_off(this, 'fondotitulolistados_solohoriz')" style="CURSOR: pointer; cursor: hand;" onclick="javascript: CargarOrdenacion(9,0);" title="Empatados"><b> E.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_solohoriz" onmouseover="fila_on_off(this, 'fondo')" onmouseout="fila_on_off(this, 'fondotitulolistados_solohoriz')" style="CURSOR: pointer; cursor: hand;" onclick="javascript: CargarOrdenacion(11,0);" title="Perdidos"><b> P.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_solohoriz" onmouseover="fila_on_off(this, 'fondo')" onmouseout="fila_on_off(this, 'fondotitulolistados_solohoriz')" style="CURSOR: pointer; cursor: hand;" onclick="javascript: CargarOrdenacion(1,0);" title="Goles a Favor"><b> F.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_solohoriz" onmouseover="fila_on_off(this, 'fondo')" onmouseout="fila_on_off(this, 'fondotitulolistados_solohoriz')" style="CURSOR: pointer; cursor: hand;" onclick="javascript: CargarOrdenacion(3,0);" title="Goles en Contra"><b> C.</b></td> 
+          <td width="10%" align="center" class="fondotitulolistados_solohoriz">&nbsp;</td> 
+          <td width="7%" align="center" class="fondotitulolistados_notop"><b>Puntos</b></td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="103224_2"> 
+          <td width="1%" style="padding-top:0px; padding-bottom:0px; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;"> 
+           <div style="width:6px;height:25px; align:left; background-color:#5fcb5b;">
+            &nbsp;
+           </div> </td> 
+          <td width="4%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;padding-left:15px;padding-right:15px;"> 1 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=103224&amp;codgrupo=3764773"> CAMAS C.F. "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">59</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">18</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">5</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">1</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">127</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">39</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="1018223_2"> 
+          <td width="1%" style="padding-top:0px; padding-bottom:0px; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;"> 
+           <div style="width:6px;height:25px; align:left; background-color:#5fcb5b;">
+            &nbsp;
+           </div> </td> 
+          <td width="4%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;padding-left:15px;padding-right:15px;"> 2 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=1018223&amp;codgrupo=3764773"> CD TOR DEL REY DE PILAS "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">55</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">17</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">4</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">107</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">50</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="117228_2"> 
+          <td width="1%" style="padding-top:0px; padding-bottom:0px; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;"> 
+           <div style="width:6px;height:25px; align:left; background-color:#5fcb5b;">
+            &nbsp;
+           </div> </td> 
+          <td width="4%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;padding-left:15px;padding-right:15px;"> 3 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=117228&amp;codgrupo=3764773"> U.D. TOMARES "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">54</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">17</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">4</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">137</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">41</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="1003723_2"> 
+          <td width="1%" style="padding-top:0px; padding-bottom:0px; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;"> 
+           <div style="width:6px;height:25px; align:left; background-color:#5fcb5b;">
+            &nbsp;
+           </div> </td> 
+          <td width="4%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;padding-left:15px;padding-right:15px;"> 4 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=1003723&amp;codgrupo=3764773"> C.D. DIEZ SANLUCAR "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">51</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">16</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">5</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">106</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">38</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="103725_2"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 5 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=103725&amp;codgrupo=3764773"> CASTILLEJA C.F. "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">44</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">13</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">5</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">6</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">103</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">49</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="2063851_2"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 6 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=2063851&amp;codgrupo=3764773"> BENACAZON C.F. "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">41</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">5</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">7</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">73</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">37</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="110020_2"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 7 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=110020&amp;codgrupo=3764773"> OLIVARENSE ATLETICO "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">36</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">11</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">10</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">87</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">72</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="113424_2"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 8 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=113424&amp;codgrupo=3764773"> C.D. GELVES "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">33</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">10</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">11</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">81</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">70</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="150123_2"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 9 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=150123&amp;codgrupo=3764773"> C.D. SALTERAS "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">25</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">7</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">4</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">13</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">86</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">79</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="154624_2"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 10 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=154624&amp;codgrupo=3764773"> ATLETICO LIBERTAD "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">20</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">6</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">2</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">16</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">53</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">135</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="108830_2"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 11 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=108830&amp;codgrupo=3764773"> U.D. MAIRENA DEL ALJARAFE "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">18</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">5</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">3</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">16</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">70</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">122</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp;<span title="Empatado" style="background-color:#D7DF01; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">E</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="163318_2"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 12 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=163318&amp;codgrupo=3764773"> U.D. LORETO </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">12</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">4</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">20</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">52</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">145</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Ganado" style="background-color:#04B431; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">G</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')" id="117624_2"> 
+          <td width="1%" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;padding-top:6px; padding-bottom:6px;">&nbsp;</td> 
+          <td width="3%" align="center" style="border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999;padding-top:6px; padding-bottom:6px;"> 13 </td> 
+          <td nowrap class="fondolistados" style="padding-left:10px;padding-top:6px; padding-bottom:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=117624&amp;codgrupo=3764773"> R.C.D. NUEVA SEVILLA "A" </a> </td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">0</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">24</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">18</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; ">223</td> 
+          <td align="center" class="fondolistados" style="padding-top:6px; padding-bottom:6px; "> &nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp;<span title="Perdido" style="background-color:#F78181; padding:0 2px 0 2px; color:white; font-size:10px; font-weight:bolder;">P</span>&nbsp; </td> 
+          <td align="center" class="fondolistadoscierre" style="padding-top:6px; padding-bottom:6px;">0&nbsp;</td> 
+         </tr> 
+         <tr>
+          <td colspan="12"><br> 
+           <table width="100%" border="0" bordercolor="#000000" cellspacing="0" cellpadding="4"> 
+            <tbody>
+             <tr> 
+              <td> <a href="javascript: IrA(25);" class="bt banterior"> Anterior&nbsp; </a> </td> 
+              <td align="right"> </td> 
+             </tr> 
+            </tbody>
+           </table> </td>
+         </tr> 
+         <tr>
+          <td align="right" colspan="11"><br> 
+           <table border="0" cellspacing="0" cellpadding="2"> 
+            <tbody>
+             <tr height="6px"> 
+              <td width="12px" align="left" bgcolor="#5fcb5b">&nbsp;</td> 
+              <td nowrap align="right" class="" style="color:#999">&nbsp;Permanecen en catg&nbsp;&nbsp;&nbsp;</td> 
+             </tr> 
+            </tbody>
+           </table> </td>
+         </tr> 
+        </tbody>
+       </table> <br><br> 
+       <table width="760" border="0" bordercolor="#000000" cellspacing="0" cellpadding="0"> 
+        <tbody>
+         <tr align="center"> 
+          <td align="right" colspan="10" class="title_categoría">Equipos retirados de la Competición </td> 
+         </tr> 
+         <tr bgcolor="#EDEDED"> 
+          <td colspan="4" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Equipos Retirados</span> (Situación en el momento de retirarse)</td> 
+          <td colspan="4" align="center" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Partidos</span></td> 
+          <td colspan="2" align="center" class="fondotitulolistadosizq"><span class="OBLIGATORIO">Goles</span></td> 
+          <td align="center" class="fondotitulolistadostodo"><span class="OBLIGATORIO">Sanción</span></td> 
+         </tr> 
+         <tr bgcolor="#FBFBFB"> 
+          <td colspan="3" class="fondotitulolistados_notop_izq">&nbsp;</td> 
+          <td width="7%" align="center" class="fondotitulolistados_notop_izq"><b>Puntos</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_notop_izq" title="Jugados"><b>J.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_notop_izq" title="Ganados"><b>G.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_notop_izq" title="Empatados"><b> E.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_notop_izq" title="Perdidos"><b>P.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_notop_izq" title="Goles a Favor"><b>F.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_notop_izq" title="Goles en Contra"><b>C.</b></td> 
+          <td width="7%" align="center" class="fondotitulolistados_notop"><b>Puntos</b></td> 
+         </tr> 
+         <tr bgcolor="#FFFFFF" onmouseover="fila_on_off(this, 'FILA_ON')" onmouseout="fila_on_off(this, 'FILA_OFF')"> 
+          <td style="padding-top:0px; padding-bottom:0px; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #999999; border-left-width: 1px; border-left-style: solid; border-left-color: #999999;"> &nbsp; </td> 
+          <td align="center" class="fondolistados" width="6%" style="border-left-color: white; !important">0</td> 
+          <td class="fondolistados" style="padding-top:6px; padding-bottom:6px; padding-left:6px;"> <a href="NFG_VisCompeticiones_Grupo?cod_primaria=1000123&amp;codequipo=1017916&amp;codgrupo=3764773"> EL REGATE C.D. </a> </td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistados">0</td> 
+          <td align="center" class="fondolistadoscierre">0&nbsp;</td> 
+         </tr> 
+        </tbody>
+       </table> </span> 
+      <br> 
+      <script>var Nova_Pdf_Url;function Update_Nova_Pdf(TVC){Nova_Pdf_Url="/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codcompeticion=2646493&codgrupo=3764773&codjornada=26&orden_pdf=&TVC="+TVC+"&NPcd_Pdf=1"}Update_Nova_Pdf(0);</script> 
+      <script>var Nova_Select_Printer;if(typeof(Nova_Print_Url)!="undefined"){if(document.getElementById("Id_Nova_Print")){document.getElementById("Id_Nova_Print").style.display="block"}}function Nova_Print(SelectPrinter){var h=50;var w=270;if(typeof(Nova_Print_Url)!="undefined"){Nova_Select_Printer=SelectPrinter;window.open("/pnfg/NSendHtml/Generico/html/N_Print.html","","titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width="+w+",height="+h+",top="+(screen.availHeight-h-85)+",left="+(screen.availWidth-w-10))}}if(typeof(Nova_Pdf_Url)!="undefined"){if(document.getElementById("Id_Nova_Pdf")){document.getElementById("Id_Nova_Pdf").style.display="block"}}function Nova_Pdf(){if(typeof(Nova_Pdf_Url)!="undefined"){h=125;w=250;var v=window.open(Nova_Pdf_Url,"","titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width="+w+",height="+h+",top="+((screen.availHeight-30-h)/2)+",left="+((screen.availWidth-w)/2))}};</script> 
+     </div> 
+    </div> 
+   </div> 
+   <div style="clear:both"></div> 
+   <div class="marco"> 
+    <div class="prt" style="width:1080px; -webkit-border-radius:0px; -moz-border-radius: 0px;border-radius: 0px;"> 
+     <div class="colf" style="width:1080px;"> 
+      <div class="spr"></div> 
+      <div class="cld" style="margin-left: 150px;width:750px;"> 
+       <div id="div-gpt-ad-1389084883928-5" style="width:728px; height:90px;"> 
+        <script>googletag.cmd.push(function(){googletag.display("div-gpt-ad-1389084883928-5")});</script> 
+       </div> 
+      </div> 
+      <div class="spr"></div> 
+      <div class="clds" style="background-image:url(/pnfg/);background-repeat:no-repeat;"> 
+       <table style="width: 1080px; height: 200px;" border="0" cellpadding="0"> 
+        <tbody> 
+         <tr> 
+          <td colspan="4">&nbsp;</td> 
+         </tr> 
+         <tr> 
+          <td colspan="4" bgcolor="#334f3f" height="40"> <h2><span class="rfaf">&nbsp; <a class="rfaflink" href="#">RFAF.es </a> </span></h2> </td> 
+         </tr> 
+         <tr> 
+          <td width="320"> 
+           <div align="center">
+            <img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/lema-pie.png" alt="" width="240">
+           </div> </td> 
+          <td style="padding: 20px 10px 20px 10px;" valign="top" width="200"> <h3><span class="tabla">Delegaciones</span><br> <br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000144">Almería </a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000149">Cádiz</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000150">Córdoba</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000151">Granada</a> <br> </span><span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000152">Huelva</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000153">Jaén</a> </span><br> <span class="letragris "><a class="link" href="/pnfg/NPortada?CodPortada=1000154">Málaga</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000155">Sevilla</a></span></h3> </td> 
+          <td style="padding: 20px 10px 20px 10px;" valign="top" width="200"> <h3><span class="tabla">Estamentos</span><br> <br><span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000159">Árbitros</a> </span><br><span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000064">Entrenadores</a> </span><br><span class="letragris "> <a class="link" href="http://www.cedifa.org/" target="_blank">CEDIFA </a> </span><br><span class="letragris "> <a class="link" href="http://www.clinicadeldeporte.es/">Clínica del Deporte</a> </span><br><span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000107">Mutualidad</a> </span><br><span class="letragris "> <a class="link" href="http://www.contarconelfutbol.es/" target="_blank">Contar con el Fútbol</a> </span><br><span class="letragris "> <a class="link" href="http://webtv.multistream.tv/faf/#/?videoId=78aa1bbc-e914-42fe-a0c2-5358fc3f3bc6" target="_blank">RFAF TV</a> </span><br><span class="letragris "> <a class="link" href="http://intranet.rfaf.novanet.es/" target="_blank">Intranet</a></span></h3> </td> 
+          <td style="padding: 20px 10px 20px 10px;" valign="top" width="200"> <h3><span class="tabla ">Secciones </span><br> <br><span class="letragris "> <a class="link" href=" /pnfg/NPortada?CodPortada=1000171">RFAF</a></span><br> <span class="letragris "><a class="link" href="/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120">Competiciones</a></span><br> <span class="letragris "><a class="link" href="/pnfg/NPortada?CodPortada=1000165 ">Selecciones</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000206">Campeonatos y Eventos</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NBdd_LstDocumentos?cod_primaria=142">Normativa</a> </span> <br> <span class="letragris "> <a class="link" href="http://www.cedifa.org" target="_blank">Centro de Formación</a> </span> <br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000169">Fútbol Social</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000158">Comunicación</a> </span> <br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000170">Documentos</a></span></h3> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+      <div class="spr"></div> 
+      <div class="clds" style="height:534px;background-image:url(http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/background-patrocinadores.jpg);"> 
+       <style type="text/css">.patro{float:left;position:relative;margin-left:5px;overflow:hidden;color:#777;font-size:10px;font-weight:bold;font-family:Verdana}.salto{clear:both;font-size:1px}.indicativo{font-size:12px;color:#666;padding-left:480px}.imgjuntaandalucia{float:left;position:relative;width:300px;height80px;overflow:hidden;margin-left:75px}.imgrfef{float:left;position:relative;overflow:hidden;width:300px;height:80px;padding-left:125px}.imgcajasol{float:left;position:relative;overflow:hidden;width:300px;height:80px;padding-left:95px;margin-left:1px;padding-top:25px}.imgluanvi{float:left;position:relative;overflow:hidden;width:400px;height:60px;padding-left:265px;margin-left:200px}.imgunicef{float:left;position:relative;overflow:hidden;width:300px;height:80px;padding-left:75px;padding-top:15px}.imgcatsa{float:left;position:relative;overflow:hidden;width:300px;height:100px;padding-left:135px;padding-top:5px}.imgfederoptico{float:left;position:relative;overflow:hidden;width:420px;height:100px;margin-left:15px;padding-top:15px}.imgcaixabank{float:left;position:relative;overflow:hidden;width:300px;height:100px;padding-left:155px}.imgcea{float:left;position:relative;overflow:hidden;width:160px;height:100px;padding-left:15px;padding-top:5px;margin-left:30px}.imgcajarural{float:left;position:relative;overflow:hidden;width:230px;height:100px;padding-left:125px;padding-top:5px}.imgseur{float:left;position:relative;overflow:hidden;width:250px;height:100px;padding-left:55px;padding-top:25px}.imgrefereeland{float:left;position:relative;overflow:hidden;width:240px;height:100px;padding-left:105px;padding-top:5px}.imgpoligras{float:left;position:relative;overflow:hidden;width:650px;height:100px;padding-left:80px;padding-top:15px}.imgcocacola{float:left;position:relative;overflow:hidden;width:280px;height:100px;padding-left:55px;padding-top:15px}</style> 
+       <script>function cambiar(x){document.images[x].src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/"+x+".png"}function volver(x){document.images[x].src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/"+x+"1.png"};</script> 
+       <div style="width:1080px;position:relative;float:left; margin-top:5px;"> 
+        <div class="imgjuntaandalucia">
+         <a href="http://www.juntadeandalucia.es/organismos/turismoydeporte.html" target="_blank" onmouseover="cambiar('juntaandalucia');" onmouseout="volver('juntaandalucia');"> <img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/juntaandalucia1.png" name="juntaandalucia" border="0"></a>
+        </div> 
+        <div class="imgrfef">
+         <a href="http://www.rfef.es/" target="_blank" onmouseover="cambiar('rfef');" onmouseout="volver('rfef');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/rfef1.png" name="rfef" border="0"></a>
+        </div> 
+        <div class="imgunicef">
+         <a href="http://www.unicef.es/" target="_blank" onmouseover="cambiar('unicef');" onmouseout="volver('unicef');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/unicef1.png" name="unicef" border="0"></a>
+        </div> 
+        <div class="salto" style="height:10px;"> 
+        </div> 
+        <div class="indicativo" style="height:10px;">
+         Patrocinadores 
+        </div> 
+        <div class="imgcajasol">
+         <a href="http://www.fundacioncajasol.com." target="_blank" onmouseover="cambiar('cajasol');" onmouseout="volver('cajasol');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/cajasol1.png" name="cajasol" border="0"></a>
+        </div> 
+        <div class="imgcatsa">
+         <a href="http://www.catsa.es/" target="_blank" onmouseover="cambiar('catsa');" onmouseout="volver('catsa');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/catsa1.png" name="catsa" border="0"></a>
+        </div> 
+        <div class="imgcaixabank">
+         <a href="https://portal.lacaixa.es/home/particulares_es.html" target="_blank" onmouseover="cambiar('caixabank');" onmouseout="volver('caixabank');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/caixabank1.png" name="caixabank" border="0"></a>
+        </div>
+        <br> 
+        <div class="imgpoligras">
+         <a href="http://www.fieldturf.eu/es" target="_blank" onmouseover="cambiar('poligras');" onmouseout="volver('poligras');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/poligras1.png" alt="" name="poligras" border="0"></a>
+        </div> 
+        <div class="imgcocacola">
+         <a href="http://www.cocacolaiberianpartners.com/es/" target="_blank" onmouseover="cambiar('cocacola');" onmouseout="volver('cocacola');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/cocacola1.png" name="cocacola" border="0"></a>
+        </div> 
+        <p> </p> 
+        <div class="salto" style="height:15px;"></div> 
+        <div class="indicativo" style="height:10px;">
+         Sponsor Técnico
+        </div> 
+        <div class="imgluanvi">
+         <a href="http://www.luanvi.es/" target="_blank" onmouseover="cambiar('luanvi');" onmouseout="volver('luanvi');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/luanvi1.png" name="luanvi" border="0"></a>
+        </div> 
+        <div class="salto" style="height:10px;"> 
+        </div> 
+        <div class="indicativo" style="height:10px;">
+         Colaboradores
+        </div> 
+        <div class="imgcea">
+         <a href="http://www.cea.es/" target="_blank" onmouseover="cambiar('cea');" onmouseout="volver('cea');"> <img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/cea1.png" name="cea" border="0"></a>
+        </div> 
+        <div class="imgfederoptico">
+         <a href="http://www.federopticos.com/" target="_blank" onmouseover="cambiar('federoptico');" onmouseout="volver('federoptico');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/federoptico1.png" name="federoptico" border="0"></a>
+        </div> 
+        <div class="imgseur">
+         <a href="http://www.seur.es/" target="_blank" onmouseover="cambiar('seur');" onmouseout="volver('seur');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/seur1.png" name="seur" border="0"></a>
+        </div>
+        <a href="http://www.cajaruraldelsur.es/" target="_blank" onmouseover="cambiar('cajarural');" onmouseout="volver('cajarural');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/cajarural1.png" name="cajarural" border="0"></a>
+       </div> 
+      </div> 
+     </div> 
+     <div class="spr"></div> 
+     <div class="clds"> 
+      <style type="text/css">.rfaf1{color:#fff;font-family:Arial;font-size:12px}.rfaflink{color:#fff;text-decoration:none}.datos{color:#fff;font-family:Arial;font-size:12px}.avisos{color:#fff;font-family:Arial;text-decoration:none;font-size:12px}.avisos:hover{color:#9a7a58;font-family:Arial;text-decoration:none}</style> 
+      <table width="1080" cellpadding="0" cellspacing="10" bgcolor="#334f3f"> 
+       <tbody>
+        <tr> 
+         <td colspan="3" style="text-align:center;"> <span class="rfaf1">© REAL FEDERACIÓN ANDALUZA DE FÚTBOL </span> <span class="datos"> - C/ Tomás Pérez, 57. 41006 - SEVILLA - Tlf.: 954 924 928 - Fax: 954 925 418 - <a href="mailto:federacion@faf.es" class="datos">federacion@faf.es</a></span></td> 
+        </tr> 
+        <tr> 
+         <td width="33%" style="text-align:right"><a class="avisos" href="/pnfg/NNws_ShwNewDup?codigo=9937&amp;cod_primaria=140&amp;cod_secundaria=140"> (Política de Privacidad)</a> </td> 
+         <td width="33%" style="text-align:center"><a class="avisos" href="/pnfg/NNws_ShwNewDup?codigo=9938&amp;cod_primaria=140&amp;cod_secundaria=140">(Aviso Legal)</a></td> 
+         <td><a class="avisos" href="/pnfg/NNws_ShwNewDup?codigo=50935&amp;cod_primaria=140&amp;cod_secundaria=2000720#.Vqio-yrhC70">(Transparencia)</a></td> 
+        </tr> 
+       </tbody>
+      </table> 
+     </div> 
+     <div class="spr"></div> 
+     <div class="clds"> 
+      <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","UA-47325460-1","auto");ga("send","pageview");</script> 
+     </div> 
+    </div> 
+   </div> 
+  </div>  
+  <script>NMessageToPrint=0;</script>  
+ </body>
+</html>
+Número de entradas en la página inicial de Jarroba: 0
+
+aqui
