@@ -175,8 +175,13 @@ public class PlayerService {
 
 		result.setId(playerForm2.getId());
 		result.setVersion(playerForm2.getVersion());
-		result.setFile(playerForm2.getFile());
-		return result;
+		long i = playerForm2.getFile().length;	
+		
+		//Controlamos el tamaño de la foto que no sobrepase los 3MB
+		if(i <3145728){
+			result.setFile(playerForm2.getFile());
+		}
+	return result;
 	}
 
 	// MIO CONCHI

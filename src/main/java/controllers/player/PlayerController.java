@@ -260,9 +260,9 @@ public class PlayerController extends ErrorController {
 				result.addObject("detailsPlayer", false);
 				result.addObject("editPhoto", true);
 				result.addObject("viewProfileOther", false);
+			
 			}
 		}
-
 		return result;
 	}
 		

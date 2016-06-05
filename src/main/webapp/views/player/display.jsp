@@ -155,8 +155,16 @@
 
 				</form:errors>
 				<br>
+				<div class="alert alert-success" role="alert">
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<strong><spring:message code="player.sizePhoto"></spring:message></strong> 
+				</div>
+				<br>
 				<tag:submit code="display.save" name="save2" />
-				<tag:button code="display.cancel" url="principal/index.do'" />
+				<tag:buttonazul code="display.cancel" url="principal/index.do'" />
 			</form:form>
 		</jstl:if>
 	</jstl:if>
@@ -192,7 +200,8 @@
 		</jstl:if>
 
 
-		<tag:button code="display.cancel" url="player/c/listPlayerSameCategoryCoach.do'" />
+		<tag:button code="display.cancel"
+			url="player/c/listPlayerSameCategoryCoach.do'" />
 	</form:form>
 </security:authorize>
 
