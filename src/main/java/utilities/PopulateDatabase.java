@@ -29,7 +29,7 @@ public class PopulateDatabase {
 			databaseUtil.recreateDatabase();
 			
 			System.out.printf("Reading configuration file `%s'...%n", "PopulateDatabase.xml");
-			populationContext = new ClassPathXmlApplicationContext("classpath:PopulateDatabase2.xml");
+			populationContext = new ClassPathXmlApplicationContext("classpath:PopulateDatabase.xml");
 						
 			System.out.printf("Persisting %d entities...%n%n", populationContext.getBeanDefinitionCount());
 			databaseUtil.openTransaction();			
