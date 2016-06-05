@@ -12,8 +12,7 @@
 		<value>/views/error/messages</value>
 		<value>/views/security/messages</value>		
 		<value>/views/principal/messages</value>
-		
-		<value>/views/admin/messages</value>
+
 		<value>/views/coach/messages</value>
 		<value>/views/comment/messages</value>
 		<value>/views/player/messages</value>
@@ -27,6 +26,7 @@
 		<value>/views/folder/user/messages</value>
 		<value>/views/message/user/messages</value>
 		<value>/views/family/messages</value>
+		<value>/views/classification/messages</value>
 	</util:list>
 
 </beans>

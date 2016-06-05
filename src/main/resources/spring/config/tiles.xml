@@ -13,8 +13,6 @@
 		<value>/views/security/tiles.xml</value>
 		<value>/views/principal/tiles.xml</value>
 		
-		
-		<value>/views/admin/tiles.xml</value>
 		<value>/views/coach/tiles.xml</value>
 		<value>/views/player/tiles.xml</value>
 		<value>/views/comment/tiles.xml</value>
@@ -30,6 +28,7 @@
 		
 		<value>/views/register/tiles.xml</value>
 		<value>/views/law/tiles.xml</value>
+		<value>/views/classification/tiles.xml</value>
 	</util:list>
 
 </beans>

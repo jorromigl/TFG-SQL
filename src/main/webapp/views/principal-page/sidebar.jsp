@@ -119,7 +119,7 @@
                            <li class="nv active"><a><i class="fa fa-line-chart"></i><spring:message
 										code="master.page.classification" /><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: block;">
-                                        <li class="current-page"><a href="classificacion/list.do"><spring:message
+                                        <li class="current-page"><a href="classificacion/display.do"><spring:message
 										code="master.page.user.classification" /> </a>
 										 </li>
 										
@@ -211,7 +211,7 @@
 						   <li class="nv active"><a><i class="fa fa-line-chart"></i><spring:message
 										code="master.page.classification" /><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: block;">
-                                        <li class="current-page"><a href="classificacion/list.do"><spring:message
+                                        <li class="current-page"><a href="classificacion/display.do"><spring:message
 										code="master.page.user.classification" /> </a>
 										 </li>
 										
@@ -296,7 +296,7 @@
                              <li class="nv active"><a><i class="fa fa-line-chart"></i><spring:message
 										code="master.page.classification" /><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: block;">
-                                        <li class="current-page"><a href="classificacion/list.do"><spring:message
+                                        <li class="current-page"><a href="classificacion/display.do"><spring:message
 										code="master.page.user.classification" /> </a>
 										 </li>
 										

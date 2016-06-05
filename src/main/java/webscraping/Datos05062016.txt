@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="ISO-8859-15"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15"> 
+  <script src="/pnfg/script/nova.js"></script> 
+  <link rel="stylesheet" href="http://files.rfaf.novanet.es/pnfg/css/RFAF/nova.css" type="text/css"> 
+  <script>NMapeoHoja="http://files.rfaf.novanet.es/pnfg/css/RFAF/";NMapeoProd="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/";</script> 
+  <title>RFAF - Visualización de Partidos</title> 
+  <script src="/pnfg/script/hint.js"></script>
+  <script>function IrA(jornada){url="/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120&CodCompeticion=5619311&CodGrupo=5619312&CodTemporada=11&CodJornada="+jornada;url=url+"&Sch_Codigo_Delegacion="+document.BuscaNFG_CMP.Sch_Codigo_Delegacion.value;url=url+"&Sch_Tipo_Juego="+document.BuscaNFG_CMP.Sch_Tipo_Juego.value;location=url}function BuscarPartidos(Jornada){if(Jornada!=0){url="/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120"+"&CodCompeticion="+top.document.BuscaNFG_CMP.competicion.value+"&CodGrupo="+top.document.BuscaNFG_CMP.grupo.value+"&CodTemporada="+top.document.BuscaNFG_CMP.temporada.value+"&CodJornada="+Jornada;url=url+"&Sch_Codigo_Delegacion="+document.BuscaNFG_CMP.Sch_Codigo_Delegacion.value;url=url+"&Sch_Tipo_Juego="+document.BuscaNFG_CMP.Sch_Tipo_Juego.value;location=url}}function BuscarCompeticiones(clave_acceso){top.Select_Init(top.document.BuscaNFG_CMP.competicion,new Array("0","-- Seleccione --"),null);top.Select_Init(top.document.BuscaNFG_CMP.grupo,new Array("0","-- Seleccione --"),null);top.Select_Init(top.document.BuscaNFG_CMP.jornada,new Array("0","-- Seleccione --"),null);txt_url="NFG_CmpJornada_Exec?cod_primaria=1000120&codtemporada="+document.getElementById("temporada").value;txt_url=txt_url+"&Sch_Codigo_Delegacion="+document.BuscaNFG_CMP.Sch_Codigo_Delegacion.value;txt_url=txt_url+"&Sch_Tipo_Juego="+document.BuscaNFG_CMP.Sch_Tipo_Juego.value;top.NFG_ControlExec.location=txt_url}function BuscarGrupos(clave_acceso){top.Select_Init(top.document.BuscaNFG_CMP.grupo,new Array("0","-- Cargando... --"),null);top.Select_Init(top.document.BuscaNFG_CMP.jornada,new Array("0","-- Seleccione --"),null);if(clave_acceso!=""){top.NFG_ControlExec.location="NFG_CmpJornada_Exec?cod_primaria=1000120&codcompeticion="+document.getElementById("competicion").value+"&Sch_Codigo_Delegacion="+document.BuscaNFG_CMP.Sch_Codigo_Delegacion.value}}function BuscarJornadas(clave_acceso,tipo){top.Select_Init(top.document.BuscaNFG_CMP.jornada,new Array("0","-- Cargando... --"),null);if(clave_acceso!=""){if(tipo==1){top.NFG_ControlExec.location="NFG_CmpJornada_Exec?cod_primaria=1000120&codgrupo="+clave_acceso}else{if(tipo==2){top.NFG_ControlExec.location="NFG_CmpJornada_Exec?cod_primaria=1000120&codgrupo="+clave_acceso}}}};</script>
+  <style>.wid2_resultado{font-size:14px;color:#dba901;font-weight:bold}.wid2_resultado_prov{font-size:14px;color:#688a08;font-weight:bold}.wid2_resultado_cerrada{font-size:14px;color:#df3a01;font-weight:bold}</style>
+ </head>    
+ <body class="page-header-fixed page-sidebar-fixed" style="margin:0px;"> 
+  <div class="marcouno"> 
+   <div class="marcocabecera"> 
+    <div class="prt" style="width:1080px; "> 
+     <div class="colu" style="width:1080px;"> 
+      <div class="spr"></div> 
+      <div class="cld"> 
+       <script>function changeImg(imgNumber){var myImages=["/pnfg/varios/html/backgrounds/siteBackground.jpg","/pnfg/varios/html/backgrounds/siteBackground1.jpg","/pnfg/varios/html/backgrounds/siteBackground2.jpg"];var imgShown=document.body.style.backgroundImage;var newImgNumber=Math.floor(Math.random(2)*myImages.length);document.body.style.backgroundImage="url("+myImages[newImgNumber]+")"}window.onload=changeImg;</script> 
+       <style type="text/css">.menuppal{font-family:Arial,Helvetica,sans-serifarial;font-size:8px}.menuppal a{color:#FFF;text-decoration:none;font-size:8pt}.menuppal a:hover{color:#e4dc63;text-decoration:none;font-size:8pt}.submenu{font-family:Arial,Helvetica,sans-serifarial;font-size:9px;color:#ccc}.submenu a{color:#fff;text-decoration:none;font-size:9pt}.submenu a:hover{color:#e4dc63;text-decoration:none;font-size:9pt}</style> 
+       <script>function cambiar(x){document.images[x].src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/"+x+".png"}function volver(x){document.images[x].src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/"+x+"1.png"};</script> 
+       <div style="width: 1080px; float: left;"> 
+        <div style="width: 1080px; float: left; background-color:#28573D; padding-left:5px;"> 
+         <table width="100%" border="0" cellpadding="0" cellspacing="0" class="menuppal"> 
+          <tbody>
+           <tr valign="middle"> 
+            <td width="200" style="padding-left:10PX; font-size:18px; color:#FFFFFF; padding-right:20px;"> 
+             <div align="center">
+              <strong><a style=" color:#FFFFFF; font-size:18px;" href="http://www.rfaf.es/pnfg/NPortada">RFAF</a></strong>.es
+             </div></td> 
+            <td width="8%">
+             <div align="center">
+              <a href="/pnfg/NPortada?CodPortada=1000144"><strong>ALMERÍA</strong></a>
+             </div></td> 
+            <td width="6%">
+             <div align="center">
+              <a href="/pnfg/NPortada?CodPortada=1000149"><strong>CÁDIZ</strong></a>
+             </div></td> 
+            <td width="7%">
+             <div align="center">
+              <a href="/pnfg/NPortada?CodPortada=1000150"><strong>CÓRDOBA</strong></a>
+             </div></td> 
+            <td width="7%">
+             <div align="center">
+              <a href="/pnfg/NPortada?CodPortada=1000151"><strong>GRANADA</strong></a>
+             </div></td> 
+            <td width="7%">
+             <div align="center">
+              <a href="/pnfg/NPortada?CodPortada=1000152"><strong>HUELVA</strong></a>
+             </div></td> 
+            <td width="6%">
+             <div align="center">
+              <a href="/pnfg/NPortada?CodPortada=1000153"><strong>JAÉN</strong></a>
+             </div></td> 
+            <td width="7%">
+             <div align="center">
+              <a href="/pnfg/NPortada?CodPortada=1000154"><strong>MÁLAGA</strong></a>
+             </div></td> 
+            <td width="8%">
+             <div align="center">
+              <a href="/pnfg/NPortada?CodPortada=1000155"><strong>SEVILLA</strong></a>
+             </div></td> 
+            <td style="padding-right:5px;">
+             <div style="text-align:right"></div></td> 
+            <td width="200" align="center"> <a href="http://www.linkedin.com/pub/real-federaci%C3%B3n-andaluza-de-f%C3%BAtbol/88/680/b00" target="_blank" onmouseover="cambiar('icoli');" onmouseout="volver('icoli');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/icoli1.png" name="icoli" border="0" align="right"></a> &nbsp; <a href="https://plus.google.com/u/0/101175935646085924880/posts" target="_blank" onmouseover="cambiar('icog+');" onmouseout="volver('icog+');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/icog+1.png" name="icog+" border="0" align="right"></a> &nbsp; <a href="http://www.facebook.com/FederacionAndaluzaFutbol" target="_blank" onmouseover="cambiar('icofac');" onmouseout="volver('icofac');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/icofac1.png" name="icofac" border="0" align="right"></a>&nbsp;&nbsp; <a href="http://twitter.com/#!/FedAndaluzaFutb" target="_blank" onmouseover="cambiar('icotw');" onmouseout="volver('icotw');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/icotw1.png" name="icotw" border="0" align="right"></a> &nbsp; </td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div style="clear: both"></div> 
+        <div style="width: 1080px; float: left;"> 
+         <table width="1000" cellpadding="0" cellspacing="0" style="TEXT-ALIGN: center; width: 1080px; height: 40px;" class="menuppal"> 
+          <tbody> 
+           <tr> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;"> <strong><a href="/pnfg/NPortada?CodPortada=1000272" target="_blank"> ÁRBITROS</a></strong></td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;">|</td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;"> <strong><a href="http://www.entrenadoresanadaluces.es" target="_blank"> ENTRENADORES</a></strong> </td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;">|</td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;"> <strong><a href="http://www.cedifa.org/" target="_blank">CEDIFA</a></strong></td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;">|</td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;"> <strong><a href="http://www.clinicadeldeporte.es/" target="_blank">CLINICA DEL DEPORTE</a></strong></td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;">|</td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;"> <strong><a href="/pnfg/NPortada?CodPortada=1000107">SALUD</a></strong></td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;">|</td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;"> <strong><a href="/pnfg/NPortada?CodPortada=1000291" target="_blank">CONTAR CON EL FÚTBOL </a></strong> </td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;">|</td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;"> <strong><a href="http://www.futbolandaluz.tv/" target="_BLANK">RFAF TV </a></strong></td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;">|</td> 
+            <td bgcolor="#000000" class="submenu" style="padding: 2px;"> <strong><a href="http://intranet.rfaf.es/" target="_BLANK">INTRANET </a></strong></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <table border="0"> 
+          <tbody> 
+           <tr> 
+            <td valign="top"> 
+             <div style="float: left; width: 265px; text-align: left;"> 
+              <div align="center">
+               <a title="Federación Andaluza de Futbol" href="/pnfg/NPortada"> <img src="http://rfaf.es/pnfg/varios/imagenes/logorfaf.png" border="0"></a> 
+              </div> 
+             </div> </td> 
+            <td align="right" valign="bottom"> <script>var googletag=googletag||{};googletag.cmd=googletag.cmd||[];(function(){var gads=document.createElement("script");gads.async=true;gads.type="text/javascript";var useSSL="https:"==document.location.protocol;gads.src=(useSSL?"https:":"http:")+"//www.googletagservices.com/tag/js/gpt.js";var node=document.getElementsByTagName("script")[0];node.parentNode.insertBefore(gads,node)})();</script> <script>var _comscore=_comscore||[];_comscore.push({c1:"2",c2:"19252050"});(function(){var s=document.createElement("script"),el=document.getElementsByTagName("script")[0];s.async=true;s.src=(document.location.protocol=="https:"?"https://sb":"http://b")+".scorecardresearch.com/beacon.js";el.parentNode.insertBefore(s,el)})();</script> 
+             <noscript> 
+              <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=19252050&amp;cv=2.0&amp;cj=1"> 
+             </noscript> <script>googletag.cmd.push(function(){googletag.defineSlot("/78011819/FAF_200_1",[200,200],"div-gpt-ad-1389084883928-0").addService(googletag.pubads());googletag.defineSlot("/78011819/FAF_200_2",[200,200],"div-gpt-ad-1389084883928-1").addService(googletag.pubads());googletag.defineSlot("/78011819/FAF_300_1",[300,250],"div-gpt-ad-1389084883928-2").addService(googletag.pubads());googletag.defineSlot("/78011819/FAF_300_2",[300,250],"div-gpt-ad-1389084883928-3").addService(googletag.pubads());googletag.defineSlot("/78011819/FAF_300_INTERIOR",[300,250],"div-gpt-ad-1389084883928-4").addService(googletag.pubads());googletag.defineSlot("/78011819/FAF_728_BOTTOM",[728,90],"div-gpt-ad-1389084883928-5").addService(googletag.pubads());googletag.defineSlot("/78011819/FAF_728_COMPETICION",[728,90],"div-gpt-ad-1389084883928-6").addService(googletag.pubads());googletag.defineSlot("/78011819/FAF_COMPETICION_2",[[728,90],[468,60],[320,100],[336,280],[300,250]],"div-gpt-ad-1389084883928-80").addService(googletag.pubads());googletag.defineSlot("/78011819/FAF_728_TOP",[728,90],"div-gpt-ad-1389084883928-7").addService(googletag.pubads());googletag.defineSlot("/78011819/FAF_300_1",[300,250],"div-gpt-ad-1457517452674-0").addService(googletag.pubads());googletag.pubads().setTargeting("RFAF",["competicion"]);googletag.pubads().enableSingleRequest();googletag.pubads().collapseEmptyDivs();googletag.enableServices()});</script> 
+             <div id="div-gpt-ad-1389084883928-7" style="width:728px; height:90px;float:right;"> 
+              <script>googletag.cmd.push(function(){googletag.display("div-gpt-ad-1389084883928-7")});</script> 
+             </div> 
+             <div style="float: right; margin-right: 10px; font-size: 12px; font-family: Arial, Helvetica, sans-serif;text-align: right;"> 
+             </div> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div style="clear:both"></div> 
+   <div class="marcomenu"> 
+    <script>TmplMapeoHoja="http://files.rfaf.novanet.es/pnfg/css/RFAF/";TmplMapeoProd="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/";</script> 
+    <script src="http://files.rfaf.novanet.es/pnfg/css/RFAF/menu_horiz_scr.js"></script> 
+    <script>var e_100=addTopLevelMenu("RFAF","/pnfg/NPortada?CodPortada=1000171","","");addMenuItem("Presidencia","/pnfg/NNws_LstNews?cod_primaria=140&cod_secundaria=2000720","",e_100,"");addMenuItem("Secretaría","/pnfg/NNws_LstNews?cod_primaria=140&cod_secundaria=2000721","",e_100,"");addMenuItem("Licencias","/pnfg/NNws_LstNews?cod_primaria=140&cod_secundaria=2000722","",e_100,"");addMenuItem("Calidad y Seguridad","/pnfg/NNws_LstNews?cod_primaria=140&cod_secundaria=2000723","",e_100,"");addMenuItem("Área Jurídica","/pnfg/NNws_LstNews?cod_primaria=140&cod_secundaria=2000724","",e_100,"");addMenuItem("Transparencia","http://www.rfaf.es/pnfg/NNws_ShwNewDup?codigo=50935&cod_primaria=140&cod_secundaria=5002198#.VxqjETCLS70","",e_100,"");var e_1000029=addTopLevelMenu("Competiciones","/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120","","");addMenuItem("Fútbol","/pnfg/NPortada?CodPortada=1000163","",e_1000029,"");addMenuItem("Fútbol Sala","/pnfg/NPortada?CodPortada=1000067","",e_1000029,"");addMenuItem("Fútbol Femenino","/pnfg/NPortada?CodPortada=1000066","",e_1000029,"");addMenuItem("Fútbol Playa","/pnfg/NPortada?CodPortada=1000164","",e_1000029,"");addMenuItem("Partidos Amistosos/Especiales","/pnfg/NPcd/NFG_CA_VisPartidosEspeciales?cod_primaria=5000309","",e_1000029,"");addMenuItem("Preguntas Frecuentes","/pnfg/NNws_ShwNewDup?codigo=10013&cod_primaria=5000385&cod_secundaria=5000385#.VbCxMLPtlBc","_blank",e_1000029,"");var e_1000036=addTopLevelMenu("Selecciones y Campeonatos","","","");addMenuItem("Fútbol","/pnfg/NPcd/NFG_Sel_WebSeleccion?cod_primaria=5002065&tipo_juego=1&cod_delegacion=9&cod_seleccion=9002&carga_filtro=1","",e_1000036,"");addMenuItem("Fútbol Sala","/pnfg/NPcd/NFG_Sel_WebSeleccion?cod_primaria=5002065&tipo_juego=3&cod_delegacion=9&cod_seleccion=9019&carga_filtro=1","",e_1000036,"");addMenuItem("Fútbol Femenino","/pnfg/NPcd/NFG_Sel_WebSeleccion?cod_primaria=5002065&cod_delegacion=9&cod_seleccion=9011&carga_filtro=1","",e_1000036,"");addMenuItem("Fútbol Playa","/pnfg/NPcd/NFG_Sel_WebSeleccion?cod_primaria=5002065&tipo_juego=5&cod_delegacion=9&cod_seleccion=9016&carga_filtro=1","",e_1000036,"");addMenuItem("Historia de Selección","/pnfg/NNws_ShwNewDup?codigo=51974&cod_primaria=5000310&cod_secundaria=5002156#.VuZov5zhC70","",e_1000036,"");addMenuItem("La Camiseta Andaluza","/pnfg/NNws_ShwNewDup?codigo=51974&cod_primaria=5000310&cod_secundaria=5002156#.VuZov5zhC70","",e_1000036,"");addMenuItem("Archivo de Noticias","/pnfg/NNws_LstNews?cod_primaria=5000318","_blank",e_1000036,"");var e_1000030=addTopLevelMenu("Normativa","","","");addMenuItem("Estatutos","/pnfg/NBdd_LstDocumentos?cod_primaria=142&cod_secundaria=2000794","",e_1000030,"");addMenuItem("Reglamentos","/pnfg/NBdd_LstDocumentos?cod_primaria=142&cod_secundaria=2000793","",e_1000030,"");addMenuItem("Reglas de Juego","/pnfg/NBdd_LstDocumentos?cod_primaria=142&cod_secundaria=2000787","",e_1000030,"");addMenuItem("Circulares","/pnfg/NBdd_LstDocumentos?cod_primaria=142&cod_secundaria=2000788","",e_1000030,"");var e_1000038=addTopLevelMenu("Centros de Formación","/pnfg/NNws_LstNews?cod_primaria=5000383","","");addMenuItem("Entrenadores (CEDIFA)","http://www.cedifa.org/?zona=3&id=1","_blank",e_1000038,"");addMenuItem("Árbitros ","http://www.cetara.es/","_blank",e_1000038,"");addMenuItem("Escuelas de Fútbol","http://www.cedifa.org/pnfg/NPortada?CodPortada=1000293","_blank",e_1000038,"");addMenuItem("Escuela de Padres","/pnfg/NPortada?CodPortada=1000167","",e_1000038,"");addMenuItem("Escuela de Salud","http://www.cedifa.org/pnfg/NPortada?CodPortada=1000296","_blank",e_1000038,"");addMenuItem("Fútbol Social","/pnfg/NPortada?CodPortada=1000169","",null,"");var e_1000034=addTopLevelMenu("Comunicación","/pnfg/NPortada?CodPortada=1000158","","");addMenuItem("Noticias","/pnfg/NNws_LstNews?cod_primaria=5000289","",e_1000034,"");addMenuItem("Revista Golesur","/pnfg/NBdd_LstDocumentos?cod_primaria=5000422","",e_1000034,"");addMenuItem("RFAF TV","http://www.futbolandaluz.tv/","_blank",e_1000034,"");addMenuItem("Imagen corporativa","/pnfg/NNws_ShwNewDup?codigo=13812&cod_primaria=140&cod_secundaria=140#.VlrYMXYve70","",e_1000034,"");addMenuItem("Contacta con la RFAF","/pnfg/NNws_ShwNewDup?codigo=45081&cod_primaria=140&cod_secundaria=2001548#.U-C_Evl_vBx","",e_1000034,"");addMenuItem("Documentación","/pnfg/NPortada?CodPortada=1000170","",null,"");</script> 
+    <div style="height: ; width: 100%; background-image: url('http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/fondo_menu.jpg');"> 
+     <div id="menubar_m1" style="float: left;"></div> 
+    </div> 
+    <script>f31();</script> 
+   </div> 
+   <div id="mtot" class="marco"> 
+    <div id="mizq" style="float: left;"> 
+     <div class="prt" style="width:300px; "> 
+      <div class="colf" style="width:300px;"> 
+       <div class="spr"></div> 
+       <div class="cld"> 
+        <center>
+         <div id="div-gpt-ad-1457517452674-0" style="height:250px; width:300px;"> 
+          <script>googletag.cmd.push(function(){googletag.display("div-gpt-ad-1457517452674-0")});</script> 
+         </div>
+        </center> 
+       </div> 
+       <div class="spr"></div> 
+       <div class="clds"> 
+        <style>#menucomp{width:300px}#menucomp .title{background:-moz-linear-gradient(top,rgba(98,125,77,1) 0,rgba(31,59,8,1) 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(98,125,77,1)),color-stop(100%,rgba(31,59,8,1)));background:-webkit-linear-gradient(top,rgba(98,125,77,1) 0,rgba(31,59,8,1) 100%);background:-o-linear-gradient(top,rgba(98,125,77,1) 0,rgba(31,59,8,1) 100%);background:-ms-linear-gradient(top,rgba(98,125,77,1) 0,rgba(31,59,8,1) 100%);background:linear-gradient(to bottom,rgba(98,125,77,1) 0,rgba(31,59,8,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#627d4d',endColorstr='#1f3b08',GradientType=0);color:#fff;font-size:12px;font-family:Arial,Helvetica,sans-serif;width:300PX;padding:12px 0 12px 5px;border-bottom:1px dotted #999}#menucomp ul{list-style-type:none;padding:0;margin:0}#menucomp ul li{width:300PX;padding:8px 0 8px 5px;border-bottom:1px dotted #999;color:#333;display:block;background:-moz-linear-gradient(top,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,1)),color-stop(100%,rgba(229,229,229,1)));background:-webkit-linear-gradient(top,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);background:-o-linear-gradient(top,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);background:-ms-linear-gradient(top,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);background:linear-gradient(to bottom,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#e5e5e5',GradientType=0)}#menucomp a{display:block;text-decoration:none;font-size:13px;font-family:Arial,Helvetica,sans-serif}#menucomp ul li:hover{background:-moz-linear-gradient(top,rgba(238,238,238,1) 0,rgba(204,204,204,1) 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(238,238,238,1)),color-stop(100%,rgba(204,204,204,1)));background:-webkit-linear-gradient(top,rgba(238,238,238,1) 0,rgba(204,204,204,1) 100%);background:-o-linear-gradient(top,rgba(238,238,238,1) 0,rgba(204,204,204,1) 100%);background:-ms-linear-gradient(top,rgba(238,238,238,1) 0,rgba(204,204,204,1) 100%);background:linear-gradient(to bottom,rgba(238,238,238,1) 0,rgba(204,204,204,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee',endColorstr='#cccccc',GradientType=0);display:block}#menucomp ul li:active{background:-moz-linear-gradient(top,rgba(157,213,58,1) 0,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(157,213,58,1)),color-stop(50%,rgba(161,213,79,1)),color-stop(51%,rgba(128,194,23,1)),color-stop(100%,rgba(124,188,10,1)));background:-webkit-linear-gradient(top,rgba(157,213,58,1) 0,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%);background:-o-linear-gradient(top,rgba(157,213,58,1) 0,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%);background:-ms-linear-gradient(top,rgba(157,213,58,1) 0,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%);background:linear-gradient(to bottom,rgba(157,213,58,1) 0,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dd53a',endColorstr='#7cbc0a',GradientType=0);display:block}</style> 
+        <div id="menucomp"> 
+         <div class="title"> 
+          <strong>DATOS COMPETICIÓN</strong>
+         </div> 
+         <ul> 
+          <a href="/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120"><li><strong>Calendarios y Horarios</strong></li></a> 
+          <a href="/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120"><li><strong>Resultados y Clasificaciones</strong></li></a> 
+          <a href="/pnfg/NPcd/NFG_ConsultaSanciones?cod_primaria=5000416"><li><strong>Consulta de Sanciones</strong></li></a> 
+          <a href="/pnfg/NBdd_LstDocumentos?cod_primaria=5000386&amp;cod_secundaria=2001096"><li><strong>Resoluciones del Comité de Apelación</strong></li></a> 
+          <a href="/pnfg/NPcd/NFG_LstCompeticiones_Vis?cod_primaria=1000123"><li><strong>Buscador de Competiciones</strong></li></a> 
+          <a href="/pnfg/NPcd/NFG_LstCampos?cod_primaria=1000122"><li><strong>Terrenos de Juego</strong></li></a> 
+          <a href="/pnfg/NPcd/NFG_Clubes?cod_primaria=1000118&amp;cod_estado_activo=1"><li><strong>Consulta de Clubes</strong></li></a> 
+          <a href="/pnfg/NPcd/NFG_LstEquipos?cod_primaria=1000119&amp;Sch_Activas=1"><li><strong>Consulta de Equipos</strong></li></a> 
+          <a href="/pnfg/NPcd/NFG_LstDirectorioEquipos?cod_primaria=1000117"><li><strong>Directorio de Equipos</strong></li></a> 
+          <a href="/pnfg/NNws_ShwNewDup?codigo=10013&amp;cod_primaria=5000385&amp;cod_secundaria=5000385"><li><strong>Preguntas Frecuentes</strong></li></a> 
+          <a href=""><li><strong>Compromiso de Transparencia</strong></li></a> 
+         </ul> 
+        </div> 
+       </div> 
+       <div class="spr"></div> 
+       <div class="clds"> 
+        <center>
+         <a href="http://www.matchapp.es/#download" target="_blank"><img src="/pnfg/img/RFAF/ESP/entorno/300x50.gif" alt="" width="300" height="50" border="0"></a>
+        </center> 
+        <div class="spr"></div> 
+        <center> 
+         <iframe width="300" height="169" src="https://www.youtube.com/embed/a3MoS2HIVtM" frameborder="0" allowfullscreen></iframe>
+        </center> 
+       </div> 
+       <div class="spr"></div> 
+       <div class="clds"> 
+        <div class="prt" style="width:300px; "> 
+         <div class="colu" style="width:300px;"> 
+          <div class="spr"></div> 
+          <div class="cld cld_redondo" style="padding:10px;"> 
+           <div style="text-align: center;">
+            <span style="text-decoration: underline;"><strong>AVISO IMPORTANTE</strong></span>
+           </div> 
+           <div style="text-align: center;"> 
+            <br>
+           </div> 
+           <div style="text-align: justify;">
+            &#x201c;Debido a la transición al nuevo portal de información y mejora de los servicios tecnológicos en esta federación, si percibe alguna anomalía en los datos concernientes a su club, rogamos pónganse en contacto con su delegación provincial correspondiente, para subsanarlos de la mejor forma posible, prevaleciendo los datos que están en posesión de esta federación o su correspondiente delegación&#x201d;.
+            <br>
+            <br> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="spr"></div> 
+       <div class="clds"> 
+        <div class="prt" style="width:300px; "> 
+         <div class="colu" style="width:300px;"> 
+          <div class="spr"></div> 
+          <div class="clds"> 
+           <style type="text/css">.widgetcompartir{margin-bottom:5px;border:1px solid #ddd;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;overflow:hidden;float:left;width:285px;text-align:center;background:-moz-linear-gradient(top,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(255,255,255,1)),color-stop(100%,rgba(229,229,229,1)));background:-webkit-linear-gradient(top,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);background:-o-linear-gradient(top,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);background:-ms-linear-gradient(top,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);background:linear-gradient(to bottom,rgba(255,255,255,1) 0,rgba(229,229,229,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#e5e5e5',GradientType=0)}</style> 
+           <div class="widgetcompartir"> 
+            <strong> <span style="color:#CCC; font-size:14px; font-family:Arial, Helvetica, sans-serif;">COMPARTIR</span></strong> 
+            <div style="clear:both;"></div> 
+            <div style=" float:left; margin-left:45px; margin-top:2px;"> 
+             <script>document.write("<iframe src='https://www.facebook.com/plugins/share_button.php?href="+encodeURIComponent(document.URL)+"&layout=box_count&mobile_iframe=true&width=80&height=61&appId' width='80' height='61' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe>");</script> 
+            </div> 
+            <div style="float:left;margin-left:25px;margin-top:43px;"> 
+             <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="FedAndaluzaFutb" data-related="novafutbol" data-lang="es">Tweet</a>
+             <script src="http://platform.twitter.com/widgets.js"></script> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="mdch" style="float: right;"> 
+     <div class="prt" style="width:1px; "> 
+      <div class="colf" style="width:1px;"> 
+       <div class="spr"></div> 
+       <div class="cld"> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="mctr" style="min-height: 400px; float: left; overflow: hidden;"> 
+     <div style="width:auto;padding:5px;"> 
+      <script>document.getElementById("mctr").style.width=(document.getElementById("mtot").clientWidth-document.getElementById("mizq").clientWidth-document.getElementById("mdch").clientWidth)+"px";</script> 
+      <div style="clear:both"></div> 
+      <div class="marco" style="height: 42px;width: 100%; background-image: url('http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/bg_3.gif');"> 
+       <div style="float: left; margin-top: 10px;"> 
+        <span id="TituloPagina" class="title_subcategoría">Calendarios, Clasificaciones, Horarios y Resultados</span> 
+       </div> 
+       <div style="float: right;"> 
+        <span id="Id_Nova_Pdf" style="float: left; display:none"> <a href="javascript:Nova_Pdf();" onmouseout="document.images['Nova_Img_Pdf'].src='http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/printer_pdf.png';" onmouseover="document.images['Nova_Img_Pdf'].src='http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/printer_pdf_over.png';"><img name="Nova_Img_Pdf" src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/printer_pdf.png" alt="Crear documento PDF" border="0"></a>&nbsp; </span> 
+        <span id="Id_Nova_Print" style="display:none"> <a href="javascript:Abrir_ventana('../varios/html/ayuda_activex.htm')" onmouseout="document.images['Nova_Img_Printer_ayuda'].src='http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/printer_ayuda.png';" onmouseover="document.images['Nova_Img_Printer_ayuda'].src='http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/printer_ayuda_over.png';"><img name="Nova_Img_Printer_ayuda" src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/printer_ayuda.png" alt="Ayuda Impresión" border="0"></a> <a href="javascript:Nova_Print(true);" onmouseout="document.images['Nova_Img_Printer'].src='http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/printer.png';" onmouseover="document.images['Nova_Img_Printer'].src='http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/printer_over.png';"><img name="Nova_Img_Printer" src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/printer.png" alt="Imprimir seleccionando impresora" border="0"></a>&nbsp; </span> 
+       </div> 
+      </div> 
+      <form name="BuscaNFG_CMP" action="NFG_CmpJornada_Exec" method="post"> 
+       <input type="hidden" value="1000120" name="cod_primaria>"> 
+       <table width="100%" height="20" border="0" cellpadding="0" cellspacing="0"> 
+        <tbody>
+         <tr> 
+          <td> 
+           <table border="0" cellpadding="3" cellspacing="0" class="tabla_rdg" style="min-width:760px;"> 
+            <tbody>
+             <tr> 
+              <td><span class="titulocaja">Filtro de búsqueda</span></td> 
+             </tr> 
+             <tr class="subtitulos">
+               &nbsp;&nbsp; 
+              <td><b>Temporada:&nbsp;&nbsp; </b> <select name="temporada" onchange="BuscarCompeticiones(this.options[this.selectedIndex].value)"> <option value="11">2015-2016</option> <option value="10">2014-2015</option> <option value="9">2013-2014</option> </select> <script>document.BuscaNFG_CMP.temporada.value=11;</script> &nbsp;&nbsp; &nbsp;&nbsp;<b>Delegación:</b> <select name="Sch_Codigo_Delegacion" class="campoformulario" onchange="BuscarCompeticiones(this.value)"> <option value="">-- Todas --</option> <option value="9">ANDALUZA</option> <option value="2">Almería</option> <option value="3">Cádiz</option> <option value="4">Córdoba</option> <option value="5">Granada</option> <option value="6">Huelva</option> <option value="7">Jaén</option> <option value="8">Málaga</option> <option value="1">Sevilla</option> </select> <script>document.BuscaNFG_CMP.Sch_Codigo_Delegacion.value="9";</script> &nbsp;&nbsp; <b>Tipo de Juego:</b> <select name="Sch_Tipo_Juego" class="campoformulario" onchange="BuscarCompeticiones(this.value)"> <option value="">-- Todos --</option> <option value="1">Futbol-Campo</option> <option value="2">Futbol-7</option> <option value="3">Futbol-Sala</option> <option value="5">Futbol-Playa</option> </select> <script>document.BuscaNFG_CMP.Sch_Tipo_Juego.value="3";</script> </td> 
+             </tr> 
+             <tr>
+              <td align="left"><b> Competicion:&nbsp;&nbsp; </b> <span id="competiciones"> <select name="competicion" style="width:300px;" id="competicion" onchange="BuscarGrupos(this.options[this.selectedIndex].value)"> <option value="0">-- Seleccione --</option>            <optgroup label="FÚTBOL SALA"> <option value="3387228">COPA CENTENARIO RFAF SENIOR F.S.</option> <option value="2626238">3ª DIVISION F.S.</option> <option value="5619332">CPTO ANDALUCIA CLUBES CADETE FS.</option> <option value="5646915">CPTO ANDALUCIA CLUBES CADETE FS. (Fase Final)</option> <option value="5609901">CPTO ANDALUCIA CLUBES INFANTIL FS.</option> <option value="5646911">CPTO ANDALUCIA CLUBES INFANTIL FS. (Fase Final)</option> <option value="5619311">CPTO ANDALUCIA CLUBES ALEVIN FS.</option> <option value="5646835">CPTO ANDALUCIA CLUBES ALEVIN FS. (Fase Final)</option> <option value="5619263">CPTO ANDALUCIA CLUBES BENJAMIN FS.</option> <option value="5646309">CPTO ANDALUCIA CLUBES BENJAMIN FS. (Fase Final)</option> </optgroup> <optgroup label="FÚTBOL SALA FEMENINO"> <option value="2617242">2ª DIVISION FEMENINA F.S.</option> <option value="4328000">COPA CENTENARIO RFAF FEMENINA SÉNIOR FS.</option> <option value="2818470">1ª ANDALUZA FEMENINA SENIOR F.S.</option> <option value="5588175">PLAY OFF DE ASCENSO A 2ª DIV. FEMENINA FS.</option> <option value="5534627">CPTO ANDALUCIA CLUBES FEMENINA INFANTIL FS</option> <option value="5642367">CPTO ANDALUCIA CLUBES FEMENINA INFANTIL FS FASE FINAL</option> </optgroup>   <optgroup label="SELECCIONES"> <option value="5619049">VI CPTO. BENJAMIN FS. SELEC. PROVINCIALES Fase Final</option> <option value="5580000">VII CPTO. ALEVÍN FS. SELECC. PROVINCIALES </option> <option value="5581056">VII CPTO. ALEVÍN FS. SELECC. PROVINCIALES Final</option> <option value="5601708">VI CPTO. BENJAMIN FS. SELEC. PROVINCIALES</option> <option value="5641344">XVIII CPTO. CADETE FS SELEC. PROVINCIALES</option> <option value="5646819">XVIII CPTO. CADETE FS SELEC. PROVINCIALES Fase Final</option> <option value="5654273">XV CPTO. INFANTIL FS. SELECCIONES PROVINCIALES</option> </optgroup> </select> </span> <script>Select_Preselecciona(document.getElementById("competicion"),"5619311");</script> </td> 
+             </tr> 
+             <tr> 
+              <td> <b>Grupo: </b> &nbsp;&nbsp;&nbsp; <select name="grupo" id="grupo" onchange="BuscarJornadas(this.options[this.selectedIndex].value,2)"> <option value="0">-- Seleccione --</option> <option value="5619312">Único</option> </select> <script>Select_Preselecciona(document.getElementById("grupo"),"5619312");</script> &nbsp;&nbsp;&nbsp;<b>Jornada:&nbsp;&nbsp;</b> <select name="jornada" id="jornada" onchange="BuscarPartidos(this.options[this.selectedIndex].value)"> <option value="0">-- Seleccione --</option> <option value="1">07-05-2016 (8º)</option> <option value="2">14-05-2016 (8º)</option> </select> <script>Select_Preselecciona(document.getElementById("jornada"),"1");</script></td> 
+             </tr> 
+            </tbody>
+           </table> </td> 
+         </tr> 
+         <tr>
+          <td> 
+           <div style="text-align: center; padding-top:8px; padding-bottom:5px;"> 
+            <div id="div-gpt-ad-1389084883928-6"> 
+             <script>googletag.cmd.push(function(){googletag.display("div-gpt-ad-1389084883928-6")});</script> 
+            </div> 
+           </div> </td>
+         </tr> 
+        </tbody>
+       </table> 
+       <table border="0" cellspacing="0" cellpadding="0"> 
+        <tbody>
+         <tr> 
+          <td><br> 
+           <table width="750" border="0" cellspacing="0" cellpadding="0"> 
+            <tbody>
+             <tr> 
+              <td> 
+               <table width="664" border="0" cellspacing="0" cellpadding="3"> 
+                <tbody>
+                 <tr> 
+                  <td nowrap><a class="bt bfecha" href="/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&amp;codtemporada=11&amp;codcompeticion=5619311&amp;codgrupo=5619312&amp;CodJornada=1">Ver Calendario</a>&nbsp;&nbsp;&nbsp;&nbsp; <a class="bt btable" href="NFG_VisClasificacion?cod_primaria=1000120&amp;codjornada=1&amp;codcompeticion=5619311&amp;codgrupo=5619312&amp;codjornada=1">Ver Clasificación</a>&nbsp;&nbsp;&nbsp;&nbsp; <a class="bt btable" href="NFG_CMP_Goleadores?cod_primaria=1000120&amp;CodJornada=1&amp;codcompeticion=5619311&amp;codtemporada=11&amp;codgrupo=5619312">Tabla Goleadores</a>&nbsp;&nbsp;&nbsp;&nbsp; </td> 
+                 </tr> 
+                 <tr> 
+                  <td height="5"></td> 
+                 </tr> 
+                </tbody>
+               </table> 
+               <table width="100%" border="0" cellpadding="2" cellspacing="0" class="tabla_rdg" style="background-color:#FFF;"> 
+                <tbody>
+                 <tr> 
+                  <td> </td>
+                  <td height="15" align="center"> <span class="tituloprograma">8º Final (Ida)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+                 </tr> 
+                </tbody>
+               </table> 
+               <table width="664" border="0" cellpadding="0" cellspacing="0"> 
+                <tbody>
+                 <tr> 
+                  <td height="5"></td> 
+                 </tr> 
+                </tbody>
+               </table> 
+               <div> 
+                <div class="tabla_rdg" style="background-color:#FFF!important;"> 
+                 <span class="textocolor">&nbsp;08-05-2016- 11:55</span> 
+                 <table width="750" border="0" cellpadding="1" cellspacing="0"> 
+                  <tbody>
+                   <tr> 
+                    <td width="330" align="right"> <span class="subtitulos"> &nbsp; <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=2167135"> COLEGIO HIGHLANDS SEVILLA </a> </span> &nbsp; <img src="/pnfg/pimg/Clubes/thumb/10121.png" width="20" align="absmiddle"> </td> 
+                    <td width="25" align="center"> <span class="title">&nbsp; <span class="wid2_resultado_cerrada">1</span> </span> </td> 
+                    <td width="5" align="center">-</td> 
+                    <td width="25" align="center"> <span class="title"> <span class="wid2_resultado_cerrada">5</span> </span> </td> 
+                    <td width="300"> <img src="/pnfg/pimg/Clubes/thumb/03502.jpg" width="20" align="absmiddle"> &nbsp;<span class="subtitulos"> <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=350219"> C.D.GEMINIS </a> &nbsp; </span> </td> 
+                    <td align="center" width="75px" style="font-size:10px;font-weight: bolder;color: green;" title="Penaltis"> </td> 
+                   </tr> 
+                   <tr> 
+                    <td colspan="6"> 
+                     <table width="100%" cellspacing="0" cellpadding="0" border="0"> 
+                      <tbody>
+                       <tr> 
+                        <td width="121"> &nbsp; <a class="img lcab1" href="/pnfg/NFG_CmpPartido?cod_primaria=1000120&amp;CodActa=765580" onmouseover="showhint('<span class=title><b>Ver ficha del Partido</b></span>', this)">&nbsp;</a> </td> 
+                        <td width="263<tml_else>476"> <span class="textocolor"><b>Campo:</b></span> <a href="/pnfg/NPcd/NFG_VisCampos?cod_primaria=1000122&amp;Codigo_Campo=2015065"> Sevilla - IFNI CD (Pabellón) </a> - Pabellón - Sintético </td> 
+                        <td> <span class="textocolor"><b>Árbitro: </b></span>MARTINEZ MORENO, JOSE ANTONIO &nbsp; </td> 
+                       </tr> 
+                       <tr align="right"> 
+                        <td colspan="5"> </td> 
+                       </tr> 
+                      </tbody>
+                     </table> </td> 
+                   </tr> 
+                  </tbody>
+                 </table> 
+                </div> 
+                <table width="664" border="0" cellspacing="0" cellpadding="0"> 
+                 <tbody>
+                  <tr> 
+                   <td height="3"></td> 
+                  </tr> 
+                 </tbody>
+                </table> 
+                <div class="tabla_rdg" style="background-color:#FFF!important;"> 
+                 <span class="textocolor">&nbsp;07-05-2016- 12:00</span> 
+                 <table width="750" border="0" cellpadding="1" cellspacing="0"> 
+                  <tbody>
+                   <tr> 
+                    <td width="330" align="right"> <span class="subtitulos"> &nbsp; <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=2069949"> CAMPO AVIACION LORETO CF AA.VV </a> </span> &nbsp; <img src="/pnfg/pimg/Clubes/thumb/00100_0000159763_00100_0000074108_escudo_loreto_.jpg" width="20" align="absmiddle"> </td> 
+                    <td width="25" align="center"> <span class="title">&nbsp; <span class="wid2_resultado_cerrada">2</span> </span> </td> 
+                    <td width="5" align="center">-</td> 
+                    <td width="25" align="center"> <span class="title"> <span class="wid2_resultado_cerrada">3</span> </span> </td> 
+                    <td width="300"> <img src="/pnfg/pimg/Clubes/thumb/00100_0000068158_escudo.png" width="20" align="absmiddle"> &nbsp;<span class="subtitulos"> <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=434822"> C.D. SPORTING DE BENAMEJI </a> &nbsp; </span> </td> 
+                    <td align="center" width="75px" style="font-size:10px;font-weight: bolder;color: green;" title="Penaltis"> </td> 
+                   </tr> 
+                   <tr> 
+                    <td colspan="6"> 
+                     <table width="100%" cellspacing="0" cellpadding="0" border="0"> 
+                      <tbody>
+                       <tr> 
+                        <td width="121"> &nbsp; <a class="img lcab1" href="/pnfg/NFG_CmpPartido?cod_primaria=1000120&amp;CodActa=765581" onmouseover="showhint('<span class=title><b>Ver ficha del Partido</b></span>', this)">&nbsp;</a> </td> 
+                        <td width="263<tml_else>476"> <span class="textocolor"><b>Campo:</b></span> <a href="/pnfg/NPcd/NFG_VisCampos?cod_primaria=1000122&amp;Codigo_Campo=2503049"> CENTRO HISTORICO PABELLON PVO </a> - Pabellón - Sintético </td> 
+                        <td> <span class="textocolor"><b>Árbitro: </b></span>LINARES LOPEZ, MANUEL &nbsp; </td> 
+                       </tr> 
+                       <tr align="right"> 
+                        <td colspan="5"> </td> 
+                       </tr> 
+                      </tbody>
+                     </table> </td> 
+                   </tr> 
+                  </tbody>
+                 </table> 
+                </div> 
+                <table width="664" border="0" cellspacing="0" cellpadding="0"> 
+                 <tbody>
+                  <tr> 
+                   <td height="3"></td> 
+                  </tr> 
+                 </tbody>
+                </table> 
+                <div class="tabla_rdg" style="background-color:#FFF!important;"> 
+                 <span class="textocolor">&nbsp;08-05-2016- 12:00</span> 
+                 <table width="750" border="0" cellpadding="1" cellspacing="0"> 
+                  <tbody>
+                   <tr> 
+                    <td width="330" align="right"> <span class="subtitulos"> &nbsp; <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=55"> C.D. ADEVAL F.S. </a> </span> &nbsp; <img src="/pnfg/pimg/Clubes/thumb/04356.JPG" width="20" align="absmiddle"> </td> 
+                    <td width="25" align="center"> <span class="title">&nbsp; <span class="wid2_resultado_cerrada">0</span> </span> </td> 
+                    <td width="5" align="center">-</td> 
+                    <td width="25" align="center"> <span class="title"> <span class="wid2_resultado_cerrada">0</span> </span> </td> 
+                    <td width="300"> <img src="/pnfg/pimg/Clubes/thumb/01709.png" width="20" align="absmiddle"> &nbsp;<span class="subtitulos"> <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=170919"> SANTA ANA A.D. FS "A" </a> &nbsp; </span> </td> 
+                    <td align="center" width="75px" style="font-size:10px;font-weight: bolder;color: green;" title="Penaltis"> </td> 
+                   </tr> 
+                   <tr> 
+                    <td colspan="6"> 
+                     <table width="100%" cellspacing="0" cellpadding="0" border="0"> 
+                      <tbody>
+                       <tr> 
+                        <td width="121"> &nbsp; <a class="img lcab1" href="/pnfg/NFG_CmpPartido?cod_primaria=1000120&amp;CodActa=765582" onmouseover="showhint('<span class=title><b>Ver ficha del Partido</b></span>', this)">&nbsp;</a> </td> 
+                        <td width="263<tml_else>476"> <span class="textocolor"><b>Campo:</b></span> <a href="/pnfg/NPcd/NFG_VisCampos?cod_primaria=1000122&amp;Codigo_Campo=2159323"> LA SALLE PABELLON </a> - Pabellón - Sintético </td> 
+                        <td> <span class="textocolor"><b>Árbitro: </b></span>DELGADO RAMIREZ, VALERIANO &nbsp; </td> 
+                       </tr> 
+                       <tr align="right"> 
+                        <td colspan="5"> </td> 
+                       </tr> 
+                      </tbody>
+                     </table> </td> 
+                   </tr> 
+                  </tbody>
+                 </table> 
+                </div> 
+                <table width="664" border="0" cellspacing="0" cellpadding="0"> 
+                 <tbody>
+                  <tr> 
+                   <td height="3"></td> 
+                  </tr> 
+                 </tbody>
+                </table> 
+                <div class="tabla_rdg" style="background-color:#FFF!important;"> 
+                 <span class="textocolor">&nbsp;03-05-2016- 17:00</span> 
+                 <table width="750" border="0" cellpadding="1" cellspacing="0"> 
+                  <tbody>
+                   <tr> 
+                    <td width="330" align="right"> <span class="subtitulos"> &nbsp; <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=123"> C.D. PENIBETICO GUEJAR SIERRA </a> </span> &nbsp; <img src="/pnfg/pimg/Clubes/thumb/00100_0000109537_logotipo_club_guejar1.jpg" width="20" align="absmiddle"> </td> 
+                    <td width="25" align="center"> <span class="title">&nbsp; <span class="wid2_resultado_cerrada">3</span> </span> </td> 
+                    <td width="5" align="center">-</td> 
+                    <td width="25" align="center"> <span class="title"> <span class="wid2_resultado_cerrada">5</span> </span> </td> 
+                    <td width="300"> <img src="/pnfg/pimg/Clubes/thumb/02032.jpg" width="20" align="absmiddle"> &nbsp;<span class="subtitulos"> <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=2757862"> U.C.D. LA CAÑADA ATCO </a> &nbsp; </span> </td> 
+                    <td align="center" width="75px" style="font-size:10px;font-weight: bolder;color: green;" title="Penaltis"> </td> 
+                   </tr> 
+                   <tr> 
+                    <td colspan="6"> 
+                     <table width="100%" cellspacing="0" cellpadding="0" border="0"> 
+                      <tbody>
+                       <tr> 
+                        <td width="121"> &nbsp; <a class="img lcab1" href="/pnfg/NFG_CmpPartido?cod_primaria=1000120&amp;CodActa=765583" onmouseover="showhint('<span class=title><b>Ver ficha del Partido</b></span>', this)">&nbsp;</a> </td> 
+                        <td width="263<tml_else>476"> <span class="textocolor"><b>Campo:</b></span> <a href="/pnfg/NPcd/NFG_VisCampos?cod_primaria=1000122&amp;Codigo_Campo=5671"> VEREDA ESTRELLA PABELLON </a> - Pabellón - Sintético </td> 
+                        <td> <span class="textocolor"><b>Árbitro: </b></span>IBAÑEZ SERVIAN, JUAN ANTONIO &nbsp; </td> 
+                       </tr> 
+                       <tr align="right"> 
+                        <td colspan="5"> </td> 
+                       </tr> 
+                      </tbody>
+                     </table> </td> 
+                   </tr> 
+                  </tbody>
+                 </table> 
+                </div> 
+                <table width="664" border="0" cellspacing="0" cellpadding="0"> 
+                 <tbody>
+                  <tr> 
+                   <td height="3"></td> 
+                  </tr> 
+                 </tbody>
+                </table> 
+                <div class="tabla_rdg" style="background-color:#FFF!important;"> 
+                 <span class="textocolor">&nbsp;02-05-2016- 12:00</span> 
+                 <table width="750" border="0" cellpadding="1" cellspacing="0"> 
+                  <tbody>
+                   <tr> 
+                    <td width="330" align="right"> <span class="subtitulos"> &nbsp; <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=2631079"> C.D.C. ZAPILLO AT </a> </span> &nbsp; <img src="/pnfg/pimg/Clubes/thumb/00100_0000067938_Escudo_Zapillo_AT..jpg" width="20" align="absmiddle"> </td> 
+                    <td width="25" align="center"> <span class="title">&nbsp; <span class="wid2_resultado_cerrada">5</span> </span> </td> 
+                    <td width="5" align="center">-</td> 
+                    <td width="25" align="center"> <span class="title"> <span class="wid2_resultado_cerrada">2</span> </span> </td> 
+                    <td width="300"> <img src="/pnfg/pimg/Clubes/thumb/00100_0000003123_FUTSALHENDIN.jpg" width="20" align="absmiddle"> &nbsp;<span class="subtitulos"> <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=565003"> C.D. FUTSAL MONTEVIVE-ALHENDIN </a> &nbsp; </span> </td> 
+                    <td align="center" width="75px" style="font-size:10px;font-weight: bolder;color: green;" title="Penaltis"> </td> 
+                   </tr> 
+                   <tr> 
+                    <td colspan="6"> 
+                     <table width="100%" cellspacing="0" cellpadding="0" border="0"> 
+                      <tbody>
+                       <tr> 
+                        <td width="121"> &nbsp; <a class="img lcab1" href="/pnfg/NFG_CmpPartido?cod_primaria=1000120&amp;CodActa=765584" onmouseover="showhint('<span class=title><b>Ver ficha del Partido</b></span>', this)">&nbsp;</a> </td> 
+                        <td width="263<tml_else>476"> <span class="textocolor"><b>Campo:</b></span> <a href="/pnfg/NPcd/NFG_VisCampos?cod_primaria=1000122&amp;Codigo_Campo=2018543"> PABELLON MUNICIPAL DE ALHAMA F-SALA </a> - Pabellón - Sintético </td> 
+                        <td> <span class="textocolor"><b>Árbitro: </b></span>VILLALOBOS GARCIA, JUAN ANTONIO &nbsp; </td> 
+                       </tr> 
+                       <tr align="right"> 
+                        <td colspan="5"> </td> 
+                       </tr> 
+                      </tbody>
+                     </table> </td> 
+                   </tr> 
+                  </tbody>
+                 </table> 
+                </div> 
+                <table width="664" border="0" cellspacing="0" cellpadding="0"> 
+                 <tbody>
+                  <tr> 
+                   <td height="3"></td> 
+                  </tr> 
+                 </tbody>
+                </table> 
+                <div class="tabla_rdg" style="background-color:#FFF!important;"> 
+                 <span class="textocolor">&nbsp;07-05-2016- 18:30</span> 
+                 <table width="750" border="0" cellpadding="1" cellspacing="0"> 
+                  <tbody>
+                   <tr> 
+                    <td width="330" align="right"> <span class="subtitulos"> &nbsp; <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=2069280"> TORREMOLINOS F.S. CLUB "A" </a> </span> &nbsp; <img src="/pnfg/pimg/Clubes/thumb/00100_0000008064_Torremolinos_FS.escudo.jpg" width="20" align="absmiddle"> </td> 
+                    <td width="25" align="center"> <span class="title">&nbsp; <span class="wid2_resultado_cerrada">2</span> </span> </td> 
+                    <td width="5" align="center">-</td> 
+                    <td width="25" align="center"> <span class="title"> <span class="wid2_resultado_cerrada">9</span> </span> </td> 
+                    <td width="300"> <img src="/pnfg/pimg/Clubes/thumb/07252.gif" width="20" align="absmiddle"> &nbsp;<span class="subtitulos"> <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=207"> ATLETICO JAEN F.C. </a> &nbsp; </span> </td> 
+                    <td align="center" width="75px" style="font-size:10px;font-weight: bolder;color: green;" title="Penaltis"> </td> 
+                   </tr> 
+                   <tr> 
+                    <td colspan="6"> 
+                     <table width="100%" cellspacing="0" cellpadding="0" border="0"> 
+                      <tbody>
+                       <tr> 
+                        <td width="121"> &nbsp; <a class="img lcab1" href="/pnfg/NFG_CmpPartido?cod_primaria=1000120&amp;CodActa=765585" onmouseover="showhint('<span class=title><b>Ver ficha del Partido</b></span>', this)">&nbsp;</a> </td> 
+                        <td width="263<tml_else>476"> <span class="textocolor"><b>Campo:</b></span> <a href="/pnfg/NPcd/NFG_VisCampos?cod_primaria=1000122&amp;Codigo_Campo=2018777"> SAN MIGUEL PABELLON MUNICIPAL </a> - Pabellón - Parquet </td> 
+                        <td> <span class="textocolor"><b>Árbitro: </b></span>ARROYO ROMERO, JUAN JESUS &nbsp; </td> 
+                       </tr> 
+                       <tr align="right"> 
+                        <td colspan="5"> </td> 
+                       </tr> 
+                      </tbody>
+                     </table> </td> 
+                   </tr> 
+                  </tbody>
+                 </table> 
+                </div> 
+                <table width="664" border="0" cellspacing="0" cellpadding="0"> 
+                 <tbody>
+                  <tr> 
+                   <td height="3"></td> 
+                  </tr> 
+                 </tbody>
+                </table> 
+                <div class="tabla_rdg" style="background-color:#FFF!important;"> 
+                 <span class="textocolor">&nbsp;08-05-2016- 12:30</span> 
+                 <table width="750" border="0" cellpadding="1" cellspacing="0"> 
+                  <tbody>
+                   <tr> 
+                    <td width="330" align="right"> <span class="subtitulos"> &nbsp; <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=259"> IBROS POR EL DEPORTE </a> </span> &nbsp; <img src="/pnfg/pimg/Clubes/thumb/00100_0000069151_ibros_FS.jpg" width="20" align="absmiddle"> </td> 
+                    <td width="25" align="center"> <span class="title">&nbsp; <span class="wid2_resultado_cerrada">3</span> </span> </td> 
+                    <td width="5" align="center">-</td> 
+                    <td width="25" align="center"> <span class="title"> <span class="wid2_resultado_cerrada">1</span> </span> </td> 
+                    <td width="300"> <img src="/pnfg/pimg/Clubes/thumb/00100_0000001021_Coinena_FS_8696.png" width="20" align="absmiddle"> &nbsp;<span class="subtitulos"> <a style="color:#000;" href="NFG_VisEquipos?cod_primaria=1000119&amp;Codigo_Equipo=869618"> U.D. COINEÑA F.S. </a> &nbsp; </span> </td> 
+                    <td align="center" width="75px" style="font-size:10px;font-weight: bolder;color: green;" title="Penaltis"> </td> 
+                   </tr> 
+                   <tr> 
+                    <td colspan="6"> 
+                     <table width="100%" cellspacing="0" cellpadding="0" border="0"> 
+                      <tbody>
+                       <tr> 
+                        <td width="121"> &nbsp; <a class="img lcab1" href="/pnfg/NFG_CmpPartido?cod_primaria=1000120&amp;CodActa=765586" onmouseover="showhint('<span class=title><b>Ver ficha del Partido</b></span>', this)">&nbsp;</a> </td> 
+                        <td width="263<tml_else>476"> <span class="textocolor"><b>Campo:</b></span> <a href="/pnfg/NPcd/NFG_VisCampos?cod_primaria=1000122&amp;Codigo_Campo=2065331"> IBROS PABELLON MUNICIPAL </a> </td> 
+                        <td> <span class="textocolor"><b>Árbitro: </b></span>CASTILLO JORDAN, GINES &nbsp; </td> 
+                       </tr> 
+                       <tr align="right"> 
+                        <td colspan="5"> </td> 
+                       </tr> 
+                      </tbody>
+                     </table> </td> 
+                   </tr> 
+                  </tbody>
+                 </table> 
+                </div> 
+                <table width="664" border="0" cellspacing="0" cellpadding="0"> 
+                 <tbody>
+                  <tr> 
+                   <td height="3"></td> 
+                  </tr> 
+                 </tbody>
+                </table> 
+               </div> 
+               <table width="750" cellpadding="3" cellspacing="0"> 
+                <tbody>
+                 <tr> 
+                  <td colspan="3"> 
+                   <div style="text-align: center; padding-top:8px; padding-bottom:5px;"> 
+                    <div id="div-gpt-ad-1389084883928-80"> 
+                     <script>googletag.cmd.push(function(){googletag.display("div-gpt-ad-1389084883928-80")});</script> 
+                    </div> 
+                   </div> </td> 
+                 </tr> 
+                 <tr> 
+                  <td align="left"> </td> 
+                  <td> </td> 
+                  <td align="right"> <a class="bt bsiguiente" href="javascript:IrA(2);">Siguiente</a> </td> 
+                 </tr> 
+                </tbody>
+               </table></td> 
+             </tr> 
+            </tbody>
+           </table></td> 
+         </tr> 
+        </tbody>
+       </table> 
+       <br> 
+       <p>&nbsp;</p> 
+       <iframe src="" name="NFG_ControlExec" height="0" width="0" scrolling="no" frameborder="0" marginwidth="0"> </iframe> 
+      </form>
+     </div> 
+    </div> 
+   </div> 
+   <div style="clear:both"></div> 
+   <div class="marco"> 
+    <div class="prt" style="width:1080px; -webkit-border-radius:0px; -moz-border-radius: 0px;border-radius: 0px;"> 
+     <div class="colf" style="width:1080px;"> 
+      <div class="spr"></div> 
+      <div class="cld" style="margin-left: 150px;width:750px;"> 
+       <div id="div-gpt-ad-1389084883928-5" style="width:728px; height:90px;"> 
+        <script>googletag.cmd.push(function(){googletag.display("div-gpt-ad-1389084883928-5")});</script> 
+       </div> 
+      </div> 
+      <div class="spr"></div> 
+      <div class="clds" style="background-image:url(/pnfg/);background-repeat:no-repeat;"> 
+       <table style="width: 1080px; height: 200px;" border="0" cellpadding="0"> 
+        <tbody> 
+         <tr> 
+          <td colspan="4">&nbsp;</td> 
+         </tr> 
+         <tr> 
+          <td colspan="4" bgcolor="#334f3f" height="40"> <h2><span class="rfaf">&nbsp; <a class="rfaflink" href="#">RFAF.es </a> </span></h2> </td> 
+         </tr> 
+         <tr> 
+          <td width="320"> 
+           <div align="center">
+            <img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/lema-pie.png" alt="" width="240">
+           </div> </td> 
+          <td style="padding: 20px 10px 20px 10px;" valign="top" width="200"> <h3><span class="tabla">Delegaciones</span><br> <br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000144">Almería </a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000149">Cádiz</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000150">Córdoba</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000151">Granada</a> <br> </span><span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000152">Huelva</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000153">Jaén</a> </span><br> <span class="letragris "><a class="link" href="/pnfg/NPortada?CodPortada=1000154">Málaga</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000155">Sevilla</a></span></h3> </td> 
+          <td style="padding: 20px 10px 20px 10px;" valign="top" width="200"> <h3><span class="tabla">Estamentos</span><br> <br><span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000159">Árbitros</a> </span><br><span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000064">Entrenadores</a> </span><br><span class="letragris "> <a class="link" href="http://www.cedifa.org/" target="_blank">CEDIFA </a> </span><br><span class="letragris "> <a class="link" href="http://www.clinicadeldeporte.es/">Clínica del Deporte</a> </span><br><span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000107">Mutualidad</a> </span><br><span class="letragris "> <a class="link" href="http://www.contarconelfutbol.es/" target="_blank">Contar con el Fútbol</a> </span><br><span class="letragris "> <a class="link" href="http://webtv.multistream.tv/faf/#/?videoId=78aa1bbc-e914-42fe-a0c2-5358fc3f3bc6" target="_blank">RFAF TV</a> </span><br><span class="letragris "> <a class="link" href="http://intranet.rfaf.novanet.es/" target="_blank">Intranet</a></span></h3> </td> 
+          <td style="padding: 20px 10px 20px 10px;" valign="top" width="200"> <h3><span class="tabla ">Secciones </span><br> <br><span class="letragris "> <a class="link" href=" /pnfg/NPortada?CodPortada=1000171">RFAF</a></span><br> <span class="letragris "><a class="link" href="/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120">Competiciones</a></span><br> <span class="letragris "><a class="link" href="/pnfg/NPortada?CodPortada=1000165 ">Selecciones</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000206">Campeonatos y Eventos</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NBdd_LstDocumentos?cod_primaria=142">Normativa</a> </span> <br> <span class="letragris "> <a class="link" href="http://www.cedifa.org" target="_blank">Centro de Formación</a> </span> <br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000169">Fútbol Social</a> </span><br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000158">Comunicación</a> </span> <br> <span class="letragris "> <a class="link" href="/pnfg/NPortada?CodPortada=1000170">Documentos</a></span></h3> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+      <div class="spr"></div> 
+      <div class="clds" style="height:534px;background-image:url(http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/background-patrocinadores.jpg);"> 
+       <style type="text/css">.patro{float:left;position:relative;margin-left:5px;overflow:hidden;color:#777;font-size:10px;font-weight:bold;font-family:Verdana}.salto{clear:both;font-size:1px}.indicativo{font-size:12px;color:#666;padding-left:480px}.imgjuntaandalucia{float:left;position:relative;width:300px;height80px;overflow:hidden;margin-left:75px}.imgrfef{float:left;position:relative;overflow:hidden;width:300px;height:80px;padding-left:125px}.imgcajasol{float:left;position:relative;overflow:hidden;width:300px;height:80px;padding-left:95px;margin-left:1px;padding-top:25px}.imgluanvi{float:left;position:relative;overflow:hidden;width:400px;height:60px;padding-left:265px;margin-left:200px}.imgunicef{float:left;position:relative;overflow:hidden;width:300px;height:80px;padding-left:75px;padding-top:15px}.imgcatsa{float:left;position:relative;overflow:hidden;width:300px;height:100px;padding-left:135px;padding-top:5px}.imgfederoptico{float:left;position:relative;overflow:hidden;width:420px;height:100px;margin-left:15px;padding-top:15px}.imgcaixabank{float:left;position:relative;overflow:hidden;width:300px;height:100px;padding-left:155px}.imgcea{float:left;position:relative;overflow:hidden;width:160px;height:100px;padding-left:15px;padding-top:5px;margin-left:30px}.imgcajarural{float:left;position:relative;overflow:hidden;width:230px;height:100px;padding-left:125px;padding-top:5px}.imgseur{float:left;position:relative;overflow:hidden;width:250px;height:100px;padding-left:55px;padding-top:25px}.imgrefereeland{float:left;position:relative;overflow:hidden;width:240px;height:100px;padding-left:105px;padding-top:5px}.imgpoligras{float:left;position:relative;overflow:hidden;width:650px;height:100px;padding-left:80px;padding-top:15px}.imgcocacola{float:left;position:relative;overflow:hidden;width:280px;height:100px;padding-left:55px;padding-top:15px}</style> 
+       <script>function cambiar(x){document.images[x].src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/"+x+".png"}function volver(x){document.images[x].src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/"+x+"1.png"};</script> 
+       <div style="width:1080px;position:relative;float:left; margin-top:5px;"> 
+        <div class="imgjuntaandalucia">
+         <a href="http://www.juntadeandalucia.es/organismos/turismoydeporte.html" target="_blank" onmouseover="cambiar('juntaandalucia');" onmouseout="volver('juntaandalucia');"> <img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/juntaandalucia1.png" name="juntaandalucia" border="0"></a>
+        </div> 
+        <div class="imgrfef">
+         <a href="http://www.rfef.es/" target="_blank" onmouseover="cambiar('rfef');" onmouseout="volver('rfef');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/rfef1.png" name="rfef" border="0"></a>
+        </div> 
+        <div class="imgunicef">
+         <a href="http://www.unicef.es/" target="_blank" onmouseover="cambiar('unicef');" onmouseout="volver('unicef');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/unicef1.png" name="unicef" border="0"></a>
+        </div> 
+        <div class="salto" style="height:10px;"> 
+        </div> 
+        <div class="indicativo" style="height:10px;">
+         Patrocinadores 
+        </div> 
+        <div class="imgcajasol">
+         <a href="http://www.fundacioncajasol.com." target="_blank" onmouseover="cambiar('cajasol');" onmouseout="volver('cajasol');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/cajasol1.png" name="cajasol" border="0"></a>
+        </div> 
+        <div class="imgcatsa">
+         <a href="http://www.catsa.es/" target="_blank" onmouseover="cambiar('catsa');" onmouseout="volver('catsa');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/catsa1.png" name="catsa" border="0"></a>
+        </div> 
+        <div class="imgcaixabank">
+         <a href="https://portal.lacaixa.es/home/particulares_es.html" target="_blank" onmouseover="cambiar('caixabank');" onmouseout="volver('caixabank');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/caixabank1.png" name="caixabank" border="0"></a>
+        </div>
+        <br> 
+        <div class="imgpoligras">
+         <a href="http://www.fieldturf.eu/es" target="_blank" onmouseover="cambiar('poligras');" onmouseout="volver('poligras');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/poligras1.png" alt="" name="poligras" border="0"></a>
+        </div> 
+        <div class="imgcocacola">
+         <a href="http://www.cocacolaiberianpartners.com/es/" target="_blank" onmouseover="cambiar('cocacola');" onmouseout="volver('cocacola');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/cocacola1.png" name="cocacola" border="0"></a>
+        </div> 
+        <p> </p> 
+        <div class="salto" style="height:15px;"></div> 
+        <div class="indicativo" style="height:10px;">
+         Sponsor Técnico
+        </div> 
+        <div class="imgluanvi">
+         <a href="http://www.luanvi.es/" target="_blank" onmouseover="cambiar('luanvi');" onmouseout="volver('luanvi');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/luanvi1.png" name="luanvi" border="0"></a>
+        </div> 
+        <div class="salto" style="height:10px;"> 
+        </div> 
+        <div class="indicativo" style="height:10px;">
+         Colaboradores
+        </div> 
+        <div class="imgcea">
+         <a href="http://www.cea.es/" target="_blank" onmouseover="cambiar('cea');" onmouseout="volver('cea');"> <img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/cea1.png" name="cea" border="0"></a>
+        </div> 
+        <div class="imgfederoptico">
+         <a href="http://www.federopticos.com/" target="_blank" onmouseover="cambiar('federoptico');" onmouseout="volver('federoptico');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/federoptico1.png" name="federoptico" border="0"></a>
+        </div> 
+        <div class="imgseur">
+         <a href="http://www.seur.es/" target="_blank" onmouseover="cambiar('seur');" onmouseout="volver('seur');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/seur1.png" name="seur" border="0"></a>
+        </div>
+        <a href="http://www.cajaruraldelsur.es/" target="_blank" onmouseover="cambiar('cajarural');" onmouseout="volver('cajarural');"><img src="http://files.rfaf.novanet.es/pnfg/img/RFAF/ESP/entorno/cajarural1.png" name="cajarural" border="0"></a>
+       </div> 
+      </div> 
+     </div> 
+     <div class="spr"></div> 
+     <div class="clds"> 
+      <style type="text/css">.rfaf1{color:#fff;font-family:Arial;font-size:12px}.rfaflink{color:#fff;text-decoration:none}.datos{color:#fff;font-family:Arial;font-size:12px}.avisos{color:#fff;font-family:Arial;text-decoration:none;font-size:12px}.avisos:hover{color:#9a7a58;font-family:Arial;text-decoration:none}</style> 
+      <table width="1080" cellpadding="0" cellspacing="10" bgcolor="#334f3f"> 
+       <tbody>
+        <tr> 
+         <td colspan="3" style="text-align:center;"> <span class="rfaf1">© REAL FEDERACIÓN ANDALUZA DE FÚTBOL </span> <span class="datos"> - C/ Tomás Pérez, 57. 41006 - SEVILLA - Tlf.: 954 924 928 - Fax: 954 925 418 - <a href="mailto:federacion@faf.es" class="datos">federacion@faf.es</a></span></td> 
+        </tr> 
+        <tr> 
+         <td width="33%" style="text-align:right"><a class="avisos" href="/pnfg/NNws_ShwNewDup?codigo=9937&amp;cod_primaria=140&amp;cod_secundaria=140"> (Política de Privacidad)</a> </td> 
+         <td width="33%" style="text-align:center"><a class="avisos" href="/pnfg/NNws_ShwNewDup?codigo=9938&amp;cod_primaria=140&amp;cod_secundaria=140">(Aviso Legal)</a></td> 
+         <td><a class="avisos" href="/pnfg/NNws_ShwNewDup?codigo=50935&amp;cod_primaria=140&amp;cod_secundaria=2000720#.Vqio-yrhC70">(Transparencia)</a></td> 
+        </tr> 
+       </tbody>
+      </table> 
+     </div> 
+     <div class="spr"></div> 
+     <div class="clds"> 
+      <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","UA-47325460-1","auto");ga("send","pageview");</script> 
+     </div> 
+    </div> 
+   </div> 
+  </div>  
+  <script>NMessageToPrint=0;</script>   
+ </body>
+</html>
