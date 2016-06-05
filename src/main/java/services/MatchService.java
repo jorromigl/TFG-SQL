@@ -11,6 +11,7 @@ import org.springframework.util.Assert;
 
 import domain.Coach;
 import domain.Match;
+import domain.Recruitment;
 import domain.Summary;
 import repositories.MatchRepository;
 
@@ -25,6 +26,9 @@ public class MatchService {
 
 	@Autowired
 	private CoachService coachService;
+	
+	@Autowired
+	private RecruitmentService recruitmentService;
 
 	@Autowired
 	private SummaryService summaryService;
@@ -54,6 +58,10 @@ public class MatchService {
 
 	public void delete(Match m) {
 		Assert.notNull(m);
+		if ( m.getRecruitment()!=null){
+			Recruitment r = recruitmentService.findOne(m.getRecruitment().getId());
+			recruitmentService.delete(r);
+		}
 		matchRepository.delete(m);
 	}
 

@@ -29,7 +29,7 @@
 				<div class="form-group">
 					<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 						<tag:submitverde code="squadra.save" name="save" />
-						<tag:buttonazul code="squadra.cancel" url="principal/index.do" />
+						<tag:buttonazul code="squadra.cancel" url="principal/index.do'" />
 					</div>
 				</div>
 			</jstl:if>
@@ -76,7 +76,7 @@
 				<br>
 			<br>
 				<%-- 	<tag:select code="squadra.players.add" path="player"  id="player" items="players" itemLabel="name"/> --%>
-				<tag:buttonazul code="squadra.cancel" url="principal/index.do" />
+				<tag:buttonazul code="squadra.return" url="principal/index.do'" />
 			</jstl:if>
 			<br>
 			<br>

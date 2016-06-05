@@ -28,5 +28,5 @@
 	</security:authorize>
 </display:table>
 </div>
-	<tag:button code="family.return" url="principal/index.do'" />
+	<tag:buttonazul code="family.return" url="principal/index.do'" />
 

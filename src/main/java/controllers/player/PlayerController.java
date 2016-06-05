@@ -252,7 +252,7 @@ public class PlayerController extends ErrorController {
 		} else {
 			try {
 				p = playerService.reconstructor3(playerForm2);
-				playerService.save(p);
+				playerService.save2(p);
 				result = new ModelAndView("redirect:../principal/index.do");
 
 			} catch (Throwable error) {
