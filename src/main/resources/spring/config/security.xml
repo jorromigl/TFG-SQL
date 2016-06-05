@@ -103,7 +103,9 @@
 		<security:intercept-url pattern="/comment/edit.do" access="permitAll" />
 		<security:intercept-url pattern="/comment/admin/delete.do" access="hasRole('ADMIN')" />
 		
-		<security:intercept-url pattern="/classificacion/display.do" access="permitAll" />
+		<security:intercept-url pattern="/classification/coach/display.do" access="hasRole('COACH')" />
+		<security:intercept-url pattern="/classification/family/display.do" access="hasRole('FAMILY')" />
+		<security:intercept-url pattern="/classification/player/display.do" access="hasRole('PLAYER')" />
 		
 		<security:intercept-url pattern="/views/error/index.jsp" access="permitAll" />
 		

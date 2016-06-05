@@ -18,7 +18,7 @@
 		<div class="col-md-12">
 			<div class="x_panel">
 
-				<tag:textbox code="msg.moment" path="moment" readonly="true" />
+<%-- 				<tag:textbox code="msg.moment" path="moment" readonly="true" /> --%>
 				
 				
 				<h4> <spring:message code="msg.moment"/>  <jstl:out value="${messageDisplay.moment}"></jstl:out> </h4>
@@ -105,18 +105,19 @@
 
                           </div>
                           <div class="col-md-4 text-right">
-                            <p class="date"> 8:02 PM 12 FEB 2014</p>
+                            <p class="date"> <jstl:out value="${messageDisplay.moment}"></jstl:out></p>
                           </div>
                           <div class="col-md-12">
-                            <h4> Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci. Donec ultrices faucibus rutrum.</h4>
+                            <h4><jstl:out value="${messageDisplay.sender.subject}"></jstl:out></h4>
                           </div>
                         </div>
                         <div class="sender-info">
                           <div class="row">
                             <div class="col-md-12">
-                              <strong>Jon Doe</strong>
-                              <span>(jon.doe@gmail.com)</span> to
-                              <strong>me</strong>
+                              <strong><jstl:out value="${messageDisplay.sender.name}"></jstl:out></strong>
+                              <strong><jstl:out value="${messageDisplay.sender.surname}"></jstl:out></strong>
+                              <span>(<jstl:out value="${messageDisplay.sender.email}"></jstl:out>)</span> to
+                              <strong><jstl:out value="${messageDisplay.recipient.name}"></jstl:out></strong>
                               <a class="sender-dropdown"><i class="fa fa-chevron-down"></i></a>
                             </div>
                           </div>
