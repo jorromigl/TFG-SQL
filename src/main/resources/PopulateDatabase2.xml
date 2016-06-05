@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- User accounts -->
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="player1" />
+		<property name="password" value="5d2bbc279b5ce75815849d5e3f0533ec" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="player2" />
+		<property name="password" value="88e77ff74930f37010370c296d14737b" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="player3" />
+		<property name="password" value="1aa3814dca32e4c0b79a2ca047ef1db0" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount5" class="security.UserAccount">
+		<property name="username" value="player4" />
+		<property name="password" value="12efaba7fd50f5c66bd295683c0ce2a7" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount6" class="security.UserAccount">
+		<property name="username" value="player5" />
+		<property name="password" value="c5aec8b7110bb97bf59ab1a06805ebdd" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount7" class="security.UserAccount">
+		<property name="username" value="player6" />
+		<property name="password" value="9d470eed6fd655c08563e806848cdc6d" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount8" class="security.UserAccount">
+		<property name="username" value="player7" />
+		<property name="password" value="10b5d73053b6372f33e28589a0285f80" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount9" class="security.UserAccount">
+		<property name="username" value="player8" />
+		<property name="password" value="0d4753a9802fe6af7d3bab0c91cb07f3" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount10" class="security.UserAccount">
+		<property name="username" value="player9" />
+		<property name="password" value="26a26a749d6d4cbe1da7c2f3a172fea8" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount11" class="security.UserAccount">
+		<property name="username" value="player10" />
+		<property name="password" value="d9174af8299b39a7092f4b7683cf8ce2" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount12" class="security.UserAccount">
+		<property name="username" value="player11" />
+		<property name="password" value="9762f0934dc0ea7270781f47971f6427" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount13" class="security.UserAccount">
+		<property name="username" value="player12" />
+		<property name="password" value="00ef768852ca05393a4d6232c8ea1bc8" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount14" class="security.UserAccount">
+		<property name="username" value="player13" />
+		<property name="password" value="c69b29cda2e8649394fe77b34385031a" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="PLAYER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount15" class="security.UserAccount">
+		<property name="username" value="family1" />
+		<property name="password" value="f66c54467198093c357c8288fdc30198" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="FAMILY" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount16" class="security.UserAccount">
+		<property name="username" value="family2" />
+		<property name="password" value="630ed96f322c75b8560d861408122c33" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="FAMILY" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount17" class="security.UserAccount">
+		<property name="username" value="family3" />
+		<property name="password" value="861bd5e5b44bee407502ca246efb1c50" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="FAMILY" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount18" class="security.UserAccount">
+		<property name="username" value="coach1" />
+		<property name="password" value="1bf06497729c4c55cb24a10c99ce4525" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="COACH" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	<!-- ADMIN -->
+	
+	
+	
+	
+	
+	<bean id="admin" class="domain.Admin">
+		<property name="name" value="Jorge" />
+		<property name="surname" value="Romero Iglesias" />
+		<property name="email" value="jorge@mail.com" />
+		<property name="userAccount" ref="userAccount1" />
+		<property name="phone" value="+34655655655" />
+		<property name="address" value="calle hinojo 13" />
+
+		<property name="folders">
+			<list>
+				<ref bean="folder1" />
+				<ref bean="folder2" />
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	
+	
+	<!-- CATEGORY -->
+	
+	
+	
+	
+	<bean id="category1" class="domain.Category">
+		<property name="cname" value="Juvenil" />
+	</bean>
+	<bean id="category2" class="domain.Category">
+		<property name="cname" value="Cadete" />
+	</bean>
+	<bean id="category3" class="domain.Category">
+		<property name="cname" value="Infantil" />
+	</bean>
+	<bean id="category4" class="domain.Category">
+		<property name="cname" value="Alevin" />
+	</bean>
+	<bean id="category5" class="domain.Category">
+		<property name="cname" value="Benjamin" />
+	</bean>
+	<bean id="category6" class="domain.Category">
+		<property name="cname" value="PreBenjamin" />
+	</bean>
+	
+	<!-- COACH -->
+	
+	
+	
+	
+	
+	
+	<bean id="coach1" class="domain.Coach">
+		<property name="name" value="Juande" />
+		<property name="surname" value="Roman Ramos" />
+		<property name="email" value="juande@mail.com" />
+		<property name="address" value="calle señor 21" />
+		<property name="phone" value="+34655655655" />
+		<!--  <property name="photo" value="" />-->
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount18" />
+		<property name="admin" ref="admin" />
+		<property name="summaries">
+			<list>
+				
+			</list>
+		</property>
+		
+
+		<property name="squadras">
+			<list>
+			<ref bean="squadra1" />
+			</list>
+		</property>
+		<property name="folders">
+			<list>
+				<ref bean="folder3" />
+				<ref bean="folder4" />
+			</list>
+		</property>
+	</bean>
+	
+		
+	<!-- CLASSIFICATION -->
+	
+	
+	<bean id="classification1" class="domain.Classification">
+		<property name="division" value="Primera Division"/>
+		<property name="info" value="Informacion de la clasificacion 1"/>
+		<property name="point" value="7"/>
+		<property name="played" value="5"/>
+		<property name="won" value="2"/>
+		<property name="lost" value="1"/>
+		<property name="tied" value="2"/>
+	</bean>
+	
+	<bean id="classification2" class="domain.Classification">
+		<property name="division" value="Segunda Division"/>
+		<property name="info" value="Informacion de la clasificacion 2"/>
+		<property name="point" value="7"/>
+		<property name="played" value="5"/>
+		<property name="won" value="2"/>
+		<property name="lost" value="1"/>
+		<property name="tied" value="2"/>
+	</bean>
+	
+	
+	<!-- SQUADRA-->
+
+
+
+	<bean id="squadra1" class="domain.Squadra">
+		<property name="name" value="Cavaleri" />
+		<property name="category" ref="category1" />
+		<property name="coach" ref="coach1" />
+		<property name="classification" ref="classification1" />
+		<property name="players">
+			<list>
+				<ref bean="player1" />
+				<ref bean="player2" />
+				<ref bean="player3" />
+				<ref bean="player4" />
+				<ref bean="player5" />
+				<ref bean="player6" />
+				<ref bean="player7" />
+				<ref bean="player8" />
+				<ref bean="player9" />
+				<ref bean="player10"/>
+				<ref bean="player11" />
+			</list>
+		</property>
+		
+	</bean>
+	
+	
+	<!-- PLAYER -->
+	
+		
+	<bean id="player1" class="domain.Player">
+		<property name="name" value="Jesús" />
+		<property name="surname" value="Rodriguez Pérez" />
+		<property name="email" value="jorromigl@gmail.com" />
+		<property name="address" value="calle hinojo 2" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="02/11/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount2" />
+		<property name="families">
+			<list>
+				<ref bean="family1" />
+				<ref bean="family2" />
+			</list>
+		</property>
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder7" />
+				<ref bean="folder8" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player2" class="domain.Player">
+		<property name="name" value="Miguel" />
+		<property name="surname" value="Muñoz Cano" />
+		<property name="email" value="migue@mail.com" />
+		<property name="address" value="calle ajo 3" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="02/11/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount3" />
+		<property name="families">
+			<list>
+				<ref bean="family3" />
+			</list>
+		</property>
+
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder9" />
+				<ref bean="folder10" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player3" class="domain.Player">
+		<property name="name" value="Jose" />
+		<property name="surname" value="Lasso Martinez" />
+		<property name="email" value="jose@mail.com" />
+		<property name="address" value="calle uruguay 4" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="03/10/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount4" />
+		<property name="families">
+			<list>
+			
+			</list>
+		</property>
+
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder11" />
+				<ref bean="folder12" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player4" class="domain.Player">
+		<property name="name" value="Daniel" />
+		<property name="surname" value="Lopez Vega" />
+		<property name="email" value="dani@mail.com" />
+		<property name="address" value="calle brasil 6" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="04/09/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount5" />
+		<property name="families">
+			<list>
+			
+			</list>
+		</property>
+
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder13" />
+				<ref bean="folder14" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player5" class="domain.Player">
+		<property name="name" value="Manuel" />
+		<property name="surname" value="Vargas Perez" />
+		<property name="email" value="manuel@mail.com" />
+		<property name="address" value="calle Filosofia 8" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="07/10/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount6" />
+		<property name="families">
+			<list>
+				
+			</list>
+		</property>
+
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder15" />
+				<ref bean="folder16" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player6" class="domain.Player">
+		<property name="name" value="Cristian" />
+		<property name="surname" value="Serrano Galvez" />
+		<property name="email" value="cristian@mail.com" />
+		<property name="address" value="calle filosofia 3" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="05/08/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount7" />
+		<property name="families">
+			<list>
+				
+			</list>
+		</property>
+
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder17" />
+				<ref bean="folder18" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player7" class="domain.Player">
+		<property name="name" value="Luis" />
+		<property name="surname" value="Villalba Romero" />
+		<property name="email" value="luis@mail.com" />
+		<property name="address" value="calle huracan 9" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="02/07/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount8" />
+		<property name="families">
+			<list>
+				
+			</list>
+		</property>
+		
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder19" />
+				<ref bean="folder20" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player8" class="domain.Player">
+		<property name="name" value="Hugo" />
+		<property name="surname" value="Boss Py" />
+		<property name="email" value="hugo@mail.com" />
+		<property name="address" value="calle Gabana 10" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="04/04/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount9" />
+		<property name="families">
+			<list>
+				
+			</list>
+		</property>
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder21" />
+				<ref bean="folder22" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player9" class="domain.Player">
+		<property name="name" value="Agustin" />
+		<property name="surname" value="Betis Web" />
+		<property name="email" value="agu@mail.com" />
+		<property name="address" value="calle Sacarias 2" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="02/01/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount10" />
+		<property name="families">
+			<list>
+			
+			</list>
+		</property>
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder23" />
+				<ref bean="folder24" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player10" class="domain.Player">
+		<property name="name" value="Javier" />
+		<property name="surname" value="Alonso Baena" />
+		<property name="email" value="javi@mail.com" />
+		<property name="address" value="calle lopez 1" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="12/11/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount11" />
+		<property name="families">
+			<list>
+				
+			</list>
+		</property>
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder25" />
+				<ref bean="folder26" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player11" class="domain.Player">
+		<property name="name" value="Fernando" />
+		<property name="surname" value="Diaz Rivero" />
+		<property name="email" value="fer@mail.com" />
+		<property name="address" value="calle casanova 9" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="06/03/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount12" />
+		<property name="families">
+			<list>
+			
+			</list>
+		</property>
+	
+		<property name="recruitments">
+			<list>
+				<ref bean="recruitment1" />
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder27" />
+				<ref bean="folder28" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player12" class="domain.Player">
+		<property name="name" value="Rodrigo" />
+		<property name="surname" value="Ramos Aguilar" />
+		<property name="email" value="jorromigl@gmail.com" />
+		<property name="address" value="calle cerro Aguila 6" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="21/02/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount13" />
+		<property name="families">
+			<list>
+				
+			</list>
+		</property>
+	
+		<property name="recruitments">
+			<list>
+				
+			</list>
+		</property>
+		<property name="squadra" ref="squadra1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder29" />
+				<ref bean="folder30" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="player13" class="domain.Player">
+		<property name="name" value="Alvaro" />
+		<property name="surname" value="Xeva Cejudo" />
+		<property name="email" value="xeva@mail.com" />
+		<property name="address" value="calle tajo 13" />
+		<!--  <property name="photo" value="" />-->
+		<property name="date" value="25/08/2000 10:00"/>
+		<property name="phone" value="+34655655655" />
+		<property name="category" ref="category1"/>
+		<property name="userAccount" ref="userAccount14" />
+		<property name="families">
+			<list>
+				
+			</list>
+		</property>
+		<property name="recruitments">
+			<list>
+				
+			</list>
+		</property>
+		<property name="folders">
+			<list>
+				<ref bean="folder31" />
+				<ref bean="folder32" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- MATCH -->
+	
+	
+	
+	
+	
+	
+	<bean id="match1" class="domain.Match">
+		<property name="rival" value="Tomares" />
+		<property name="location" value="Tomares" />
+		<property name="moment" value="25/08/2018 10:00" />
+		<property name="coach" ref="coach1" />
+		<property name="squadra" ref="squadra1" />
+		<property name="recruitment" ref="recruitment1" />
+		<property name="comments">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- RECRUITMENT-->
+	
+	
+	
+	<bean id="recruitment1" class="domain.Recruitment">
+		<property name="match" ref="match1"/>
+		<property name="players">
+			<list>
+				<ref bean="player1" />
+				<ref bean="player2" />
+				<ref bean="player3" />
+				<ref bean="player4" />
+				<ref bean="player5" />
+				<ref bean="player6" />
+				<ref bean="player7" />
+				<ref bean="player8" />
+				<ref bean="player9" />
+				<ref bean="player10" />
+				<ref bean="player11" />				
+			</list>
+		</property>
+	</bean>	
+	
+	<!-- FAMILY -->
+
+
+
+
+
+
+	<bean id="family1" class="domain.Family">
+		<property name="name" value="Pedro" />
+		<property name="surname" value="Sanchez" />
+		<property name="email" value="pedro@mail.com" />
+		<property name="address" value="calle clavo 21" />
+		<property name="phone" value="+34655655655" />
+		<!--  <property name="photo" value="" />-->
+		<property name="userAccount" ref="userAccount15" />
+		<property name="comments">
+			<list>
+
+			</list>
+		</property>
+		<property name="player" ref="player1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder33" />
+				<ref bean="folder34" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="family2" class="domain.Family">
+		<property name="name" value="Pablo" />
+		<property name="surname" value="Iglesias" />
+		<property name="email" value="pablo@mail.com" />
+		<property name="address" value="calle ajonjolin 22" />
+		<property name="phone" value="+34655655655" />
+		<!--  <property name="photo" value="" />-->
+		<property name="userAccount" ref="userAccount16" />
+		<property name="comments">
+			<list>
+				
+			</list>
+		</property>
+		<property name="player" ref="player1" />
+		<property name="folders">
+			<list>
+				<ref bean="folder35" />
+				<ref bean="folder36" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="family3" class="domain.Family">
+		<property name="name" value="Mario" />
+		<property name="surname" value="Rajoy" />
+		<property name="email" value="mario@mail.com" />
+		<property name="address" value="calle pimienta 2" />
+		<property name="phone" value="+34655655655" />
+		<!--  <property name="photo" value="" />-->
+		<property name="userAccount" ref="userAccount17" />
+		<property name="comments">
+			<list>
+				
+			</list>
+		</property>
+		<property name="player" ref="player2" />
+		<property name="folders">
+			<list>
+				<ref bean="folder37" />
+				<ref bean="folder38" />
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	
+	<!-- MATCH -->
+	
+	<!-- SUMMARY -->
+	
+	
+	<!-- RECRUITMENT-->
+		
+	
+	<!-- COMMENT -->
+	
+		
+	<!-- FOLDER -->
+	
+	<bean id="folder1" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="admin" />
+	</bean>
+
+	<bean id="folder2" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="admin" />
+	</bean>
+
+	<bean id="folder3" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="coach1" />
+	</bean>
+	
+	<bean id="folder4" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="coach1" />
+	</bean>
+
+	
+	
+	
+	<bean id="folder7" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player1" />
+	</bean>
+	
+	<bean id="folder8" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player1" />
+	</bean>
+	
+	<bean id="folder9" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player2" />
+	</bean>
+	
+	<bean id="folder10" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player2" />
+	</bean>
+	
+	<bean id="folder11" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player3" />
+	</bean>
+	
+	<bean id="folder12" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player3" />
+	</bean>
+	
+	<bean id="folder13" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player4" />
+	</bean>
+	
+	<bean id="folder14" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player4" />
+	</bean>
+	
+	<bean id="folder15" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player5" />
+	</bean>
+	
+	<bean id="folder16" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player5" />
+	</bean>
+	
+	<bean id="folder17" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player6" />
+	</bean>
+	
+	<bean id="folder18" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player6" />
+	</bean>
+	
+	<bean id="folder19" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player7" />
+	</bean>
+
+	<bean id="folder20" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player7" />
+	</bean>
+	
+	<bean id="folder21" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player8" />
+	</bean>
+
+	<bean id="folder22" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player8" />
+	</bean>
+	
+	<bean id="folder23" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player9" />
+	</bean>
+
+	<bean id="folder24" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player9" />
+	</bean>
+	
+	<bean id="folder25" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player10" />
+	</bean>
+
+	<bean id="folder26" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player10" />
+	</bean>
+	
+	<bean id="folder27" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player11" />
+	</bean>
+
+	<bean id="folder28" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player11" />
+	</bean>
+	
+	<bean id="folder29" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player12" />
+	</bean>
+
+	<bean id="folder30" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player12" />
+	</bean>
+	
+	<bean id="folder31" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player13" />
+	</bean>
+
+	<bean id="folder32" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="player13" />
+	</bean>
+	
+	<bean id="folder33" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family1" />
+	</bean>
+
+	<bean id="folder34" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family1" />
+	</bean>
+	
+	<bean id="folder35" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family2" />
+	</bean>
+
+	<bean id="folder36" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family2" />
+	</bean>
+	
+	<bean id="folder37" class="domain.Folder">
+		<property name="name" value="Inbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family3" />
+	</bean>
+
+	<bean id="folder38" class="domain.Folder">
+		<property name="name" value="Outbox" />
+		<property name="messages">
+			<list>
+			</list>
+		</property>
+		<property name="user" ref="family3" />
+	</bean>
+	
+	
+</beans>

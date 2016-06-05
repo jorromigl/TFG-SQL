@@ -20,11 +20,6 @@
 	
 	
 	<!-- ADMIN -->
-	
-	
-	
-	
-	
 	<bean id="admin" class="domain.Admin">
 		<property name="name" value="Jorge" />
 		<property name="surname" value="Romero Iglesias" />
