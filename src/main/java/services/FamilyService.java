@@ -198,7 +198,12 @@ public class FamilyService {
 			
 			result.setId(familyForm2.getId());
 			result.setVersion(familyForm2.getVersion());
-			result.setFile(familyForm2.getFile());
+			long i = familyForm2.getFile().length;	
+			
+			//Controlamos el tamaño de la foto que no sobrepase los 3MB
+			if(i <3145728){
+				result.setFile(familyForm2.getFile());
+			}
 			return result;
 		}
 
@@ -228,9 +233,7 @@ public class FamilyService {
 
 			familyForm2.setId(family.getId());
 			familyForm2.setVersion(family.getVersion());		
-			
 			familyForm2.setFile(family.getFile());
-
 			return familyForm2;
 		}
 		

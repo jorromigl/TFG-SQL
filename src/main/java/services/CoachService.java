@@ -178,7 +178,12 @@ public class CoachService {
 		
 		result.setId(coachForm2.getId());
 		result.setVersion(coachForm2.getVersion());
-		result.setFile(coachForm2.getFile());
+		long i = coachForm2.getFile().length;	
+		
+		//Controlamos el tamaño de la foto que no sobrepase los 3MB
+		if(i <3145728){
+			result.setFile(coachForm2.getFile());
+		}
 		return result;
 	}
 

@@ -138,6 +138,14 @@
 
 				</form:errors>
 				<br>
+				<div class="alert alert-success" role="alert">
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<strong><spring:message code="coach.sizePhoto"></spring:message></strong> 
+				</div>
+				<br>
 				<tag:submitverde code="display.save" name="save2" />
 				<tag:buttonazul code="display.cancel" url="principal/index.do'" />
 			</form:form>
