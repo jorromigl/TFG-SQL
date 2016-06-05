@@ -160,7 +160,7 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<strong><spring:message code="player.sizePhoto"></spring:message></strong> 
+					<strong><spring:message code="player.sizePhoto"></spring:message></strong>
 				</div>
 				<br>
 				<tag:submit code="display.save" name="save2" />
@@ -175,66 +175,151 @@
 	<form:form action="${requestURI}" method="post" modelAttribute="player"
 		enctype="multipart/form-data">
 
-		<form:hidden path="id" />
-		<form:hidden path="version" />
+		<div class="content">
+			<div class="col-md-12">
+				<div class="x_panel">
 
 
-		<tag:textbox code="display.username" path="userAccount.username"
-			readonly="true" />
-		<tag:textbox code="display.name" path="name" readonly="true" />
-		<tag:textbox code="display.surname" path="surname" readonly="true" />
-		<tag:textbox code="display.category" path="category.cname"
-			readonly="true" />
-		<tag:textbox code="display.date" path="date" readonly="true" />
-		<tag:textbox code="display.email" path="email" readonly="true" />
-		<tag:textbox code="display.phone" path="phone" readonly="true" />
-		<tag:textbox code="display.address" path="address" readonly="true" />
+					<form:hidden path="id" />
+					<form:hidden path="version" />
 
-		<jstl:if test="${player.file == null }">
-			<spring:message code="player.notImage"></spring:message>
-		</jstl:if>
+					<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+						<jstl:if test="${player.file == null }">
+							<div class="thumbnail">
+								<div class=" view view-first">
+									<img style="width: 100%; display: block;"
+										src="images/user1.png" alt="image">
+								</div>
 
-		<jstl:if test="${player.file != null }">
-			<img style="width: 50px; height: 50px;"
-				src="player/showImage.do?playerId=${player.id}" />
-		</jstl:if>
+							</div>
+						</jstl:if>
+
+						<jstl:if test="${player.file != null }">
+
+							<div class="avatar-view">
+								<div class=" view view-first">
+									<img style="width: 100%; display: block;"
+										src="player/showImage.do?playerId=${player.id}" alt="image">
+								</div>
+							</div>
+
+						</jstl:if>
+					</div>
+					<h3 class="title">
+						<jstl:out value="${player.name}"></jstl:out>
+						<jstl:out value="${player.surname}"></jstl:out>
+					</h3>
+					<H4>
+						<jstl:out value="${player.userAccount.username}"></jstl:out>
+					</H4>
+
+					<h5 class="fa fa-calendar">
+						<jstl:out value="${player.date}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-envelope">
+						<jstl:out value="${player.email}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-phone">
+						<jstl:out value="${player.phone}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-home ">
+						<jstl:out value="${player.address}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-futbol-o">
+						<jstl:out value="${player.category.cname}"></jstl:out>
+					</h5>
+
+					<br>
+				</div>
 
 
-		<tag:button code="display.cancel"
-			url="player/c/listPlayerSameCategoryCoach.do'" />
+				<tag:buttonazul code="display.cancel"
+					url="player/c/listPlayerSameCategoryCoach.do'" />
+
+			</div>
+		</div>
+
 	</form:form>
+
+
+
+
 </security:authorize>
 
 <security:authorize access="hasRole('FAMILY')">
 	<form:form action="${requestURI}" method="post" modelAttribute="player"
 		enctype="multipart/form-data">
+		<div class="content">
+			<div class="col-md-12">
+				<div class="x_panel">
 
 
-		<form:hidden path="id" />
-		<form:hidden path="version" />
+					<form:hidden path="id" />
+					<form:hidden path="version" />
+
+					<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+						<jstl:if test="${player.file == null }">
+							<div class="thumbnail">
+								<div class=" view view-first">
+									<img style="width: 100%; display: block;"
+										src="images/user1.png" alt="image">
+								</div>
+
+							</div>
+						</jstl:if>
+
+						<jstl:if test="${player.file != null }">
+
+							<div class="avatar-view">
+								<div class=" view view-first">
+									<img style="width: 100%; display: block;"
+										src="player/showImage.do?playerId=${player.id}" alt="image">
+								</div>
+							</div>
+
+						</jstl:if>
+					</div>
+					<h3 class="title">
+						<jstl:out value="${player.name}"></jstl:out>
+						<jstl:out value="${player.surname}"></jstl:out>
+					</h3>
+					<H4>
+						<jstl:out value="${player.userAccount.username}"></jstl:out>
+					</H4>
+
+					<h5 class="fa fa-calendar">
+						<jstl:out value="${player.date}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-envelope">
+						<jstl:out value="${player.email}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-phone">
+						<jstl:out value="${player.phone}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-home ">
+						<jstl:out value="${player.address}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-futbol-o">
+						<jstl:out value="${player.category.cname}"></jstl:out>
+					</h5>
+
+					<br>
+				</div>
 
 
-		<tag:textbox code="display.username" path="userAccount.username"
-			readonly="true" />
-		<tag:textbox code="display.name" path="name" readonly="true" />
-		<tag:textbox code="display.surname" path="surname" readonly="true" />
-		<tag:textbox code="display.category" path="category.cname"
-			readonly="true" />
-		<tag:textbox code="display.date" path="date" readonly="true" />
-		<tag:textbox code="display.email" path="email" readonly="true" />
-		<tag:textbox code="display.phone" path="phone" readonly="true" />
-		<tag:textbox code="display.address" path="address" readonly="true" />
+				<tag:buttonazul code="display.cancel"
+					url="player/c/listPlayerSameCategoryCoach.do'" />
 
-		<jstl:if test="${player.file == null }">
-			<spring:message code="player.notImage"></spring:message>
-		</jstl:if>
-
-		<jstl:if test="${player.file != null }">
-			<img style="width: 50px; height: 50px;"
-				src="player/showImage.do?playerId=${player.id}" />
-		</jstl:if>
-
-		<tag:buttonazul code="display.return" url="principal/index.do'" />
+			</div>
+		</div>
 	</form:form>
 </security:authorize>
 
