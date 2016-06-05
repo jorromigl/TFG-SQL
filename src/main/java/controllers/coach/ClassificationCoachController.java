@@ -47,17 +47,6 @@ public class ClassificationCoachController extends ErrorController {
 				return result;
 			}
 
-//	@RequestMapping(value = "/display", method = RequestMethod.GET)
-//	public ModelAndView display() {
-//		ModelAndView result;
-//
-//		result = new ModelAndView("classification/display");
-//
-//		result.addObject("requestURI", "/classification/coach/display.do");
-//
-//		return result;
-//	}
-
 	protected ModelAndView createModelAndView() {
 
 		ModelAndView result;

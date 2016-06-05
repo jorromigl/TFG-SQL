@@ -15,7 +15,7 @@
 
 
 	<spring:message code="classification.info" var="info" />
-	<display:column property="info" title="${info}" sortable="${true}" />
+	<display:column property="info" title="${info}" />
 	
 	<spring:message code="classification.point" var="point" />
 	<display:column property="point" title="${point}" />

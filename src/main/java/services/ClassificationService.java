@@ -19,6 +19,7 @@ import domain.Classification;
 import domain.Coach;
 import domain.Comment;
 import domain.Folder;
+import domain.User;
 import repositories.ClassificationRepository;
 import repositories.CommentRepository;
 import security.Authority;
@@ -28,32 +29,33 @@ import webscraping.obtainData;
 @Service
 @Transactional
 public class ClassificationService {
-	
 
 	// Managed repository
 	@Autowired
 	private ClassificationRepository classificationRepository;
-	
+
+	@Autowired
+	private UserService userService;
+
 	public static final String RUTA = "C:/Users/Jorge/git/TFG-SQL/src/main/resources";
-	
+
 	// Constructor
 	public ClassificationService() {
-		
+
 		super();
 	}
-	
+
 	public Classification create() {
 		Classification res = new Classification();
 
 		return res;
 	}
-	
+
 	public List<Classification> clasification() throws IOException, ParserConfigurationException, Exception{
 		List<Classification> tabla= new ArrayList<>();
-		List<List<String>> rows= rows();
+		List<List<String>> rows= rows();		
 		for ( List<String> row: rows){
 			Classification result= create();
-				result.setDivision(nameDivision());
 				result.setInfo(row.get(0));
 				result.setPoint(Integer.parseInt(row.get(1)));
 				result.setPlayed(Integer.parseInt(row.get(2)));
@@ -69,9 +71,9 @@ public class ClassificationService {
 	public static final String url = "http://www.faf.es/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codjornada=26&codcompeticion=2646493&codgrupo=3764773&codjornada=26";
 
 	public List<List<String>> rows() throws IOException, ParserConfigurationException, Exception {
-		
+
 		List<List<String>> rows = new ArrayList<List<String>>();
-		
+
 		// Compruebo si me da un 200 al hacer la petición
 		if (obtainData.getStatusConnectionCode(url) == 200) {
 
@@ -80,7 +82,7 @@ public class ClassificationService {
 			Document document = obtainData.getHtmlDocument(url);
 			// System.out.println(document);
 
-			String documentHTML = obtainData.readFile(RUTA+ "/aaa.txt");
+			String documentHTML = obtainData.readFile(RUTA + "/aaa.txt");
 
 			// Convierto el String en Document
 			Document doc = Jsoup.parse(documentHTML);
@@ -107,18 +109,5 @@ public class ClassificationService {
 		}
 		return rows;
 	}
-	
-	public String nameDivision() throws IOException{
-		String result = "";
-		String documentHTML = obtainData.readFile(RUTA + "aaa.txt");
-
-		Document doc = Jsoup.parse(documentHTML);
-		Elements tables = doc.getElementsByClass("title_categoría");
-
-		return result;
-
-		}
-	
-	
 
 }
