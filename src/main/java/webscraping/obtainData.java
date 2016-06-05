@@ -21,11 +21,8 @@ import org.jsoup.select.Elements;
 import org.xml.sax.InputSource;
 
 public class obtainData {
-
-	public static final String RUTA = "./src/main/java/webscraping";
-
 	/* Read data from a text file and store in a String variable */
-	static String readFile(String fileName) throws IOException {
+	public static String readFile(String fileName) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 		try {
 			StringBuilder sb = new StringBuilder();
@@ -40,19 +37,6 @@ public class obtainData {
 		} finally {
 			br.close();
 		}
-	}
-
-	private static Document convertStringToDocument(String xmlStr) {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder;
-		try {
-			builder = factory.newDocumentBuilder();
-			Document doc = (Document) builder.parse(new InputSource(new StringReader(xmlStr)));
-			return doc;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 
 	public static int getStatusConnectionCode(String url) {
@@ -88,45 +72,4 @@ public class obtainData {
 		return doc;
 	}
 
-	public static final String url = "http://www.faf.es/pnfg/NPcd/NFG_VisClasificacion?cod_primaria=1000120&codjornada=26&codcompeticion=2646493&codgrupo=3764773&codjornada=26";
-
-	public static List<List<String>> rows() throws IOException, ParserConfigurationException, Exception {
-		
-		List<List<String>> rows = new ArrayList<List<String>>();
-		
-		// Compruebo si me da un 200 al hacer la petición
-		if (getStatusConnectionCode(url) == 200) {
-
-			// Obtengo el HTML de la web en un objeto Document (solo una vez por
-			// semana)
-			Document document = getHtmlDocument(url);
-			// System.out.println(document);
-
-			String documentHTML = readFile(RUTA + "/clasificacion05062016.txt");
-
-			// Convierto el String en Document
-			Document doc = Jsoup.parse(documentHTML);
-			Elements tables = doc.getElementsByTag("table");
-			Element firstTable = tables.get(4);
-			Elements tr2 = firstTable.getElementsByTag("tr");
-			List<String> lista = new ArrayList<String>();
-			int numeroRows = 0;
-			for (int i = 2; i < 15; i++) {
-				Element td = tr2.get(i);
-				Elements tds = td.getElementsByTag("td");
-				numeroRows = tds.size();
-				for (int e = 2; e < numeroRows; e++) {
-					lista.add(tds.get(e).text());
-				}
-			}
-			int a = 0;
-			int b = 10;
-			for (int c = 0; c < numeroRows; c++) {
-				rows.add(lista.subList(a, b));
-				a = b;
-				b += 10;
-			}
-		}
-		return rows;
-	}
 }

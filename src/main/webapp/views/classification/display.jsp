@@ -11,7 +11,7 @@
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 
 
-<display:table name="classifications" id="row" requestURI="${requestURI}" pagesize="5" class="table table-hover">
+<display:table name="classifications" id="row" requestURI="${requestURI}" pagesize="20" class="table table-hover">
 
 
 	<spring:message code="classification.info" var="info" />
