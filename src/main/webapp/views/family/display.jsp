@@ -115,6 +115,6 @@
 				src="family/showImage.do?familyId=${family.id}" />
 		</jstl:if>
 
-		<tag:button code="display.cancel" url="principal/index.do'" />
+		<tag:buttonazul code="display.cancel" url="familiers/player/viewMyFamily.do'" />
 	</form:form>
 </security:authorize>

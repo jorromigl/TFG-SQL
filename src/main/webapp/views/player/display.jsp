@@ -192,7 +192,7 @@
 		</jstl:if>
 
 
-		<tag:button code="display.cancel" url="principal/index.do'" />
+		<tag:button code="display.cancel" url="player/c/listPlayerSameCategoryCoach.do'" />
 	</form:form>
 </security:authorize>
 

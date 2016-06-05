@@ -76,7 +76,7 @@
 				<br>
 			<br>
 				<%-- 	<tag:select code="squadra.players.add" path="player"  id="player" items="players" itemLabel="name"/> --%>
-				<tag:buttonazul code="squadra.cancel" url="squadra/coach/mysquadra.do'" />
+				<tag:buttonazul code="squadra.return" url="principal/index.do'" />
 			</jstl:if>
 			<br>
 			<br>

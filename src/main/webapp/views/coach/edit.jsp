@@ -35,6 +35,6 @@
 
 	<br>
 	<br>
-	<acme:cancel code="coach.return" url="principal/index.do" />
+	<tag:buttonazul code="coach.return" url="squadra/player/displaySquadra.do'" />
 
 </form:form>
