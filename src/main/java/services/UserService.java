@@ -184,6 +184,7 @@ public class UserService {
 		
 		String email = passForm.getEmail();
 		User u= userRepository.findByEmail(email);
+		if (u!=null){
 				
 		String password = new BigInteger(50, new SecureRandom()).toString(32);
 		String password1 = password;
@@ -198,7 +199,7 @@ public class UserService {
 						+ "a su perfil para modificar la contraseña. \n\n Un saludo, gracias");
 	}
 	
-	
+	}
 
 }
 
