@@ -14,60 +14,110 @@
 	<jstl:if test="${detailsFamily==true}">
 		<form:form action="${requestURI}" method="post"
 			modelAttribute="family" enctype="multipart/form-data">
+			<div class="content">
+				<div class="col-md-12">
+					<div class="x_panel">
 
-			<!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form	 -->
 
-			<form:hidden path="id" />
-			<form:hidden path="version" />
-			<form:hidden path="player" />
+						<form:hidden path="id" />
+						<form:hidden path="version" />
+						<form:hidden path="player" />
 
-			<tag:textbox code="display.username" path="userAccount.username"
-				readonly="true" />
-			<tag:textbox code="display.name" path="name" readonly="true" />
-			<tag:textbox code="display.surname" path="surname" readonly="true" />
-			<tag:textbox code="display.email" path="email" readonly="true" />
-			<tag:textbox code="display.phone" path="phone" readonly="true" />
-			<tag:textbox code="display.address" path="address" readonly="true" />
-			<%-- 		<tag:textbox code="display.player" path="player.name" readonly="true"/> --%>
 
-			<jstl:if test="${family.file == null }">
-				<spring:message code="family.notImage"></spring:message>
-			</jstl:if>
+						<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+							<jstl:if test="${family.file == null }">
+								<div class="thumbnail">
+									<div class=" view view-first">
+										<img style="width: 100%; display: block;"
+											src="images/user1.png" alt="image">
+										<div class="mask">
+											<p>
+												<spring:message code="family.change"></spring:message>
+											</p>
+											<div class="tools tools-bottom">
+												<a href="family/displayC.do"><i class="fa fa-pencil"></i></a>
+											</div>
+										</div>
+									</div>
 
-			<jstl:if test="${family.file != null }">
-				<img style="width: 50px; height: 50px;"
-					src="family/showImage.do?familyId=${family.id}" />
-			</jstl:if>
+								</div>
+							</jstl:if>
 
-			<tag:button code="display.edit" url="family/displayB.do'" />
-			<tag:button code="display.edit2" url="family/displayC.do'" />
-			<tag:button code="display.cancel" url="principal/index.do'" />
+							<jstl:if test="${family.file != null }">
+
+								<div class="avatar-view">
+									<div class=" view view-first">
+										<img style="width: 100%; display: block;"
+											src="family/showImage.do?familyId=${family.id}" alt="image">
+										<div class="mask">
+											<p>
+												<spring:message code="family.change"></spring:message>
+											</p>
+											<div class="tools tools-bottom">
+												<a href="family/displayC.do"><i class="fa fa-pencil"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</jstl:if>
+						</div>
+
+
+						<h3 class="title">
+							<jstl:out value="${family.name}"></jstl:out>
+							<jstl:out value="${family.surname}"></jstl:out>
+						</h3>
+						<H4>
+							<jstl:out value="${family.userAccount.username}"></jstl:out>
+						</H4>
+
+						<h5 class="fa fa-envelope">
+							<jstl:out value="${family.email}"></jstl:out>
+						</h5>
+						<br>
+						<h5 class="fa fa-phone">
+							<jstl:out value="${family.phone}"></jstl:out>
+						</h5>
+						<br>
+						<h5 class="fa fa-home ">
+							<jstl:out value="${family.address}"></jstl:out>
+						</h5>
+
+						<br>
+					</div>
+					<tag:buttonverde code="display.edit" url="family/displayB.do'" />
+					<tag:buttonazul code="display.cancel" url="principal/index.do'" />
+				</div>
+
+			</div>
+
 		</form:form>
 	</jstl:if>
 
 	<jstl:if test="${detailsFamily==false}">
 		<jstl:if test="${editPhoto==false }">
-			<form:form action="${requestURI}" method="post"
-				modelAttribute="family">
+			<div id="wrapper">
+				<section class="login_content">
+					<form:form action="${requestURI}" method="post"
+						modelAttribute="family">
 
-				<!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form	 -->
+						<form:hidden path="id" />
+						<form:hidden path="version" />
+						<form:hidden path="player" />
 
-				<form:hidden path="id" />
-				<form:hidden path="version" />
-				<form:hidden path="player" />
+						<tag:textboxstyle code="display.username" path="username" />
+						<tag:passwordstyle code="display.password" path="password" />
+						<tag:passwordstyle code="display.password2" path="verifyPassword" />
+						<tag:textboxstyle code="display.name" path="name" />
+						<tag:textboxstyle code="display.surname" path="surname" />
+						<tag:textboxstyle code="display.email" path="email" />
+						<tag:textboxstyle code="display.phone" path="phone" />
+						<tag:textboxstyle code="display.address" path="address" />
 
-				<tag:textbox code="display.username" path="username" />
-				<tag:password code="display.password" path="password" />
-				<tag:password code="display.password2" path="verifyPassword" />
-				<tag:textbox code="display.name" path="name" />
-				<tag:textbox code="display.surname" path="surname" />
-				<tag:textbox code="display.email" path="email" />
-				<tag:textbox code="display.phone" path="phone" />
-				<tag:textbox code="display.address" path="address" />
-
-				<tag:submit code="display.save" name="save1" />
-				<tag:button code="display.cancel" url="principal/index.do'" />
-			</form:form>
+						<tag:submitverde code="display.save" name="save1" />
+						<tag:buttonazul code="display.cancel" url="principal/index.do'" />
+					</form:form>
 		</jstl:if>
 
 		<jstl:if test="${editPhoto==true }">
@@ -90,7 +140,7 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<strong><spring:message code="family.sizePhoto"></spring:message></strong> 
+					<strong><spring:message code="family.sizePhoto"></spring:message></strong>
 				</div>
 				<br>
 				<tag:submit code="display.save" name="save2" />
@@ -100,29 +150,63 @@
 	</jstl:if>
 </security:authorize>
 <security:authorize access="hasRole('PLAYER')">
-	<form:form action="${requestURI}" method="post" modelAttribute="family"  enctype="multipart/form-data">
+	<form:form action="${requestURI}" method="post" modelAttribute="family"
+		enctype="multipart/form-data">
+		<div class="content">
+			<div class="col-md-12">
+				<div class="x_panel">
 
-		<!-- 		enctype="multipart/form-data"  PARA FOTOOOOO en la etiqueta form	 -->
+					<form:hidden path="id" />
+					<form:hidden path="version" />
 
-		<form:hidden path="id" />
-		<form:hidden path="version" />
+					<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+						<jstl:if test="${family.file == null }">
+							<div class="thumbnail">
+								<div class=" view view-first">
+									<img style="width: 100%; display: block;"
+										src="images/user1.png" alt="image">
+								</div>
 
-		<tag:textbox code="display.username" path="userAccount.username" readonly="true" />
-		<tag:textbox code="display.name" path="name" readonly="true" />
-		<tag:textbox code="display.surname" path="surname" readonly="true" />
-		<tag:textbox code="display.email" path="email" readonly="true" />
-		<tag:textbox code="display.phone" path="phone" readonly="true" />
-		<tag:textbox code="display.address" path="address" readonly="true" />
+							</div>
+						</jstl:if>
 
-		<jstl:if test="${family.file == null }">
-			<spring:message code="family.notImage"></spring:message>
-		</jstl:if>
+						<jstl:if test="${family.file != null }">
 
-		<jstl:if test="${family.file != null }">
-			<img style="width: 50px; height: 50px;"
-				src="family/showImage.do?familyId=${family.id}" />
-		</jstl:if>
+							<div class="avatar-view">
+								<div class=" view view-first">
+									<img style="width: 100%; display: block;"
+										src="family/showImage.do?familyId=${family.id}" alt="image">
+								</div>
+							</div>
 
-		<tag:buttonazul code="display.cancel" url="familiers/player/viewMyFamily.do'" />
+						</jstl:if>
+					</div>
+
+
+					<h3 class="title">
+						<jstl:out value="${family.name}"></jstl:out>
+						<jstl:out value="${family.surname}"></jstl:out>
+					</h3>
+					<H4>
+						<jstl:out value="${family.userAccount.username}"></jstl:out>
+					</H4>
+
+					<h5 class="fa fa-envelope">
+						<jstl:out value="${family.email}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-phone">
+						<jstl:out value="${family.phone}"></jstl:out>
+					</h5>
+					<br>
+					<h5 class="fa fa-home ">
+						<jstl:out value="${family.address}"></jstl:out>
+					</h5>
+
+					<br>
+				</div>
+				<tag:buttonazul code="display.cancel" url="principal/index.do'" />
+			</div>
+		</div>
 	</form:form>
 </security:authorize>
