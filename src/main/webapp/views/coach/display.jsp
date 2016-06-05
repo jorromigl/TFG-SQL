@@ -339,7 +339,7 @@
 
 					<br>
 				</div>
-				<tag:buttonazul code="display.cancel" url="principal/index.do'" />
+				<tag:buttonazul code="display.return" url="principal/index.do'" />
 			</div>
 
 		</div>

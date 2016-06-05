@@ -69,4 +69,4 @@
 	</security:authorize>
 </display:table>
 </div>	
-	<tag:buttonverde code="match.return" url="principal/index.do'" />
+	<tag:buttonazul code="match.return" url="principal/index.do'" />

@@ -30,6 +30,6 @@
 			
 		</security:authorize>
 	<br> <br>
-	<acme:cancel code="family.return" url="principal/index.do" />
+	<tag:buttonazul code="family.return" url="principal/index.do'" />
 
 </form:form>

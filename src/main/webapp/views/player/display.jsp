@@ -225,7 +225,7 @@
 				src="player/showImage.do?playerId=${player.id}" />
 		</jstl:if>
 
-		<tag:button code="display.cancel" url="principal/index.do'" />
+		<tag:buttonazul code="display.return" url="principal/index.do'" />
 	</form:form>
 </security:authorize>
 
